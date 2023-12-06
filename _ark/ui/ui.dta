@@ -5,6 +5,7 @@
    "ui/meta_panel.milo")
 (init
    #include init.dta
+   #ifndef _SHIP
    {new
       BandScreen
       empty_screen
