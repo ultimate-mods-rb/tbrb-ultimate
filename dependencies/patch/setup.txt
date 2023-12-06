@@ -1,0 +1,10 @@
+# setup.txt : scanned by wit+wwt while composing a disc.
+# remove the '!' before names to activate parameters.
+
+disc-type = Wii
+image-type = WBFS
+
+part-id = R9JE69
+part-name = The Beatles: Rock Band Ultimate
+part-offset = 0xf800000
+

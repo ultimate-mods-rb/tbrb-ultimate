@@ -1,0 +1,27 @@
+#define CHEATS_ALLOWED
+({&&
+      {exists ui}
+      {!
+         {ui in_transition}}
+      {==
+         {ui current_screen}
+         splash_screen}})
+#define OVERSHELL_DISALLOWED_SCREENS
+({'||' {== {ui current_screen} game_screen} {== {ui current_screen} song_select_screen} {== {ui current_screen} hth_game_screen} {== {ui current_screen} overshell_main_screen} {== {ui current_screen} options_milo_screen} {== {ui current_screen} qp_seldiff_screen} {== {ui current_screen} story_chapter_seldiff_screen} {== {ui current_screen} story_chapterchallenge_seldiff_screen} {== {ui current_screen} h2h_seldiff_screen} {== {ui current_screen} overshell_visual_screen} {== {ui current_screen} practice_game_screen} {== {ui current_screen} matchmaking_screen}})
+#define G_RED
+(kPad_Circle)
+#define G_YELLOW
+(kPad_Tri)
+#define G_BLUE
+(kPad_Square)
+#define G_ORANGE
+(kPad_L1)
+((G_BLUE G_YELLOW G_ORANGE G_ORANGE G_ORANGE G_BLUE G_BLUE G_BLUE G_YELLOW G_ORANGE)
+   {if
+      CHEATS_ALLOWED
+      {ui push_screen bonus_photo_unlock_screen}})
+((kPad_Select kPad_Select)
+   {unless OVERSHELL_DISALLOWED_SCREENS
+      {do
+         {set $modifier_exit {ui current_screen}}
+         {ui push_screen overshell_main_screen}}})
