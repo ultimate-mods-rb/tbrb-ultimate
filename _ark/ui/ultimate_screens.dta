@@ -1,0 +1,36 @@
+{new
+   BandScreen
+   autoplay_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok autoplay_info})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   BandScreen
+   frs_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok frs_info})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   BandScreen
+   reset_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok restart_info})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   BandScreen
+   mod_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok mod_info})
+   (SELECT_MSG
+      {ui pop_screen})}

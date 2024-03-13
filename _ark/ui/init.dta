@@ -43,25 +43,30 @@
 #include net_delegator.dta
 #include store/store.dta
 #include overshell.dta
+#include ultimate_screens.dta
 #ifdef HX_WII
 #include naming_screen.dta
 #include matchmaking/invitations_wii.dta
 #endif
-#ifndef _SHIP
+;#ifndef _SHIP
 #include selvenue.dta
 #include framerate/frame_rate.dta
-#endif
+;#endif
 #ifdef HX_WII
 #include dlc_wii.dta
 #endif
-
+;{set $disablehud TRUE}
+;{set $autoplay TRUE}
+;{set $guitarinsttype kControllerGuitar}
+;{set $padinsttype kControllerVocals}
+;{set $druminsttype kControllerDrum}
 ;sets default track speed. 1.15 is 115%, 1.30 is 130% and so on.
 {set $trackspeed 1.0}
 
 ;sets default song speed 1.15 is 115%, 1.30 is 130% and so on.
 {set $speedmod 1.0}
 
-;set default venue fps.
+;set default venue fps. venue fps does not work on any platform and idk why please fix
 {set $emulatefps 30}
 
 ;no venues

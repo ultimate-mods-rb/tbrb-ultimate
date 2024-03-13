@@ -1,1 +1,6 @@
 _build/wii/
+_build/xbox/gen/
+_build/PS3/USRDIR/
+iso
+_tbrb_extracted
+cons

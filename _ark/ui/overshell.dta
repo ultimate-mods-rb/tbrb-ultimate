@@ -6,7 +6,7 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_spd os_vis)}
+      {sel_section.lst set_data (os_spd os_vis " " " ")}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
@@ -42,6 +42,15 @@
 ((
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
+   os_cycle_free_camera
+   os_toggle_hud
+   #ifdef HX_WII
+   os_toggle_pp
+   #endif
+   os_toggle_graphics
+   #ifndef HX_WII
+   " "
+   #endif
 ))
 {new
    MultiSelectListPanel
@@ -74,6 +83,32 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
+         (os_cycle_free_camera
+            {cycle_free_camera}
+         )
+         (os_toggle_hud
+            {set
+         $show_hud
+         {toggle_hud}}
+      {do
+         ($track
+            {get_track_panel})
+         {if
+            $track
+            {$track set_showing $show_hud}}}
+      {if_else
+         $show_hud
+         {cheat_display
+            show
+            "HUD: ON"}
+         {cheat_display
+            show
+            "HUD: OFF"}}
+         )
+         (os_toggle_pp
+            {pp_override})
+         (os_toggle_graphics
+            {rnd toggle_all_postprocs})
       }
    )
    (lst_reset
@@ -115,10 +150,20 @@
       {sfx.sld set_num_steps 60} ;number of steps for venue fps slider
 	  {background.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
       {crowd.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
-      {sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+      ;#ifdef HX_WII
+      {$this disable sfx.sld}
+      {sfx.sld set_showing FALSE}
+      ;#else
+      ;{sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+      ;#endif
 	  {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
 	  {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
-	  {sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+      ;#ifdef HX_WII
+      {$this disable sfx.btn}
+      {sfx.btn set_showing FALSE}
+      ;#else
+	  ;{sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+      ;#endif
       {audio_options.lbl set text_token milosliderlbl}
       {karaoke.btn set_showing FALSE}
       {$this disable karaoke.btn}

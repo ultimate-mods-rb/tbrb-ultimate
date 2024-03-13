@@ -6,6 +6,14 @@
       {==
          {ui current_screen}
          splash_screen}})
+#define CLOSE_FRAME_RATE_SCREEN
+({&&
+      {exists ui}
+      {!
+         {ui in_transition}}
+      {==
+         {ui current_screen}
+         frame_rate_screen}})
 #define OVERSHELL_DISALLOWED_SCREENS
 ({'||' {== {ui current_screen} game_screen} {== {ui current_screen} song_select_screen} {== {ui current_screen} hth_game_screen} {== {ui current_screen} overshell_main_screen} {== {ui current_screen} options_milo_screen} {== {ui current_screen} qp_seldiff_screen} {== {ui current_screen} story_chapter_seldiff_screen} {== {ui current_screen} story_chapterchallenge_seldiff_screen} {== {ui current_screen} h2h_seldiff_screen} {== {ui current_screen} overshell_visual_screen} {== {ui current_screen} practice_game_screen} {== {ui current_screen} matchmaking_screen}})
 #define G_RED
@@ -25,3 +33,8 @@
       {do
          {set $modifier_exit {ui current_screen}}
          {ui push_screen overshell_main_screen}}})
+((kPad_Circle)
+   {if
+      CLOSE_FRAME_RATE_SCREEN
+      {do
+         {ui goto_screen MAIN_MENU_RETURN_SCREEN}}})

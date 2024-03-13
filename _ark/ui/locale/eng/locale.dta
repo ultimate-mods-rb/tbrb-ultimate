@@ -1,12 +1,81 @@
+(enable_autoplay
+   "Enable autoplay")
+(disable_autoplay
+   "Disable autoplay")
+(autoplay_info
+   "no cheetin i big l is watching\n\nRestart your game to disable this modifier\n\nif you find any exploit in the autoplay please\n privately let me know and they will be patched")
+(pausecommand_toggle_hud
+   "Disable HUD")
+(frs_info
+   "you should only press buttons if you know what they do")
+(go_to_frs
+   "Go to frame_rate_screen")
+(enable_whammy
+   "Enable whammy")
+(disable_whammy
+   "Disable whammy")
+(restart_info
+   "Restart your game to disable this modifier")
+(cng_inst_type
+   "Change Instrument Type")
+(cng_g_inst_type
+   "Change Guitar Instrument Type")
+(cng_d_inst_type
+   "Change Drums Instrument Type")
+(cng_v_inst_type
+   "Change Vocals Instrument Type")
+(cng_g_2_g
+   "Reset Guitar Instrument Type")
+(cng_d_2_d
+   "Reset Drums Instrument Type")
+(cng_v_2_v
+   "Reset Vocals Instrument Type")
+(cng_d_2_g
+   "Change Drums to Guitar") ;this good for dolphin padtar trust
+(cng_v_2_g
+   "Change Vocals to Guitar")
+(cng_g_2_d
+   "Change Guitar to Drums")
+(cng_v_2_d
+   "Change Vocals to Drums")
+(cng_g_2_v
+   "Change Guitar to Vocals")
+(cng_d_2_v
+   "Change Drums to Vocals")
+(os_toggle_hud
+   "Toggle HUD")
+(os_cycle_free_camera
+   "Cycle Free Camera")
+(features
+   "Extra mods")
+#ifdef HX_WII
+(toggle_pp
+   "Toggle All Postprocs")
+(os_toggle_pp
+   "Toggle All Postprocs")
+(toggle_graphics
+   "Toggle All Background Graphics")
+(os_toggle_graphics
+   "Toggle All Background Graphics")
+#else
+(toggle_graphics
+   "Toggle All Postprocs")
+(os_toggle_graphics
+   "Toggle All Postprocs")
+#endif
+(mod_info_button
+   "Mod info")
+(mod_info
+   "The Beatles Rock Band Ultimate Version 1.1 by Big L 2112\n\nCredit to joe nuts for converting most songs and the people I borrowed customs from\n\nPress - twice to open the dx overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (milosliderlbl
-   "Speed / Framerate")
+   "Speeds")
 (speed_msg
    "SONG SPEED: %d%%")
 (trackspeed_msg
    "NOTE SPEED: %d%%")
 (fps_msg
    "VENUE FPS: %dFPS")
-(os_dxsettings "DELUXE SETTINGS")
+(os_dxsettings "SETTINGS")
 (os_spd "Speed Modifiers")
 (os_vis "Visual Modifiers")
 (os_blackbg1 "Disable Venues: ON")
@@ -3637,7 +3706,7 @@
 #endif
 #ifdef HX_WII
 (hyperspeed_info
-   "This option increases the speed at which the track moves towards you. This setting will be applied to all players on this Wii console.")
+   "This option increases the speed at which the track moves towards you. If you want to set a custom track speed which can be more fine tuned press - twice and go to the speeds menu then disable this modifier. This setting will be applied to all players on this Wii console.")
 #endif
 #ifdef HX_PC
 (hyperspeed_info
