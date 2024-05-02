@@ -48,7 +48,7 @@
    (player_slot 9))
 (audio
    (default_style unmute)
-   (mute_volume -96.0); for anyone here wondering this is a rb3 situation where the mute volume is controlled by the song 
+   (mute_volume -96.0)
    (mute_volume_vocals -12.0)
    (multiplayer_scale 0.33)
    (multiplayer_attenuation 3.0)
@@ -59,7 +59,7 @@
    (drum_velocity_to_db
       (0.0 -13.0 -7.0 -3.0 -2.0 -0.5 0.0))
    (drum_sample_attenuation 3.0)
-   (whammy_enabled FALSE)
+   (whammy_enabled $whammypb)
    (auto_miss_sound_timeout_seconds 5.0)
    (auto_miss_sound_timeout_gems 5)
    (auto_miss_sound_timeout_gems_remote 10)

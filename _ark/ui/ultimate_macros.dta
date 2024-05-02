@@ -1,0 +1,73 @@
+#ifndef HX_WII
+#define INIT_DTA_READER
+(
+   {foreach $entry {read_file #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif}
+      {if {== {elem $entry 0} {basename track_speed}}
+         {set $trackspeed
+            {elem {find $entry track_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename song_speed}}
+         {set $speedmod
+            {elem {find $entry song_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename emulate_fps}}
+         {set $emulatefps
+            {elem {find $entry emulate_fps} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename black_bg}}
+         {set $blackbg
+            {elem {find $entry black_bg} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename postfx}}
+         {set $postfx
+            {elem {find $entry postfx} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename highway_texture}}
+         {set $highway
+            {elem {find $entry highway_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename streak_texture}}
+         {set $streak
+            {elem {find $entry streak_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename spotlight_texture}}
+         {set $spotlight
+            {elem {find $entry spotlight_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename whammypb}}
+         {set $whammypb
+            {elem {find $entry whammypb} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename syncdifspeeds}}
+         {set $syncdifspeeds
+            {elem {find $entry syncdifspeeds} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename legacybass}}
+         {set $legacybass
+            {elem {find $entry legacybass} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename padtar}}
+         {set $padtar
+            {elem {find $entry padtar} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename paddrum}}
+         {set $paddrum
+            {elem {find $entry paddrum} 1}
+         }
+      }
+   }
+)
+
+#endif

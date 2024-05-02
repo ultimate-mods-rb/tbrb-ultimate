@@ -34,3 +34,30 @@
       {dialog_panel set_ok mod_info})
    (SELECT_MSG
       {ui pop_screen})}
+{new
+   BandScreen
+   force_instrument_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok force_instrument_info})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   BandScreen
+   theatre_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok theatre_info})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   BandScreen
+   album_art_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok album_art_info})
+   (SELECT_MSG
+      {ui pop_screen})}

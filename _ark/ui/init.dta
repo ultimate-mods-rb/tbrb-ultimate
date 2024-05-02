@@ -44,6 +44,7 @@
 #include store/store.dta
 #include overshell.dta
 #include ultimate_screens.dta
+#include ultimate_macros.dta
 #ifdef HX_WII
 #include naming_screen.dta
 #include matchmaking/invitations_wii.dta
@@ -55,18 +56,14 @@
 #ifdef HX_WII
 #include dlc_wii.dta
 #endif
-;{set $disablehud TRUE}
-;{set $autoplay TRUE}
-;{set $guitarinsttype kControllerGuitar}
-;{set $padinsttype kControllerVocals}
-;{set $druminsttype kControllerDrum}
+
 ;sets default track speed. 1.15 is 115%, 1.30 is 130% and so on.
 {set $trackspeed 1.0}
 
 ;sets default song speed 1.15 is 115%, 1.30 is 130% and so on.
 {set $speedmod 1.0}
 
-;set default venue fps. venue fps does not work on any platform and idk why please fix
+;set default venue fps
 {set $emulatefps 30}
 
 ;no venues
@@ -75,6 +72,86 @@
 ;song title always on
 {set $songtitle FALSE}
 
+;disables the background graphics. only works on wii and does nothing if set to true by default
+{set $disablegfx FALSE}
+
+;when on disables post procs
+{set $postfx FALSE}
+
+;disables whammy pitch bending by default
+{set $whammypb FALSE}
+
+;do gem custom textures
+{set $gemcustomtexture FALSE}
+
+;gem texture
+{set $gem "none"}
+
+;do smasher custom textures
+{set $smashercustomtexture FALSE}
+
+;smasher texture
+{set $smasher "none"}
+
+;do streak custom texture
+{set $streakcustomtexture FALSE}
+
+;streak texture
+{set $streak "none"}
+
+;do overdrive custom textures
+{set $spotlightcustomtexture FALSE}
+
+;smasher texture
+{set $highway "none"}
+
+;do streak custom texture
+{set $highwaycustomtexture FALSE}
+
+;overdrive texture
+{set $spotlight "none"}
+
+;do multiplier ring custom textures
+{set $multiringcustomtexture FALSE}
+
+;multiplier ring texture
+{set $multiring "none"}
+
+;do overdrive bar custom textures
+{set $odbarcustomtexture FALSE}
+
+;overdrive bar texture
+{set $odbar "none"}
+
+;do score custom textures
+{set $scorecustomtexture FALSE}
+
+;score texture
+{set $scoretex "none"}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
+
+#ifndef HX_WII
+{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif} INIT_DTA_READER}
+#endif
+;modifier funcs
+{if $postfx
+   #ifdef HX_WII {pp_override} #else {rnd toggle_all_postprocs} #endif}
+{if $padtar
+   #ifdef HX_PS3
+   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+   #endif
+   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}}
+{if $paddrum
+   #ifdef HX_PS3
+   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+   #endif
+   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}}
+
+{unless {== $highway none} {set $highwaycustomtexture TRUE}}
+
+{unless {== $spotlight none} {set $spotlightcustomtexture TRUE}}
+
+{unless {== $streak none} {set $streakcustomtexture TRUE}}

@@ -43,32 +43,6 @@
    #endif}
 {new
    Object
-   pausecommand_toggle_hud
-   (should_display
-      {if_else
-         $autoplay
-         TRUE
-         FALSE})
-   (on_selected
-            {set
-         $show_hud
-         {toggle_hud}}
-      {do
-         ($track
-            {get_track_panel})
-         {if
-            $track
-            {$track set_showing $show_hud}}}
-      {if_else
-         $show_hud
-         {cheat_display
-            show
-            "HUD: ON"}
-         {cheat_display
-            show
-            "HUD: OFF"}})}
-{new
-   Object
    pausecommand_resume
    (should_display TRUE)
    (on_selected
@@ -182,7 +156,6 @@
    pausecommand_accomplishments
    (should_display
       {if_else
-         $autoplay
          {gamemode in_mode tutorial}
          FALSE
          TRUE})
@@ -505,7 +478,7 @@
    (save_selected_index FALSE)
    (saved_selected_index -1)
    (pause_commands
-      (pausecommand_resume pausecommand_restart pausecommand_restartlesson pausecommand_change_difficulty pausecommand_lefty_flip pausecommand_toggle_hud pausecommand_metronome pausecommand_metronome_volume pausecommand_vocal_options pausecommand_accomplishments pausecommand_previouslesson pausecommand_nextlesson pausecommand_restarttutorial pausecommand_practice_new_section pausecommand_new_song pausecommand_new_challenge pausecommand_forfeit pausecommand_quit))
+      (pausecommand_resume pausecommand_restart pausecommand_restartlesson pausecommand_change_difficulty pausecommand_lefty_flip pausecommand_metronome pausecommand_metronome_volume pausecommand_vocal_options pausecommand_accomplishments pausecommand_previouslesson pausecommand_nextlesson pausecommand_restarttutorial pausecommand_practice_new_section pausecommand_new_song pausecommand_new_challenge pausecommand_forfeit pausecommand_quit))
    (active_commands
       ())
    (chose_quit FALSE)

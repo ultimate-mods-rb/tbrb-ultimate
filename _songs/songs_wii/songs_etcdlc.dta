@@ -1,0 +1,2850 @@
+;customs
+;4-20-24
+(thesheikofaraby
+   (name "The Sheik Of Araby")
+   (song_id 6272667)
+   (context 111)
+   (song
+     (name        songs/thesheikofaraby/thesheikofaraby)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 275)
+      (guitar 220)
+      (bass 219)
+      (vocals 200)
+      (band 300)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-01-01") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 17)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_thesheikofaraby01.bik" ;missing fix me
+   )
+)
+(comeandgetit
+   (name "Come And Get It")
+   (song_id 9520002)
+    (context 140)
+   (song
+     (name        songs/comeandgetit/comeandgetit)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 105)
+      (guitar 188)
+      (bass 180)
+      (vocals 175)
+      (band 200)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-04-24") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 18)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(unclealbert
+   (name "Uncle Albert / Admiral Halsey")
+   (song_id 6690007)
+   (context 937)
+   (song
+     (name        songs/unclealbert/unclealbert)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; George Martin and the Beatles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 150)
+      (guitar 300)
+      (bass 247)
+      (vocals 300)
+      (band 267)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1971-05-17") ; use 2009-01-01 as default if unknown
+   (date_recorded "1970-11-06") ; use 2009-01-01 as default if unknown
+   (album_name "Ram")
+   (album_track_number 5)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loadingunclealbert01.bik"
+      "vo_loadingunclealbert02.bik"
+   )
+)
+(twoofusanthology
+   (name "Two Of Us (Anthology 3 Version)")
+   (song_id 1995248)
+   (context 0)
+   (song
+     (name        songs/twoofusanthology/twoofusanthology)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 30638 60046)
+   (rank
+      (drum 100)
+      (guitar 200)
+      (bass 210)
+      (vocals 275)
+      (band 230)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-01-24") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 31)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)i
+   (singer john)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
+(mullofkintyre
+   (name "Mull of Kintyre")
+   (song_id 6690006)
+   (context 0)
+   (song
+     (name        songs/mullofkintyre/mullofkintyre)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; George Martin and the Beatles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 30638 60046)
+   (rank
+      (drum 1)
+      (guitar 1)
+      (bass 228)
+      (vocals 301)
+      (band 215)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1977-11-11") ; use 2009-01-01 as default if unknown
+   (date_recorded "1977-08-09") ; use 2009-01-01 as default if unknown
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loadingmullofkintyre01.bik"
+      "vo_loadingmullofkintyre02.bik"
+   )
+)
+;2-25-24
+(pickmeup
+   (name "Pick Me Up")
+   (artist "Dinosaur Jr.")
+   (song_id 1005647)
+   (context 0)
+   (song
+     (name        songs/pickmeup/pickmeup)
+     (tracks
+        ((drum (0 1))
+         (bass 2)
+         (guitar (3 4))
+         (vocals 5)
+        )
+     )
+     (vocal_parts 1)
+     ;                DRUMS     BS     GUITAR    VOX   TRKS
+     (pans        ( -1.0  1.0   0.0  -1.0  1.0   0.0  -0.6 ))  ;;collapsed DMS, TRKS L
+     (vols        ( -3.0 -3.0  -2.0  -5.0 -5.0  -1.0  -2.0 ))
+     (cores       (  -1   -1    -1     1    1    -1    -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo 32)
+   (preview 200481 230481)
+   (rank
+      (drum 264)
+      (guitar 383)
+      (bass 302)
+      (vocals 206)
+      (band 328)
+   )
+   (venue rooftop) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2007-03-16") ; use 2009-01-01 as default if unknown
+   (date_recorded "2007-03-16") ; use 2009-01-01 as default if unknown
+   (album_name "Beyond")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
+;end of 2-25-24
+;2-24-24
+(12bar
+   (name "12 Bar Original")
+   (song_id 2591248) 
+   (context 69)
+   (song
+     (name        songs/12bar/12bar)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+	     (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                KICK   DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Cheeze approved
+     (cores       (  -1    -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 37000 67000)
+  (rank
+      (drum 100)
+      (guitar 280)
+      (bass 250)
+      (vocals 0)
+      (band 260)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-03-18") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-02-20") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 2")
+   (album_track_number 16)
+   
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds ;missing thanks for that one c3
+    "vo_loading_12bar01.bik"
+	"vo_loading_12bar02.bik"
+	"vo_loading_12bar03.bik"
+	"vo_loading_12bar04.bik")
+)
+(babysinblack
+   (name "Baby's In Black")
+   (song_id 2510078)
+   (context 13)
+   (song
+     (name        songs/babysinblack/babysinblack)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 19000 51000)
+   (rank
+      (drum 154)
+      (guitar 300)
+      (bass 160)
+      (vocals 467)
+      (band 250)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-08-11") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(devilinherheart
+   (name "Devil In Her Heart")
+   (song_id 9350019)
+   (context 94)
+   (song
+     (name        songs/devilinherheart/devilinherheart)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 68000 98000)
+   (rank
+      (drum 150)
+      (guitar 250)
+      (bass 238)
+      (vocals 301)
+      (band 270)
+   )
+   (venue sullivan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1963-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-04-18") ; use 2009-01-01 as default if unknown
+   (album_name "With The Beatles")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(glassonionanthology
+   (name "Glass Onion (Anthology 3 Version)")
+   (song_id 9560002)
+   (context 50)
+   (song
+     (name        songs/glassonionanthology/glassonionanthology)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 30638 60046)
+   (rank
+      (drum 200)
+      (guitar 220)
+      (bass 250)
+      (vocals 250)
+      (band 260)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-09-12") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 19)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(imthegreatest
+   (name "I'm The Greatest")
+   (song_id 1970031)
+   (context 0)
+   (song
+     (name        songs/imthegreatest/imthegreatest)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 49005 79005)
+   (rank
+      (drum 157)
+      (guitar 316)
+      (bass 228)
+      (vocals 242)
+      (band 236)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1973-11-02") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-03-13") ; use 2009-01-01 as default if unknown
+   (album_name "Ringo")
+   (album_track_number 1)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer ringo)
+   (songtype electric piano)
+   (downloaded TRUE)
+   (loading_sounds ;missing thanks for that one c3
+      "vo_loading_greatest01.bik"
+      "vo_loading_greatest02.bik"
+	  "vo_loading_greatest03.bik"
+	  "vo_loading_greatest04.bik"
+   )
+   (new_ar_console TRUE)
+)
+(kansascityanthology
+   (name "Kansas City / Hey-Hey-Hey-Hey! (Anthology 1 Version)")
+   (song_id 6071067)
+   (context 53)
+   (song
+     (name        songs/kansascityanthology/kansascityanthology)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 300)
+      (guitar 240)
+      (bass 240)
+      (vocals 278)
+      (band 279)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-01-02") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 35)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(kentucky
+   (name "Blue Moon Of Kentucky")
+   (song_id 1994002)
+   (context 140)
+   (song
+     (name        songs/kentucky/kentucky)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 100)
+      (guitar 120)
+      (bass 0)
+      (vocals 175)
+      (band 204)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1994-04-24") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 80)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
+(twominutessilence
+   (name "Two Minutes Silence")
+   (song_id 1970006)
+   (context 0)	  
+		
+   (song
+     (name        songs/twominutessilence/twominutessilence)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian Approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 8500 47000)
+   (rank
+      (drum 1)
+      (guitar 1)
+      (bass 1)
+      (vocals 1)
+      (band 1)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-05-09") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-11-13") ; use 2009-01-01 as default if unknown
+   (album_name "Unfinished Music No. 2: Life with the Lions")
+   (album_track_number 4)
+   
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic piano)
+   (downloaded TRUE)
+   (new_ar_console TRUE)
+   (win_sounds ;missing thanks for that one c3 
+      "vo_win_x_twominutessilence01.bik"
+   )
+   (win_sounds ;missing thanks for that one c3
+      "vo_fail_x_twominutessilence01.bik"
+   )
+   (loading_sounds ;missing thanks for that one c3
+		"vo_loading_twominutessilence01.bik"
+	)
+)
+(maryjane
+   (name "What's The New Mary Jane")
+   (song_id 9340342)
+    (context 0)
+   (song
+     (name        songs/maryjane/maryjane)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 100)
+      (guitar 250)
+      (bass 0)
+      (vocals 174)
+      (band 200)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-08-14") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 19)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(notguilty
+   (name "Not Guilty")
+   (song_id 9520342)
+    (context 0)
+   (song
+     (name        songs/notguilty/notguilty)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 160)
+      (guitar 230)
+      (bass 270)
+      (vocals 175)
+      (band 250)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-08-07") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 18)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds ;missing thanks for that one c3
+      "vo_loading_notguilty01.bik"
+   )
+)
+(strawberrylove
+   (name "Strawberry Fields Forever (Love Version)")
+   (song_id 1994018)
+   (context 93)
+   (song
+     (name        songs/strawberrylove/strawberrylove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; Abc
+     (cores       (  -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 7000 37000)
+   (rank
+      (drum 400)
+      (guitar 499)
+      (bass 153)
+      (vocals 273)
+      (band 350)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2006-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1966-11-08") ; use 2009-01-01 as default if unknown
+   (album_name "Love")
+   (album_track_number 13)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
+(takegoodcareofmybaby
+   (name "Take Good Care Of My Baby")
+   (song_id 992631)
+   (context 86)
+   (song
+     (name        songs/takegoodcareofmybaby/takegoodcareofmybaby)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10000 40000)
+   (rank
+      (drum 190)
+      (guitar 218)
+      (bass 225)
+      (vocals 270)
+      (band 260)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1962-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-01-01") ; use 2009-01-01 as default if unknown
+   (album_name "The Decca Tapes")
+   (album_track_number 2)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(thatmeansalot
+   (name "That Means A Lot")
+   (song_id 1592768) 
+    (context 0)
+   (song
+     (name        songs/thatmeansalot/thatmeansalot)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+	     (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                KICK   DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Cheeze approved
+     (cores       (  -1    -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 37000 67000)
+   (rank
+      (drum 120)
+      (guitar 140)
+      (bass 130)
+      (vocals 190)
+      (band 160)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-03-18") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-02-20") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 2")
+   (album_track_number 6)
+   
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds ;missing thanks for that one c3
+    "vo_loading_thatmeansalot01.bik"
+	"vo_loading_thatmeansalot02.bik"
+	"vo_loading_thatmeansalot03.bik"
+	"vo_loading_thatmeansalot04.bik"
+	"vo_loading_thatmeansalot05.bik"
+	"vo_loading_thatmeansalot06.bik"
+	"vo_loading_thatmeansalot07.bik"
+	"vo_loading_thatmeansalot08.bik"
+	"vo_loading_thatmeansalot09.bik"
+	"vo_loading_thatmeansalot10.bik")
+)
+(toknowher
+   (name "To Know Her Is To Love Her")
+   (song_id 1994367)
+   (context 42)
+   (song
+     (name        songs/toknowher/toknowher)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 10400 40400)
+   (rank
+      (drum 110)
+      (guitar 100)
+      (bass 100)
+      (vocals 250)
+      (band 100)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1994-11-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-07-16") ; use 2009-01-01 as default if unknown
+   (album_name "Live At The BBC")
+   (album_track_number 25)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(wonderfulchristmastime
+   (name "Wonderful Christmastime")
+   (song_id 1970020)
+   (context 133)
+   (song
+     (name        songs/wonderfulchristmastime/wonderfulchristmastime)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 17500 37500)
+   (rank
+      (drum 107)
+      (guitar 170)
+      (bass 194)
+      (vocals 307)
+      (band 305)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1979-11-16") ; use 2009-01-01 as default if unknown
+   (date_recorded "1979-08-30") ; use 2009-01-01 as default if unknown
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype solo)
+   (downloaded TRUE)
+)
+(ladymadonnalove
+   (name "Lady Madonna (Love Version)")
+   (song_id 9980002)
+   (context 111)
+   (song
+     (name songs/ladymadonnalove/ladymadonnalove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Delk approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 176)
+      (guitar 355)
+      (bass 280)
+      (vocals 300)
+      (band 314)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2006-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-02-11") ; use 2009-01-01 as default if unknown
+   (album_name "Love")
+   (album_track_number 17)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_ladymadonnalove01.bik"
+	  "vo_loading_ladymadonnalove02.bik"
+	  "vo_loading_ladymadonnalove03.bik"
+   )
+)
+(gentlyweepsanthology
+   (name "While My Guitar Gently Weeps (Anthology 3 Version)")
+   (song_id 4829106)
+    (context 53)
+   (song
+     (name songs/gentlyweepsanthology/gentlyweepsanthology)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 30638 60046)
+   (rank
+      (drum 0)
+      (guitar 210)
+      (bass 0)
+      (vocals 175)
+      (band 200)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-10-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-09-06") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 3")
+   (album_track_number 16)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)i
+   (singer george)
+   (songtype acoustic)
+   (downloaded TRUE)
+) (buddyholly
+   (name "Buddy Holly")
+   (song_id 9970003)
+   (context 88)
+   (song
+     (name       songs/buddyholly/buddyholly)
+     (tracks
+        ((drum (0 1 2 3 4))
+         (bass (2 3))
+         (guitar (6 7))
+		 (vocals (8 9))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        (   0.0  -1.0  1.0 -1.0  1.0  0.0 -1.0  1.0 -1.0  1.0 -1.0  1.0 ))
+     (vols        (   0.0   0.0  0.0 -1.5 -1.5 -3.0 -4.5 -4.5 -4.0 -4.0 -6.0 -6.0 ))
+     (cores       (   -1    -1   -1   -1   -1   -1    1    1   -1   -1   -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2100)
+   (anim_tempo kTempoMedium)
+   (preview 83313 111920)
+   (rank
+      (drum 122)
+      (guitar 310)
+      (bass 250)
+      (vocals 310)
+      (band 211)
+   )
+   (venue sullivan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1994-09-07") ; use 2009-01-01 as default if unknown
+   (date_recorded "1993-09-07") ; use 2009-01-01 as default if unknown
+   (album_name "Weezer (The Blue Album)")
+   (album_track_number 3)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   
+   (loading_sounds
+		"vo_loading_buddyholly01.bik")
+) (one
+   (name "One")
+   (song_id 9970006)
+   (context 88)
+   (song
+     (name      songs/one/one)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 127000 157000)
+   (rank
+      (drum 242)
+      (guitar 409)
+      (bass 293)
+      (vocals 218)
+      (band 267)
+   )
+   (venue budokan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1989-01-10") ; use 2009-01-01 as default if unknown
+   (date_recorded "1987-11-01") ; use 2009-01-01 as default if unknown
+   (album_name "...And Justice for All")
+   (album_track_number 4)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+  )
+(crippledinside
+   (name "Crippled Inside")
+   (song_id 9350010)
+   (context 97)
+   (song
+     (name        songs/crippledinside/crippledinside)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 142)
+      (guitar 350)
+      (bass 240)
+      (vocals 117)
+      (band 138)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1971-10-11") ; use 2009-01-01 as default if unknown
+   (date_recorded "1971-05-27") ; use 2009-01-01 as default if unknown
+   (album_name "Imagine")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic)
+    (downloaded TRUE)
+   
+    (loading_sounds
+      "vo_loading_crippledinside01.bik"
+      "vo_loading_crippledinside02.bik"
+      "vo_loading_crippledinside03.bik"
+      "vo_loading_crippledinside04.bik"
+      "vo_loading_crippledinside05.bik"
+      "vo_loading_crippledinside06.bik"
+      "vo_loading_crippledinside07.bik"
+      "vo_loading_crippledinside08.bik"
+) 
+)
+(cryforashadow
+   (name "Cry For A Shadow")
+   (song_id 6072667)
+  (context 153)
+   (song
+     (name songs/cryforashadow/cryforashadow)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 190)
+      (guitar 250)
+      (bass 260)
+      (vocals 0)
+      (band 250)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-01-02") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+    (downloaded TRUE)
+)
+(ifyouvegottrouble
+   (name "If You've Got Trouble")
+   (song_id 99903430)
+   (context 0)
+   (song
+     (name  songs/ifyouvegottrouble/ifyouvegottrouble)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 61300 91300)
+   (rank
+      (drum 160)
+      (guitar 240)
+      (bass 230)
+      (vocals 170)
+      (band 260)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-03-18") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-02-18") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 2")
+   (album_track_number 5)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+    "vo_loading_ifyouvegottrouble01.bik"
+   "vo_loading_ifyouvegottrouble02.bik")
+) 
+(everynight
+   (name "Every Night")
+   (song_id 1970010)
+   (context 0)
+   (song
+     (name songs/everynight/everynight)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 149)
+      (guitar 242)
+      (bass 257)
+      (vocals 238)
+      (band 207)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1970-04-17") ; use 2009-01-01 as default if unknown
+   (date_recorded "1970-02-22") ; use 2009-01-01 as default if unknown
+   (album_name "McCartney")
+   (album_track_number 4)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype solo)
+   (downloaded TRUE)
+   )
+(illbeonmyway
+   (name "I'll Be On My Way")
+   (song_id 953702)
+   (context 0)
+   (song
+     (name songs/illbeonmyway/illbeonmyway)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Nikocado Avacado approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 100)
+      (guitar 100)
+      (bass 200)
+      (vocals 180)
+      (band 200)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1994-11-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-04-04") ; use 2009-01-01 as default if unknown
+   (album_name "Live At The BBC")
+   (album_track_number 7)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+) (jet
+   (name "Jet")
+   (song_id 1970005)
+   (context 0)
+   (song
+     (name songs/jet/jet)
+     (tracks
+        ((drum (0 1 2 3 4 5))
+         (bass (6 7))
+         (guitar (8 9))
+		 (vocals (10 11))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS                            BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  ))
+     (vols        (  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  )) ; Aprovado por Delk snm
+     (cores       (  -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 366)
+      (guitar 364)
+      (bass 219)
+      (vocals 300)
+      (band 318)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1973-11-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-09-17") ; use 2009-01-01 as default if unknown
+   (album_name "Band on the Run")
+   (album_track_number 2)
+   
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+) (liveandletdie
+   (name "Live And Let Die")
+   (song_id 1970004)
+   (context 0)
+   (song
+     (name songs/liveandletdie/liveandletdie)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Delk approved :moai:
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 57626 87626)
+   (rank
+      (drum 179)
+      (guitar 314)
+      (bass 263)
+      (vocals 205)
+      (band 293)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1973-04-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1972-10-27") ; use 2009-01-01 as default if unknown
+   (album_name "Red Rose Speedway")
+   (album_track_number 2)
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_liveandletdie01.bik"
+      "vo_loading_liveandletdie02.bik"
+      "vo_loading_liveandletdie03.bik"
+	  "vo_loading_liveandletdie04.bik"
+	  "vo_loading_liveandletdie05.bik"
+	  "vo_loading_liveandletdie06.bik"
+	  "vo_loading_liveandletdie07.bik"
+   )
+  
+) 
+(photograph
+   (name "Photograph")
+   (song_id 1970002)
+   (context 0)
+   (song
+     (name songs/photograph/photograph)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -10.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 169)
+      (guitar 230)
+      (bass 255)
+      (vocals 001)
+      (band 229)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+
+   (date_released "1973-11-02") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-03-12") ; use 2009-01-01 as default if unknown
+   (album_name "Ringo")
+   (album_track_number 3)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer ringo)
+   (songtype electric)
+   (downloaded TRUE)
+) (soldieroflove
+   (name "Soldier Of Love")
+   (song_id 4150058)
+   (context 133)
+   (song
+     (name  songs/soldieroflove/soldieroflove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Littlepal approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 17500 37500)
+   (rank
+      (drum 129)
+      (guitar 210)
+      (bass 230)
+      (vocals 210)
+      (band 200)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1994-11-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-07-16") ; use 2009-01-01 as default if unknown
+   (album_name "Live At The BBC")
+   (album_track_number 17)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+) (strawberryanthology
+   (name "Strawberry Fields Forever (Take 1 / Anthology 2 Version)")
+   (song_id 1524768) 
+   (context 0)
+   (song
+     (name  songs/strawberryanthology/strawberryanthology)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+	     (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                KICK   DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Cheeze approved
+     (cores       (  -1    -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 37000 67000)
+   (rank
+      (drum 130)
+      (guitar 140)
+      (bass 0)
+      (vocals 199)
+      (band 120)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1996-03-18") ; use 2009-01-01 as default if unknown
+   (date_recorded "1966-11-08") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 2")
+   (album_track_number 27)
+   
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+)
+ (californication
+   (name "Californication")
+   (song_id 6690002)
+   (context 111)
+   (song
+     (name   songs/californication/californication)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 150)
+      (guitar 300)
+      (bass 340)
+      (vocals 350)
+      (band 414)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2006-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "2002-02-11") ; use 2009-01-01 as default if unknown
+   (album_name "Californication")
+   (album_track_number 17)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+) (oceanman
+   (name "Ocean Man")
+   (song_id 6660666)
+   (context 69)
+   (song
+     (name songs/oceanman/oceanman)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 20900 50900)
+   (rank
+      (drum 200)
+      (guitar 290)
+      (bass 195)
+      (vocals 314)
+      (band 268)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2069-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1995-10-21") ; use 2009-01-01 as default if unknown
+   (album_name "Spinebob Anthology 2")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+)
+ (givemelove
+   (name "Give Me Love (Give Me Peace On Earth)")
+   (song_id 1970001)
+   (context 0)
+   (song
+     (name  songs/givemelove/givemelove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )  
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Delk approved :moai:
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 240)
+      (guitar 272)
+      (bass 262)
+      (vocals 255)
+      (band 278)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1973-10-11") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-05-27") ; use 2009-01-01 as default if unknown
+   (album_name "Living In The Material World")
+   (album_track_number 1)
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_givemelove01.bik"
+      "vo_loading_givemelove02.bik"
+      "vo_loading_givemelove03.bik"	  
+   )
+) (beautifulboy
+   (name "Beautiful Boy (Darling Boy)")
+   (song_id 1970003)
+   (context 0)
+   (song
+     (name       songs/beautifulboy/beautifulboy)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 177)
+      (guitar 199)
+      (bass 204)
+      (vocals 287)
+      (band 149)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1980-11-17") ; use 2009-01-01 as default if unknown
+   (date_recorded "1980-10-22") ; use 2009-01-01 as default if unknown
+   (album_name "Double Fantasy")
+   (album_track_number 7)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype solo)
+   (downloaded TRUE)
+) (happyxmas
+   (name "Happy Xmas (War is Over)")
+   (song_id 6690005)
+   (context 0)
+   (song
+     (name   songs/happyxmas/happyxmas)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 140)
+      (guitar 200)
+      (bass 050)
+      (vocals 280)
+      (band 280)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1971-12-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1971-08-26") ; use 2009-01-01 as default if unknown
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loadinghappyxmas01.bik"
+      "vo_loadinghappyxmas02.bik"
+   )
+) (hellolittlegirl
+   (name "Hello Little Girl")
+   (song_id 6054367)
+   (context 42)
+   (song
+     (name songs/hellolittlegirl/hellolittlegirl)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 300)
+      (guitar 290)
+      (bass 222)
+      (vocals 328)
+      (band 240)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-01-01") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 19)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_hellolittlegirl01.bik"
+   )
+) (howdoyoudoit
+   (name "How Do You Do It?")
+   (song_id 6415667)
+   (context 0)
+   (song
+     (name songs/howdoyoudoit/howdoyoudoit)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 300)
+      (guitar 220)
+      (bass 200)
+      (vocals 250)
+      (band 230)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-04-19") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 23)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_howdoyoudoit01.bik"
+   )
+)
+ (letmerollit
+   (name "Let Me Roll It")
+   (song_id 6690003)
+   (context 111)
+   (song
+     (name  songs/letmerollit/letmerollit)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 140)
+      (guitar 300)
+      (bass 225)
+      (vocals 250)
+      (band 280)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1973-12-05") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-07-17") ; use 2009-01-01 as default if unknown
+   (album_name "Band on the Run")
+   (album_track_number 17)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+) (shout
+   (name "Shout")
+   (song_id 6482667)
+   (context 40)
+   (song
+     (name       songs/shout/shout)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 10400 40400)
+   (rank
+      (drum 400)
+      (guitar 200)
+      (bass 240)
+      (vocals 278)
+      (band 279)
+   )
+   (venue sullivan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-04-19") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 35)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+) (wonderwall
+   (name "Wonderwall")
+   (song_id 6690004)
+   (context 111)
+   (song
+     (name       songs/wonderwall/wonderwall)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 242)
+      (guitar 221)
+      (bass 181)
+      (vocals 175)
+      (band 215)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-10-30") ; use 2009-01-01 as default if unknown
+   (date_recorded "1995-09-18") ; use 2009-01-01 as default if unknown
+   (album_name "(What's the Story) Morning Glory?")
+   (album_track_number 17)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic)
+   (downloaded TRUE)
+) (mybonnie
+   (name "My Bonnie")
+   (song_id 6024537)
+   (context 14)
+   (song
+     (name       songs/mybonnie/mybonnie)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Dababy approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 240)
+      (guitar 360)
+      (bass 220)
+      (vocals 378)
+      (band 280)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1961-5-22") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 10)
+
+   (format 0)
+   ('version' 1)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+) 
+ (imagine
+   (name "Imagine")
+   (song_id 9970010)
+   (context 97)
+   (song
+     (name songs/imagine/imagine)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 57626 87626)
+   (rank
+      (drum 52)
+      (guitar 252)
+      (bass 95)
+      (vocals 117)
+      (band 138)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1971-10-11") ; use 2009-01-01 as default if unknown
+   (date_recorded "1971-05-27") ; use 2009-01-01 as default if unknown
+   (album_name "Imagine")
+   (album_track_number 2)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loadingimagine01.bik"
+      "vo_loadingimagine02.bik"
+   )
+) (gotmymind
+   (name "Got My Mind Set on You (1st Version)")
+   (song_id 9980001)
+   (context 111)
+   (song
+     (name songs/gotmymind/gotmymind)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Delk approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 163)
+      (guitar 214)
+      (bass 234)
+      (vocals 288)
+      (band 282)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1987-11-02") ; use 2009-01-01 as default if unknown
+   (date_recorded "1987-06-23") ; use 2009-01-01 as default if unknown
+   (album_name "Cloud Nine")
+   (album_track_number 11)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_gotmymind.bik"
+))
+ (maybeimamazed
+   (name "Maybe I'm Amazed")
+   (song_id 9970011)
+   (context 97)
+   (song
+     (name songs/maybeimamazed/maybeimamazed)
+     (tracks
+        ((drum (0 1))
+         (bass (2))
+         (guitar (3 4))
+		 (vocals (5 6))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 49005 79005)
+   (rank
+      (drum 179)
+      (guitar 279)
+      (bass 176)
+      (vocals 310)
+      (band 190)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1970-04-17") ; use 2009-01-01 as default if unknown
+   (date_recorded "1970-02-22") ; use 2009-01-01 as default if unknown
+   (album_name "McCartney")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+)  (likedreamersdo
+   (name "Like Dreamers Do")
+   (song_id 9980049)
+   (context 0)
+   (song
+     (name songs/likedreamersdo/likedreamersdo)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Delk approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10400 40400)
+   (rank
+      (drum 180)
+      (guitar 262)
+      (bass 269)
+      (vocals 220)
+      (band 300)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1995-11-20") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-02-02") ; use 2009-01-01 as default if unknown
+   (album_name "Anthology 1")
+   (album_track_number 18)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+) 
+(goodbye
+   (name "Goodbye")
+   (song_id 2019052)
+   (context 127)
+   (song
+     (name songs/goodbye/goodbye)
+     (tracks
+        ((guitar (0 1))
+	 (vocals (2 3))
+        )
+     )   
+     (vocal_parts 1)
+    ;                 GUITAR     VOCALS
+     (pans        ( -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0 )) ; Bv
+     (cores       (   1    1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 33550 63550)
+   (rank
+      (drum 0)
+      (guitar 276)
+      (bass 0)
+      (vocals 240)
+      (band 260)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2019-09-27") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-02-01") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road (Super Deluxe)")
+   (album_track_number 20)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_goodbye01.bik"
+   )
+)
+
+
+

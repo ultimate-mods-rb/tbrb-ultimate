@@ -40,9 +40,8 @@
    (enter_time 0.0)
    (attract_timeout_done FALSE)
    (enter
-   ;#ifdef HX_XBOX
-   ;{ui push_screen xbox_info_screen}
-   ;#endif
+       {$this iterate UILabel $l {$l set_showing FALSE}}
+      {logo_beatles.tex set_bitmap "ui/splash/ulti_logo_beatles.png"}
       #ifdef HX_PS3
       {register_trophy}
       #endif

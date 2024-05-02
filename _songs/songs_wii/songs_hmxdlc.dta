@@ -1,0 +1,1682 @@
+(abbeyroadmedley
+   (name "Abbey Road Medley")
+   (song_id 1000010)
+   (context 54)
+   (song
+     (name        songs/abbeyroadmedley/abbeyroadmedley)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 25000 55000)
+   (rank
+      (drum 388)
+      (guitar 358)
+      (bass 280)
+      (vocals 475)
+      (band 405)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-05-06") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 18)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer john paul george ringo)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_younever01.bik"
+      "vo_loading_younever02.bik"
+      "vo_loading_younever03.bik"
+      "vo_loading_younever04.bik"
+      "vo_loading_younever05.bik"
+      "vo_loading_younever06.bik"
+      "vo_loading_younever07.bik"
+      "vo_loading_sunking01.bik"
+      "vo_loading_sunking02.bik"
+      "vo_loading_sunking03.bik"
+      "vo_loading_sunking04.bik"
+      "vo_loading_polythene01.bik"
+      "vo_loading_polythene02.bik"
+      "vo_loading_polythene03.bik"
+      "vo_loading_polythene04.bik"
+      "vo_loading_polythene05.bik"
+      "vo_loading_polythene06.bik"
+      "vo_loading_polythene07.bik"
+      "vo_loading_polythene08.bik"
+      "vo_loading_polythene09.bik"
+      "vo_loading_polythene10.bik"
+      "vo_loading_polythene11.bik"
+      "vo_loading_polythene12.bik"
+      "vo_loading_golden01.bik"
+      "vo_loading_golden02.bik"
+      "vo_loading_golden03.bik"
+      "vo_loading_hermajesty01.bik"
+      "vo_loading_hermajesty02.bik"
+   )
+   (downloaded TRUE)
+   (medley_contains_songs
+   younevergive
+   sunkingmeanmr
+   polythenebathroom
+   goldencarrytheend
+   hermajesty
+   theend
+   ))
+(sgtpepperreprise
+   (name "Sgt. Pepper's Lonely Hearts Club Band (Reprise)")
+   (song_id 1000002)
+   (context 0)
+   (song
+     (name songs/sgtpepperreprise/sgtpepperreprise)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -0.5 -0.5  -0.5 -0.5  -0.5 -0.5  -0.5 -0.5  -0.5 -0.5 )) ; Giles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 22523 52523)
+   (rank
+      (drum 171)
+      (guitar 207)
+      (bass 320)
+      (vocals 155)
+      (band 213)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-04-01") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul george)
+   (songtype electric)
+   (loading_sounds
+      "vo_loading_sgtpepperreprise01.bik"
+      "vo_loading_sgtpepperreprise02.bik"
+      "vo_loading_sgtpepperreprise03.bik"
+   )
+   (downloaded TRUE)
+)
+(beingformrkite
+   (name "Being For The Benefit Of Mr. Kite!")
+   (song_id 1000006)
+   (context 0)
+   (song
+     (name songs/beingformrkite/beingformrkite)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -0.5 -0.5  -0.5 -0.5  -0.5 -0.5  -0.5 -0.5  -0.5 -0.5 )) ; Giles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10500 40500)
+   (rank
+      (drum 175)
+      (guitar 355)
+      (bass 273)
+      (vocals 314)
+      (band 279)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-02-17") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 7)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (loading_sounds
+      "vo_loading_beingformrkite01.bik"
+      "vo_loading_beingformrkite02.bik"
+      "vo_loading_beingformrkite03.bik"
+      "vo_loading_beingformrkite04.bik"
+      "vo_loading_beingformrkite05.bik"
+      "vo_loading_beingformrkite06.bik"
+      "vo_loading_beingformrkite07.bik"
+      "vo_loading_beingformrkite08.bik"
+   )
+   (downloaded TRUE)
+)
+(whenim64
+   (name "When I'm Sixty-Four")
+   (song_id 1000004)
+   (context 0)
+   (song
+     (name songs/whenim64/whenim64)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 ))  ; clipping was audible at 0.0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -4.5)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 15743 45743)
+   (rank
+      (drum 260)
+      (guitar 264)
+      (bass 212)
+      (vocals 291)
+      (band 256)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1966-12-06") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 9)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype piano acoustic)
+   (loading_sounds
+      "vo_loading_whenim01.bik"
+      "vo_loading_whenim02.bik"
+      "vo_loading_whenim03.bik"
+   )
+   (downloaded TRUE)
+)
+(lovelyrita
+   (name "Lovely Rita")
+   (song_id 1000003)
+   (context 0)
+   (song
+     (name songs/lovelyrita/lovelyrita)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 ))  ; clipping was audible at 0.0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 25356 55356)
+   (rank
+      (drum 142)
+      (guitar 352)
+      (bass 284)
+      (vocals 395)
+      (band 293)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-02-23") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 10)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype piano acoustic)
+   (loading_sounds
+      "vo_loading_lovelyrita01.bik"
+      "vo_loading_lovelyrita02.bik"
+      "vo_loading_lovelyrita03.bik"
+      "vo_loading_lovelyrita04.bik"
+   )
+   (downloaded TRUE)
+)
+(hermajesty
+   (name "Her Majesty")
+   (song_id 1000011) ; must be a unique number in the 1000001 - 1005000 range
+   (context 53)
+   (song
+     (name songs/hermajesty/hermajesty)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 04886 29000)
+   (rank
+      (drum 050)
+      (guitar 337)
+      (bass 050)
+      (vocals 360)
+      (band 199)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-07-02") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 17)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_hermajesty01.bik"
+      "vo_loading_hermajesty02.bik"
+   )
+   (downloaded TRUE)
+)
+(goldencarrytheend
+   (name "Golden Slumbers/Carry That Weight/The End")
+   (song_id 1000012) ; must be a unique number in the 1000001 - 1005000 range
+   (context 52)
+   (song
+     (name songs/goldencarrytheend/goldencarrytheend)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 ))  ; clipping was audible at 0.0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 84149 114149)
+   (rank
+      (drum 359)
+      (guitar 357)
+      (bass 226)
+      (vocals 308)
+      (band 312)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-07-02") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 14)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer john paul george ringo)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_golden01.bik"
+      "vo_loading_golden02.bik"
+      "vo_loading_golden03.bik"
+   )
+   (downloaded TRUE)
+)
+(sunkingmeanmr
+   (name "Sun King/Mean Mr. Mustard")
+   (song_id 1000014) ; must be a unique number in the 1000001 - 1005000 range
+   (context 50)
+   (song
+     (name songs/sunkingmeanmr/sunkingmeanmr)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 138135 168135)
+   (rank
+      (drum 140)
+      (guitar 202)
+      (bass 222)
+      (vocals 375)
+      (band 235)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-07-24") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 10)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer john paul george)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_sunking01.bik"
+      "vo_loading_sunking02.bik"
+      "vo_loading_sunking03.bik"
+      "vo_loading_sunking04.bik"
+   )
+   (downloaded TRUE)
+)
+(allyouneedislove
+   (name "All You Need Is Love")
+   (song_id 1000018)
+   (context 1)
+   (song
+     (name songs/allyouneedislove/allyouneedislove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -2.5 -2.5  -2.5 -2.5  -2.5 -2.5  -2.5 -2.5  -2.5 -2.5 ))  ; clipping was audible at 0.0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -96.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -4.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 65764 83424)
+   (rank
+      (drum 137)
+      (guitar 365)
+      (bass 228)
+      (vocals 289)
+      (band 286)
+   )
+   (format 0)
+   (version 20)
+   (game_origin beatles)
+   (rating 2)
+   (date_released "1967-11-24")
+   (date_recorded "1967-06-25")
+   (album_name "Magical Mystery Tour")
+   (album_track_number 11)
+   (venue dreamscape)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+)
+(ohdarling
+   (name "Oh! Darling")
+   (song_id 1000016)
+   (context 48)
+   (song
+     (name songs/ohdarling/ohdarling)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 4500 34400)
+   (rank
+      (drum 251)
+      (guitar 106)
+      (bass 230)
+      (vocals 390)
+      (band 244)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-04-20") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 4)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_ohdarling01.bik"
+      "vo_loading_ohdarling02.bik"
+      "vo_loading_ohdarling03.bik"
+      "vo_loading_ohdarling04.bik"
+      "vo_loading_ohdarling05.bik"
+      "vo_loading_ohdarling06.bik"
+      "vo_loading_ohdarling07.bik"
+   )
+   (downloaded TRUE)
+)
+(runforyourlife
+   (name "Run For Your Life")
+   (song_id 1000029) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/runforyourlife/runforyourlife)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 24000 54000)
+   (rank
+      (drum 254)
+      (guitar 290)
+      (bass 267)
+      (vocals 357)
+      (band 292)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-10-12") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 14)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(thinkforyourself
+   (name "Think For Yourself")
+   (song_id 1000022) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/thinkforyourself/thinkforyourself)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30500 60500)
+   (rank
+      (drum 220)
+      (guitar 225)
+      (bass 234)
+      (vocals 320)
+      (band 272)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-08") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 5)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(inmylife
+   (name "In My Life")
+   (song_id 1000027) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/inmylife/inmylife)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; clipping at 0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 13000 43000)
+   (rank
+      (drum 145)
+      (guitar 319)
+      (bass 206)
+      (vocals 280)
+      (band 238)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 11)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (loading_sounds
+      "vo_loading_inmylife01.bik"
+   )
+   (downloaded TRUE)
+)
+(girl
+   (name "Girl")
+   (song_id 1000025) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/girl/girl)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; clipping at 0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 25000 55000)
+   (rank
+      (drum 135)
+      (guitar 187)
+      (bass 192)
+      (vocals 310)
+      (band 206)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-11") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 9)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (loading_sounds
+      "vo_loading_girl01.bik"
+      "vo_loading_girl02.bik"
+   )
+   (downloaded TRUE)
+)
+(adayinthelife
+   (name "A Day In The Life")
+   (song_id 1000001)
+   (context 0)
+   (song
+     (name songs/adayinthelife/adayinthelife)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -10.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 78000 108000)
+   (rank
+      (drum 293)
+      (guitar 252)
+      (bass 258)
+      (vocals 294)
+      (band 274)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-01-19") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 13)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul)
+   (songtype electric acoustic piano)
+   (loading_sounds
+      "vo_loading_adayinthelife01.bik"
+      "vo_loading_adayinthelife02.bik"
+   )
+   (downloaded TRUE)
+)
+(fixingahole
+   (name "Fixing A Hole")
+   (song_id 1000008)
+   (context 0)
+   (song
+     (name songs/fixingahole/fixingahole)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; Giles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 9000 39000)
+   (rank
+      (drum 234)
+      (guitar 198)
+      (bass 210)
+      (vocals 308)
+      (band 237)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-02-09") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 5)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (loading_sounds
+      "vo_loading_fixingahole01.bik"
+      "vo_loading_fixingahole02.bik"
+      "vo_loading_fixingahole03.bik"
+   )
+   (downloaded TRUE)
+)
+(shesleavinghome
+   (name "She's Leaving Home")
+   (song_id 1000007)
+   (context 0)
+   (song
+     (name songs/shesleavinghome/shesleavinghome)
+     (tracks
+        ((bass (0 1))
+         (guitar (2 3))
+         (vocals (4 5))
+        )
+     )   
+     (vocal_parts 2)
+     ;                 BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -3.0 -3.0  -3.0 -3.0  -3.0 -3.0  -3.0 -3.0 )) ; Giles approved
+     (cores       (  -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -6.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 11000 41000)
+   (rank
+      (drum 000)
+      (guitar 314)
+      (bass 229)
+      (vocals 264)
+      (band 269)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-03-17") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 6)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul)
+   (songtype acoustic)
+   (loading_sounds
+      "vo_loading_shesleavinghome01.bik"
+      "vo_loading_shesleavinghome02.bik"
+   )
+   (downloaded TRUE)
+)
+(maxwells
+   (name "Maxwell's Silver Hammer")
+   (song_id 1000017)
+   (context 47)
+   (song
+     (name songs/maxwells/maxwells)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; Giles approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 38500 68400)
+   (rank
+      (drum 143)
+      (guitar 192)
+      (bass 227)
+      (vocals 275)
+      (band 209)
+   )
+   (venue dreamscape)
+   
+   (date_released "1969-09-26") ; TEMP
+   (date_recorded "1969-07-09") ; TEMP
+   (album_name "Abbey Road")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_maxwells01.bik"
+      "vo_loading_maxwells02.bik"
+      "vo_loading_maxwells03.bik"
+      "vo_loading_maxwells04.bik"
+      "vo_loading_maxwells05.bik"
+      "vo_loading_maxwells06.bik"
+   )
+   (downloaded TRUE)
+)
+(younevergive
+   (name "You Never Give Me Your Money")
+   (song_id 1000015) ; must be a unique number in the 1000001 - 1005000 range
+   (context 49)
+   (song
+     (name songs/younevergive/younevergive)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 25000 55000)
+   (rank
+      (drum 154)
+      (guitar 302)
+      (bass 228)
+      (vocals 320)
+      (band 251)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-05-06") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 9)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_younever01.bik"
+      "vo_loading_younever02.bik"
+      "vo_loading_younever03.bik"
+      "vo_loading_younever04.bik"
+      "vo_loading_younever05.bik"
+      "vo_loading_younever06.bik"
+      "vo_loading_younever07.bik"
+   )
+   (downloaded TRUE)
+)
+(polythenebathroom
+   (name "Polythene Pam/She Came In Through The Bathroom Window")
+   (song_id 1000013) ; must be a unique number in the 1000001 - 1005000 range
+   (context 51)
+   (song
+     (name songs/polythenebathroom/polythenebathroom)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 71000 101000)
+   (rank
+      (drum 306)
+      (guitar 293)
+      (bass 225)
+      (vocals 370)
+      (band 298)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-07-25") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_polythene01.bik"
+      "vo_loading_polythene02.bik"
+      "vo_loading_polythene03.bik"
+      "vo_loading_polythene04.bik"
+      "vo_loading_polythene05.bik"
+      "vo_loading_polythene06.bik"
+      "vo_loading_polythene07.bik"
+      "vo_loading_polythene08.bik"
+      "vo_loading_polythene09.bik"
+      "vo_loading_polythene10.bik"
+      "vo_loading_polythene11.bik"
+      "vo_loading_polythene12.bik"
+   )
+   (downloaded TRUE)
+)
+(because
+   (name "Because")
+   (song_id 1000009) ; must be a unique number in the 1000001 - 1005000 range
+   (context 55)
+   (song
+     (name songs/because/because)
+     (tracks
+        ((bass (0 1))
+         (guitar (2 3))
+         (vocals (4 5))
+        )
+     )   
+     (vocal_parts 3)
+    ;                   BASS      GUITAR     VOCALS     TRACKS
+     (pans        (  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  -1.5 -1.5  -1.5 -1.5  -1.5 -1.5  -1.5 -1.5 )); Giles approved
+     (cores       (   -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (preview 30000 60000)
+   (rank
+      (drum 000)
+      (guitar 125)
+      (bass 160)
+      (vocals 330)
+      (band 205)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1969-09-26") ; use 2009-01-01 as default if unknown
+   (date_recorded "1969-08-01") ; use 2009-01-01 as default if unknown
+   (album_name "Abbey Road")
+   (album_track_number 8)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (new_ar_console TRUE)
+   (guide_pitch_volume -3.0)
+   (singer john paul george)
+   (songtype electric acoustic)
+   (loading_sounds
+      "vo_loading_because01.bik"
+      "vo_loading_because02.bik"
+      "vo_loading_because03.bik"
+   )
+   (downloaded TRUE)
+)
+(theword
+   (name "The Word")
+   (song_id 1000023) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/theword/theword)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 8000 38000)
+   (rank
+      (drum 216)
+      (guitar 203)
+      (bass 298)
+      (vocals 316)
+      (band 267)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-10") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 6)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(wait
+   (name "Wait")
+   (song_id 1000028) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/wait/wait)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; clipping at 0
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14000 44000)
+   (rank
+      (drum 187)
+      (guitar 220)
+      (bass 211)
+      (vocals 315)
+      (band 266)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-06-17") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 12)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(whatgoeson
+   (name "What Goes On")
+   (song_id 1000026) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/whatgoeson/whatgoeson)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 10000 40000)
+   (rank
+      (drum 460)
+      (guitar 344)
+      (bass 250)
+      (vocals 289)
+      (band 293)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-04") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 8)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(norwegianwood
+   (name "Norwegian Wood (This Bird Has Flown)")
+   (song_id 1000019) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/norwegianwood/norwegianwood)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 13000 43000)
+   (rank
+      (drum 136)
+      (guitar 314)
+      (bass 199)
+      (vocals 200)
+      (band 212)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-10-21") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 2)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (loading_sounds
+      "vo_loading_norwegianwood01.bik"
+      "vo_loading_norwegianwood02.bik"
+      "vo_loading_norwegianwood03.bik"
+      "vo_loading_norwegianwood04.bik"
+   )
+   (downloaded TRUE)
+)
+(michelle
+   (name "Michelle")
+   (song_id 1000024) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/michelle/michelle)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -2.0 -2.0  -1.0 -1.0 )) ; clipping at 0, vox down 1dB at Giles' request
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 13200 43200)
+   (rank
+      (drum 120)
+      (guitar 283)
+      (bass 201)
+      (vocals 308)
+      (band 228)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-03") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 7)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (loading_sounds
+      "vo_loading_michelle01.bik"
+   )
+   (downloaded TRUE)
+)
+(youwontseeme
+   (name "You Won't See Me")
+   (song_id 1000020) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/youwontseeme/youwontseeme)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 33000 63000)
+   (rank
+      (drum 235)
+      (guitar 103)
+      (bass 294)
+      (vocals 361)
+      (band 265)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-11-11") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(nowhereman
+   (name "Nowhere Man")
+   (song_id 1000021) ; ALWAYS set this to 0, unless you are Heather
+   (context 0)
+   (song
+     (name songs/nowhereman/nowhereman)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 5000 35000)
+   (rank
+      (drum 205)
+      (guitar 182)
+      (bass 292)
+      (vocals 314)
+      (band 268)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-10-22") ; use 2009-01-01 as default if unknown
+   (album_name "Rubber Soul")
+   (album_track_number 4)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (downloaded TRUE)
+)
+(withinyouwithoutyou
+   (name "Within You Without You")
+   (song_id 1000005)
+   (context 0)
+   (song
+     (name songs/withinyouwithoutyou/withinyouwithoutyou)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -15.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 132000 162000)
+   (rank
+      (drum 310)
+      (guitar 354)
+      (bass 312)
+      (vocals 230)
+      (band 301)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1967-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1967-03-15") ; use 2009-01-01 as default if unknown
+   (album_name "Sgt. Pepper's Lonely Hearts Club Band")
+   (album_track_number 8)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+)

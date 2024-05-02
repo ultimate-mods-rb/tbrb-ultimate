@@ -6,17 +6,24 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_spd os_vis " " " ")}
+      {sel_section.lst set_data (os_vis os_spd os_trk " " " ")}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_spd
+            #ifdef HX_WII
             {ui push_screen options_milo_screen}
+            #else
+            {ui push_screen options_milo_screen}
+            #endif
          )
          (os_vis
-            {ui push_screen overshell_visual_screen}
+            {ui push_screen overshell_visual_screen} ;note redo this at some point
+         )
+         (os_trk
+            {ui push_screen overshell_trk_screen}
          )
       }
    )
@@ -27,6 +34,9 @@
             {ui goto_screen $modifier_exit}
             {ui goto_screen splash_screen}
          }
+         #ifndef HX_WII
+         INIT_DTA_WRITER
+         #endif
          {ui pop_screen}
          {set $modifierpos 0}
       }
@@ -42,14 +52,18 @@
 ((
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
-   os_cycle_free_camera
-   os_toggle_hud
-   #ifdef HX_WII
-   os_toggle_pp
+   {if_else $postfx os_postfx1 os_postfx0}
+   {if_else $syncdifspeeds os_syncdifspeeds1 os_syncdifspeeds0}
+   {if_else $whammypb os_whammypb1 os_whammypb0}
+   #ifndef HX_XBOX
+   {if_else $legacybass os_legacybass1 os_legacybass0}
    #endif
-   os_toggle_graphics
+   #ifdef HX_WII
+   {if_else $disablegfx os_disablegfx1 os_disablegfx0}
+   #endif
    #ifndef HX_WII
-   " "
+   {if_else $padtar os_padtar1 os_padtar0}
+   {if_else $paddrum os_paddrum1 os_paddrum0}
    #endif
 ))
 {new
@@ -83,32 +97,116 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
-         (os_cycle_free_camera
-            {cycle_free_camera}
+         (os_whammypb1
+            {set $whammypb {! $whammypb}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_whammypb0
+            {set $whammypb {! $whammypb}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_legacybass1
+            {set $legacybass {! $legacybass}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_legacybass0
+            {set $legacybass {! $legacybass}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_padtar1
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_padtar0
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_paddrum1
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_paddrum0
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+       )
+         (os_disablegfx1
+            {set $disablegfx {! $disablegfx}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         {rnd toggle_all_postprocs}
          )
-         (os_toggle_hud
-            {set
-         $show_hud
-         {toggle_hud}}
-      {do
-         ($track
-            {get_track_panel})
-         {if
-            $track
-            {$track set_showing $show_hud}}}
-      {if_else
-         $show_hud
-         {cheat_display
-            show
-            "HUD: ON"}
-         {cheat_display
-            show
-            "HUD: OFF"}}
+         (os_disablegfx0
+            {set $disablegfx {! $disablegfx}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         {rnd toggle_all_postprocs}
+       )
+       (os_postfx1
+            {set $postfx {! $postfx}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         #ifdef HX_WII
+         {pp_override}
+         #else
+         {rnd toggle_all_postprocs}
+         #endif
          )
-         (os_toggle_pp
-            {pp_override})
-         (os_toggle_graphics
-            {rnd toggle_all_postprocs})
+         (os_postfx0
+            {set $postfx {! $postfx}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         #ifdef HX_WII
+         {pp_override}
+         #else
+         {rnd toggle_all_postprocs}
+         #endif
+       )
+         (os_syncdifspeeds1
+            {set $syncdifspeeds {! $syncdifspeeds}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_syncdifspeeds0
+            {set $syncdifspeeds {! $syncdifspeeds}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
       }
    )
    (lst_reset
@@ -131,6 +229,181 @@
    (panels overshell_visual_panel)
    (focus overshell_visual_panel)}
 ;
+#define TRK_MODIFIER_DATA
+((
+   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_blnk #ifdef HX_WII os_blnk #endif
+))
+{new
+   MultiSelectListPanel
+   overshell_trk_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_trk}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_wiisux
+            {set $wiisux TRUE}
+         )
+         (os_reset
+            {set $gemcustomtexture FALSE}
+            {set $gem "none"}
+            {set $smashercustomtexture FALSE}
+            {set $smasher "none"}
+            {set $streakcustomtexture FALSE}
+            {set $streak "none"}
+            {set $spotlightcustomtexture FALSE}
+            {set $highwaycustomtexture FALSE}
+            {set $highway "none"}
+            {set $spotlight "none"}
+            {set $multiringcustomtexture FALSE}
+            {set $multiring "none"}
+            {set $odbarcustomtexture FALSE}
+            {set $odbar "none"}
+            {set $scorecustomtexture FALSE}
+            {set $scoretex "none"}
+            {$this lst_reset}
+            INIT_DTA_WRITER
+            {ui push_screen reset_info_screen}
+         )
+         (os_hw
+            {ui push_screen overshell_highway_screen}
+         )
+         (os_strk
+            {ui push_screen overshell_streak_screen}
+         )
+         (os_spotlight
+            {ui push_screen overshell_spotlight_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data TRK_MODIFIER_DATA}
+   {if $trkmodifierpos
+      {sel_section.lst set_selected $trkmodifierpos}
+   })
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_main_screen}
+         {ui pop_screen}
+         {set $trkmodifierpos 0}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_trk_screen
+   (panels overshell_trk_panel)
+   (focus overshell_trk_panel)}
+;
+{new
+    MultiSelectListPanel
+    overshell_highway_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data
+            (#include track/highway/highway.dta)}
+        {title.lbl set text_token {localize os_hw}})
+    (exit)
+    (SELECT_MSG
+      {set $highwaycustomtexture TRUE}
+      {set $highway {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_highway_screen
+   (panels overshell_highway_panel)
+   (focus overshell_highway_panel)}
+;
+{new
+    MultiSelectListPanel
+    overshell_streak_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data
+            (#include track/streak/streak.dta)}
+        {title.lbl set text_token {localize os_strk}})
+    (exit)
+    (SELECT_MSG
+      {set $streakcustomtexture TRUE}
+      {set $streak {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_streak_screen
+   (panels overshell_streak_panel)
+   (focus overshell_streak_panel)}
+;
+{new
+    MultiSelectListPanel
+    overshell_spotlight_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data
+            (#include track/spotlight/spotlight.dta)}
+        {title.lbl set text_token {localize os_spotlight}})
+    (exit)
+    (SELECT_MSG
+      {set $spotlightcustomtexture TRUE}
+      {set $spotlight {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_spotlight_screen
+   (panels overshell_spotlight_panel)
+   (focus overshell_spotlight_panel)}
+;
 {new
    UIPanel
    options_milo_panel
@@ -150,20 +423,20 @@
       {sfx.sld set_num_steps 60} ;number of steps for venue fps slider
 	  {background.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
       {crowd.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
-      ;#ifdef HX_WII
+      #ifdef HX_WII
       {$this disable sfx.sld}
       {sfx.sld set_showing FALSE}
-      ;#else
-      ;{sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
-      ;#endif
+      #else
+      {sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+      #endif
 	  {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
 	  {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
-      ;#ifdef HX_WII
+      #ifdef HX_WII
       {$this disable sfx.btn}
       {sfx.btn set_showing FALSE}
-      ;#else
-	  ;{sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
-      ;#endif
+      #else
+	  {sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+      #endif
       {audio_options.lbl set text_token milosliderlbl}
       {karaoke.btn set_showing FALSE}
       {$this disable karaoke.btn}

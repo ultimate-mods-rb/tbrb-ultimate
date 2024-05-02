@@ -1,6 +1,7 @@
 (proj9_menu
    (quickplay
       (band_quickplay qp_local qp_online)
+      (custom_modes theatre_info_button theatre autoplay)
       (tug_of_war
          local_multi_tow
          player_match_tow
@@ -43,9 +44,12 @@
       #endif)
    (ultimenu
       mod_info_button
-      ;overshell maybe one day but it randomly worked once
-      ;#ifdef HX_PS3 (cng_inst_type(cng_g_inst_type cng_g_2_g cng_g_2_d cng_g_2_v)(cng_d_inst_type cng_d_2_d cng_d_2_g cng_d_2_v)(cng_v_inst_type cng_v_2_v cng_v_2_g cng_v_2_d)) #endif ;crash causr on wii and ps tripple
-      (features enable_whammy enable_autoplay go_to_frs)) ;toggle_pp toggle_graphics disable_whammy disable_autoplay
+      #ifdef HX_WII
+      album_art_info_button
+      #endif
+      overshell
+      (features go_to_frs)
+      (force_instrument force_instrument_info_button force_reset #ifdef HX_WII force_dolpadtar #else force_guitar force_drums #endif))
    #ifdef HX_WII
    ((online_options popup)
       check_invites

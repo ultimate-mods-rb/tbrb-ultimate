@@ -53,10 +53,12 @@
          set_showing
          TRUE}
       {meta_performer disband_if_bad_configuration}
+      #ifndef HX_XBOX
 	  {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
 	  {set $guitar_groove_active FALSE}
+     #endif
 	 {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
       {script_task
@@ -78,10 +80,12 @@
                ($this intro_end)})}
       kDataUnhandled)
    (intro_skip
+      #ifndef HX_XBOX
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
 	  {set $guitar_groove_active FALSE}
+     #endif
      {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
       {{gamemode get game_screen}
@@ -89,10 +93,12 @@
          TRUE}
       kDataUnhandled)
    (music_start
+      #ifndef HX_XBOX
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
 	  {set $guitar_groove_active FALSE}
+     #endif
       {ui music_start}
       kDataUnhandled)
    (beat
@@ -114,10 +120,12 @@
                      {elem $levels $ex})}}}}
       kDataUnhandled)
    (game_over
+      #ifndef HX_XBOX
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
 	  {set $guitar_groove_active FALSE}
+     #endif
       #ifndef HX_WII
       {stagekit_reset}
       #endif
@@ -249,7 +257,8 @@
          FALSE})
    PAUSE_ON_MIC_DISCONNECT
    (enter
-      {if $autoplay {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
+      {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}} {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
+      {$world iterate PostProc $p {$p set emulate_fps $emulatefps}}
       {$this set_showing TRUE}
       {set
          [delayed_mic_check]
@@ -450,7 +459,49 @@
          {game
             set_paused
             {platform_mgr guide_showing}}}
-      PAUSE_MICS_ON_GUIDE_CHANGE))
+      PAUSE_MICS_ON_GUIDE_CHANGE)
+   (BUTTON_UP_MSG
+      {if
+         {&&
+            {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+            {find_obj
+               {$p9director chars_dir}
+               john
+               hist}
+            $world}
+         {switch
+            $raw_button
+            #ifdef HX_WII
+            (kPad_DLeft
+               {beatmatch
+                  jump
+                  {-
+                     {beatmatch get_song_ms}
+                     10000.0}})
+            (kPad_DRight
+               {beatmatch
+                  jump
+                  {'+'
+                     {beatmatch get_song_ms}
+                     10000.0}})
+            #else
+            (kPad_L1
+               {beatmatch
+                  jump
+                  {-
+                     {beatmatch get_song_ms}
+                     10000.0}})
+            (kPad_R1
+               {beatmatch
+                  jump
+                  {'+'
+                     {beatmatch get_song_ms}
+                     10000.0}})
+            #endif
+            (kPad_Square
+               {cycle_free_camera})
+            (kPad_Tri
+               {toggle_time_paused})}}))
 {new
    BandScreen
    game_screen

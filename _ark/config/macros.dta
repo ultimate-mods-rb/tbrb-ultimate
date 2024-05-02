@@ -1,10 +1,9 @@
-;#define PADTAR (1)
 #define INIT_BAND
 (1)
 #include sfx_macros.dta
 #include ../../../system/run/config/macros.dta
 #include ../../../system/run/band/band_macros.dta
-#define TBRBUV1.1 (1)
+#define TBRBUV1.11 (1)
 #define kP9LeftArm
 (1)
 #define kP9RightArm

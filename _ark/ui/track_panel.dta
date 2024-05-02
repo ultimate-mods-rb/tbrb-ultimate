@@ -25,11 +25,17 @@
    (animate_track_out_fast)
    (animate_track_in_fast)
    (finish_load
-      {$this set_showing FALSE}
+      {$this
+         set_showing
+         {!
+            {gamemode in_mode theatre}}}
       {$this set_track_out})
    (intro_start
       {$this track_reset}
-      {$this set_showing TRUE}
+      {$this
+         set_showing
+         {!
+            {gamemode in_mode theatre}}}
       {$this set_track_in})
    (intro_skip
       {$this track_reset}
@@ -52,6 +58,41 @@
       {{$this loaded_dir}
          reset})
    (on_extend
+
+      ;{if $wiisux
+         #ifdef HX_WII
+         {{$this find proj9_player_meter_bg.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_bg.png"}}
+         {{$this find proj9_player_meter_lens.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_lens.png"}}
+         {{$this find streak_meter_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_bg_wii.png"}}
+         ;{{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_wii.png"}}
+         {{$this find streak_meter_vox_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_vox_bg.png"}}
+         #endif
+      ;}
+
+      {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+         {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded_ap.png"}}
+         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate.png"}}
+      }
+
+      {unless {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+         {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded.png"}}
+         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_bk.png"}}
+      }
+
+      {if $highwaycustomtexture
+         {{$this find track_lanes.tex} set_bitmap {sprint "ui/track/highway/" $highway ".png"}}
+      }
+      
+      {if $streakcustomtexture
+         {{$this find bass_superstreak_pattern.tex} set_bitmap {sprint "ui/track/streak/" $streak ".png"}}
+      }
+
+      {if $spotlightcustomtexture
+         {{$this find spotlight_bass_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+         {{$this find spotlight_guitar_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+         {{$this find spotlight_drums_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+      }
+
       {$this play_intro}
       {if
          {&&
@@ -86,7 +127,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {&& {> [num_gems_combo] 39} {! $bass_groove_active}} {set $bass_groove_active TRUE} {{{{get_track_panel} find bass} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {&& {> [num_gems_combo] 39} {! $bass_groove_active}} {set $bass_groove_active TRUE} {{{{get_track_panel} find bass} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $bass_firstnote}
@@ -115,7 +156,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find bass} find streak_meter} star_deploy_stop}
       {bass stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 39} {set $bass_groove_active FALSE} {{{{get_track_panel} find bass} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 39} {set $bass_groove_active FALSE} {{{{get_track_panel} find bass} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -130,7 +171,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {&& {> [num_gems_combo] 29} {! $guitar_groove_active}} {set $guitar_groove_active TRUE} {{{{get_track_panel} find guitar} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {&& {> [num_gems_combo] 29} {! $guitar_groove_active}} {set $guitar_groove_active TRUE} {{{{get_track_panel} find guitar} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $guitar_firstnote}
@@ -159,7 +200,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find guitar} find streak_meter} star_deploy_stop}
       {guitar stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 29} {set $guitar_groove_active FALSE} {{{{get_track_panel} find guitar} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 29} {set $guitar_groove_active FALSE} {{{{get_track_panel} find guitar} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -174,7 +215,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass}  {if {&& {> [num_gems_combo] 29} {! $drum_groove_active}} {set $drum_groove_active TRUE} {{{{get_track_panel} find drum} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}}  {if {&& {> [num_gems_combo] 29} {! $drum_groove_active}} {set $drum_groove_active TRUE} {{{{get_track_panel} find drum} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $drum_firstnote}
@@ -203,7 +244,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find drum} find streak_meter} star_deploy_stop}
       {drum stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 29} {set $drum_groove_active FALSE} {{{{get_track_panel} find drum} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 29} {set $drum_groove_active FALSE} {{{{get_track_panel} find drum} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -214,13 +255,13 @@
 #define TRACK_PANEL_HANDLERS
 ((enter
       {game add_sink $this}
-	  {unless {gamemode get is_h2h_arrangement}
+	  {unless {'||' {gamemode in_mode h2h_score_duel_local} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_local} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}}
          {beatmatch foreach_active_player $player ;handle adding the appropriate callbacks to each player
              {switch {$player instrument}
                 (bass {$player add_sink fc_bass_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
                 (guitar {$player add_sink fc_guitar_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
                 (drum {$player add_sink fc_drum_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})}}}
-      {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ 2.4 $trackspeed} $speedmod}} ;implement track speed modifier
+      {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ {if_else $syncdifspeeds 1.2 2.4} $trackspeed} $speedmod}} ;implement track speed modifier
       {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {/ 1.2 $trackspeed} $speedmod}}
       {$this
          set_showing
@@ -279,11 +320,17 @@
    (animate_track_out_fast)
    (animate_track_in_fast)
    (finish_load
-      {$this set_showing FALSE}
+      {$this
+         set_showing
+         {!
+            {gamemode in_mode theatre}}}
       {$this set_track_out})
    (intro_start
       {$this track_reset}
-      {$this set_showing TRUE}
+      {$this
+         set_showing
+         {!
+            {gamemode in_mode theatre}}}
       {$this set_track_in})
    (intro_skip
       {$this track_reset}
@@ -306,6 +353,41 @@
       {{$this loaded_dir}
          reset})
    (on_extend
+
+      ;{if $wiisux
+         #ifdef HX_WII
+         {{$this find proj9_player_meter_bg.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_bg.png"}}
+         {{$this find proj9_player_meter_lens.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_lens.png"}}
+         {{$this find streak_meter_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_bg_wii.png"}}
+         ;{{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_wii.png"}}
+         {{$this find streak_meter_vox_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_vox_bg.png"}}
+         #endif
+      ;}
+
+      {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+         {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded_ap.png"}}
+         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate.png"}}
+      }
+
+      {unless {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+         {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded.png"}}
+         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_bk.png"}}
+      }
+
+      {if $highwaycustomtexture
+         {{$this find track_lanes.tex} set_bitmap {sprint "ui/track/highway/" $highway ".png"}}
+      }
+      
+      {if $streakcustomtexture
+         {{$this find bass_superstreak_pattern.tex} set_bitmap {sprint "ui/track/streak/" $streak ".png"}}
+      }
+
+      {if $spotlightcustomtexture
+         {{$this find spotlight_bass_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+         {{$this find spotlight_guitar_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+         {{$this find spotlight_drums_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
+      }
+
       {$this play_intro}
       {if
          {&&
