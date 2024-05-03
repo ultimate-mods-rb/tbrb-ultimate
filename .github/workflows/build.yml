@@ -73,7 +73,7 @@ jobs:
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/package.conf _build/ps3
       - name: Delete USRDIR folder
         run: |
-          rmdir /s /q _build\ps3\USRDIR
+          rmdir /s _build\ps3\USRDIR
       - name: Move PS3 eboot patch
         run: |
           move "_build\ps3 eboot patch" "_build\ps3\ps3 eboot patch"
