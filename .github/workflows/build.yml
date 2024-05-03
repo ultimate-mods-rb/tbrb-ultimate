@@ -72,7 +72,7 @@ jobs:
           $packageversion="1.00"
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/package.conf _build/ps3
       - name: Delete USRDIR folder
-        un: |
+        run: |
           Remove-Item -Path "_build\ps3\USRDIR" -Recurse -Force
       - name: Move PS3 eboot patch
         run: |
