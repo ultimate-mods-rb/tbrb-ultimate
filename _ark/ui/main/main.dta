@@ -1,7 +1,7 @@
 #ifndef HX_WII
 #define INIT_DTA_WRITER
 (
-   {write_file #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif
+   {write_file #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 #ifdef REGION_EUROPE "GD:/dev_hdd0/game/BLES00532/USRDIR/ulti_settings.dta" #else "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif #endif
       {array
         (
             (track_speed
