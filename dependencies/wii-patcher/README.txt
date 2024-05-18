@@ -1,0 +1,1 @@
+to use the patcher put a wbfs or iso file in the iso folder then run the bat if on windows or sh if on linux
