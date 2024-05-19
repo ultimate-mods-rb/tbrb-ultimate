@@ -105,7 +105,7 @@ jobs:
           name: TBRBUL-PS3-EUR
           path: _build/ps3
 
-  build_wii-patcher:
+  build_wii_patcher:
     runs-on: ubuntu-latest
 
     steps:

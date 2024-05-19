@@ -139,6 +139,21 @@
 ;modifier funcs
 {if $postfx
    #ifdef HX_WII {pp_override} #else {rnd toggle_all_postprocs} #endif}
+{if $forcecnv
+   {set $forcevenue TRUE}
+   {set $forcedvenue cavern}}
+{if $forcesnv
+   {set $forcevenue TRUE}
+   {set $forcedvenue sullivan}}
+{if $forcesav
+   {set $forcevenue TRUE}
+   {set $forcedvenue shea}}
+{if $forcebnv
+   {set $forcevenue TRUE}
+   {set $forcedvenue budokan}}
+{if $forcerpv
+   {set $forcevenue TRUE}
+   {set $forcedvenue rooftop}}
 {if $padtar
    #ifdef HX_PS3
    {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}

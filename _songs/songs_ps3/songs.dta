@@ -53,7 +53,7 @@
    (album_name
       "A Hard Day's Night")
    (album_track_number 1)
-   (venue sullivan)
+   (venue {if_else $forcevenue $forcedvenue sullivan})
    (guide_pitch_volume -3.0))
 (andyourbirdcansing
    (name
@@ -106,7 +106,7 @@
    (album_name
       "Revolver")
    (album_track_number 9)
-   (venue budokan)
+   (venue {if_else $forcevenue $forcedvenue budokan})
    (guide_pitch_volume -3.0))
 (backintheussr
    (name
@@ -159,7 +159,7 @@
    (album_name
       "The Beatles [White Album] (Disc 1)")
    (album_track_number 6)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric)
@@ -218,7 +218,7 @@
    (album_name
       "The Beatles [White Album] (Disc 2)")
    (album_track_number 8)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric piano)
@@ -277,7 +277,7 @@
    (album_name
       "Please Please Me")
    (album_track_number 5)
-   (venue cavern)
+   (venue {if_else $forcevenue $forcedvenue cavern})
    (guide_pitch_volume -3.0))
 (cantbuymelove
    (name
@@ -330,7 +330,7 @@
    (album_name
       "A Hard Day's Night")
    (album_track_number 7)
-   (venue sullivan)
+   (venue {if_else $forcevenue $forcedvenue sullivan})
    (guide_pitch_volume -3.0))
 (cometogether
    (name
@@ -383,7 +383,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 1)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (new_ar_console TRUE)
    (guide_pitch_volume -3.0)
    (singer john)
@@ -442,7 +442,7 @@
       "1965-01-01")
    (date_recorded
       "1965-10-16")
-   (venue budokan)
+   (venue {if_else $forcevenue $forcedvenue budokan})
    (guide_pitch_volume -3.0))
 (dearprudence
    (name
@@ -495,7 +495,7 @@
    (album_name
       "The Beatles [White Album] (Disc 1)")
    (album_track_number 2)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric acoustic)
@@ -553,7 +553,7 @@
    (album_name
       "Let It Be")
    (album_track_number 2)
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (doyouwanttoknowasecret
    (name
@@ -606,7 +606,7 @@
    (album_name
       "Please Please Me")
    (album_track_number 11)
-   (venue cavern)
+   (venue {if_else $forcevenue $forcedvenue cavern})
    (guide_pitch_volume -3.0))
 (dontletmedown
    (name
@@ -656,7 +656,7 @@
       "1969-01-01")
    (date_recorded
       "1969-01-28")
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (drivemycar
    (name
@@ -709,7 +709,7 @@
    (album_name
       "Rubber Soul")
    (album_track_number 1)
-   (venue budokan)
+   (venue {if_else $forcevenue $forcedvenue budokan})
    (guide_pitch_volume -3.0))
 (eightdaysaweek
    (name
@@ -762,7 +762,7 @@
    (album_name
       "Beatles For Sale")
    (album_track_number 8)
-   (venue shea)
+   (venue {if_else $forcevenue $forcedvenue shea})
    (guide_pitch_volume -3.0))
 (getback
    (name
@@ -815,7 +815,7 @@
    (album_name
       "Let It Be")
    (album_track_number 12)
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (gettingbetter
    (name
@@ -868,7 +868,7 @@
    (album_name
       "Sgt. Pepper's Lonely Hearts Club Band")
    (album_track_number 4)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric)
@@ -930,7 +930,7 @@
    (album_name
       "Sgt. Pepper's Lonely Hearts Club Band")
    (album_track_number 11)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric piano)
@@ -989,7 +989,7 @@
    (album_name
       "Magical Mystery Tour")
    (album_track_number 7)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric acoustic piano)
@@ -1049,7 +1049,7 @@
    (album_name
       "The Beatles [White Album] (Disc 2)")
    (album_track_number 23)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric)
@@ -1112,7 +1112,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 7)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (new_ar_console TRUE)
    (guide_pitch_volume -1.0)
    (singer george)
@@ -1174,7 +1174,7 @@
    (album_name
       "Yellow Submarine")
    (album_track_number 2)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric piano)
@@ -1233,7 +1233,7 @@
    (album_name
       "Magical Mystery Tour")
    (album_track_number 6)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric)
@@ -1295,7 +1295,7 @@
       "1964-01-01")
    (date_recorded
       "1964-10-18")
-   (venue shea)
+   (venue {if_else $forcevenue $forcedvenue shea})
    (guide_pitch_volume -3.0))
 (imemine
    (name
@@ -1348,7 +1348,7 @@
    (album_name
       "Let It Be")
    (album_track_number 4)
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (isawherstandingthere
    (name
@@ -1401,7 +1401,7 @@
    (album_name
       "Please Please Me")
    (album_track_number 1)
-   (venue cavern)
+   (venue {if_else $forcevenue $forcedvenue cavern})
    (guide_pitch_volume -3.0))
 (iwannabeyourman2
    (name
@@ -1454,7 +1454,7 @@
    (album_name
       "With The Beatles")
    (album_track_number 11)
-   (venue sullivan)
+   (venue {if_else $forcevenue $forcedvenue sullivan})
    (guide_pitch_volume -3.0))
 (iwanttoholdyourhand
    (name
@@ -1504,7 +1504,7 @@
       "1963-01-01")
    (date_recorded
       "1963-10-17")
-   (venue sullivan)
+   (venue {if_else $forcevenue $forcedvenue sullivan})
    (guide_pitch_volume -3.0))
 (iwantyou
    (name
@@ -1558,7 +1558,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 6)
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (ifineededsomeone
    (name
@@ -1611,7 +1611,7 @@
    (album_name
       "Rubber Soul")
    (album_track_number 13)
-   (venue shea)
+   (venue {if_else $forcevenue $forcedvenue shea})
    (guide_pitch_volume -3.0))
 (imlookingthroughyou
    (name
@@ -1664,7 +1664,7 @@
    (album_name
       "Rubber Soul")
    (album_track_number 10)
-   (venue shea)
+   (venue {if_else $forcevenue $forcedvenue shea})
    (guide_pitch_volume -3.0))
 (ivegotafeeling
    (name
@@ -1717,7 +1717,7 @@
    (album_name
       "Let It Be")
    (album_track_number 8)
-   (venue rooftop)
+   (venue {if_else $forcevenue $forcedvenue rooftop})
    (guide_pitch_volume -3.0))
 (lucyinthesky
    (name
@@ -1770,7 +1770,7 @@
    (album_name
       "Sgt. Pepper's Lonely Hearts Club Band")
    (album_track_number 3)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric acoustic)
@@ -1830,7 +1830,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 5)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (new_ar_console TRUE)
    (guide_pitch_volume -3.0)
    (singer ringo)
@@ -1888,7 +1888,7 @@
       "1966-01-01")
    (date_recorded
       "1966-04-13")
-   (venue budokan)
+   (venue {if_else $forcevenue $forcedvenue budokan})
    (guide_pitch_volume -3.0))
 (revolution
    (name
@@ -1938,7 +1938,7 @@
       "1968-01-01")
    (date_recorded
       "1968-07-10")
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (songtype electric)
@@ -1996,7 +1996,7 @@
    (album_name
       "Sgt. Pepper's Lonely Hearts Club Band")
    (album_track_number 1)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer paul ringo)
    (songtype electric)
@@ -2058,7 +2058,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 2)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (new_ar_console TRUE)
    (guide_pitch_volume -3.0)
    (singer george)
@@ -2123,7 +2123,7 @@
    (album_name
       "Revolver")
    (album_track_number 1)
-   (venue budokan)
+   (venue {if_else $forcevenue $forcedvenue budokan})
    (guide_pitch_volume -3.0))
 (theend
    (name
@@ -2176,7 +2176,7 @@
    (album_name
       "Abbey Road")
    (album_track_number 16)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (new_ar_console TRUE)
    (guide_pitch_volume -3.0)
    (songtype piano)
@@ -2233,7 +2233,7 @@
    (album_name
       "Help!")
    (album_track_number 7)
-   (venue shea)
+   (venue {if_else $forcevenue $forcedvenue shea})
    (guide_pitch_volume -3.0))
 (tomorrowwithin
    (name
@@ -2286,7 +2286,7 @@
    (album_name
       "Love")
    (album_track_number 8)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer john)
    (lose_sounds
@@ -2346,7 +2346,7 @@
    (album_name
       "Please Please Me")
    (album_track_number 14)
-   (venue cavern)
+   (venue {if_else $forcevenue $forcedvenue cavern})
    (guide_pitch_volume -3.0))
 (whilemyguitargentlyweeps
    (name
@@ -2399,7 +2399,7 @@
    (album_name
       "The Beatles [White Album] (Disc 1)")
    (album_track_number 7)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer george)
    (songtype electric acoustic piano)
@@ -2457,7 +2457,7 @@
    (album_name
       "Revolver")
    (album_track_number 6)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (guide_pitch_volume -3.0)
    (singer ringo)
    (songtype acoustic)
@@ -3495,7 +3495,7 @@
    (album_name
       "Extras")
    (album_track_number 23)
-   (venue dreamscape)
+   (venue {if_else $forcevenue $forcedvenue dreamscape})
    (validate_ignore FALSE)
    (fake FALSE)
    (song_scroll_speed 2300))

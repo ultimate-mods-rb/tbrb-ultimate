@@ -86,7 +86,8 @@
    "VENUE FPS: %dFPS")
 (os_dxsettings "SETTINGS")
 (os_spd "Speed Modifiers")
-(os_vis "Gameplay Modifiers")
+(os_mod "Gameplay Modifiers")
+(os_vis "Visual Modifiers")
 (os_blackbg1 "Disable Venues: ON")
 (os_songtitle1 "Song Title Always: ON")
 (os_blackbg0 "Disable Venues: OFF")
@@ -119,6 +120,26 @@
    "Sync Dificulty Speeds: ON")
 (os_syncdifspeeds0
    "Sync Dificulty Speeds: OFF")
+(os_forcecnv1
+   "Force Cavern Venue: ON")
+(os_forcecnv0
+   "Force Cavern Venue: OFF")
+(os_forcesnv1
+   "Force Sullivan Venue: ON")
+(os_forcesnv0
+   "Force Sullivan Venue: OFF")
+(os_forcesav1
+   "Force Shea Venue: ON")
+(os_forcesav0
+   "Force Shea Venue: OFF")
+(os_forcebnv1
+   "Force Budokan Venue: ON")
+(os_forcebnv0
+   "Force Budokan Venue: OFF")
+(os_forcerpv1
+   "Force Rooftop Venue: ON")
+(os_forcerpv0
+   "Force Rooftop Venue: OFF")
 (nice_solo
    "Nice")
 (choke_solo

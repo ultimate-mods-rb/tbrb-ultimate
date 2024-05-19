@@ -6,21 +6,20 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_vis os_spd os_trk " " " ")}
+      {sel_section.lst set_data (os_mod os_vis os_spd os_trk " ")}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_spd
-            #ifdef HX_WII
             {ui push_screen options_milo_screen}
-            #else
-            {ui push_screen options_milo_screen}
-            #endif
+         )
+         (os_mod
+            {ui push_screen overshell_modifier_screen}
          )
          (os_vis
-            {ui push_screen overshell_visual_screen} ;note redo this at some point
+            {ui push_screen overshell_visual_screen}
          )
          (os_trk
             {ui push_screen overshell_trk_screen}
@@ -47,24 +46,148 @@
    overshell_main_screen
    (panels overshell_main_panel)
    (focus overshell_main_panel)}
+
+;
+#define MODIFIER_DATA
+((
+   {if_else $syncdifspeeds os_syncdifspeeds1 os_syncdifspeeds0}
+   #ifndef HX_XBOX
+   {if_else $legacybass os_legacybass1 os_legacybass0}
+   #endif
+   {if_else $whammypb os_whammypb1 os_whammypb0}
+   #ifndef HX_WII
+   {if_else $padtar os_padtar1 os_padtar0}
+   {if_else $paddrum os_paddrum1 os_paddrum0}
+   #endif
+   " "
+   " "
+))
+{new
+   MultiSelectListPanel
+   overshell_modifier_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_mod}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_syncdifspeeds1
+            {set $syncdifspeeds {! $syncdifspeeds}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_syncdifspeeds0
+            {set $syncdifspeeds {! $syncdifspeeds}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_legacybass1
+            {set $legacybass {! $legacybass}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_legacybass0
+            {set $legacybass {! $legacybass}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_whammypb1
+            {set $whammypb {! $whammypb}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_whammypb0
+            {set $whammypb {! $whammypb}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_padtar1
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_padtar0
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_paddrum1
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_paddrum0
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+            #endif
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data MODIFIER_DATA}
+   {if $modifierpos
+      {sel_section.lst set_selected $modifierpos}
+   })
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_main_screen}
+         {ui pop_screen}
+         {set $modifierpos 0}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_modifier_screen
+   (panels overshell_modifier_panel)
+   (focus overshell_modifier_panel)}
+;
+
 ;
 #define VIS_MODIFIER_DATA
 ((
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
    {if_else $postfx os_postfx1 os_postfx0}
-   {if_else $syncdifspeeds os_syncdifspeeds1 os_syncdifspeeds0}
-   {if_else $whammypb os_whammypb1 os_whammypb0}
-   #ifndef HX_XBOX
-   {if_else $legacybass os_legacybass1 os_legacybass0}
-   #endif
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    #endif
-   #ifndef HX_WII
-   {if_else $padtar os_padtar1 os_padtar0}
-   {if_else $paddrum os_paddrum1 os_paddrum0}
-   #endif
+   {if_else $forcecnv os_forcecnv1 os_forcecnv0}
+   {if_else $forcesnv os_forcesnv1 os_forcesnv0}
+   {if_else $forcesav os_forcesav1 os_forcesav0}
+   {if_else $forcebnv os_forcebnv1 os_forcebnv0}
+   {if_else $forcerpv os_forcerpv1 os_forcerpv0}
 ))
 {new
    MultiSelectListPanel
@@ -97,74 +220,6 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
-         (os_whammypb1
-            {set $whammypb {! $whammypb}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_whammypb0
-            {set $whammypb {! $whammypb}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_legacybass1
-            {set $legacybass {! $legacybass}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_legacybass0
-            {set $legacybass {! $legacybass}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_padtar1
-            {set $padtar {! $padtar}}
-            {set $paddrum FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_padtar0
-            {set $padtar {! $padtar}}
-            {set $paddrum FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_paddrum1
-            {set $paddrum {! $paddrum}}
-            {set $padtar FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
-         (os_paddrum0
-            {set $paddrum {! $paddrum}}
-            {set $padtar FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-       )
          (os_disablegfx1
             {set $disablegfx {! $disablegfx}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
@@ -196,14 +251,89 @@
          #else
          {rnd toggle_all_postprocs}
          #endif
-       )
-         (os_syncdifspeeds1
-            {set $syncdifspeeds {! $syncdifspeeds}}
+         )
+         (os_forcecnv1
+            {set $forcecnv {! $forcecnv}}
+            {set $forcevenue FALSE}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
-         (os_syncdifspeeds0
-            {set $syncdifspeeds {! $syncdifspeeds}}
+         (os_forcecnv0
+            {set $forcecnv {! $forcecnv}}
+            {set $forcesnv FALSE}
+            {set $forcesav FALSE}
+            {set $forcebnv FALSE}
+            {set $forcerpv FALSE}
+            {set $forcevenue TRUE}
+            {set $forcedvenue cavern}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcesnv1
+            {set $forcesnv {! $forcesnv}}
+            {set $forcevenue FALSE}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcesnv0
+            {set $forcesnv {! $forcesnv}}
+            {set $forcecnv FALSE}
+            {set $forcesav FALSE}
+            {set $forcebnv FALSE}
+            {set $forcerpv FALSE}
+            {set $forcevenue TRUE}
+            {set $forcedvenue sullivan}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcesav1
+            {set $forcesav {! $forcesav}}
+            {set $forcevenue FALSE}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcesav0
+            {set $forcesav {! $forcesav}}
+            {set $forcecnv FALSE}
+            {set $forcesnv FALSE}
+            {set $forcebnv FALSE}
+            {set $forcerpv FALSE}
+            {set $forcevenue TRUE}
+            {set $forcedvenue shea}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcebnv1
+            {set $forcebnv {! $forcebnv}}
+            {set $forcevenue FALSE}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcebnv0
+            {set $forcebnv {! $forcebnv}}
+            {set $forcecnv FALSE}
+            {set $forcesnv FALSE}
+            {set $forcesav FALSE}
+            {set $forcerpv FALSE}
+            {set $forcevenue TRUE}
+            {set $forcedvenue budokan}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcerpv1
+            {set $forcerpv {! $forcerpv}}
+            {set $forcevenue FALSE}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcerpv0
+            {set $forcerpv {! $forcerpv}}
+            {set $forcecnv FALSE}
+            {set $forcesnv FALSE}
+            {set $forcesav FALSE}
+            {set $forcebnv FALSE}
+            {set $forcevenue TRUE}
+            {set $forcedvenue rooftop}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )

@@ -40,6 +40,21 @@
             (legacybass
                (legacybass $legacybass)
             )
+            (forcecnv
+               (forcecnv $forcecnv)
+            )
+            (forcesnv
+               (forcesnv $forcesnv)
+            )
+            (forcesav
+               (forcesav $forcesav)
+            )
+            (forcebnv
+               (forcebnv $forcebnv)
+            )
+            (forcerpv
+               (forcerpv $forcerpv)
+            )
             (padtar
                (padtar $padtar)
             )
