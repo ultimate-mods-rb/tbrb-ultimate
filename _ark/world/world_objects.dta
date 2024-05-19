@@ -681,7 +681,7 @@
                   {exists game}
                   {has_substr
                      $file
-                     "dlc/content"}}
+                     #ifdef HX_WII "dlc/content" #else ":" #endif}}
                {cond
                   ({has_substr
                         $file
@@ -1452,9 +1452,13 @@
                   {$char get_type}
                   extras}
                {if
+                  #ifdef HX_WII
                   {&&
                      $grp
                      {$char find main.drv}}
+                  #else
+                  $grp
+                  #endif
                   {{$char find main.drv}
                      play_group
                      $grp
@@ -1704,7 +1708,6 @@
                         0}}}
                $intro_shot})
          (pick_venue
-         #ifdef HX_WII
             {if_else $forcevenue
                $forcedvenue
                {if_else
@@ -1712,16 +1715,7 @@
                   {meta_performer get_venue}
                   {{$this get_songpref}
                      get
-                     venue}}}
-         #else
-               {if_else
-                  {exists meta_performer}
-                  {meta_performer get_venue}
-                  {{$this get_songpref}
-                     get
-                     venue}}
-         #endif
-         )
+                     venue}}})
          (venue_outfit
             {do
                ($bonus 0)
