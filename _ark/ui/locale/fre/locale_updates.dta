@@ -198,3 +198,83 @@
 (hw_pink "Pink")
 (hw_red "Red")
 (os_blnk " ")
+(os_gems_colors
+   "Gem Colors")
+(os_smashers_colors
+   "Smashers Colors")
+(os_gtr_gems_color
+   "Guitar Gems Color")
+(os_drm_gems_color
+   "Drum Gems Color")
+(os_gtr_sus_color
+   "Guitar Sustains Color")
+(os_gtr_smasher_color
+   "Guitar Smasher Color")
+(os_drm_smasher_color
+   "Drum Smasher Color")
+(os_reset_gem
+   "Reset")
+(os_reset_sus
+   "Reset")
+(os_green_gem
+   "Green")
+(os_red_gem
+   "Red")
+(os_yellow_gem
+   "Yellow")
+(os_blue_gem
+   "Blue")
+(os_orange_gem
+   "Orange")
+(os_overdrive_gem
+   "Overdrive")
+(os_kick_gem
+   "Kick")
+(os_gtr_gems_1
+   "Slot 1")
+(os_gtr_gems_2
+   "Slot 2")
+(os_gtr_gems_3
+   "Slot 3")
+(os_gtr_gems_4
+   "Slot 4")
+(os_gtr_gems_5
+   "Slot 5")
+(os_gtr_sus_1
+   "Slot 1")
+(os_gtr_sus_2
+   "Slot 2")
+(os_gtr_sus_3
+   "Slot 3")
+(os_gtr_sus_4
+   "Slot 4")
+(os_gtr_sus_5
+   "Slot 5")
+(os_drm_gems_1
+   "Kick")
+(os_drm_gems_2
+   "Slot 1")
+(os_drm_gems_3
+   "Slot 2")
+(os_drm_gems_4
+   "Slot 3")
+(os_drm_gems_5
+   "Slot 4")
+(os_gtr_smasher_1
+   "Slot 1")
+(os_gtr_smasher_2
+   "Slot 2")
+(os_gtr_smasher_3
+   "Slot 3")
+(os_gtr_smasher_4
+   "Slot 4")
+(os_gtr_smasher_5
+   "Slot 5")
+(os_drm_smasher_1
+   "Slot 1")
+(os_drm_smasher_2
+   "Slot 2")
+(os_drm_smasher_3
+   "Slot 3")
+(os_drm_smasher_4
+   "Slot 4")

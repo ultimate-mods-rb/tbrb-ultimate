@@ -129,6 +129,37 @@
 ;score texture
 {set $scoretex "none"}
 
+;default gem/smasher/sustain colors
+{set $gtrgem1 gem_red.wid}
+{set $gtrhgem1 gem_red_hopo.wid}
+{set $gtrgem2 gem_orange.wid}
+{set $gtrhgem2 gem_orange_hopo.wid}
+{set $gtrgem3 gem_yellow.wid}
+{set $gtrhgem3 gem_yellow_hopo.wid}
+{set $gtrgem4 gem_green.wid}
+{set $gtrhgem4 gem_green_hopo.wid}
+{set $gtrgem5 gem_blue.wid}
+{set $gtrhgem5 gem_blue_hopo.wid}
+{set $drmgem1 gem_kick.wid}
+{set $drmgem2 drum_red.wid}
+{set $drmgem3 drum_yellow.wid}
+{set $drmgem4 drum_blue.wid}
+{set $drmgem5 drum_green.wid}
+{set $gtrsm1 red}
+{set $gtrsm2 orange}
+{set $gtrsm3 yellow}
+{set $gtrsm4 green}
+{set $gtrsm5 blue}
+{set $gtrsus1 red}
+{set $gtrsus2 orange}
+{set $gtrsus3 yellow}
+{set $gtrsus4 green}
+{set $gtrsus5 blue}
+{set $drms1 red}
+{set $drms2 yellow}
+{set $drms3 blue}
+{set $drms4 green}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif

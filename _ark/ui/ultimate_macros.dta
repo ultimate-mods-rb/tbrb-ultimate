@@ -42,6 +42,151 @@
             {elem {find $entry spotlight_texture} 1}
          }
       }
+      {if {== {elem $entry 0} {basename gtrgem1}}
+         {set $gtrgem1
+            {elem {find $entry gtrgem1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrhgem1}}
+         {set $gtrhgem1
+            {elem {find $entry gtrhgem1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrgem2}}
+         {set $gtrgem2
+            {elem {find $entry gtrgem2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrhgem2}}
+         {set $gtrhgem2
+            {elem {find $entry gtrhgem2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrgem3}}
+         {set $gtrgem3
+            {elem {find $entry gtrgem3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrhgem3}}
+         {set $gtrhgem3
+            {elem {find $entry gtrhgem3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrgem4}}
+         {set $gtrgem4
+            {elem {find $entry gtrgem4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrhgem4}}
+         {set $gtrhgem4
+            {elem {find $entry gtrhgem4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrgem5}}
+         {set $gtrgem5
+            {elem {find $entry gtrgem5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrhgem5}}
+         {set $gtrhgem5
+            {elem {find $entry gtrhgem5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmgem1}}
+         {set $drmgem1
+            {elem {find $entry drmgem1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmgem2}}
+         {set $drmgem2
+            {elem {find $entry drmgem2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmgem3}}
+         {set $drmgem3
+            {elem {find $entry drmgem3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmgem4}}
+         {set $drmgem4
+            {elem {find $entry drmgem4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmgem5}}
+         {set $drmgem5
+            {elem {find $entry drmgem5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm1}}
+         {set $gtrsm1
+            {elem {find $entry gtrsm1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm2}}
+         {set $gtrsm2
+            {elem {find $entry gtrsm2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm3}}
+         {set $gtrsm3
+            {elem {find $entry gtrsm3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm4}}
+         {set $gtrsm4
+            {elem {find $entry gtrsm4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm5}}
+         {set $gtrsm5
+            {elem {find $entry gtrsm5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsus1}}
+         {set $gtrsus1
+            {elem {find $entry gtrsus1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsus2}}
+         {set $gtrsus2
+            {elem {find $entry gtrsus2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsus3}}
+         {set $gtrsus3
+            {elem {find $entry gtrsus3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsus4}}
+         {set $gtrsus4
+            {elem {find $entry gtrsus4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsus5}}
+         {set $gtrsus5
+            {elem {find $entry gtrsus5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms1}}
+         {set $drms1
+            {elem {find $entry drms1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms2}}
+         {set $drms2
+            {elem {find $entry drms2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms3}}
+         {set $drms3
+            {elem {find $entry drms3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms4}}
+         {set $drms4
+            {elem {find $entry drms4} 1}
+         }
+      }
       {if {== {elem $entry 0} {basename whammypb}}
          {set $whammypb
             {elem {find $entry whammypb} 1}

@@ -361,7 +361,7 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_blnk #ifdef HX_WII os_blnk #endif
+   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_gems_colors os_smashers_colors #ifdef HX_WII os_blnk #endif
 ))
 {new
    MultiSelectListPanel
@@ -407,6 +407,12 @@
          (os_spotlight
             {ui push_screen overshell_spotlight_screen}
          )
+         (os_gems_colors
+            {ui push_screen overshell_gem_color_screen}
+         )
+         (os_smashers_colors
+            {ui push_screen overshell_smasher_color_screen}
+         )
       }
    )
    (lst_reset
@@ -428,6 +434,1778 @@
    overshell_trk_screen
    (panels overshell_trk_panel)
    (focus overshell_trk_panel)}
+
+;
+
+; take this "code" as an example as why you should leave this to the pros not like me
+
+#define GEMC_MODIFIER_DATA ; dta make me cry why is dta dta
+((
+   os_gtr_gems_color os_gtr_sus_color os_drm_gems_color os_blnk os_blnk
+))
+{new
+   MultiSelectListPanel
+   overshell_gem_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_gtr_gems_color
+            {ui push_screen overshell_gtr_gem_color_screen}
+         )
+         (os_gtr_sus_color
+            {ui push_screen overshell_gtr_sus_color_screen}
+         )
+         (os_drm_gems_color
+            {ui push_screen overshell_drm_gem_color_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GEMC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gem_color_screen
+   (panels overshell_gem_color_panel)
+   (focus overshell_gem_color_panel)}
+   ;
+;
+
+#define GGEMC_MODIFIER_DATA
+((
+   os_reset_gem os_gtr_gems_1 os_gtr_gems_2 os_gtr_gems_3 os_gtr_gems_4 os_gtr_gems_5
+))
+{new
+   MultiSelectListPanel
+   overshell_gtr_gem_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_color}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_gem
+            {set $gtrgem1 gem_green.wid}
+            {set $gtrhgem1 gem_green_hopo.wid}
+            {set $gtrgem2 gem_red.wid}
+            {set $gtrhgem2 gem_red_hopo.wid}
+            {set $gtrgem3 gem_yellow.wid}
+            {set $gtrhgem3 gem_yellow_hopo.wid}
+            {set $gtrgem4 gem_blue.wid}
+            {set $gtrhgem4 gem_blue_hopo.wid}
+            {set $gtrgem5 gem_orange.wid}
+            {set $gtrhgem5 gem_orange_hopo.wid}
+         )
+         (os_gtr_gems_1
+            {ui push_screen overshell_gtr_gems_1_screen}
+         )
+         (os_gtr_gems_2
+            {ui push_screen overshell_gtr_gems_2_screen}
+         )
+         (os_gtr_gems_3
+            {ui push_screen overshell_gtr_gems_3_screen}
+         )
+         (os_gtr_gems_4
+            {ui push_screen overshell_gtr_gems_4_screen}
+         )
+         (os_gtr_gems_5
+            {ui push_screen overshell_gtr_gems_5_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GGEMC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gem_color_screen
+   (panels overshell_gtr_gem_color_panel)
+   (focus overshell_gtr_gem_color_panel)}
+   ;
+;
+
+;
+
+#define DGEMC_MODIFIER_DATA
+((
+   os_reset_gem os_drm_gems_1 os_drm_gems_2 os_drm_gems_3 os_drm_gems_4 os_drm_gems_5
+))
+{new
+   MultiSelectListPanel
+   overshell_drm_gem_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_color}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_gem
+            {set $drmgem1 gem_kick.wid}
+            {set $drmgem2 drum_red.wid}
+            {set $drmgem3 drum_yellow.wid}
+            {set $drmgem4 drum_blue.wid}
+            {set $drmgem5 drum_green.wid}
+         )
+         (os_drm_gems_1
+            {ui push_screen overshell_drm_gems_1_screen}
+         )
+         (os_drm_gems_2
+            {ui push_screen overshell_drm_gems_2_screen}
+         )
+         (os_drm_gems_3
+            {ui push_screen overshell_drm_gems_3_screen}
+         )
+         (os_drm_gems_4
+            {ui push_screen overshell_drm_gems_4_screen}
+         )
+         (os_drm_gems_5
+            {ui push_screen overshell_drm_gems_5_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DGEMC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gem_color_screen
+   (panels overshell_drm_gem_color_panel)
+   (focus overshell_drm_gem_color_panel)}
+   ;
+;
+
+;
+
+#define GSUSC_MODIFIER_DATA
+((
+   os_reset_sus os_gtr_sus_1 os_gtr_sus_2 os_gtr_sus_3 os_gtr_sus_4 os_gtr_sus_5
+))
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_color}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_sus
+            {set $gtrsus1 green}
+            {set $gtrsus2 red}
+            {set $gtrsus3 yellow}
+            {set $gtrsus4 blue}
+            {set $gtrsus5 orange}
+         )
+         (os_gtr_sus_1
+            {ui push_screen overshell_gtr_sus_1_screen}
+         )
+         (os_gtr_sus_2
+            {ui push_screen overshell_gtr_sus_2_screen}
+         )
+         (os_gtr_sus_3
+            {ui push_screen overshell_gtr_sus_3_screen}
+         )
+         (os_gtr_sus_4
+            {ui push_screen overshell_gtr_sus_4_screen}
+         )
+         (os_gtr_sus_5
+            {ui push_screen overshell_gtr_sus_5_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSUSC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_color_screen
+   (panels overshell_gtr_sus_color_panel)
+   (focus overshell_gtr_sus_color_panel)}
+   ;
+;
+
+#define GCOLORS_MODIFIER_DATA
+((
+   os_green_gem os_red_gem os_yellow_gem os_blue_gem os_orange_gem os_overdrive_gem
+))
+#define DCOLORS_MODIFIER_DATA
+((
+   os_red_gem os_yellow_gem os_blue_gem os_green_gem os_kick_gem os_overdrive_gem
+))
+#define GSMASHERS_MODIFIER_DATA
+((
+   os_green_gem os_red_gem os_yellow_gem os_blue_gem os_orange_gem os_blnk
+))
+#define DSMASHERS_MODIFIER_DATA
+((
+   os_red_gem os_yellow_gem os_blue_gem os_green_gem os_orange_gem os_blnk
+))
+#define GCOLORS_LEAVE
+(
+   {ui goto_screen overshell_gtr_gem_color_screen}
+   {ui pop_screen}
+)
+#define DCOLORS_LEAVE
+(
+   {ui goto_screen overshell_drm_gem_color_screen}
+   {ui pop_screen}
+)
+
+#define SUSCOLORS_LEAVE
+(
+   {ui goto_screen overshell_gtr_gem_color_screen}
+   {ui pop_screen}
+)
+#define GSMASHER_LEAVE
+(
+   {ui goto_screen overshell_gtr_smasher_color_screen}
+   {ui pop_screen}
+)
+#define DSMASHER_LEAVE
+(
+   {ui goto_screen overshell_drm_smasher_color_screen}
+   {ui pop_screen}
+)
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_gems_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrgem1 gem_green.wid}
+            {set $gtrhgem1 gem_green_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrgem1 gem_red.wid}
+            {set $gtrhgem1 gem_red_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrgem1 gem_yellow.wid}
+            {set $gtrhgem1 gem_yellow_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrgem1 gem_blue.wid}
+            {set $gtrhgem1 gem_blue_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrgem1 gem_orange.wid}
+            {set $gtrhgem1 gem_orange_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrgem1 star_gem.wid}
+            {set $gtrhgem1 star_hopo.wid}
+            GCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gems_1_screen
+   (panels overshell_gtr_gems_1_panel)
+   (focus overshell_gtr_gems_1_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_gems_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrgem2 gem_green.wid}
+            {set $gtrhgem2 gem_green_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrgem2 gem_red.wid}
+            {set $gtrhgem2 gem_red_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrgem2 gem_yellow.wid}
+            {set $gtrhgem2 gem_yellow_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrgem2 gem_blue.wid}
+            {set $gtrhgem2 gem_blue_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrgem2 gem_orange.wid}
+            {set $gtrhgem2 gem_orange_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrgem2 star_gem.wid}
+            {set $gtrhgem2 star_hopo.wid}
+            GCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gems_2_screen
+   (panels overshell_gtr_gems_2_panel)
+   (focus overshell_gtr_gems_2_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_gems_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrgem3 gem_green.wid}
+            {set $gtrhgem3 gem_green_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrgem3 gem_red.wid}
+            {set $gtrhgem3 gem_red_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrgem3 gem_yellow.wid}
+            {set $gtrhgem3 gem_yellow_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrgem3 gem_blue.wid}
+            {set $gtrhgem3 gem_blue_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrgem3 gem_orange.wid}
+            {set $gtrhgem3 gem_orange_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrgem3 star_gem.wid}
+            {set $gtrhgem3 star_hopo.wid}
+            GCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gems_3_screen
+   (panels overshell_gtr_gems_3_panel)
+   (focus overshell_gtr_gems_3_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_gems_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrgem4 gem_green.wid}
+            {set $gtrhgem4 gem_green_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrgem4 gem_red.wid}
+            {set $gtrhgem4 gem_red_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrgem4 gem_yellow.wid}
+            {set $gtrhgem4 gem_yellow_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrgem4 gem_blue.wid}
+            {set $gtrhgem4 gem_blue_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrgem4 gem_orange.wid}
+            {set $gtrhgem4 gem_orange_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrgem4 star_gem.wid}
+            {set $gtrhgem4 star_hopo.wid}
+            GCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gems_4_screen
+   (panels overshell_gtr_gems_4_panel)
+   (focus overshell_gtr_gems_4_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_gems_5_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_5}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrgem5 gem_green.wid}
+            {set $gtrhgem5 gem_green_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrgem5 gem_red.wid}
+            {set $gtrhgem5 gem_red_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrgem5 gem_yellow.wid}
+            {set $gtrhgem5 gem_yellow_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrgem5 gem_blue.wid}
+            {set $gtrhgem5 gem_blue_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrgem5 gem_orange.wid}
+            {set $gtrhgem5 gem_orange_hopo.wid}
+            GCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrgem5 star_gem.wid}
+            {set $gtrhgem5 star_hopo.wid}
+            GCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_gems_5_screen
+   (panels overshell_gtr_gems_5_panel)
+   (focus overshell_gtr_gems_5_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_gems_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_red_gem
+            {set $drmgem1 drum_red.wid}
+            DCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $drmgem1 drum_yellow.wid}
+            DCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $drmgem1 drum_blue.wid}
+            DCOLORS_LEAVE
+         )
+         (os_green_gem
+            {set $drmgem1 drum_green.wid}
+            DCOLORS_LEAVE
+         )
+         (os_kick_gem
+            {set $drmgem1 gem_kick.wid}
+            DCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $drmgem1 drum_star.wid}
+            DCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gems_1_screen
+   (panels overshell_drm_gems_1_panel)
+   (focus overshell_drm_gems_1_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_gems_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_red_gem
+            {set $drmgem2 drum_red.wid}
+            DCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $drmgem2 drum_yellow.wid}
+            DCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $drmgem2 drum_blue.wid}
+            DCOLORS_LEAVE
+         )
+         (os_green_gem
+            {set $drmgem2 drum_green.wid}
+            DCOLORS_LEAVE
+         )
+         (os_kick_gem
+            {set $drmgem2 gem_kick.wid}
+            DCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $drmgem2 drum_star.wid}
+            DCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gems_2_screen
+   (panels overshell_drm_gems_2_panel)
+   (focus overshell_drm_gems_2_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_gems_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_red_gem
+            {set $drmgem3 drum_red.wid}
+            DCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $drmgem3 drum_yellow.wid}
+            DCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $drmgem3 drum_blue.wid}
+            DCOLORS_LEAVE
+         )
+         (os_green_gem
+            {set $drmgem3 drum_green.wid}
+            DCOLORS_LEAVE
+         )
+         (os_kick_gem
+            {set $drmgem3 gem_kick.wid}
+            DCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $drmgem3 drum_star.wid}
+            DCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gems_3_screen
+   (panels overshell_drm_gems_3_panel)
+   (focus overshell_drm_gems_3_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_gems_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_red_gem
+            {set $drmgem4 drum_red.wid}
+            DCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $drmgem4 drum_yellow.wid}
+            DCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $drmgem4 drum_blue.wid}
+            DCOLORS_LEAVE
+         )
+         (os_green_gem
+            {set $drmgem4 drum_green.wid}
+            DCOLORS_LEAVE
+         )
+         (os_kick_gem
+            {set $drmgem4 gem_kick.wid}
+            DCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $drmgem4 drum_star.wid}
+            DCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gems_4_screen
+   (panels overshell_drm_gems_4_panel)
+   (focus overshell_drm_gems_4_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_gems_5_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_gems_5}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_red_gem
+            {set $drmgem5 drum_red.wid}
+            DCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $drmgem5 drum_yellow.wid}
+            DCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $drmgem5 drum_blue.wid}
+            DCOLORS_LEAVE
+         )
+         (os_green_gem
+            {set $drmgem5 drum_green.wid}
+            DCOLORS_LEAVE
+         )
+         (os_kick_gem
+            {set $drmgem5 gem_kick.wid}
+            DCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $drmgem5 drum_star.wid}
+            DCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_gem_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_gems_5_screen
+   (panels overshell_drm_gems_5_panel)
+   (focus overshell_drm_gems_5_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsus1 green}
+            SUSCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsus1 red}
+            SUSCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsus1 yellow}
+            SUSCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsus1 blue}
+            SUSCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsus1 orange}
+            SUSCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrsus1 star}
+            SUSCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_1_screen
+   (panels overshell_gtr_sus_1_panel)
+   (focus overshell_gtr_sus_1_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsus2 green}
+            SUSCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsus2 red}
+            SUSCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsus2 yellow}
+            SUSCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsus2 blue}
+            SUSCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsus2 orange}
+            SUSCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrsus2 star}
+            SUSCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_2_screen
+   (panels overshell_gtr_sus_2_panel)
+   (focus overshell_gtr_sus_2_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsus3 green}
+            SUSCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsus3 red}
+            SUSCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsus3 yellow}
+            SUSCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsus3 blue}
+            SUSCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsus3 orange}
+            SUSCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrsus3 star}
+            SUSCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_3_screen
+   (panels overshell_gtr_sus_3_panel)
+   (focus overshell_gtr_sus_3_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsus4 green}
+            SUSCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsus4 red}
+            SUSCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsus4 yellow}
+            SUSCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsus4 blue}
+            SUSCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsus4 orange}
+            SUSCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrsus4 star}
+            SUSCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_4_screen
+   (panels overshell_gtr_sus_4_panel)
+   (focus overshell_gtr_sus_4_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_sus_5_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_sus_5}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsus5 green}
+            SUSCOLORS_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsus5 red}
+            SUSCOLORS_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsus5 yellow}
+            SUSCOLORS_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsus5 blue}
+            SUSCOLORS_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsus5 orange}
+            SUSCOLORS_LEAVE
+         )
+         (os_overdrive_gem
+            {set $gtrsus5 star}
+            SUSCOLORS_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GCOLORS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_sus_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_sus_5_screen
+   (panels overshell_gtr_sus_5_panel)
+   (focus overshell_gtr_sus_5_panel)}
+   ;
+;
+
+#define SMASHERC_MODIFIER_DATA
+((
+   os_gtr_smasher_color os_drm_smasher_color os_blnk os_blnk
+))
+{new
+   MultiSelectListPanel
+   overshell_smasher_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_smashers_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_gtr_smasher_color
+            {ui push_screen overshell_gtr_smasher_color_screen}
+         )
+         (os_drm_smasher_color
+            {ui push_screen overshell_drm_smasher_color_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data SMASHERC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_smasher_color_screen
+   (panels overshell_smasher_color_panel)
+   (focus overshell_smasher_color_panel)}
+   ;
+;
+
+;
+
+#define GSMASHERC_MODIFIER_DATA
+((
+   os_reset_gem os_gtr_smasher_1 os_gtr_smasher_2 os_gtr_smasher_3 os_gtr_smasher_4 os_gtr_smasher_5
+))
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_color}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_gem
+            {set $gtrsm1 green}
+            {set $gtrsm2 red}
+            {set $gtrsm3 yellow}
+            {set $gtrsm4 blue}
+            {set $gtrsm5 orange}
+         )
+         (os_gtr_smasher_1
+            {ui push_screen overshell_gtr_smasher_1_screen}
+         )
+         (os_gtr_smasher_1
+            {ui push_screen overshell_gtr_smasher_1_screen}
+         )
+         (os_gtr_smasher_2
+            {ui push_screen overshell_gtr_smasher_2_screen}
+         )
+         (os_gtr_smasher_3
+            {ui push_screen overshell_gtr_smasher_3_screen}
+         )
+         (os_gtr_smasher_4
+            {ui push_screen overshell_gtr_smasher_4_screen}
+         )
+         (os_gtr_smasher_5
+            {ui push_screen overshell_gtr_smasher_5_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_color_screen
+   (panels overshell_gtr_smasher_color_panel)
+   (focus overshell_gtr_smasher_color_panel)}
+   ;
+;
+
+;
+
+#define DSMASHERC_MODIFIER_DATA
+((
+   os_reset_gem os_drm_smasher_1 os_drm_smasher_2 os_drm_smasher_3 os_drm_smasher_4 os_blnk
+))
+{new
+   MultiSelectListPanel
+   overshell_drm_smasher_color_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_smasher_color}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_gem
+            {set $drms1 red}
+            {set $drms2 yellow}
+            {set $drms3 blue}
+            {set $drms4 green}
+         )
+         (os_drm_smasher_1
+            {ui push_screen overshell_drm_smasher_1_screen}
+         )
+         (os_drm_smasher_2
+            {ui push_screen overshell_drm_smasher_2_screen}
+         )
+         (os_drm_smasher_3
+            {ui push_screen overshell_drm_smasher_3_screen}
+         )
+         (os_drm_smasher_4
+            {ui push_screen overshell_drm_smasher_4_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DSMASHERC_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_smasher_color_screen
+   (panels overshell_drm_smasher_color_panel)
+   (focus overshell_drm_smasher_color_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsm1 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsm1 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsm1 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsm1 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsm1 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_1_screen
+   (panels overshell_gtr_smasher_1_panel)
+   (focus overshell_gtr_smasher_1_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsm2 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsm2 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsm2 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsm2 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsm2 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_2_screen
+   (panels overshell_gtr_smasher_2_panel)
+   (focus overshell_gtr_smasher_2_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsm3 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsm3 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsm3 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsm3 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsm3 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_3_screen
+   (panels overshell_gtr_smasher_3_panel)
+   (focus overshell_gtr_smasher_3_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsm4 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsm4 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsm4 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsm4 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsm4 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_4_screen
+   (panels overshell_gtr_smasher_4_panel)
+   (focus overshell_gtr_smasher_4_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_gtr_smasher_5_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_smasher_5}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $gtrsm5 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $gtrsm5 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $gtrsm5 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $gtrsm5 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $gtrsm5 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_gtr_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_gtr_smasher_5_screen
+   (panels overshell_gtr_smasher_5_panel)
+   (focus overshell_gtr_smasher_5_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_smasher_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_smasher_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $drms1 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $drms1 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $drms1 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $drms1 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $drms1 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_smasher_1_screen
+   (panels overshell_drm_smasher_1_panel)
+   (focus overshell_drm_smasher_1_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_smasher_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_smasher_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $drms2 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $drms2 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $drms2 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $drms2 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $drms2 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_smasher_2_screen
+   (panels overshell_drm_smasher_2_panel)
+   (focus overshell_drm_smasher_2_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_smasher_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_smasher_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $drms3 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $drms3 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $drms3 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $drms3 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $drms3 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_smasher_3_screen
+   (panels overshell_drm_smasher_3_panel)
+   (focus overshell_drm_smasher_3_panel)}
+   ;
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drm_smasher_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drm_smasher_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_green_gem
+            {set $drms4 green}
+            GSMASHER_LEAVE
+         )
+         (os_red_gem
+            {set $drms4 red}
+            GSMASHER_LEAVE
+         )
+         (os_yellow_gem
+            {set $drms4 yellow}
+            GSMASHER_LEAVE
+         )
+         (os_blue_gem
+            {set $drms4 blue}
+            GSMASHER_LEAVE
+         )
+         (os_orange_gem
+            {set $drms4 orange}
+            GSMASHER_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data DSMASHERS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_drm_smasher_color_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drm_smasher_4_screen
+   (panels overshell_drm_smasher_4_panel)
+   (focus overshell_drm_smasher_4_panel)}
+   ;
+;
+
+;I HOPE SHE MADE LOTSA SPAGHETTI :kekw:
+
+;
+
 ;
 {new
     MultiSelectListPanel
