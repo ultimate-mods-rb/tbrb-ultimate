@@ -68,7 +68,10 @@
                (gtrhgem2 $gtrhgem2)
             )
             (gtrgem3
-               (gtrgem3 $gtrhgem3)
+               (gtrgem3 $gtrgem3)
+            )
+            (gtrhgem3
+               (gtrhgem3 $gtrhgem3)
             )
             (gtrgem4
                (gtrgem4 $gtrgem4)
