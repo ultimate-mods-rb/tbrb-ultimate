@@ -116,6 +116,14 @@
    "Pad is Drums: ON")
 (os_paddrum0
    "Pad is Drums: OFF")
+(os_skipintro1
+   "Skip Intro Movie: ON")
+(os_skipintro0
+   "Skip Intro Movie: OFF")
+(os_skipsplash1
+   "Skip Splash Screen: ON")
+(os_skipsplash0
+   "Skip Splash Screen: OFF")
 (os_syncdifspeeds1
    "Sync Dificulty Speeds: ON")
 (os_syncdifspeeds0

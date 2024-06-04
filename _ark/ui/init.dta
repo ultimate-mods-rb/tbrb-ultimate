@@ -84,6 +84,12 @@
 ;do gem custom textures
 {set $gemcustomtexture FALSE}
 
+;skip intro by default
+{set $skipintro TRUE}
+
+;dont skip splash by default
+{set $skipsplash FALSE}
+
 ;gem texture
 {set $gem "none"}
 

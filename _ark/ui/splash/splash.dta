@@ -5,9 +5,11 @@
    (audio TRUE)
    (loop FALSE)
    (update_presence TRUE)
-   (videos intro_movie)
+   (videos {if_else $skipintro fake intro_movie})
    (movie_done
-      {ui goto_screen splash_screen})
+      {if_else $skipsplash
+      {ui goto_screen main_popup_swapper}
+      {ui goto_screen splash_screen}})
    (enter
       {platform_mgr disable_xmp}
       kDataUnhandled)
@@ -20,7 +22,9 @@
          {'||'
             {== $action kAction_Start}
             {== $action kAction_Confirm}}
-         {ui goto_screen splash_screen}})}
+            {if_else $skipsplash
+               {ui goto_screen main_popup_swapper}
+               {ui goto_screen splash_screen}}})}
 {new
    BandScreen
    intro_movie_screen

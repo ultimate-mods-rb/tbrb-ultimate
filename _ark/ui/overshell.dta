@@ -58,6 +58,8 @@
    #ifndef HX_WII
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
+   {if_else $skipintro os_skipintro1 os_skipintro0}
+   {if_else $skipsplash os_skipsplash1 os_skipsplash0}
    #endif
    " "
    " "
@@ -148,6 +150,26 @@
             #endif
             {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
             {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipintro1
+            {set $skipintro {! $skipintro}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipintro0
+            {set $skipintro {! $skipintro}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipsplash1
+            {set $skipsplash {! $skipsplash}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipsplash0
+            {set $skipsplash {! $skipsplash}}
             {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )

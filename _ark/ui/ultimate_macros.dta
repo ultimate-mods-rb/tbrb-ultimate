@@ -227,6 +227,16 @@
             {elem {find $entry forcerpv} 1}
          }
       }
+      {if {== {elem $entry 0} {basename skipsplash}}
+         {set $skipsplash
+            {elem {find $entry skipsplash} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename skipintro}}
+         {set $skipintro
+            {elem {find $entry skipintro} 1}
+         }
+      }
       {if {== {elem $entry 0} {basename padtar}}
          {set $padtar
             {elem {find $entry padtar} 1}
