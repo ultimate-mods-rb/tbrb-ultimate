@@ -3,7 +3,8 @@
 #include sfx_macros.dta
 #include ../../../system/run/config/macros.dta
 #include ../../../system/run/band/band_macros.dta
-#define TBRBUV1.11 (1)
+#define TBRBU (1)
+#define TBRBUV2.00BETA (1)
 #define kP9LeftArm
 (1)
 #define kP9RightArm

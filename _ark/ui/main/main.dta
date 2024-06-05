@@ -40,20 +40,11 @@
             (legacybass
                (legacybass $legacybass)
             )
-            (forcecnv
-               (forcecnv $forcecnv)
+            (forceoutfit
+               (forceoutfit $forceoutfit)
             )
-            (forcesnv
-               (forcesnv $forcesnv)
-            )
-            (forcesav
-               (forcesav $forcesav)
-            )
-            (forcebnv
-               (forcebnv $forcebnv)
-            )
-            (forcerpv
-               (forcerpv $forcerpv)
+            (forcevenue
+               (forcevenue $forcevenue)
             )
             (gtrgem1
                (gtrgem1 $gtrgem1)

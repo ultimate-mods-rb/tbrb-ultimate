@@ -1708,14 +1708,14 @@
                         0}}}
                $intro_shot})
          (pick_venue
-            {if_else $forcevenue
-               $forcedvenue
+            {if_else {== $forcevenue off}
                {if_else
                   {exists meta_performer}
                   {meta_performer get_venue}
                   {{$this get_songpref}
                      get
-                     venue}}})
+                     venue}}
+               $forcevenue})
          (venue_outfit
             {do
                ($bonus 0)

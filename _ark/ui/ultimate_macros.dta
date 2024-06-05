@@ -202,29 +202,14 @@
             {elem {find $entry legacybass} 1}
          }
       }
-      {if {== {elem $entry 0} {basename forcecnv}}
-         {set $forcecnv
-            {elem {find $entry forcecnv} 1}
+      {if {== {elem $entry 0} {basename forceoutfit}}
+         {set $forceoutfit
+            {elem {find $entry forceoutfit} 1}
          }
       }
-      {if {== {elem $entry 0} {basename forcesnv}}
-         {set $forcesnv
-            {elem {find $entry forcesnv} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forcesav}}
-         {set $forcesav
-            {elem {find $entry forcesav} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forcebnv}}
-         {set $forcebnv
-            {elem {find $entry forcebnv} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forcerpv}}
-         {set $forcerpv
-            {elem {find $entry forcerpv} 1}
+      {if {== {elem $entry 0} {basename forcevenue}}
+         {set $forcevenue
+            {elem {find $entry forcevenue} 1}
          }
       }
       {if {== {elem $entry 0} {basename skipsplash}}

@@ -205,11 +205,8 @@
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    #endif
-   {if_else $forcecnv os_forcecnv1 os_forcecnv0}
-   {if_else $forcesnv os_forcesnv1 os_forcesnv0}
-   {if_else $forcesav os_forcesav1 os_forcesav0}
-   {if_else $forcebnv os_forcebnv1 os_forcebnv0}
-   {if_else $forcerpv os_forcerpv1 os_forcerpv0}
+   os_blnk
+   os_blnk
 ))
 {new
    MultiSelectListPanel
@@ -253,111 +250,26 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          {rnd toggle_all_postprocs}
-       )
-       (os_postfx1
+         )
+         (os_postfx1
             {set $postfx {! $postfx}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
-         #ifdef HX_WII
-         {pp_override}
-         #else
-         {rnd toggle_all_postprocs}
-         #endif
+            #ifdef HX_WII
+            {pp_override}
+            #else
+            {rnd toggle_all_postprocs}
+            #endif
          )
          (os_postfx0
             {set $postfx {! $postfx}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
-         #ifdef HX_WII
-         {pp_override}
-         #else
-         {rnd toggle_all_postprocs}
-         #endif
-         )
-         (os_forcecnv1
-            {set $forcecnv {! $forcecnv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcecnv0
-            {set $forcecnv {! $forcecnv}}
-            {set $forcesnv FALSE}
-            {set $forcesav FALSE}
-            {set $forcebnv FALSE}
-            {set $forcerpv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue cavern}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcesnv1
-            {set $forcesnv {! $forcesnv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcesnv0
-            {set $forcesnv {! $forcesnv}}
-            {set $forcecnv FALSE}
-            {set $forcesav FALSE}
-            {set $forcebnv FALSE}
-            {set $forcerpv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue sullivan}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcesav1
-            {set $forcesav {! $forcesav}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcesav0
-            {set $forcesav {! $forcesav}}
-            {set $forcecnv FALSE}
-            {set $forcesnv FALSE}
-            {set $forcebnv FALSE}
-            {set $forcerpv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue shea}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcebnv1
-            {set $forcebnv {! $forcebnv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcebnv0
-            {set $forcebnv {! $forcebnv}}
-            {set $forcecnv FALSE}
-            {set $forcesnv FALSE}
-            {set $forcesav FALSE}
-            {set $forcerpv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue budokan}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcerpv1
-            {set $forcerpv {! $forcerpv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcerpv0
-            {set $forcerpv {! $forcerpv}}
-            {set $forcecnv FALSE}
-            {set $forcesnv FALSE}
-            {set $forcesav FALSE}
-            {set $forcebnv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue rooftop}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
+            #ifdef HX_WII
+            {pp_override}
+            #else
+            {rnd toggle_all_postprocs}
+            #endif
          )
       }
    )
@@ -383,7 +295,7 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_gems_colors os_smashers_colors #ifdef HX_WII os_blnk #endif
+   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_venues os_outfits os_gems_colors os_smashers_colors
 ))
 {new
    MultiSelectListPanel
@@ -429,6 +341,12 @@
          (os_spotlight
             {ui push_screen overshell_spotlight_screen}
          )
+         (os_venues
+            {ui push_screen overshell_venues_screen}
+         )
+         (os_outfits
+            {ui push_screen overshell_outfits_screen}
+         )
          (os_gems_colors
             {ui push_screen overshell_gem_color_screen}
          )
@@ -460,6 +378,81 @@
 ;
 
 ; take this "code" as an example as why you should leave this to the pros not like me
+
+
+;
+#define TBRB_VENUES_MODIFIER_DATA
+((off cavern sullivan shea budokan rooftop))
+{new
+    MultiSelectListPanel
+    overshell_venues_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data TBRB_VENUES_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_venues}})
+    (exit)
+    (SELECT_MSG
+      {set $forcevenue {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_venues_screen
+   (panels overshell_venues_panel)
+   (focus overshell_venues_panel)}
+;
+
+;
+#define TBRB_OUTFITS_MODIFIER_DATA
+((off budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 hidden))
+{new
+    MultiSelectListPanel
+    overshell_outfits_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data TBRB_OUTFITS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $forceoutfit {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_outfits_screen
+   (panels overshell_outfits_panel)
+   (focus overshell_outfits_panel)}
+;
 
 #define GEMC_MODIFIER_DATA ; dta make me cry why is dta dta
 ((
