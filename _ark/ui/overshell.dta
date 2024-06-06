@@ -425,6 +425,9 @@
     overshell_outfits_panel
     OVERSHELL_LIST_FILE
     (enter
+        #ifndef HX_WII
+        {passive_messages_panel queue_message cdlc_warning_message}
+        #endif
         {sel_section.lst set_data TBRB_OUTFITS_MODIFIER_DATA}
         {title.lbl set text_token {localize os_outfits}})
     (exit)

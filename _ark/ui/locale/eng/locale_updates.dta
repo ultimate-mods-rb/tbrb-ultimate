@@ -208,6 +208,8 @@
 (hw_pink "Pink")
 (hw_red "Red")
 (os_blnk " ")
+(cdlc_warning_message
+   "Some CDLC songs might crash on load when forcing outfits due to how they do custom outfits\nDisable if you have issues")
 (os_gems_colors
    "Gem Colors")
 (os_smashers_colors
