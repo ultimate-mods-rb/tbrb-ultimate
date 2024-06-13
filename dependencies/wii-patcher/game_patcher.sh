@@ -1,11 +1,21 @@
 #!/bin/bash
 
-ISO_FOLDER="$(pwd)/iso"
-ULTIMATE_FILES_FOLDER="$(pwd)/ultimate_files"
-WIT_EXECUTABLE="$(pwd)/wit/wit"
+# Check if the script is running on macOS
+if [[ $(uname -s) == "Darwin" ]]; then
+    echo "Running on macOS"
+    # macOS-specific path to wit executable
+    WIT_EXECUTABLE="$(pwd)/wit/wit_macos"
+else
+    echo "Not running on macOS"
+    # Assume Linux or other Unix-like systems
+    WIT_EXECUTABLE="$(pwd)/wit/wit"
+fi
 
 # Ensure execute permission for wit executable
 chmod +x "$WIT_EXECUTABLE"
+
+ISO_FOLDER="$(pwd)/iso"
+ULTIMATE_FILES_FOLDER="$(pwd)/ultimate_files"
 
 if [ ! -d "$ISO_FOLDER" ]; then
     echo "ISO folder not found."
