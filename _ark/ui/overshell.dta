@@ -59,6 +59,8 @@
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
    {if_else $skipintro os_skipintro1 os_skipintro0}
+   #endif
+   #ifdef HX_PS3
    {if_else $skipsplash os_skipsplash1 os_skipsplash0}
    #endif
    " "

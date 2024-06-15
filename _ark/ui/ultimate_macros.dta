@@ -212,11 +212,13 @@
             {elem {find $entry forcevenue} 1}
          }
       }
+      #ifdef HX_PS3
       {if {== {elem $entry 0} {basename skipsplash}}
          {set $skipsplash
             {elem {find $entry skipsplash} 1}
          }
       }
+      #endif
       {if {== {elem $entry 0} {basename skipintro}}
          {set $skipintro
             {elem {find $entry skipintro} 1}
