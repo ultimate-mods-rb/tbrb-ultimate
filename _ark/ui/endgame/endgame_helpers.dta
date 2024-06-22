@@ -95,9 +95,14 @@
 (#define SELECTED_AWARDS
    (())
    (set_results
+      {set $song_text1 {song_mgr song_name {meta_performer get_completed_song}}}
+      {if_else {!= $speedmod 1}
+         {set $song_text2 {sprint $song_text1 " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
+         {set $song_text2 $song_text1}}
+      {heading.lbl set fixed_length 1000}
       {heading.lbl
-         set_song_name
-         {meta_performer get_completed_song}}
+         set_token_fmt
+         $song_text2}
       {if
          {!
             {gamemode in_mode h2h}}
