@@ -453,6 +453,8 @@
          ;    {set whammy_enabled FALSE})
          (go_to_frs
              {ui goto_screen frame_rate_screen})
+         (unlock_bp
+             {ui push_screen bonus_photo_unlock_screen})
          ;(enable_autoplay
          ;   {ui push_screen autoplay_info_screen}
          ;    {set autosave FALSE} ;dw about this silly line it dont do nothin
