@@ -1,3 +1,118 @@
+(actnaturally
+   (name "Act Naturally")
+   (song_id 9990105)
+   (context 0)
+   (song
+     (name        songs/actnaturally/actnaturally)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 28000 75000)
+   (rank
+      (drum 335)
+      (guitar 330)
+      (bass 246)
+      (vocals 120)
+      (band 292)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-06-17") ; use 2009-01-01 as default if unknown
+   (album_name "Help!")
+   (album_track_number 8)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer ringo)
+   (songtype acoustic lectric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_actnaturally01.bik"
+      "vo_loading_actnaturally02.bik"
+   )
+)
+(dontpassmeby
+   (name "Don't Pass Me By")
+   (song_id 9990097)
+   (context 0)
+   (song
+     (name        songs/dontpassmeby/dontpassmeby)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+    (vocals (6 7))
+        )
+     )
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 47000 107000)
+   (rank
+      (drum 249)
+      (guitar 363)
+      (bass 284)
+      (vocals 206)
+      (band 325)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1968-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1968-06-05") ; use 2009-01-01 as default if unknown
+   (album_name "The Beatles [White Album] (Disc 1)")
+   (album_track_number 14)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer ringo)
+   (songtype piano)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_dontpassmeby01.bik"
+      "vo_loading_dontpassmeby02.bik"
+      "vo_loading_dontpassmeby03.bik"
+   )
+)
 (ififell
    (name "If I Fell")
    (song_id 9990024)
