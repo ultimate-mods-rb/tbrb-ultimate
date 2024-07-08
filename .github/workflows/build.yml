@@ -12,8 +12,8 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          chmod +x dependencies/arkhelper
-          chmod +x dependencies/dtab
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
       - name: Remove PS3 and Wii files
         run: |
           find . -name "*.*_ps3" -type f -delete
@@ -23,7 +23,7 @@ jobs:
           mv _songs/songs_xbox _ark/songs
       - name: Build ARK
         run: |
-          dependencies/arkhelper dir2ark ./_ark ./_build/xbox/gen -n "patch_xbox" -e -v 5 -s 4073741823
+          dependencies/linux/arkhelper dir2ark ./_ark ./_build/xbox/gen -n "patch_xbox" -e -v 5 -s 4073741823
       - name: Remove Excess files
         run: |
           find . -name "*.txt" -type f -delete
@@ -114,8 +114,8 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          chmod +x dependencies/arkhelper
-          chmod +x dependencies/dtab
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
       - name: Remove Xbox and PS3 files
         run: |
           find . -name "*.*_xbox" -type f -delete
@@ -138,7 +138,7 @@ jobs:
 
       - name: Build ARK
         run: |
-          dependencies/arkhelper dir2ark ./_ark ./_build/wii/ultimate_files/files/gen -n "patch_wii" -e -v 5 -s 4073741823
+          dependencies/linux/arkhelper dir2ark ./_ark ./_build/wii/ultimate_files/files/gen -n "patch_wii" -e -v 5 -s 4073741823
       
       - name: Upload result
         uses: actions/upload-artifact@v4
