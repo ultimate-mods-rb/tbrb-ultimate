@@ -3,6 +3,17 @@
 # Set a variable to track whether the ARK build failed
 FAILED_ARK_BUILD=0
 
+# Set the path to arkhelper and check if the script is running on macOS
+if [[ $(uname -s) == "Darwin" ]]; then
+    echo "Running on macOS"
+    # macOS-specific path to arkhelper executable
+    ARKHELPER_PATH="$(pwd)/dependencies/macos/arkhelper"
+else
+    echo "Not running on macOS"
+    # Assume Linux or other Unix-like systems
+    ARKHELPER_PATH="$(pwd)/dependencies/linux/arkhelper"
+fi
+
 # Move the folder "songs_ps3" into "_ark" and rename it to "songs"
 echo "Temporarily moving PS3 songs folder into ark"
 mv "$PWD/_songs/songs_ps3" "$PWD/_ark/songs"
@@ -15,7 +26,7 @@ mv "$PWD/_songs/songs_ps3" "$PWD/_ark/songs"
 # Building PS3 ARK
 echo
 echo "Building PS3 ARK"
-"$PWD/dependencies/arkhelper" dir2ark "$PWD/_ark" "$PWD/_build/ps3/USRDIR/gen" -n "patch_ps3" -e -v 5 -s 4073741823 >/dev/null 2>&1
+"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/ps3/USRDIR/gen" -n "patch_ps3" -e -v 5 -s 4073741823 >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     FAILED_ARK_BUILD=1
 fi

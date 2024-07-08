@@ -3,6 +3,17 @@
 # Set FAILED_ARK_BUILD variable to 0
 FAILED_ARK_BUILD=0
 
+# Set the path to arkhelper and check if the script is running on macOS
+if [[ $(uname -s) == "Darwin" ]]; then
+    echo "Running on macOS"
+    # macOS-specific path to arkhelper executable
+    ARKHELPER_PATH="$(pwd)/dependencies/macos/arkhelper"
+else
+    echo "Not running on macOS"
+    # Assume Linux or other Unix-like systems
+    ARKHELPER_PATH="$(pwd)/dependencies/linux/arkhelper"
+fi
+
 #echo
 #echo "Temporarily moving PS3 files out of the ark path to reduce final ARK size"
 #find "$PWD/_ark" -type f \( -name "*.milo_ps3" -o -name "*.png_ps3" -o -name "*.bmp_ps3" \) -exec mv {} "$PWD/_temp/_ark" \;
@@ -13,7 +24,7 @@ mv "$PWD/_songs/songs_xbox" "$PWD/_ark/songs"
 
 echo
 echo "Building Xbox ARK"
-"$PWD/dependencies/arkhelper" dir2ark "$PWD/_ark" "$PWD/_build/xbox/gen" -n "patch_xbox" -e -v 5 > /dev/null
+"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/xbox/gen" -n "patch_xbox" -e -v 5 > /dev/null
 if [ $? -ne 0 ]; then
     FAILED_ARK_BUILD=1
 fi

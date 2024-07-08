@@ -3,9 +3,18 @@
 # Set a variable to track whether the ARK build failed
 FAILED_ARK_BUILD=0
 
-# Set the path to wit and arkhelper
-WIT_PATH="$PWD/dependencies/wit/wit"
-ARKHELPER_PATH="$PWD/dependencies/arkhelper"
+# Set the path to wit and arkhelper and check if the script is running on macOS
+if [[ $(uname -s) == "Darwin" ]]; then
+    echo "Running on macOS"
+    # macOS-specific path to wit/arkhelper executable
+    WIT_PATH="$(pwd)/dependencies/wit/wit_macos"
+    ARKHELPER_PATH="$(pwd)/dependencies/macos/arkhelper"
+else
+    echo "Not running on macOS"
+    # Assume Linux or other Unix-like systems
+    WIT_PATH="$(pwd)/dependencies/wit/wit"
+    ARKHELPER_PATH="$(pwd)/dependencies/linux/arkhelper"
+fi
 
 # Extract ISO using wit
 "$WIT_PATH" extract "$PWD/iso" "$PWD/_build/wii"
