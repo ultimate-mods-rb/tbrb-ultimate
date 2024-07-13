@@ -1,7 +1,7 @@
 #define GUITAR_SET
 ((0
-      (normal $gtrgem1)
-      (normal_hopo $gtrhgem1)
+      (normal {elem (NORMALGEM_SET) COLOR_SHUFFLE_SLOT_1})
+      (normal_hopo {elem (HOPOGEM_SET) COLOR_SHUFFLE_SLOT_1})
       (star star_gem.wid)
       (star_hopo star_hopo.wid)
       (unison star_gem.wid)
@@ -12,8 +12,8 @@
       (caps_hopo gem_hopo_caps.wid)
       (mash gem_mash0.wid))
    (1
-      (normal $gtrgem2)
-      (normal_hopo $gtrhgem2)
+      (normal {elem (NORMALGEM_SET) COLOR_SHUFFLE_SLOT_2})
+      (normal_hopo {elem (HOPOGEM_SET) COLOR_SHUFFLE_SLOT_2})
       (star star_gem.wid)
       (star_hopo star_hopo.wid)
       (unison star_gem.wid)
@@ -24,8 +24,8 @@
       (caps_hopo gem_hopo_caps.wid)
       (mash gem_mash1.wid))
    (2
-      (normal $gtrgem3)
-      (normal_hopo $gtrhgem3)
+      (normal {elem (NORMALGEM_SET) COLOR_SHUFFLE_SLOT_3})
+      (normal_hopo {elem (HOPOGEM_SET) COLOR_SHUFFLE_SLOT_3})
       (star star_gem.wid)
       (star_hopo star_hopo.wid)
       (unison star_gem.wid)
@@ -36,8 +36,8 @@
       (caps_hopo gem_hopo_caps.wid)
       (mash gem_mash2.wid))
    (3
-      (normal $gtrgem4)
-      (normal_hopo $gtrhgem4)
+      (normal {elem (NORMALGEM_SET) COLOR_SHUFFLE_SLOT_4})
+      (normal_hopo {elem (HOPOGEM_SET) COLOR_SHUFFLE_SLOT_4})
       (star star_gem.wid)
       (star_hopo star_hopo.wid)
       (unison star_gem.wid)
@@ -48,8 +48,8 @@
       (caps_hopo gem_hopo_caps.wid)
       (mash gem_mash3.wid))
    (4
-      (normal $gtrgem5)
-      (normal_hopo $gtrhgem5)
+      (normal {elem (NORMALGEM_SET) COLOR_SHUFFLE_SLOT_5})
+      (normal_hopo {elem (HOPOGEM_SET) COLOR_SHUFFLE_SLOT_5})
       (star star_gem.wid)
       (star_hopo star_hopo.wid)
       (unison_hopo star_hopo.wid)
@@ -61,15 +61,15 @@
       (mash gem_mash4.wid)))
 #define DRUM_SET
 ((0
-      (normal $drmgem1)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT1})
       (star star_kick.wid)
       (unison star_kick.wid)
       (miss kick_miss.wid)
       (caps kick_caps.wid)
       (dim drum_kick_dim.wid))
    (1
-      (normal $drmgem2)
-      (tom $drmgem2)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT2})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT2})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -77,8 +77,8 @@
       (caps drum_caps.wid)
       (dim drum_red_dim.wid))
    (2
-      (normal $drmgem3)
-      (tom $drmgem3)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT3})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT3})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -86,8 +86,8 @@
       (caps drum_caps.wid)
       (dim drum_yellow_dim.wid))
    (3
-      (normal $drmgem4)
-      (tom $drmgem4)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT4})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT4})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -95,8 +95,8 @@
       (caps drum_caps.wid)
       (dim drum_blue_dim.wid))
    (4
-      (normal $drmgem5)
-      (tom $drmgem5)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT5})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT5})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -107,15 +107,15 @@
       (dim drum_green_dim.wid)))
 #define DRUM_LEFTY
 ((0
-      (normal $drmgem1)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT1})
       (star star_kick.wid)
       (unison star_kick.wid)
       (miss kick_miss.wid)
       (caps kick_caps.wid)
       (dim drum_kick_dim.wid))
    (1
-      (normal $drmgem5)
-      (tom $drmgem5)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT5})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT5})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -123,8 +123,8 @@
       (caps drum_caps.wid)
       (dim drum_green_dim.wid))
    (2
-      (normal $drmgem4)
-      (tom $drmgem4)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT4})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT4})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -132,8 +132,8 @@
       (caps drum_caps.wid)
       (dim drum_blue_dim.wid))
    (3
-      (normal $drmgem3)
-      (tom $drmgem3)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT3})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT3})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -141,8 +141,8 @@
       (caps drum_caps.wid)
       (dim drum_yellow_dim.wid))
    (4
-      (normal $drmgem2)
-      (tom $drmgem2)
+      (normal {elem (DRUMGEM_SET) DRUMGEM_SLOT2})
+      (tom {elem (DRUMGEM_SET) DRUMGEM_SLOT2})
       (star drum_star.wid)
       (unison drum_star.wid)
       (miss drum_miss.wid)
@@ -152,7 +152,7 @@
       (beard dynamic_crash_beard_lefty.wid)
       (dim drum_red_dim.wid)))
 (use_char_tex TRUE)
-(slot_colors $gtrsus1 $gtrsus2 $gtrsus3 $gtrsus4 $gtrsus5)
+(slot_colors SLOT_SUSTAIN_COLORS)
 (gem
    (fps 30)
    (mat_formats
