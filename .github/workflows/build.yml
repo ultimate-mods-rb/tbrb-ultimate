@@ -52,23 +52,17 @@ jobs:
           dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
       - name: Build PKG
         run: |
+          move "dependencies\ta_pkg_repacker_tools\usa\PARAM.SFO" "_build\ps3\USRDIR"
           $sha_short="$(git rev-parse --short HEAD)".ToUpper()
           $content="UP0006-BLUS30282_00-TBRBULTIM"
-          $packageversion="1.00"
+          $packageversion="1.01"
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/usa/package.conf _build/ps3
-          Move-Item "*.pkg" "_build\ps3"
-      - name: Delete USRDIR folder
-        run: |
-          Remove-Item -Path "_build\ps3\USRDIR" -Recurse -Force
-      - name: Move PS3 eboot patch
-        run: |
-          move "_build\ps3 eboot patch" "_build\ps3\ps3 eboot patch"
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: TBRBUL-PS3-USA
-          path: _build/ps3
+          path: '*.pkg'
 
   build_ps3_eur:
     runs-on: windows-2019
@@ -87,23 +81,17 @@ jobs:
           dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
       - name: Build PKG
         run: |
+          move "dependencies\ta_pkg_repacker_tools\eur\PARAM.SFO" "_build\ps3\USRDIR"
           $sha_short="$(git rev-parse --short HEAD)".ToUpper()
           $content="UP0006-BLES00532_00-TBRBULTIM"
-          $packageversion="1.00"
+          $packageversion="1.01"
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/eur/package.conf _build/ps3
-          Move-Item "*.pkg" "_build\ps3"
-      - name: Delete USRDIR folder
-        run: |
-          Remove-Item -Path "_build\ps3\USRDIR" -Recurse -Force
-      - name: Move PS3 eboot patch
-        run: |
-          move "_build\ps3 eboot patch" "_build\ps3\ps3 eboot patch"
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: TBRBUL-PS3-EUR
-          path: _build/ps3
+          path: '*.pkg'
 
   build_wii_patcher:
     runs-on: ubuntu-latest

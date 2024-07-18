@@ -1,6 +1,6 @@
 _build/wii/
 _build/xbox/gen/
-_build/PS3/USRDIR/
+_build/PS3/USRDIR/gen/
 iso
 _tbrb_extracted
 cons
