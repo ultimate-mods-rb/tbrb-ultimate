@@ -132,6 +132,14 @@
    "Note Color Shuffle: ON")
 (os_colorshuffle0
    "Note Color Shuffle: OFF")
+(os_randomvenue1
+   "Random Venue: ON")
+(os_randomvenue0
+   "Random Venue: OFF")
+(os_randomoutfit1
+   "Random Outfits: ON")
+(os_randomoutfit0
+   "Random Outfits: OFF")
 (os_forcecnv1
    "Force Cavern Venue: ON")
 (os_forcecnv0

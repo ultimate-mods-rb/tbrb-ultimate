@@ -214,6 +214,16 @@
             {elem {find $entry colorshuffle} 1}
          }
       }
+      {if {== {elem $entry 0} {basename randomvenue}}
+         {set $randomvenue
+            {elem {find $entry randomvenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomoutfit}}
+         {set $randomoutfit
+            {elem {find $entry randomoutfit} 1}
+         }
+      }
    }
 )
 

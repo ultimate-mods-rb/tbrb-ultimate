@@ -133,6 +133,12 @@
             (colorshuffle
                (colorshuffle $colorshuffle)
             )
+            (randomvenue
+               (randomvenue $randomvenue)
+            )
+            (randomoutfit
+               (randomoutfit $randomoutfit)
+            )
          )
       }
    }

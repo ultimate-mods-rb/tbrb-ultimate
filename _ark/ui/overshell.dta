@@ -205,10 +205,11 @@
    {if_else $songtitle os_songtitle1 os_songtitle0}
    {if_else $postfx os_postfx1 os_postfx0}
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
+   {if_else $randomvenue os_randomvenue1 os_randomvenue0}
+   {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    #endif
-   os_blnk
 ))
 {new
    MultiSelectListPanel
@@ -281,6 +282,29 @@
          (os_colorshuffle0
             {set $colorshuffle {! $colorshuffle}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomvenue1
+            {set $randomvenue {! $randomvenue}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomvenue0
+            {set $randomvenue {! $randomvenue}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomoutfit1
+            {set $randomoutfit {! $randomoutfit}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomoutfit0
+            {set $randomoutfit {! $randomoutfit}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            #ifndef HX_WII
+            {passive_messages_panel queue_message cdlc_warning_message}
+            #endif
             {$this lst_reset}
          )
       }
