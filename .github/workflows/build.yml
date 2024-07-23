@@ -93,7 +93,37 @@ jobs:
           name: TBRBUL-PS3-EUR
           path: '*.pkg'
 
-  build_wii_patcher:
+  build_wii_riivolution:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set env
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          mkdir -p ./dependencies/riivolution-patch/tbrbul/
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
+      - name: Remove Xbox and PS3 files
+        run: |
+          find . -name "*.*_xbox" -type f -delete
+          find . -name "*.*_ps3" -type f -delete
+      - name: Move songs_wii folder to _ark
+        run: |
+          mv _songs/songs_wii _ark/songs
+
+      - name: Build ARK
+        run: |
+          dependencies/linux/arkhelper dir2ark ./_ark ./dependencies/riivolution-patch/tbrbul -n "patch_wii" -e -v 5 -s 4073741823
+      
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: TBRBUL-Wii-Riivolution
+          path: dependencies/riivolution-patch
+
+  build_wii_patcher_usa:
     runs-on: ubuntu-latest
 
     steps:
@@ -131,5 +161,5 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: TBRBUL-Wii-Patcher
+          name: TBRBUL-Wii-Patcher-USA
           path: _build/wii
