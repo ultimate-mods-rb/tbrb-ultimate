@@ -52,23 +52,17 @@ jobs:
           dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
       - name: Build PKG
         run: |
+          move "dependencies\ta_pkg_repacker_tools\usa\PARAM.SFO" "_build\ps3"
           $sha_short="$(git rev-parse --short HEAD)".ToUpper()
           $content="UP0006-BLUS30282_00-TBRBULTIM"
-          $packageversion="1.00"
+          $packageversion="1.01"
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/usa/package.conf _build/ps3
-          Move-Item "*.pkg" "_build\ps3"
-      - name: Delete USRDIR folder
-        run: |
-          Remove-Item -Path "_build\ps3\USRDIR" -Recurse -Force
-      - name: Move PS3 eboot patch
-        run: |
-          move "_build\ps3 eboot patch" "_build\ps3\ps3 eboot patch"
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: TBRBUL-PS3-USA
-          path: _build/ps3
+          path: '*.pkg'
 
   build_ps3_eur:
     runs-on: windows-2019
@@ -87,25 +81,49 @@ jobs:
           dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
       - name: Build PKG
         run: |
+          move "dependencies\ta_pkg_repacker_tools\eur\PARAM.SFO" "_build\ps3"
           $sha_short="$(git rev-parse --short HEAD)".ToUpper()
           $content="UP0006-BLES00532_00-TBRBULTIM"
-          $packageversion="1.00"
+          $packageversion="1.01"
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/eur/package.conf _build/ps3
-          Move-Item "*.pkg" "_build\ps3"
-      - name: Delete USRDIR folder
-        run: |
-          Remove-Item -Path "_build\ps3\USRDIR" -Recurse -Force
-      - name: Move PS3 eboot patch
-        run: |
-          move "_build\ps3 eboot patch" "_build\ps3\ps3 eboot patch"
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: TBRBUL-PS3-EUR
-          path: _build/ps3
+          path: '*.pkg'
 
-  build_wii_patcher:
+  build_wii_riivolution:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set env
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          mkdir -p ./dependencies/riivolution-patch/tbrbul/
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
+      - name: Remove Xbox and PS3 files
+        run: |
+          find . -name "*.*_xbox" -type f -delete
+          find . -name "*.*_ps3" -type f -delete
+      - name: Move songs_wii folder to _ark
+        run: |
+          mv _songs/songs_wii _ark/songs
+
+      - name: Build ARK
+        run: |
+          dependencies/linux/arkhelper dir2ark ./_ark ./dependencies/riivolution-patch/tbrbul -n "patch_wii" -e -v 5 -s 4073741823
+      
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: TBRBUL-Wii-Riivolution
+          path: dependencies/riivolution-patch
+
+  build_wii_patcher_usa:
     runs-on: ubuntu-latest
 
     steps:
@@ -143,5 +161,5 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: TBRBUL-Wii-Patcher
+          name: TBRBUL-Wii-Patcher-USA
           path: _build/wii

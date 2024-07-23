@@ -42,79 +42,54 @@
             {elem {find $entry spotlight_texture} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrgem1}}
+      {if {== {elem $entry 0} {basename gtr_gem1}}
          {set $gtrgem1
-            {elem {find $entry gtrgem1} 1}
+            {elem {find $entry gtr_gem1} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrhgem1}}
-         {set $gtrhgem1
-            {elem {find $entry gtrhgem1} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename gtrgem2}}
+      {if {== {elem $entry 0} {basename gtr_gem2}}
          {set $gtrgem2
-            {elem {find $entry gtrgem2} 1}
+            {elem {find $entry gtr_gem2} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrhgem2}}
-         {set $gtrhgem2
-            {elem {find $entry gtrhgem2} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename gtrgem3}}
+      {if {== {elem $entry 0} {basename gtr_gem3}}
          {set $gtrgem3
-            {elem {find $entry gtrgem3} 1}
+            {elem {find $entry gtr_gem3} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrhgem3}}
-         {set $gtrhgem3
-            {elem {find $entry gtrhgem3} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename gtrgem4}}
+      {if {== {elem $entry 0} {basename gtr_gem4}}
          {set $gtrgem4
-            {elem {find $entry gtrgem4} 1}
+            {elem {find $entry gtr_gem4} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrhgem4}}
-         {set $gtrhgem4
-            {elem {find $entry gtrhgem4} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename gtrgem5}}
+      {if {== {elem $entry 0} {basename gtr_gem5}}
          {set $gtrgem5
-            {elem {find $entry gtrgem5} 1}
+            {elem {find $entry gtr_gem5} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrhgem5}}
-         {set $gtrhgem5
-            {elem {find $entry gtrhgem5} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename drmgem1}}
+      {if {== {elem $entry 0} {basename drm_gem1}}
          {set $drmgem1
-            {elem {find $entry drmgem1} 1}
+            {elem {find $entry drm_gem1} 1}
          }
       }
-      {if {== {elem $entry 0} {basename drmgem2}}
+      {if {== {elem $entry 0} {basename drm_gem2}}
          {set $drmgem2
-            {elem {find $entry drmgem2} 1}
+            {elem {find $entry drm_gem2} 1}
          }
       }
-      {if {== {elem $entry 0} {basename drmgem3}}
+      {if {== {elem $entry 0} {basename drmg_em3}}
          {set $drmgem3
-            {elem {find $entry drmgem3} 1}
+            {elem {find $entry drm_gem3} 1}
          }
       }
-      {if {== {elem $entry 0} {basename drmgem4}}
+      {if {== {elem $entry 0} {basename drm_gem4}}
          {set $drmgem4
-            {elem {find $entry drmgem4} 1}
+            {elem {find $entry drm_gem4} 1}
          }
       }
-      {if {== {elem $entry 0} {basename drmgem5}}
+      {if {== {elem $entry 0} {basename drm_gem5}}
          {set $drmgem5
-            {elem {find $entry drmgem5} 1}
+            {elem {find $entry drm_gem5} 1}
          }
       }
       {if {== {elem $entry 0} {basename gtrsm1}}
@@ -142,29 +117,29 @@
             {elem {find $entry gtrsm5} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrsus1}}
+      {if {== {elem $entry 0} {basename gtr_sus1}}
          {set $gtrsus1
-            {elem {find $entry gtrsus1} 1}
+            {elem {find $entry gtr_sus1} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrsus2}}
+      {if {== {elem $entry 0} {basename gtr_sus2}}
          {set $gtrsus2
-            {elem {find $entry gtrsus2} 1}
+            {elem {find $entry gtr_sus2} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrsus3}}
+      {if {== {elem $entry 0} {basename gtr_sus3}}
          {set $gtrsus3
-            {elem {find $entry gtrsus3} 1}
+            {elem {find $entry gtr_sus3} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrsus4}}
+      {if {== {elem $entry 0} {basename gtr_sus4}}
          {set $gtrsus4
-            {elem {find $entry gtrsus4} 1}
+            {elem {find $entry gtr_sus4} 1}
          }
       }
-      {if {== {elem $entry 0} {basename gtrsus5}}
+      {if {== {elem $entry 0} {basename gtr_sus5}}
          {set $gtrsus5
-            {elem {find $entry gtrsus5} 1}
+            {elem {find $entry gtr_sus5} 1}
          }
       }
       {if {== {elem $entry 0} {basename drms1}}
@@ -234,7 +209,131 @@
             {elem {find $entry paddrum} 1}
          }
       }
+      {if {== {elem $entry 0} {basename colorshuffle}}
+         {set $colorshuffle
+            {elem {find $entry colorshuffle} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomvenue}}
+         {set $randomvenue
+            {elem {find $entry randomvenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomoutfit}}
+         {set $randomoutfit
+            {elem {find $entry randomoutfit} 1}
+         }
+      }
    }
 )
 
 #endif
+#define NORMALGEM_SET
+(gem_green.wid gem_red.wid gem_yellow.wid gem_blue.wid gem_orange.wid star_gem.wid)
+#define HOPOGEM_SET
+(gem_green_hopo.wid gem_red_hopo.wid gem_yellow_hopo.wid gem_blue_hopo.wid gem_orange_hopo.wid star_hopo.wid)
+#define DRUMGEM_SET
+(gem_kick.wid drum_red.wid drum_yellow.wid drum_blue.wid drum_green.wid drum_star.wid)
+#define GTR_SUSTAIN_COLORS
+(green red yellow blue orange star)
+#define COLOR_SHUFFLE_SLOT_1
+(
+   {if_else $colorshuffle
+      {random_int 0 5}
+      $gtrgem1
+   }
+)
+#define COLOR_SHUFFLE_SLOT_2
+(
+   {if_else $colorshuffle
+      {random_int 0 5}
+      $gtrgem2
+   }
+)
+#define COLOR_SHUFFLE_SLOT_3
+(
+   {if_else $colorshuffle
+      {random_int 0 5}
+      $gtrgem3
+   }
+)
+#define COLOR_SHUFFLE_SLOT_4
+(
+   {if_else $colorshuffle
+      {random_int 0 5}
+      $gtrgem4
+   }
+)
+#define COLOR_SHUFFLE_SLOT_5
+(
+   {if_else $colorshuffle
+      {random_int 0 5}
+      $gtrgem5
+   }
+)
+
+#define DRUMGEM_SLOT1
+(
+   $drmgem1
+)
+#define DRUMGEM_SLOT2
+(
+   {if_else $colorshuffle
+      {random_int 1 5}
+      $drmgem2
+   }
+)
+#define DRUMGEM_SLOT3
+(
+   {if_else $colorshuffle
+      {random_int 1 5}
+      $drmgem3
+   }
+)
+#define DRUMGEM_SLOT4
+(
+   {if_else $colorshuffle
+      {random_int 1 5}
+      $drmgem4
+   }
+)
+#define DRUMGEM_SLOT5
+(
+   {if_else $colorshuffle
+      {random_int 1 5}
+      $drmgem5
+   }
+)
+#define SLOT_SUSTAIN_COLORS
+(
+   {elem (GTR_SUSTAIN_COLORS)
+      {if_else $colorshuffle
+         {random_int 0 5}
+         $gtrsus1
+      }
+   }
+   {elem (GTR_SUSTAIN_COLORS)
+      {if_else $colorshuffle
+         {random_int 0 5}
+         $gtrsus2
+      }
+   }
+   {elem (GTR_SUSTAIN_COLORS)
+      {if_else $colorshuffle
+         {random_int 0 5}
+         $gtrsus3
+      }
+   }
+   {elem (GTR_SUSTAIN_COLORS)
+      {if_else $colorshuffle
+         {random_int 0 5}
+         $gtrsus4
+      }
+   }
+   {elem (GTR_SUSTAIN_COLORS)
+      {if_else $colorshuffle
+         {random_int 0 5}
+         $gtrsus5
+      }
+   }
+)

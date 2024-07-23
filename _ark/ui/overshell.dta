@@ -204,11 +204,12 @@
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
    {if_else $postfx os_postfx1 os_postfx0}
+   {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
+   {if_else $randomvenue os_randomvenue1 os_randomvenue0}
+   {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    #endif
-   os_blnk
-   os_blnk
 ))
 {new
    MultiSelectListPanel
@@ -272,6 +273,39 @@
             #else
             {rnd toggle_all_postprocs}
             #endif
+         )
+         (os_colorshuffle1
+            {set $colorshuffle {! $colorshuffle}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_colorshuffle0
+            {set $colorshuffle {! $colorshuffle}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomvenue1
+            {set $randomvenue {! $randomvenue}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomvenue0
+            {set $randomvenue {! $randomvenue}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomoutfit1
+            {set $randomoutfit {! $randomoutfit}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_randomoutfit0
+            {set $randomoutfit {! $randomoutfit}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            #ifndef HX_WII
+            {passive_messages_panel queue_message cdlc_warning_message}
+            #endif
+            {$this lst_reset}
          )
       }
    )
@@ -519,16 +553,11 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_reset_gem
-            {set $gtrgem1 gem_green.wid}
-            {set $gtrhgem1 gem_green_hopo.wid}
-            {set $gtrgem2 gem_red.wid}
-            {set $gtrhgem2 gem_red_hopo.wid}
-            {set $gtrgem3 gem_yellow.wid}
-            {set $gtrhgem3 gem_yellow_hopo.wid}
-            {set $gtrgem4 gem_blue.wid}
-            {set $gtrhgem4 gem_blue_hopo.wid}
-            {set $gtrgem5 gem_orange.wid}
-            {set $gtrhgem5 gem_orange_hopo.wid}
+            {set $gtrgem1 0}
+            {set $gtrgem2 1}
+            {set $gtrgem3 2}
+            {set $gtrgem4 3}
+            {set $gtrgem5 4}
          )
          (os_gtr_gems_1
             {ui push_screen overshell_gtr_gems_1_screen}
@@ -583,11 +612,11 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_reset_gem
-            {set $drmgem1 gem_kick.wid}
-            {set $drmgem2 drum_red.wid}
-            {set $drmgem3 drum_yellow.wid}
-            {set $drmgem4 drum_blue.wid}
-            {set $drmgem5 drum_green.wid}
+            {set $drmgem1 0}
+            {set $drmgem2 1}
+            {set $drmgem3 2}
+            {set $drmgem4 3}
+            {set $drmgem5 4}
          )
          (os_drm_gems_1
             {ui push_screen overshell_drm_gems_1_screen}
@@ -642,11 +671,11 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_reset_sus
-            {set $gtrsus1 green}
-            {set $gtrsus2 red}
-            {set $gtrsus3 yellow}
-            {set $gtrsus4 blue}
-            {set $gtrsus5 orange}
+            {set $gtrsus1 0}
+            {set $gtrsus2 1}
+            {set $gtrsus3 2}
+            {set $gtrsus4 3}
+            {set $gtrsus5 4}
          )
          (os_gtr_sus_1
             {ui push_screen overshell_gtr_sus_1_screen}
@@ -739,33 +768,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrgem1 gem_green.wid}
-            {set $gtrhgem1 gem_green_hopo.wid}
+            {set $gtrgem1 0}
             GCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrgem1 gem_red.wid}
-            {set $gtrhgem1 gem_red_hopo.wid}
+            {set $gtrgem1 1}
             GCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrgem1 gem_yellow.wid}
-            {set $gtrhgem1 gem_yellow_hopo.wid}
+            {set $gtrgem1 2}
             GCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrgem1 gem_blue.wid}
-            {set $gtrhgem1 gem_blue_hopo.wid}
+            {set $gtrgem1 3}
             GCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrgem1 gem_orange.wid}
-            {set $gtrhgem1 gem_orange_hopo.wid}
+            {set $gtrgem1 4}
             GCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrgem1 star_gem.wid}
-            {set $gtrhgem1 star_hopo.wid}
+            {set $gtrgem1 5}
             GCOLORS_LEAVE
          )
       }
@@ -801,33 +824,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrgem2 gem_green.wid}
-            {set $gtrhgem2 gem_green_hopo.wid}
+            {set $gtrgem2 0}
             GCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrgem2 gem_red.wid}
-            {set $gtrhgem2 gem_red_hopo.wid}
+            {set $gtrgem2 1}
             GCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrgem2 gem_yellow.wid}
-            {set $gtrhgem2 gem_yellow_hopo.wid}
+            {set $gtrgem2 2}
             GCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrgem2 gem_blue.wid}
-            {set $gtrhgem2 gem_blue_hopo.wid}
+            {set $gtrgem2 3}
             GCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrgem2 gem_orange.wid}
-            {set $gtrhgem2 gem_orange_hopo.wid}
+            {set $gtrgem2 4}
             GCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrgem2 star_gem.wid}
-            {set $gtrhgem2 star_hopo.wid}
+            {set $gtrgem2 5}
             GCOLORS_LEAVE
          )
       }
@@ -863,33 +880,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrgem3 gem_green.wid}
-            {set $gtrhgem3 gem_green_hopo.wid}
+            {set $gtrgem3 0}
             GCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrgem3 gem_red.wid}
-            {set $gtrhgem3 gem_red_hopo.wid}
+            {set $gtrgem3 1}
             GCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrgem3 gem_yellow.wid}
-            {set $gtrhgem3 gem_yellow_hopo.wid}
+            {set $gtrgem3 2}
             GCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrgem3 gem_blue.wid}
-            {set $gtrhgem3 gem_blue_hopo.wid}
+            {set $gtrgem3 3}
             GCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrgem3 gem_orange.wid}
-            {set $gtrhgem3 gem_orange_hopo.wid}
+            {set $gtrgem3 4}
             GCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrgem3 star_gem.wid}
-            {set $gtrhgem3 star_hopo.wid}
+            {set $gtrgem3 5}
             GCOLORS_LEAVE
          )
       }
@@ -925,33 +936,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrgem4 gem_green.wid}
-            {set $gtrhgem4 gem_green_hopo.wid}
+            {set $gtrgem4 0}
             GCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrgem4 gem_red.wid}
-            {set $gtrhgem4 gem_red_hopo.wid}
+            {set $gtrgem4 1}
             GCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrgem4 gem_yellow.wid}
-            {set $gtrhgem4 gem_yellow_hopo.wid}
+            {set $gtrgem4 2}
             GCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrgem4 gem_blue.wid}
-            {set $gtrhgem4 gem_blue_hopo.wid}
+            {set $gtrgem4 3}
             GCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrgem4 gem_orange.wid}
-            {set $gtrhgem4 gem_orange_hopo.wid}
+            {set $gtrgem4 4}
             GCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrgem4 star_gem.wid}
-            {set $gtrhgem4 star_hopo.wid}
+            {set $gtrgem4 5}
             GCOLORS_LEAVE
          )
       }
@@ -987,33 +992,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrgem5 gem_green.wid}
-            {set $gtrhgem5 gem_green_hopo.wid}
+            {set $gtrgem5 0}
             GCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrgem5 gem_red.wid}
-            {set $gtrhgem5 gem_red_hopo.wid}
+            {set $gtrgem5 1}
             GCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrgem5 gem_yellow.wid}
-            {set $gtrhgem5 gem_yellow_hopo.wid}
+            {set $gtrgem5 2}
             GCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrgem5 gem_blue.wid}
-            {set $gtrhgem5 gem_blue_hopo.wid}
+            {set $gtrgem5 3}
             GCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrgem5 gem_orange.wid}
-            {set $gtrhgem5 gem_orange_hopo.wid}
+            {set $gtrgem5 4}
             GCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrgem5 star_gem.wid}
-            {set $gtrhgem5 star_hopo.wid}
+            {set $gtrgem5 5}
             GCOLORS_LEAVE
          )
       }
@@ -1049,27 +1048,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_red_gem
-            {set $drmgem1 drum_red.wid}
+            {set $drmgem1 1}
             DCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $drmgem1 drum_yellow.wid}
+            {set $drmgem1 2}
             DCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $drmgem1 drum_blue.wid}
+            {set $drmgem1 3}
             DCOLORS_LEAVE
          )
          (os_green_gem
-            {set $drmgem1 drum_green.wid}
+            {set $drmgem1 4}
             DCOLORS_LEAVE
          )
          (os_kick_gem
-            {set $drmgem1 gem_kick.wid}
+            {set $drmgem1 0}
             DCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $drmgem1 drum_star.wid}
+            {set $drmgem1 5}
             DCOLORS_LEAVE
          )
       }
@@ -1105,27 +1104,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_red_gem
-            {set $drmgem2 drum_red.wid}
+            {set $drmgem2 1}
             DCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $drmgem2 drum_yellow.wid}
+            {set $drmgem2 2}
             DCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $drmgem2 drum_blue.wid}
+            {set $drmgem2 3}
             DCOLORS_LEAVE
          )
          (os_green_gem
-            {set $drmgem2 drum_green.wid}
+            {set $drmgem2 4}
             DCOLORS_LEAVE
          )
          (os_kick_gem
-            {set $drmgem2 gem_kick.wid}
+            {set $drmgem2 0}
             DCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $drmgem2 drum_star.wid}
+            {set $drmgem2 5}
             DCOLORS_LEAVE
          )
       }
@@ -1161,27 +1160,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_red_gem
-            {set $drmgem3 drum_red.wid}
+            {set $drmgem3 1}
             DCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $drmgem3 drum_yellow.wid}
+            {set $drmgem3 2}
             DCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $drmgem3 drum_blue.wid}
+            {set $drmgem3 3}
             DCOLORS_LEAVE
          )
          (os_green_gem
-            {set $drmgem3 drum_green.wid}
+            {set $drmgem3 4}
             DCOLORS_LEAVE
          )
          (os_kick_gem
-            {set $drmgem3 gem_kick.wid}
+            {set $drmgem3 0}
             DCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $drmgem3 drum_star.wid}
+            {set $drmgem3 5}
             DCOLORS_LEAVE
          )
       }
@@ -1217,27 +1216,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_red_gem
-            {set $drmgem4 drum_red.wid}
+            {set $drmgem4 1}
             DCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $drmgem4 drum_yellow.wid}
+            {set $drmgem4 2}
             DCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $drmgem4 drum_blue.wid}
+            {set $drmgem4 3}
             DCOLORS_LEAVE
          )
          (os_green_gem
-            {set $drmgem4 drum_green.wid}
+            {set $drmgem4 4}
             DCOLORS_LEAVE
          )
          (os_kick_gem
-            {set $drmgem4 gem_kick.wid}
+            {set $drmgem4 0}
             DCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $drmgem4 drum_star.wid}
+            {set $drmgem4 5}
             DCOLORS_LEAVE
          )
       }
@@ -1273,27 +1272,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_red_gem
-            {set $drmgem5 drum_red.wid}
+            {set $drmgem5 1}
             DCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $drmgem5 drum_yellow.wid}
+            {set $drmgem5 2}
             DCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $drmgem5 drum_blue.wid}
+            {set $drmgem5 3}
             DCOLORS_LEAVE
          )
          (os_green_gem
-            {set $drmgem5 drum_green.wid}
+            {set $drmgem5 4}
             DCOLORS_LEAVE
          )
          (os_kick_gem
-            {set $drmgem5 gem_kick.wid}
+            {set $drmgem5 0}
             DCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $drmgem5 drum_star.wid}
+            {set $drmgem5 5}
             DCOLORS_LEAVE
          )
       }
@@ -1329,27 +1328,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrsus1 green}
+            {set $gtrsus1 0}
             SUSCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrsus1 red}
+            {set $gtrsus1 1}
             SUSCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrsus1 yellow}
+            {set $gtrsus1 2}
             SUSCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrsus1 blue}
+            {set $gtrsus1 3}
             SUSCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrsus1 orange}
+            {set $gtrsus1 4}
             SUSCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrsus1 star}
+            {set $gtrsus1 5}
             SUSCOLORS_LEAVE
          )
       }
@@ -1385,27 +1384,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrsus2 green}
+            {set $gtrsus2 0}
             SUSCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrsus2 red}
+            {set $gtrsus2 1}
             SUSCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrsus2 yellow}
+            {set $gtrsus2 2}
             SUSCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrsus2 blue}
+            {set $gtrsus2 3}
             SUSCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrsus2 orange}
+            {set $gtrsus2 4}
             SUSCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrsus2 star}
+            {set $gtrsus2 5}
             SUSCOLORS_LEAVE
          )
       }
@@ -1441,27 +1440,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrsus3 green}
+            {set $gtrsus3 0}
             SUSCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrsus3 red}
+            {set $gtrsus3 1}
             SUSCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrsus3 yellow}
+            {set $gtrsus3 2}
             SUSCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrsus3 blue}
+            {set $gtrsus3 3}
             SUSCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrsus3 orange}
+            {set $gtrsus3 4}
             SUSCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrsus3 star}
+            {set $gtrsus3 5}
             SUSCOLORS_LEAVE
          )
       }
@@ -1497,27 +1496,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrsus4 green}
+            {set $gtrsus4 0}
             SUSCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrsus4 red}
+            {set $gtrsus4 1}
             SUSCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrsus4 yellow}
+            {set $gtrsus4 2}
             SUSCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrsus4 blue}
+            {set $gtrsus4 3}
             SUSCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrsus4 orange}
+            {set $gtrsus4 4}
             SUSCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrsus4 star}
+            {set $gtrsus4 5}
             SUSCOLORS_LEAVE
          )
       }
@@ -1553,27 +1552,27 @@
    (SELECT_MSG
       {switch {$component selected_sym}
          (os_green_gem
-            {set $gtrsus5 green}
+            {set $gtrsus5 0}
             SUSCOLORS_LEAVE
          )
          (os_red_gem
-            {set $gtrsus5 red}
+            {set $gtrsus5 1}
             SUSCOLORS_LEAVE
          )
          (os_yellow_gem
-            {set $gtrsus5 yellow}
+            {set $gtrsus5 2}
             SUSCOLORS_LEAVE
          )
          (os_blue_gem
-            {set $gtrsus5 blue}
+            {set $gtrsus5 3}
             SUSCOLORS_LEAVE
          )
          (os_orange_gem
-            {set $gtrsus5 orange}
+            {set $gtrsus5 4}
             SUSCOLORS_LEAVE
          )
          (os_overdrive_gem
-            {set $gtrsus5 star}
+            {set $gtrsus5 5}
             SUSCOLORS_LEAVE
          )
       }

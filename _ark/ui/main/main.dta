@@ -46,50 +46,35 @@
             (forcevenue
                (forcevenue $forcevenue)
             )
-            (gtrgem1
-               (gtrgem1 $gtrgem1)
+            (gtr_gem1
+               (gtr_gem1 $gtrgem1)
             )
-            (gtrhgem1
-               (gtrhgem1 $gtrhgem1)
+            (gtr_gem2
+               (gtr_gem2 $gtrgem2)
             )
-            (gtrgem2
-               (gtrgem2 $gtrgem2)
+            (gtr_gem3
+               (gtr_gem3 $gtrgem3)
             )
-            (gtrhgem2
-               (gtrhgem2 $gtrhgem2)
+            (gtr_gem4
+               (gtr_gem4 $gtrgem4)
             )
-            (gtrgem3
-               (gtrgem3 $gtrgem3)
+            (gtr_gem5
+               (gtr_gem5 $gtrgem5)
             )
-            (gtrhgem3
-               (gtrhgem3 $gtrhgem3)
+            (drm_gem1
+               (drm_gem1 $drmgem1)
             )
-            (gtrgem4
-               (gtrgem4 $gtrgem4)
+            (drm_gem2
+               (drm_gem2 $drmgem2)
             )
-            (gtrhgem4
-               (gtrhgem4 $gtrhgem4)
+            (drm_gem3
+               (drm_gem3 $drmgem3)
             )
-            (gtrgem5
-               (gtrgem5 $gtrgem5)
+            (drm_gem4
+               (drm_gem4 $drmgem4)
             )
-            (gtrhgem5
-               (gtrhgem5 $gtrhgem5)
-            )
-            (drmgem1
-               (drmgem1 $drmgem1)
-            )
-            (drmgem2
-               (drmgem2 $drmgem2)
-            )
-            (drmgem3
-               (drmgem3 $drmgem3)
-            )
-            (drmgem4
-               (drmgem4 $drmgem4)
-            )
-            (drmgem5
-               (drmgem5 $drmgem5)
+            (drm_gem5
+               (drm_gem5 $drmgem5)
             )
             (gtrsm1
                (gtrsm1 $gtrsm1)
@@ -106,20 +91,20 @@
             (gtrsm5
                (gtrsm5 $gtrsm5)
             )
-            (gtrsus1
-               (gtrsus1 $gtrsus1)
+            (gtr_sus1
+               (gtr_sus1 $gtrsus1)
             )
-            (gtrsus2
-               (gtrsus2 $gtrsus2)
+            (gtr_sus2
+               (gtr_sus2 $gtrsus2)
             )
-            (gtrsus3
-               (gtrsus3 $gtrsus3)
+            (gtr_sus3
+               (gtr_sus3 $gtrsus3)
             )
-            (gtrsus4
-               (gtrsus4 $gtrsus4)
+            (gtr_sus4
+               (gtr_sus4 $gtrsus4)
             )
-            (gtrsus5
-               (gtrsus5 $gtrsus5)
+            (gtr_sus5
+               (gtr_sus5 $gtrsus5)
             )
             (drms1
                (drms1 $drms1)
@@ -144,6 +129,15 @@
             )
             (paddrum
                (paddrum $paddrum)
+            )
+            (colorshuffle
+               (colorshuffle $colorshuffle)
+            )
+            (randomvenue
+               (randomvenue $randomvenue)
+            )
+            (randomoutfit
+               (randomoutfit $randomoutfit)
             )
          )
       }
