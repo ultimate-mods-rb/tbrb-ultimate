@@ -1708,7 +1708,7 @@
                         0}}}
                $intro_shot})
          (pick_venue
-            {if_else $randomvenue {elem TBRB_VENUES_MODIFIER_DATA {random_int 1 5}}
+            {if_else $randomvenue {elem TBRB_VENUES_MODIFIER_DATA {random_int 1 6}}
                {if_else {== $forcevenue off}
                   {if_else
                      {exists meta_performer}
