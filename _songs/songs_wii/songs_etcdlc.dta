@@ -1794,7 +1794,7 @@
    )
    (venue dreamscape) ; if you don't know venue yet use dreamscape
    
-   (date_released "1973-11-30") ; use 2009-01-01 as default if unknown
+   (date_released "1973-12-05") ; use 2009-01-01 as default if unknown
    (date_recorded "1973-09-17") ; use 2009-01-01 as default if unknown
    (album_name "Band on the Run")
    (album_track_number 2)
