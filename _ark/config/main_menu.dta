@@ -44,9 +44,6 @@
       #endif)
    (ultimenu
       mod_info_button
-      #ifdef HX_WII
-      album_art_info_button
-      #endif
       overshell
       (features unlock_bp go_to_frs)
       (force_instrument force_instrument_info_button force_reset #ifdef HX_WII force_dolpadtar #else force_guitar force_drums #endif))
