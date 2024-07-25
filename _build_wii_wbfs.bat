@@ -19,7 +19,7 @@ move "%~dp0\_songs\songs_wii" "%~dp0\_ark\songs"
 
 copy "%~dp0\_build\wii_rebuild_files\main_wii.hdr" "%~dp0\_build\wii\files\gen"
 del  "%~dp0\_build\wii\files\gen\main_wii_10.ark"
-"%~dp0dependencies/arkhelper" dir2ark "%~dp0\_ark" "%~dp0\_build\wii\files\gen" -n "patch_wii" -e -v 5 -s >nul
+"%~dp0dependencies/arkhelper" dir2ark "%~dp0\_ark" "%~dp0\_build\wii\files\gen" -n "patch_wii" -e -v 5 -s 4073741823 >nul
 
 echo:
 echo:Moving back Xbox and PS3 files

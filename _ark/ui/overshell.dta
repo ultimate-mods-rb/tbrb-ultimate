@@ -292,6 +292,9 @@
          (os_randomvenue0
             {set $randomvenue {! $randomvenue}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
+            #ifndef HX_WII
+            {passive_messages_panel queue_message cdlc_warning_message}
+            #endif
             {$this lst_reset}
          )
          (os_randomoutfit1
@@ -424,6 +427,9 @@
     overshell_venues_panel
     OVERSHELL_LIST_FILE
     (enter
+        #ifndef HX_WII
+        {passive_messages_panel queue_message cdlc_warning_message}
+        #endif
         {sel_section.lst set_data TBRB_VENUES_MODIFIER_DATA}
         {title.lbl set text_token {localize os_venues}})
     (exit)

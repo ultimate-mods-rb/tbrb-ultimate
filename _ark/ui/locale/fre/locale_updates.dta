@@ -60,21 +60,27 @@
    "Mod info")
 #ifdef HX_WII
 (mod_info
-   "The Beatles Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax as this mod is based of TBRB Deluxe\n\nCredit to the people I borrowed customs from\n\nPress - twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
+   "The Beatles Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax as this mod is based of TBRB Deluxe\n\nCredit to the people I borrowed customs from\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
-   "Press left to go 10 seconds backwards\nPress right to go 10 seconds forwards\nPress 1 to cycle freecam\nPress 2 to pause the song\n\nno cheetin i big l is watching\n\nif you find any exploits please\n privately let me know and they will be patched")
+   "Press left to go 10 seconds backwards\nPress right to go 10 seconds forwards\nPress 1 to cycle freecam\nPress 2 to pause the song\n\nno cheetin i big l is watching")
+(overshell_info
+   "You can also press - twice to open the overshell")
 #endif
 #ifdef HX_XBOX
 (mod_info
    "The Beatles Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax as this mod is based of TBRB Deluxe\n\nPress back twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
-   "Press LB to go 10 seconds backwards\nPress RB to go 10 seconds forwards\nPress X to cycle freecam\nPress Y to pause the song\n\nno cheetin i big l is watching\n\nif you find any exploits please\n privately let me know and they will be patched")
+   "Press LB to go 10 seconds backwards\nPress RB to go 10 seconds forwards\nPress X to cycle freecam\nPress Y to pause the song\n\nno cheetin i big l is watching")
+(overshell_info
+   "You can also press back twice to open the overshell")
 #endif
 #ifdef HX_PS3
 (mod_info
    "The Beatles Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax as this mod is based of TBRB Deluxe\n\nPress select twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
-   "Press L1 to go 10 seconds backwards\nPress R1 to go 10 seconds forwards\nPress Square to cycle freecam\nPress Triangle to pause the song\n\nno cheetin i big l is watching\n\nif you find any exploits please\n privately let me know and they will be patched")
+   "Press L1 to go 10 seconds backwards\nPress R1 to go 10 seconds forwards\nPress Square to cycle freecam\nPress Triangle to pause the song\n\nno cheetin i big l is watching")
+(overshell_info
+   "You can also press select twice to open the overshell")
 #endif
 (milosliderlbl
    "Speeds")
@@ -223,7 +229,7 @@
 (hw_red "Red")
 (os_blnk " ")
 (cdlc_warning_message
-   "Some CDLC songs might crash on load when forcing outfits due to how they do custom outfits\nDisable if you have issues")
+   "Some CDLC songs might crash on load when forcing venues/outfits due to how they do custom outfits\nDisable if you have issues")
 (os_gems_colors
    "Gem Colors")
 (os_smashers_colors

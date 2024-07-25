@@ -426,6 +426,7 @@
          (album_art_info_button
             {ui push_screen album_art_info_screen})
          (overshell
+            {passive_messages_panel queue_message overshell_info}
             {set $modifier_exit {ui current_screen}}
             {ui push_screen overshell_main_screen})
          ;(toggle_graphics
