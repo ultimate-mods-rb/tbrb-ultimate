@@ -46,6 +46,12 @@
             (forcevenue
                (forcevenue $forcevenue)
             )
+            (forceminivenue
+               (forceminivenue $forceminivenue)
+            )
+            (forcescene
+               (forcescene $forcescene)
+            )
             (gtr_gem1
                (gtr_gem1 $gtrgem1)
             )

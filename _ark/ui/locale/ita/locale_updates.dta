@@ -197,6 +197,8 @@
 (os_angle "Track Angle")
 (os_venues "Force Venue")
 (os_outfits "Force Outfits")
+(os_minivenues "Force Minivenue")
+(os_scenes "Force Scene")
 (rb1 "Rock Band 1")
 (rb2 "Rock Band 2")
 (rb3 "Rock Band 3")

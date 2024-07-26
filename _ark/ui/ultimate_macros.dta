@@ -187,6 +187,16 @@
             {elem {find $entry forcevenue} 1}
          }
       }
+      {if {== {elem $entry 0} {basename forceminivenue}}
+         {set $forceminivenue
+            {elem {find $entry forceminivenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename forcescene}}
+         {set $forcescene
+            {elem {find $entry forcescene} 1}
+         }
+      }
       #ifdef HX_PS3
       {if {== {elem $entry 0} {basename skipsplash}}
          {set $skipsplash
