@@ -292,6 +292,9 @@
          (os_randomvenue0
             {set $randomvenue {! $randomvenue}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
+            #ifndef HX_WII
+            {passive_messages_panel queue_message cdlc_warning_message}
+            #endif
             {$this lst_reset}
          )
          (os_randomoutfit1
@@ -331,7 +334,7 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_venues os_outfits os_gems_colors os_smashers_colors
+   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_venues os_minivenues os_scenes os_outfits os_gems_colors os_smashers_colors
 ))
 {new
    MultiSelectListPanel
@@ -380,6 +383,12 @@
          (os_venues
             {ui push_screen overshell_venues_screen}
          )
+         (os_minivenues
+            {ui push_screen overshell_minivenues_screen}
+         )
+         (os_scenes
+            {ui push_screen overshell_scenes_screen}
+         )
          (os_outfits
             {ui push_screen overshell_outfits_screen}
          )
@@ -424,6 +433,9 @@
     overshell_venues_panel
     OVERSHELL_LIST_FILE
     (enter
+        #ifndef HX_WII
+        {passive_messages_panel queue_message cdlc_warning_message}
+        #endif
         {sel_section.lst set_data TBRB_VENUES_MODIFIER_DATA}
         {title.lbl set text_token {localize os_venues}})
     (exit)
@@ -451,6 +463,82 @@
    overshell_venues_screen
    (panels overshell_venues_panel)
    (focus overshell_venues_panel)}
+;
+#define TBRB_MINIVENUES_MODIFIER_DATA
+((off abbeyroad01 abbeyroad01field abbeyroad01helter abbeyroad01hillside abbeyroad01ocean abbeyroad01ussr abbeyroad01wallfade abbeyroad01within field goodmorning hillside ocean pepperland performancespace01 performancespace02 performancespace02rev performancespace03 performancespace04 performancespace06 submarine walrus weeps))
+{new
+    MultiSelectListPanel
+    overshell_minivenues_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        #ifndef HX_WII
+        {passive_messages_panel queue_message cdlc_warning_message}
+        #endif
+        {sel_section.lst set_data TBRB_MINIVENUES_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_minivenues}})
+    (exit)
+    (SELECT_MSG
+      {set $forceminivenue {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_minivenues_screen
+   (panels overshell_minivenues_panel)
+   (focus overshell_minivenues_panel)}
+;
+#define TBRB_SCENES_MODIFIER_DATA
+((off birds birdwallpaper cloudy dotpaths01 filmgrain fireworks01 fireworks02 flowersgrow01 herecomesthesun01 indian01 indian02 indian03 kaleido01 kaleido02 lightboke lucykaleido moire01 moire02 moire03 projection projectionbird releanor rhelter rkaleido03 rsomething rsunraypoly russr silhouette starfield stripes01 stripes02 stripes03 stripes04 stripes05 stripes06 vines01 whitebackground within withinkaleido))
+{new
+    MultiSelectListPanel
+    overshell_scenes_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        #ifndef HX_WII
+        {passive_messages_panel queue_message cdlc_warning_message}
+        #endif
+        {sel_section.lst set_data TBRB_SCENES_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_scenes}})
+    (exit)
+    (SELECT_MSG
+      {set $forcescene {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_scenes_screen
+   (panels overshell_scenes_panel)
+   (focus overshell_scenes_panel)}
 ;
 
 ;

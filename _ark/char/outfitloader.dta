@@ -389,6 +389,12 @@
          ($cat $dir)
          {if
             $p9director
+            {if {!= $forcescene off}
+               {$p9director force_scene $forcescene}
+            }
+            {if {!= $forceminivenue off}
+               {$p9director force_minivenue $forceminivenue}
+            }
             {if
                {&&
                   {exists gamemode}

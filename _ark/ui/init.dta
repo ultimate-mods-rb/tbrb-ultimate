@@ -141,6 +141,12 @@
 ;dont force venue by default
 {set $forcevenue "off"}
 
+;dont force minivenue by default
+{set $forceminivenue "off"}
+
+;dont force scene by default
+{set $forcescene "off"}
+
 ;default gem/smasher/sustain colors
 {set $gtrgem1 1}
 {set $gtrgem2 4}
