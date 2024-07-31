@@ -917,7 +917,7 @@
                         (3 {set $default_diff3 easy})
                         (fail kDataUnhandled)
                         kDataUnhandled
-                     } #ifndef HX_WII INIT_DTA_WRITER #endif )
+                     })
                   (medium.btn
                      {[user]
                         set_difficulty
@@ -929,7 +929,7 @@
                         (3 {set $default_diff3 medium})
                         (fail kDataUnhandled)
                         kDataUnhandled
-                     } #ifndef HX_WII INIT_DTA_WRITER #endif )
+                     })
                   (hard.btn
                      {[user]
                         set_difficulty
@@ -941,7 +941,7 @@
                         (3 {set $default_diff3 hard})
                         (fail kDataUnhandled)
                         kDataUnhandled
-                     } #ifndef HX_WII INIT_DTA_WRITER #endif )
+                     })
                   (expert.btn
                      {[user]
                         set_difficulty
@@ -954,7 +954,7 @@
                         (fail kDataUnhandled)
                         kDataUnhandled
                      }
-                     #ifndef HX_WII INIT_DTA_WRITER #endif )}}
+                    )}}
             kDataUnhandled)
          (net_component_focus
             ($user $new_focus_name)
