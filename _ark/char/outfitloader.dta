@@ -400,6 +400,7 @@
                   {exists gamemode}
                   {gamemode in_mode frame_rate}}
                {frame_rate_force_venue}}
+            ;{$p9director force_outfits TBRBUL_FORCE_OUTFITS}
             {$p9director on_outfit_loaded $cat $dir}})
       (on_outfit_load_started
          ($name)
