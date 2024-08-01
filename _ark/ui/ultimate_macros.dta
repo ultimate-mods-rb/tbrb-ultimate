@@ -234,6 +234,31 @@
             {elem {find $entry randomoutfit} 1}
          }
       }
+      {if {== {elem $entry 0} {basename mic_gain}}
+         {set $mic_gain_1
+            {elem {elem {find $entry mic_gain} 1} 0}
+         }
+         {set $mic_gain_2
+            {elem {elem {find $entry mic_gain} 1} 1}
+         }
+         {set $mic_gain_3
+            {elem {elem {find $entry mic_gain} 1} 2}
+         }
+      }
+      {if {== {elem $entry 0} {basename default_difficulties}}
+         {set $default_diff0
+            {elem {elem {find $entry default_difficulties} 1} 0}
+         }
+         {set $default_diff1
+            {elem {elem {find $entry default_difficulties} 1} 1}
+         }
+         {set $default_diff2
+            {elem {elem {find $entry default_difficulties} 1} 2}
+         }
+         {set $default_diff3
+            {elem {elem {find $entry default_difficulties} 1} 3}
+         }
+      }
    }
 )
 
@@ -347,3 +372,8 @@
       }
    }
 )
+#define TBRBUL_ADV_FORCE_OUTFITS
+(((ringo $forceroo $forceroi1 $forceroi2 $forceroi3 $forceroi4 none)   
+   (george $forcegeo $forcegei1 $forcegei2 $forcegei3 $forcegei4 none)
+   (john $forcejno $forcejni1 $forcejni2 $forcejni3 $forcejni4 none)
+   (paul $forceplo $forcepli1 $forcepli2 $forcepli3 $forcepli4 none)))

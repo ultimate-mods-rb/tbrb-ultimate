@@ -173,6 +173,11 @@
 {set $drms3 blue}
 {set $drms4 green}
 
+;default mic gains
+{set $mic_gain_1 4}
+{set $mic_gain_2 4}
+{set $mic_gain_3 4}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
@@ -199,3 +204,9 @@
 {unless {== $spotlight none} {set $spotlightcustomtexture TRUE}}
 
 {unless {== $streak none} {set $streakcustomtexture TRUE}}
+
+{profile_mgr set_mic_gain 0 $mic_gain_1} {profile_mgr update_mic_gain 0}
+
+{profile_mgr set_mic_gain 1 $mic_gain_2} {profile_mgr update_mic_gain 1}
+
+{profile_mgr set_mic_gain 2 $mic_gain_3} {profile_mgr update_mic_gain 2}

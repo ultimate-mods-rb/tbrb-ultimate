@@ -312,3 +312,7 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
+#ifndef HX_WII
+(mic_sensitivity_save_warning
+   " ")
+#endif

@@ -145,6 +145,12 @@
             (randomoutfit
                (randomoutfit $randomoutfit)
             )
+            (mic_gain
+               (mic_gain ({profile_mgr get_mic_gain 0} {profile_mgr get_mic_gain 1} {profile_mgr get_mic_gain 2}))
+            )
+            (default_difficulties
+               (default_difficulties ($default_diff0 $default_diff1 $default_diff2 $default_diff3))
+            )
          )
       }
    }

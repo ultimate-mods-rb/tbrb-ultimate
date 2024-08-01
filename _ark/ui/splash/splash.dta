@@ -264,6 +264,7 @@
    (helpbar
       ((confirm helpbar_continue)))
    (enter
+      {profile_mgr set_overscan TRUE}
       {dialog_panel set_custom calibration_notice go_to_calibration skip_calibration opt1.btn}
       {platform_mgr
          add_sink
