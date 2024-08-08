@@ -259,6 +259,19 @@
    (enter
       {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}} {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
       {$world iterate PostProc $p {$p set emulate_fps $emulatefps}}
+      {$world iterate WorldDir $wd {$wd iterate BandCamShot $bcs 
+         {if $fxdof {$bcs set use_depth_of_field FALSE}}
+         #ifndef HX_WII
+         {if $forcelod0
+            {foreach_int $i 0 {$bcs size (targets)}
+               {$bcs set (targets $i force_lod) kLOD0}}}
+         #endif
+         {if {>= {$emulatefps 31}
+            {foreach_int $i 0 {$bcs size (keyframes)}
+               {$bcs set (keyframes $i shake_noisefreq) {'*' {$bcs get (keyframes $i shake_noisefreq)} 0.25}}
+               {$bcs set (keyframes $i shake_noiseamp) {'*' {$bcs get (keyframes $i shake_noiseamp)} 0.25}}
+               {$bcs set (keyframes $i shake_maxangle x) {'*' {$bcs get (keyframes $i shake_maxangle x)} 0.25}}
+               {$bcs set (keyframes $i shake_maxangle y) {'*' {$bcs get (keyframes $i shake_maxangle y)} 0.25}}}}}}}
       {$this set_showing TRUE}
       {set
          [delayed_mic_check]

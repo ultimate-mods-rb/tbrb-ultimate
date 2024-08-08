@@ -45,6 +45,7 @@
 #include overshell.dta
 #include ultimate_screens.dta
 #include ultimate_macros.dta
+#include ultimate_funcs.dta
 #ifdef HX_WII
 #include naming_screen.dta
 #include matchmaking/invitations_wii.dta
@@ -178,6 +179,9 @@
 {set $mic_gain_2 4}
 {set $mic_gain_3 4}
 
+;default vsync rate ;0 = off, 1 = 60hz, 2 = 30hz, 4 = 15hz
+{set $vsyncrate 1}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
@@ -210,3 +214,7 @@
 {profile_mgr set_mic_gain 1 $mic_gain_2} {profile_mgr update_mic_gain 1}
 
 {profile_mgr set_mic_gain 2 $mic_gain_3} {profile_mgr update_mic_gain 2}
+
+#ifndef HX_WII
+{rnd set_sync $vsyncrate}
+#endif

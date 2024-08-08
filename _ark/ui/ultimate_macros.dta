@@ -259,6 +259,21 @@
             {elem {elem {find $entry default_difficulties} 1} 3}
          }
       }
+      {if {== {elem $entry 0} {basename vsync_rate}}
+         {set $vsyncrate
+            {elem {find $entry vsync_rate} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename disable_dof}}
+         {set $fxdof
+            {elem {find $entry disable_dof} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename high_lod}}
+         {set $forcelod0
+            {elem {find $entry high_lod} 1}
+         }
+      }
    }
 )
 
@@ -377,3 +392,15 @@
    (george $forcegeo $forcegei1 $forcegei2 $forcegei3 $forcegei4 none)
    (john $forcejno $forcejni1 $forcejni2 $forcejni3 $forcejni4 none)
    (paul $forceplo $forcepli1 $forcepli2 $forcepli3 $forcepli4 none)))
+#define RPC_HANDLER
+(
+   {set $current_game_mode {gamemode in_mode}}
+   {write_file #ifdef HX_XBOX "GAME:/ulti_rpc.dta" #endif #ifdef HX_PS3 #ifdef REGION_EUROPE "GD:/dev_hdd0/game/BLES00532/USRDIR/ulti_rpc.dta" #else "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_rpc.dta" #endif #endif
+         {array
+            (
+               (song {song_mgr song_name {meta_performer song}})
+               (mode $current_game_mode)
+            )
+         }
+   }
+)

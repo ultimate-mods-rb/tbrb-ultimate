@@ -151,6 +151,16 @@
             (default_difficulties
                (default_difficulties ($default_diff0 $default_diff1 $default_diff2 $default_diff3))
             )
+            (vsync_rate
+               (vsync_rate $vsyncrate)
+            )
+            (disable_dof
+               (disable_dof $fxdof)
+            )
+            (high_lod
+               (high_lod $forcelod0)
+            )
+
          )
       }
    }

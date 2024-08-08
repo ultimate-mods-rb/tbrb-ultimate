@@ -6,7 +6,7 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_mod os_vis os_spd os_trk " ")}
+      {sel_section.lst set_data (os_mod os_vis os_gfx os_spd os_trk " ")}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
@@ -20,6 +20,9 @@
          )
          (os_vis
             {ui push_screen overshell_visual_screen}
+         )
+         (os_gfx
+            {ui push_screen overshell_graphics_screen}
          )
          (os_trk
             {ui push_screen overshell_trk_screen}
@@ -53,8 +56,8 @@
    {if_else $syncdifspeeds os_syncdifspeeds1 os_syncdifspeeds0}
    #ifndef HX_XBOX
    {if_else $legacybass os_legacybass1 os_legacybass0}
-   #endif
    {if_else $whammypb os_whammypb1 os_whammypb0}
+   #endif
    #ifndef HX_WII
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
@@ -203,13 +206,10 @@
 ((
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
-   {if_else $postfx os_postfx1 os_postfx0}
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
-   #ifdef HX_WII
-   {if_else $disablegfx os_disablegfx1 os_disablegfx0}
-   #endif
+   os_blnk
 ))
 {new
    MultiSelectListPanel
@@ -247,32 +247,6 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          {rnd toggle_all_postprocs}
-         )
-         (os_disablegfx0
-            {set $disablegfx {! $disablegfx}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         {rnd toggle_all_postprocs}
-         )
-         (os_postfx1
-            {set $postfx {! $postfx}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-            #ifdef HX_WII
-            {pp_override}
-            #else
-            {rnd toggle_all_postprocs}
-            #endif
-         )
-         (os_postfx0
-            {set $postfx {! $postfx}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-            #ifdef HX_WII
-            {pp_override}
-            #else
-            {rnd toggle_all_postprocs}
-            #endif
          )
          (os_colorshuffle1
             {set $colorshuffle {! $colorshuffle}}
@@ -331,6 +305,225 @@
    overshell_visual_screen
    (panels overshell_visual_panel)
    (focus overshell_visual_panel)}
+;
+;
+#define GFX_MODIFIER_DATA
+((
+   #ifndef HX_WII
+   os_venuefps
+   os_vsync
+   {if_else $forcelod0 os_forcelod01 os_forcelod00}
+   #endif
+   {if_else $fxdof os_fxdof1 os_fxdof0}
+   {if_else $postfx os_postfx1 os_postfx0}
+   #ifdef HX_WII
+   {if_else $disablegfx os_disablegfx1 os_disablegfx0}
+   os_blnk
+   #endif
+   os_blnk
+))
+{new
+   MultiSelectListPanel
+   overshell_graphics_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gfx}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_disablegfx1
+            {set $disablegfx {! $disablegfx}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         {rnd toggle_all_postprocs}
+         )
+         (os_disablegfx0
+            {set $disablegfx {! $disablegfx}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         {rnd toggle_all_postprocs}
+         )
+         (os_postfx1
+            {set $postfx {! $postfx}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+            #ifdef HX_WII
+            {pp_override}
+            #else
+            {rnd toggle_all_postprocs}
+            #endif
+         )
+         (os_postfx0
+            {set $postfx {! $postfx}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+            #ifdef HX_WII
+            {pp_override}
+            #else
+            {rnd toggle_all_postprocs}
+            #endif
+         )
+         (os_fxdof1
+            {set $fxdof {! $fxdof}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_fxdof0
+            {set $fxdof {! $fxdof}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcelod01
+            {set $forcelod0 {! $forcelod0}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_forcelod00
+            {set $forcelod0 {! $forcelod0}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_venuefps
+            {ui push_screen overshell_venuefps_screen}
+         )
+         (os_vsync
+            {ui push_screen overshell_vsync_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data GFX_MODIFIER_DATA}
+   {if $gfxmodifierpos
+      {sel_section.lst set_selected $gfxmodifierpos}
+   })
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_graphics_screen}
+         {ui pop_screen}
+         {set $gfxmodifierpos 0}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_graphics_screen
+   (panels overshell_graphics_panel)
+   (focus overshell_graphics_panel)}
+;
+#define GFX_LEAVE
+(
+   {ui goto_screen overshell_graphics_screen}
+   {ui pop_screen}
+)
+{new
+   MultiSelectListPanel
+   overshell_vsync_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_vsync}}
+      {sel_section.lst set_selected {switch $vsyncrate (0 0) (1 1) (2 2) (4 3)}}
+      {$this pause_if_local})
+   (exit
+      {rnd set_sync $vsyncrate}
+      {$this lst_reset})
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (infinite
+            {set $vsyncrate 0}
+            GFX_LEAVE
+         )
+         (full
+            {set $vsyncrate 1}
+            GFX_LEAVE
+         )
+         (half
+            {set $vsyncrate 2}
+            GFX_LEAVE
+         )
+         (quarter
+            {set $vsyncrate 4}
+            GFX_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (infinite full half quarter os_blnk os_blnk)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         GFX_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_vsync_screen
+   (panels overshell_vsync_panel)
+   (focus overshell_vsync_panel)}
+{new
+   MultiSelectListPanel
+   overshell_venuefps_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_venuefps}}
+      {sel_section.lst set_selected {switch $emulatefps (60 0) (30 1) (24 2) (15 3) (12 4) (6 5) (1 6)}}
+      {$this pause_if_local})
+   (exit
+      {rnd set_sync $vsyncrate}
+      {$this lst_reset})
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (60fps
+            {set $emulatefps 60}
+            GFX_LEAVE
+         )
+         (30fps
+            {set $emulatefps 30}
+            GFX_LEAVE
+         )
+         (24fps
+            {set $emulatefps 24}
+            GFX_LEAVE
+         )
+         (15fps
+            {set $emulatefps 15}
+            GFX_LEAVE
+         )
+         (12fps
+            {set $emulatefps 12}
+            GFX_LEAVE
+         )
+         (6fps
+            {set $emulatefps 6}
+            GFX_LEAVE
+         )
+         (1fps
+            {set $emulatefps 1}
+            GFX_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (60fps 30fps 24fps 15fps 12fps 6fps 1fps)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         GFX_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_venuefps_screen
+   (panels overshell_venuefps_panel)
+   (focus overshell_venuefps_panel)}
+;
+
 ;
 #define TRK_MODIFIER_DATA
 ((
@@ -2438,20 +2631,20 @@
       {sfx.sld set_num_steps 60} ;number of steps for venue fps slider
 	  {background.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
       {crowd.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
-      #ifdef HX_WII
+      ;#ifdef HX_WII
       {$this disable sfx.sld}
       {sfx.sld set_showing FALSE}
-      #else
-      {sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
-      #endif
+      ;#else
+      ;{sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+      ;#endif
 	  {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
 	  {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
-      #ifdef HX_WII
+      ;#ifdef HX_WII
       {$this disable sfx.btn}
       {sfx.btn set_showing FALSE}
-      #else
-	  {sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
-      #endif
+      ;#else
+	  ;{sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+      ;#endif
       {audio_options.lbl set text_token milosliderlbl}
       {karaoke.btn set_showing FALSE}
       {$this disable karaoke.btn}

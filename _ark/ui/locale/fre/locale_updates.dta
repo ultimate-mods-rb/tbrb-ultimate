@@ -94,6 +94,7 @@
 (os_spd "Speed Modifiers")
 (os_mod "Gameplay Modifiers")
 (os_vis "Visual Modifiers")
+(os_gfx "Graphics Settings")
 (os_blackbg1 "Disable Venues: ON")
 (os_songtitle1 "Song Title Always: ON")
 (os_blackbg0 "Disable Venues: OFF")
@@ -146,6 +147,18 @@
    "Random Outfits: ON")
 (os_randomoutfit0
    "Random Outfits: OFF")
+(os_forcelod01
+   "Force High Level of Detail: ON")
+(os_forcelod00
+   "Force High Level of Detail: OFF")
+(os_fxdof1
+   "Disable Depth of Field: ON")
+(os_fxdof0
+   "Disable Depth of Field: OFF")
+(os_venuefps
+   "Venue FPS")
+(os_vsync
+   "Vsync Rate")
 (os_forcecnv1
    "Force Cavern Venue: ON")
 (os_forcecnv0
@@ -312,3 +325,7 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
+#ifndef HX_WII
+(mic_sensitivity_save_warning
+   " ")
+#endif
