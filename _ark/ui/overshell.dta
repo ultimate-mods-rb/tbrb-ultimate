@@ -6,7 +6,7 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_mod os_vis os_gfx os_spd os_trk " ")}
+      {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_blnk)}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
