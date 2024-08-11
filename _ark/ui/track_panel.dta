@@ -236,25 +236,29 @@
       {{$this loaded_dir}
          reset})
    (on_extend
-
-      ;{if $wiisux
-         #ifdef HX_WII
+      #ifdef HX_WII
+      {unless $wiisux
+         {set $wiisux TRUE}
          {{$this find proj9_player_meter_bg.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_bg.png"}}
          {{$this find proj9_player_meter_lens.tex} set_bitmap {sprint "ui/track/textures/proj9_player_meter_lens.png"}}
          {{$this find streak_meter_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_bg_wii.png"}}
-         ;{{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_wii.png"}}
+         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_bk.png"}}
          {{$this find streak_meter_vox_bg.tex} set_bitmap {sprint "ui/track/textures/streak_meter_vox_bg.png"}}
-         #endif
-      ;}
+      }
+      #endif
 
-      {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
+      {if {gamemode in_mode autoplay_mode}
+         {set $wasjustlooking TRUE}
          {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded_ap.png"}}
          {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate.png"}}
       }
 
-      {unless {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}}
-         {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded.png"}}
-         {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_bk.png"}}
+      {unless {gamemode in_mode autoplay_mode}
+         {if $wasjustlooking
+            {set $wasjustlooking FALSE}
+            {{$this find star_awarded.tex} set_bitmap {sprint "ui/track/textures/star_awarded.png"}}
+            {{$this find streak_meter_plate.tex} set_bitmap {sprint "ui/track/textures/streak_meter_plate_bk.png"}}
+         }
       }
 
       {if $highwaycustomtexture
@@ -270,7 +274,10 @@
          {{$this find spotlight_guitar_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
          {{$this find spotlight_drums_track.tex} set_bitmap {sprint "ui/track/spotlight/" $spotlight ".png"}}
       }
-
+      ;after all of the queued texture updates are completed, set them to false so they do not run again until a new texture is queued via overshell
+      {set $highwaycustomtexture FALSE}
+      {set $streakcustomtexture FALSE}
+      {set $spotlightcustomtexture FALSE}
       {$this play_intro}
       {if
          {&&
