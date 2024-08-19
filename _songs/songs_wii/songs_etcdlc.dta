@@ -3285,3 +3285,57 @@
    (downloaded TRUE)
    (new_ar_console TRUE)
 )
+(bluebird
+   (name "Bluebird")
+   (song_id 6690017)
+   (context 0)
+   (song
+     (name        songs/bluebird/bluebird)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Geoff Emerick approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 57626 87626)
+   (rank
+      (drum 2)
+      (guitar 175)
+      (bass 245)
+      (vocals 295)
+      (band 240)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1973-12-05") ; use 2009-01-01 as default if unknown
+   (date_recorded "1973-09-14") ; use 2009-01-01 as default if unknown
+   (album_name "Band On The Run")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
