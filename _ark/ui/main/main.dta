@@ -472,6 +472,8 @@
              {ui goto_screen frame_rate_screen})
          (unlock_bp
              {ui push_screen bonus_photo_unlock_screen})
+         (force_username
+            {ui push_screen force_username_info_screen})
          ;(enable_autoplay
          ;   {ui push_screen autoplay_info_screen}
          ;    {set autosave FALSE} ;dw about this silly line it dont do nothin

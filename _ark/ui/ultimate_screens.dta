@@ -61,3 +61,102 @@
       {dialog_panel set_ok album_art_info})
    (SELECT_MSG
       {ui pop_screen})}
+#ifdef HX_WII
+{new
+   BandScreen
+   force_username_info_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (keyboard_active FALSE)
+   (polls 0)
+   (username
+      "")
+   (naming_done FALSE)
+   (destination '')
+   (strict FALSE)
+   (enter
+      {dialog_panel set_custom force_username_info force_nickname_local do_clear_username opt1.btn}
+      {helpbar
+         set_config
+         ((cancel helpbar_cancel)
+            (confirm helpbar_select))}
+      {set
+         [polls]
+         0}
+      {set
+         [keyboard_active]
+         FALSE})
+   (exit
+      {if
+         {server is_connected}
+         {rock_central force_logout}})
+   (poll
+      {'++'
+         [polls]}
+      {if
+         {&&
+            [naming_done]
+            {>
+               [polls]
+               4}}
+         {set
+            [naming_done]
+            FALSE}
+         {ui pop_screen}})
+   (BUTTON_DOWN_MSG
+      {if_else
+         {== $action kAction_Cancel}
+         {ui pop_screen}
+         kDataUnhandled})
+   (SELECT_MSG
+      {if_else
+         {&&
+            {==
+               [keyboard_active]
+               FALSE}
+            {>
+               [polls]
+               4}}
+         {switch
+            $component
+            (opt1.btn
+               {set
+                  [keyboard_active]
+                  TRUE}
+               {synth keyboard_pause_voices TRUE}
+               {virtual_keyboard
+                  show_keyboard
+                  $user
+                  kRockCentralNameLength
+                  ""
+                  ""
+                  ""
+                  $this
+                  kVkNormalEntry})
+            (opt2.btn
+               {profile_mgr clear_username}
+               {ui pop_screen})
+            kDataUnhandled}
+         {do
+            {if_else
+               {== $action kAction_WiiHomeMenu}
+               kDataUnhandled
+               TRUE}}})
+   (VIRTUAL_KEYBOARD_RESULT_MSG
+      {if
+         $this
+         {set $forceusername TRUE}
+         {profile_mgr
+            set_username
+            $text}
+         {set
+            [naming_done]
+            TRUE}}
+      {synth keyboard_pause_voices FALSE}
+      {set
+         [keyboard_active]
+         FALSE}
+      {set
+         [polls]
+         0})}
+#endif
