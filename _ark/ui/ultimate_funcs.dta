@@ -1,1 +1,23 @@
-;empty, for now :)
+{func
+   game_exit_handler
+   {if_else
+      {== {meta_performer get_venue} dreamscape}
+      {if_else
+         {'||'
+            {!= $forcescene off}
+            {!= $forceminivenue off}
+            $ngskillissue
+            
+         }
+         {script_task
+            kTaskSeconds
+            (delay 2)
+            (script
+               {$this game_outro}
+            )
+         } 
+         kDataUnhandled
+      }
+      kDataUnhandled
+   }
+}
