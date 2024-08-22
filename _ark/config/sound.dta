@@ -9,8 +9,8 @@
 (karaoke_db_offset -6)
 (realistic_mode_venues shea sullivan)
 (realistic_mode_db_offset -7)
-(slider -5.5 -5 -4.5 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0)
-(slider_smallrange -5.5 -5 -4.5 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0)
+(slider -96 -5 -4.5 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0)
+(slider_smallrange -96 -5 -4.5 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0)
 (slider_voicechat -96 -14 -12 -10 -8 -6 -4 -2 0 2 4 6)
 (ratio_sliders
    #ifdef HX_XBOX
