@@ -274,6 +274,11 @@
             {elem {find $entry high_lod} 1}
          }
       }
+      {if {== {elem $entry 0} {basename disable_net_warnings}}
+         {set $skipnetwarning
+            {elem {find $entry disable_net_warnings} 1}
+         }
+      }
    }
 )
 

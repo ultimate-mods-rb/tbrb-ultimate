@@ -209,7 +209,11 @@
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
+   #ifdef HX_PS3
+   {if_else $skipnetwarning os_skipnetwarning1 os_skipnetwarning0}
+   #else
    os_blnk
+   #endif
 ))
 {new
    MultiSelectListPanel
@@ -282,6 +286,16 @@
             #ifndef HX_WII
             {passive_messages_panel queue_message cdlc_warning_message}
             #endif
+            {$this lst_reset}
+         )
+         (os_skipnetwarning1
+            {set $skipnetwarning {! $skipnetwarning}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipnetwarning0
+            {set $skipnetwarning {! $skipnetwarning}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
       }

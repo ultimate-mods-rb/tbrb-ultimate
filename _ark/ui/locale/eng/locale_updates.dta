@@ -155,6 +155,10 @@
    "Disable Depth of Field: ON")
 (os_fxdof0
    "Disable Depth of Field: OFF")
+(os_skipnetwarning1
+   "Disable Network Warnings: ON")
+(os_skipnetwarning0
+   "Disable Network Warnings: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync

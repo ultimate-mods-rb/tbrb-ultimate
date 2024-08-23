@@ -160,6 +160,9 @@
             (high_lod
                (high_lod $forcelod0)
             )
+            (disable_net_warnings
+               (disable_net_warnings $skipnetwarning)
+            )
 
          )
       }

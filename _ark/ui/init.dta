@@ -182,6 +182,9 @@
 ;default vsync rate ;0 = off, 1 = 60hz, 2 = 30hz, 4 = 15hz
 {set $vsyncrate 1}
 
+;disable network warnings by default (ps3 only)
+{set $skipnetwarning TRUE}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
