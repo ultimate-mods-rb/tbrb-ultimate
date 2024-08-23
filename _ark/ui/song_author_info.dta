@@ -1,0 +1,757 @@
+#define SONG_AUTHOR_INFO
+((
+;disk songs
+(aharddaysnight
+   (author
+      "Harmonix"
+   )
+)
+(andyourbirdcansing
+   (author
+      "Harmonix"
+   )
+)
+(backintheussr
+   (author
+      "Harmonix"
+   )
+)
+(birthday
+   (author
+      "Harmonix"
+   )
+)
+(boys
+   (author
+      "Harmonix"
+   )
+)
+(cantbuymelove
+   (author
+      "Harmonix"
+   )
+)
+(cometogether
+   (author
+      "Harmonix"
+   )
+)
+(daytripper
+   (author
+      "Harmonix"
+   )
+)
+(dearprudence
+   (author
+      "Harmonix"
+   )
+)
+(digapony
+   (author
+      "Harmonix"
+   )
+)
+(doyouwanttoknowasecret
+   (author
+      "Harmonix"
+   )
+)
+(dontletmedown
+   (author
+      "Harmonix"
+   )
+)
+(drivemycar
+   (author
+      "Harmonix"
+   )
+)
+(eightdaysaweek
+   (author
+      "Harmonix"
+   )
+)
+(getback
+   (author
+      "Harmonix"
+   )
+)
+(gettingbetter
+   (author
+      "Harmonix"
+   )
+)
+(goodmorning
+   (author
+      "Harmonix"
+   )
+)
+(hellogoodbye
+   (author
+      "Harmonix"
+   )
+)
+(helterskelter
+   (author
+      "Harmonix"
+   )
+)
+(herecomesthesun
+   (author
+      "Harmonix"
+   )
+)
+(heybulldog
+   (author
+      "Harmonix"
+   )
+)
+(iamthewalrus
+   (author
+      "Harmonix"
+   )
+)
+(ifeelfine
+   (author
+      "Harmonix"
+   )
+)
+(imemine
+   (author
+      "Harmonix"
+   )
+)
+(isawherstandingthere
+   (author
+      "Harmonix"
+   )
+)
+(iwannabeyourman2
+   (author
+      "Harmonix"
+   )
+)
+(iwanttoholdyourhand
+   (author
+      "Harmonix"
+   )
+)
+(iwantyou
+   (author
+      "Harmonix"
+   )
+)
+(ifineededsomeone
+   (author
+      "Harmonix"
+   )
+)
+(imlookingthroughyou
+   (author
+      "Harmonix"
+   )
+)
+(ivegotafeeling
+   (author
+      "Harmonix"
+   )
+)
+(lucyinthesky
+   (author
+      "Harmonix"
+   )
+)
+(octopusgarden
+   (author
+      "Harmonix"
+   )
+)
+(paperbackwriter
+   (author
+      "Harmonix"
+   )
+)
+(revolution
+   (author
+      "Harmonix"
+   )
+)
+(sgtpepperlittlehelp
+   (author
+      "Harmonix"
+   )
+)
+(something
+   (author
+      "Harmonix"
+   )
+)
+(taxman
+   (author
+      "Harmonix"
+   )
+)
+(theend
+   (author
+      "Harmonix"
+   )
+)
+(tickettoride
+   (author
+      "Harmonix"
+   )
+)
+(tomorrowwithin
+   (author
+      "Harmonix"
+   )
+)
+(twistandshout
+   (author
+      "Harmonix"
+   )
+)
+(whilemyguitargentlyweeps
+   (author
+      "Harmonix"
+   )
+)
+(yellowsubmarine
+   (author
+      "Harmonix"
+   )
+)
+(frameratetest
+   (author
+      "Harmonix"
+   )
+)
+;hmx dlc songs
+(sgtpepperreprise
+   (author
+      "Harmonix"
+   )
+)
+(beingformrkite
+   (author
+      "Harmonix"
+   )
+)
+(whenim64
+   (author
+      "Harmonix"
+   )
+)
+(lovelyrita
+   (author
+      "Harmonix"
+   )
+)
+(hermajesty
+   (author
+      "Harmonix"
+   )
+)
+(goldencarrytheend
+   (author
+      "Harmonix"
+   )
+)
+(sunkingmeanmr
+   (author
+      "Harmonix"
+   )
+)
+(allyouneedislove
+   (author
+      "Harmonix"
+   )
+)
+(ohdarling
+   (author
+      "Harmonix"
+   )
+)
+(runforyourlife
+   (author
+      "Harmonix"
+   )
+)
+(thinkforyourself
+   (author
+      "Harmonix"
+   )
+)
+(inmylife
+   (author
+      "Harmonix"
+   )
+)
+(girl
+   (author
+      "Harmonix"
+   )
+)
+(adayinthelife
+   (author
+      "Harmonix"
+   )
+)
+(fixingahole
+   (author
+      "Harmonix"
+   )
+)
+(shesleavinghome
+   (author
+      "Harmonix"
+   )
+)
+(maxwells
+   (author
+      "Harmonix"
+   )
+)
+(younevergive
+   (author
+      "Harmonix"
+   )
+)
+(polythenebathroom
+   (author
+      "Harmonix"
+   )
+)
+(because
+   (author
+      "Harmonix"
+   )
+)
+(theword
+   (author
+      "Harmonix"
+   )
+)
+(wait
+   (author
+      "Harmonix"
+   )
+)
+(whatgoeson
+   (author
+      "Harmonix"
+   )
+)
+(norwegianwood
+   (author
+      "Harmonix"
+   )
+)
+(michelle
+   (author
+      "Harmonix"
+   )
+)
+(youwontseeme
+   (author
+      "Harmonix"
+   )
+)
+(nowhereman
+   (author
+      "Harmonix"
+   )
+)
+(withinyouwithoutyou
+   (author
+      "Harmonix"
+   )
+)
+;tbrb cdlc team songs
+(acrosstheuniverse
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(actnaturally
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(dontpassmeby
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(allmyloving
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(andiloveher
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(annagotohim
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(babyrichman
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(blackbird
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(bluejayway
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(christmastime
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(circles
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(doctorrobert
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(eleanorrigby
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(flying
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(fornoone
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(foryoublue
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(frommetoyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(glassonion
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(gniknus
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(gooddaysunshine
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(gottogetyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(help
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(herethereeverywhere
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(holdmetight
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(icallyourname
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(ififell
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(illcryinstead
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(imhappyjusttodance
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(imonlysleeping
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(ishouldhaveknown
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(itsonlylove
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(itwontbelong
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(iwanttotellyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(iwill
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(julia
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(kommgibmir
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(ladymadonna
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(littlechild
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(longtallsally
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(lovemedo
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(loveyouto
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(maggiemae
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(magicalmysterytour
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(matchbox
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(misery
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(moneythatswhat
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(mothernatureson
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(obladioblada
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(pennylane
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(pleasemrpostman
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(pleasepleaseme
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(psiloveyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(rain
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(rockandrolldream
+   (author
+      "Harmonix, TBRB CDLC Team"
+   )
+)
+(rockandrollmusic
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(rolloverbeethoven
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(shelovesyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(shesaidshesaid
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(sieliebtdich
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(slowdown
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(strawberryfields
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(tellmewhy
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(thankyougirl
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(thefoolonthehill
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(theinnerlight
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(thenightbefore
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(thisboy
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(tilltherewasyou
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(tomorrownever
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(whilemyguitarlove
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(wildhoneypie
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(workingclass
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(workingclassclean
+   (author
+      "TBRB CDLC Team"
+   )
+)
+
+(yesterday
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(youreallygotahold
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(yourmothershould
+   (author
+      "TBRB CDLC Team"
+   )
+)
+(wecanworkitout
+   (author
+      "TBRB CDLC Team"
+   )
+)
+))

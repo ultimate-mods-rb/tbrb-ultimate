@@ -73,6 +73,9 @@
 ;song title always on
 {set $songtitle FALSE}
 
+;show author text by default
+{set $showauthor TRUE}
+
 ;disables the background graphics. only works on wii and does nothing if set to true by default
 {set $disablegfx FALSE}
 

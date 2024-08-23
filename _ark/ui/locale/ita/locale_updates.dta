@@ -159,6 +159,10 @@
    "Disable Network Warnings: ON")
 (os_skipnetwarning0
    "Disable Network Warnings: OFF")
+(os_showauthor1
+   "Show Song Author: ON")
+(os_showauthor0
+   "Show Song Author: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync

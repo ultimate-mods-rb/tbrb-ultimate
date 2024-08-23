@@ -279,6 +279,11 @@
             {elem {find $entry disable_net_warnings} 1}
          }
       }
+      {if {== {elem $entry 0} {basename show_song_author}}
+         {set $showauthor
+            {elem {find $entry show_song_author} 1}
+         }
+      }
    }
 )
 
@@ -463,5 +468,52 @@
       {== {ui current_screen} lose_confirm_quit_screen}
       {== {ui current_screen} complete_screen}
       {== {ui current_screen} complete_accomplishments_screen}
+   }
+)
+#include song_author_info.dta
+#define SETUP_MTV_OVERLAY
+(
+   {if
+      {exists song.lbl}
+      {do
+         ($song
+            {meta_performer song})
+         ($song_text
+            {song_mgr song_name $song})
+         {if_else
+            $showauthor
+            {do
+               {set $authorvar FALSE} ;find a better way of doing this at some point
+               {set $author_text FALSE}
+               {set $songvar {meta_performer song}}
+               {foreach $entry SONG_AUTHOR_INFO
+                  {if {== {elem $entry 0} {basename $songvar}}
+                     {set $authorvar
+                        {elem {find $entry author} 1}
+                     }
+                  }
+               }
+               {if
+                  $authorvar
+                  {set $author_text {sprint " | Author: " $authorvar}}
+               }
+            }
+            {set $author_text FALSE}
+         }
+         {song.lbl set fixed_length 1000}
+         {if_else
+             {!= $speedmod 1}
+             {if_else
+                 $author_text
+                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)" $author_text}}
+                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
+             }
+             {if_else
+                 $author_text
+                 {song.lbl set_token_fmt {sprint $song_text $author_text}}
+                 {song.lbl set_token_fmt {sprint $song_text}}
+             }
+          }
+      }
    }
 )

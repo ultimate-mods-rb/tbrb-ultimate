@@ -163,7 +163,9 @@
             (disable_net_warnings
                (disable_net_warnings $skipnetwarning)
             )
-
+            (show_song_author
+               (show_song_author $showauthor)
+            )
          )
       }
    }
