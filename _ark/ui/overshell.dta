@@ -8,7 +8,8 @@
    (enter
       {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_blnk)}
       {title.lbl set text_token os_dxsettings}
-      {$this pause_if_local})
+      {$this pause_if_local}
+      {set $overshell_up TRUE})
    (exit)
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -40,6 +41,7 @@
          INIT_DTA_WRITER
          #endif
          {ui pop_screen}
+         {set $overshell_up FALSE}
          {set $modifierpos 0}
       }
       kDataUnhandled
