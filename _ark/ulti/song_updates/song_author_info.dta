@@ -1,5 +1,3 @@
-#define SONG_AUTHOR_INFO
-((
 ;disk songs
 (aharddaysnight
    (author
@@ -754,4 +752,3 @@
       "TBRB CDLC Team"
    )
 )
-))

@@ -470,7 +470,12 @@
       {== {ui current_screen} complete_accomplishments_screen}
    }
 )
-#include song_author_info.dta
+#define SONG_AUTHOR_INFO
+(
+   (
+      #include ../ulti/song_updates/song_author_info.dta
+   )
+)
 #define SETUP_MTV_OVERLAY
 (
    {if
@@ -493,10 +498,40 @@
                      }
                   }
                }
+               #ifdef HX_WII
                {if
                   $authorvar
                   {set $author_text {sprint " | Author: " $authorvar}}
                }
+               #else ;dont put me anywhere near a kitchen it'll catch flames with how bad this is done
+               {if_else
+                  $authorvar
+                  {set $author_text {sprint " | Author: " $authorvar}}
+                  {do
+                     {set $song_dta_path {sprint {song_mgr song_path {symbol $songvar}} "/../../songs.dta"}}
+                     {unless
+                        {file_exists $song_dta_path}
+                        {set $song_dta_path FALSE}
+                     }
+                     {if
+                        $song_dta_path
+                        {foreach $entry {read_file $song_dta_path}
+                           {if {== {elem $entry 0} {basename $songvar}}
+                              {if {find $entry author}
+                                 {set $authorvar
+                                    {elem {find $entry author} 1}
+                                 }
+                              }
+                           }
+                        }
+                        {if
+                           $authorvar
+                           {set $author_text {sprint " | Author: " $authorvar}}
+                        }
+                     }
+                  }
+               }
+               #endif
             }
             {set $author_text FALSE}
          }
