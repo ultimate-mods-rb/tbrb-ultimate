@@ -391,9 +391,15 @@
             $p9director
             {if {!= $forcescene off}
                {$p9director force_scene $forcescene}
+               #ifndef HX_WII
+               {set $ngskillissue TRUE} ;wii is smart it knows how to forget
+               #endif
             }
             {if {!= $forceminivenue off}
                {$p9director force_minivenue $forceminivenue}
+               #ifndef HX_WII
+               {set $ngskillissue TRUE}
+               #endif
             }
             {if
                {&&

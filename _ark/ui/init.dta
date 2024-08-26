@@ -73,6 +73,9 @@
 ;song title always on
 {set $songtitle FALSE}
 
+;show author text by default
+{set $showauthor TRUE}
+
 ;disables the background graphics. only works on wii and does nothing if set to true by default
 {set $disablegfx FALSE}
 
@@ -182,12 +185,15 @@
 ;default vsync rate ;0 = off, 1 = 60hz, 2 = 30hz, 4 = 15hz
 {set $vsyncrate 1}
 
+;disable network warnings by default (ps3 only)
+{set $skipnetwarning TRUE}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
 
 #ifndef HX_WII
-{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif} INIT_DTA_READER}
+{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 #ifdef REGION_EUROPE "GD:/dev_hdd0/game/BLES00532/USRDIR/ulti_settings.dta" #else "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings.dta" #endif #endif} INIT_DTA_READER}
 #endif
 ;modifier funcs
 {if $postfx

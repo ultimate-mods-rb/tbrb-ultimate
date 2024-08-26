@@ -47,14 +47,4 @@
                   {fade.anim set_frame 50}
                   {fade.anim animate}}}})
          (setup_text
-            {if
-               {exists song.lbl}
-               {do
-               ($song
-                  {meta_performer song})
-               ($song_text
-                  {song_mgr song_name $song})
-               {song.lbl set fixed_length 1000}
-               {if_else {!= $speedmod 1}
-               {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
-               {song.lbl set_token_fmt {sprint $song_text}}}}}))))
+            SETUP_MTV_OVERLAY))))

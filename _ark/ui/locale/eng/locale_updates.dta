@@ -155,6 +155,14 @@
    "Disable Depth of Field: ON")
 (os_fxdof0
    "Disable Depth of Field: OFF")
+(os_skipnetwarning1
+   "Disable Network Warnings: ON")
+(os_skipnetwarning0
+   "Disable Network Warnings: OFF")
+(os_showauthor1
+   "Show Song Author: ON")
+(os_showauthor0
+   "Show Song Author: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync
@@ -325,7 +333,19 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
-#ifndef HX_WII
+#ifdef HX_WII
+(force_username
+   "Set Nickname")
+(force_username_info
+   "Forces a nickname without being connected to the game servers\nWill be reset when connecting to the game servers\n(if they're properly configured that is)")
+(force_nickname_local
+   "Set Nickname")
+(do_clear_username
+   "Clear Nickname")
+(username_info
+   "Please choose a Nickname to be used on the game servers. This Nickname will be associated with your leaderboards and friends.\n\nIf you do not wish to play online you may disable online play. To re-enable online play go to \qPlayer Settings\q in the \qOptions\q menu.\n\nWithout servers you can also set a nickname in\nUltimenu > Extra Mods > Set Nickname")
+#else
 (mic_sensitivity_save_warning
    " ")
 #endif
+

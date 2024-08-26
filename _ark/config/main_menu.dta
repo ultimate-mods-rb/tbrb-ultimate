@@ -45,7 +45,7 @@
    (ultimenu
       mod_info_button
       overshell
-      (features unlock_bp go_to_frs)
+      (features #ifdef HX_WII force_username #endif unlock_bp go_to_frs)
       (force_instrument force_instrument_info_button force_reset #ifdef HX_WII force_dolpadtar #else force_guitar force_drums #endif))
    #ifdef HX_WII
    ((online_options popup)

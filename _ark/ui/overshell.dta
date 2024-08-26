@@ -8,7 +8,8 @@
    (enter
       {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_blnk)}
       {title.lbl set text_token os_dxsettings}
-      {$this pause_if_local})
+      {$this pause_if_local}
+      {set $overshell_up TRUE})
    (exit)
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -40,6 +41,7 @@
          INIT_DTA_WRITER
          #endif
          {ui pop_screen}
+         {set $overshell_up FALSE}
          {set $modifierpos 0}
       }
       kDataUnhandled
@@ -204,12 +206,16 @@
 ;
 #define VIS_MODIFIER_DATA
 ((
-   {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $songtitle os_songtitle1 os_songtitle0}
+   {if_else $showauthor os_showauthor1 os_showauthor0}
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
+   #ifdef HX_PS3
+   {if_else $skipnetwarning os_skipnetwarning1 os_skipnetwarning0}
+   #else
    os_blnk
+   #endif
 ))
 {new
    MultiSelectListPanel
@@ -232,21 +238,15 @@
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
-         (os_blackbg1
-            {set $blackbg {! $blackbg}}
+         (os_showauthor1
+            {set $showauthor {! $showauthor}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
-         (os_blackbg0
-            {set $blackbg {! $blackbg}}
+         (os_showauthor0
+            {set $showauthor {! $showauthor}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
-         )
-         (os_disablegfx1
-            {set $disablegfx {! $disablegfx}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         {rnd toggle_all_postprocs}
          )
          (os_colorshuffle1
             {set $colorshuffle {! $colorshuffle}}
@@ -284,6 +284,16 @@
             #endif
             {$this lst_reset}
          )
+         (os_skipnetwarning1
+            {set $skipnetwarning {! $skipnetwarning}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_skipnetwarning0
+            {set $skipnetwarning {! $skipnetwarning}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
       }
    )
    (lst_reset
@@ -316,11 +326,11 @@
    #endif
    {if_else $fxdof os_fxdof1 os_fxdof0}
    {if_else $postfx os_postfx1 os_postfx0}
+   {if_else $blackbg os_blackbg1 os_blackbg0}
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    os_blnk
    #endif
-   os_blnk
 ))
 {new
    MultiSelectListPanel
@@ -390,6 +400,16 @@
          )
          (os_vsync
             {ui push_screen overshell_vsync_screen}
+         )
+         (os_blackbg1
+            {set $blackbg {! $blackbg}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_blackbg0
+            {set $blackbg {! $blackbg}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
          )
       }
    )

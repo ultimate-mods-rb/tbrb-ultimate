@@ -274,6 +274,16 @@
             {elem {find $entry high_lod} 1}
          }
       }
+      {if {== {elem $entry 0} {basename disable_net_warnings}}
+         {set $skipnetwarning
+            {elem {find $entry disable_net_warnings} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename show_song_author}}
+         {set $showauthor
+            {elem {find $entry show_song_author} 1}
+         }
+      }
    }
 )
 
@@ -402,5 +412,108 @@
                (mode $current_game_mode)
             )
          }
+   }
+)
+#define OVERSHELL_DISALLOWED_SCREENS ;find a better way of doing this
+(
+   {'||'
+      $overshell_up
+      {== {ui current_screen} game_screen}
+      {== {ui current_screen} song_select_screen}
+      {== {ui current_screen} hth_game_screen}
+      {== {ui current_screen} overshell_main_screen}
+      {== {ui current_screen} options_milo_screen}
+      {== {ui current_screen} qp_seldiff_screen}
+      {== {ui current_screen} story_chapter_seldiff_screen}
+      {== {ui current_screen} story_chapterchallenge_seldiff_screen}
+      {== {ui current_screen} h2h_seldiff_screen}
+      {== {ui current_screen} overshell_visual_screen}
+      {== {ui current_screen} practice_game_screen}
+      {== {ui current_screen} matchmaking_screen}
+      {== {ui current_screen} load_nextsong_screen}
+      {== {ui current_screen} nextstats_screen}
+      {== {ui current_screen} guitar_tutorial_screen}
+      {== {ui current_screen} sync_audio_net_screen}
+      {== {ui current_screen} main_popup_swapper}
+      {== {ui current_screen} practice_loading_screen}
+      {== {ui current_screen} meta_loading_pause_new_section_screen}
+      {== {ui current_screen} tutorial_level_menu_screen}
+      {== {ui current_screen} restart_sync_audio_net_screen}
+      {== {ui current_screen} meta_loading_main_screen}
+      {== {ui current_screen} meta_loading_pause_new_song_screen}
+      {== {ui current_screen} confirm_quit_screen}
+      {== {ui current_screen} save_screen}
+      {== {ui current_screen} story_chapter_songselect_screen}
+      {== {ui current_screen} story_chapter_screen}
+      {== {ui current_screen} story_progress_confirm_progress_delete_screen}
+      {== {ui current_screen} story_accomplishments_screen}
+      {== {ui current_screen} story_prizes_screen}
+      {== {ui current_screen} story_memorabilia_screen}
+      {== {ui current_screen} story_chaptermovie_screen}
+      {== {ui current_screen} story_chaptermovie_screen}
+      {== {ui current_screen} story_progress_sel_screen}
+      {== {ui current_screen} story_hub_screen}
+      {== {ui current_screen} real_loading_screen}
+      {== {ui current_screen} practice_sel_section_screen}
+      {== {ui current_screen} network_start_screen}
+      {== {ui current_screen} meta_loading_uisink_lost_connection_screen} 
+      {== {ui current_screen} story_retry_screen}
+      {== {ui current_screen} practice_vocal_end_screen}
+      {== {ui current_screen} lose_screen}
+      {== {ui current_screen} endgame_waiting_screen} 
+      {== {ui current_screen} coop_endgame_screen}
+      {== {ui current_screen} tow_endgame_screen}
+      {== {ui current_screen} score_duel_endgame_screen}
+      {== {ui current_screen} nextsong_screen}
+      {== {ui current_screen} lose_confirm_quit_screen}
+      {== {ui current_screen} complete_screen}
+      {== {ui current_screen} complete_accomplishments_screen}
+   }
+)
+#include song_author_info.dta
+#define SETUP_MTV_OVERLAY
+(
+   {if
+      {exists song.lbl}
+      {do
+         ($song
+            {meta_performer song})
+         ($song_text
+            {song_mgr song_name $song})
+         {if_else
+            $showauthor
+            {do
+               {set $authorvar FALSE} ;find a better way of doing this at some point
+               {set $author_text FALSE}
+               {set $songvar {meta_performer song}}
+               {foreach $entry SONG_AUTHOR_INFO
+                  {if {== {elem $entry 0} {basename $songvar}}
+                     {set $authorvar
+                        {elem {find $entry author} 1}
+                     }
+                  }
+               }
+               {if
+                  $authorvar
+                  {set $author_text {sprint " | Author: " $authorvar}}
+               }
+            }
+            {set $author_text FALSE}
+         }
+         {song.lbl set fixed_length 1000}
+         {if_else
+             {!= $speedmod 1}
+             {if_else
+                 $author_text
+                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)" $author_text}}
+                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
+             }
+             {if_else
+                 $author_text
+                 {song.lbl set_token_fmt {sprint $song_text $author_text}}
+                 {song.lbl set_token_fmt {sprint $song_text}}
+             }
+          }
+      }
    }
 )

@@ -54,6 +54,7 @@
          TRUE}
       {meta_performer disband_if_bad_configuration}
       #ifndef HX_XBOX
+      {set $outro_ran FALSE}
 	  {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
@@ -81,6 +82,7 @@
       kDataUnhandled)
    (intro_skip
       #ifndef HX_XBOX
+      {set $outro_ran FALSE}
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
@@ -94,6 +96,7 @@
       kDataUnhandled)
    (music_start
       #ifndef HX_XBOX
+      {set $outro_ran FALSE}
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
@@ -121,6 +124,7 @@
       kDataUnhandled)
    (game_over
       #ifndef HX_XBOX
+      {set $outro_ran FALSE}
       {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
       {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
 	  {set $drum_groove_active FALSE}
@@ -150,19 +154,19 @@
          {synth play track_end.cue}})
    (game_won
       {$this game_won_common}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_won_band0
       {$this game_won_common}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_won_band1
       {$this game_won_common}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_won_tie
       {$this game_won_common}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_won_finale
       {$this game_won_common}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_lost
       {beatmatch set_realtime TRUE}
       {beatmatch
@@ -180,23 +184,27 @@
          (script
             {do
                {beatmatch set_paused TRUE}})}
-      kDataUnhandled)
+      {game_exit_handler})
    (game_outro
-      {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-      {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-	  {set $drum_groove_active FALSE}
-	  {set $guitar_groove_active FALSE}
-      {beatmatch
-         foreach_active_player
-         $p
-         {$p disable_controller}}
-      {ui
-         sync_screen
-         {if_else
-            {$this lost}
-            {gamemode get lose_screen}
-            {gamemode get win_screen}}
-         1}
+      {unless ; i dunno how i feel about this it's kinda hacky so maybe look into a less hacky way to prevent it running twice
+         $outro_ran
+         {set $outro_ran TRUE}
+         {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
+         {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
+   	  {set $drum_groove_active FALSE}
+   	  {set $guitar_groove_active FALSE}
+         {beatmatch
+            foreach_active_player
+            $p
+            {$p disable_controller}}
+         {ui
+            sync_screen
+            {if_else
+               {$this lost}
+               {gamemode get lose_screen}
+               {gamemode get win_screen}}
+            1}
+      }
       kDataUnhandled)
    (disable_all_controllers
       {beatmatch
