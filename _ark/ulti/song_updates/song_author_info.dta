@@ -918,6 +918,11 @@
       "TBRB Solo Career Project"
    )
 )
+(everynight
+   (author
+      "yaniv297, TBRB Solo Career Project"
+   )
+)
 (givemelove
    (author
       "TBRB Solo Career Project"
@@ -930,7 +935,12 @@
 )
 (jet2
    (author
-      "TBRB Solo Career Project"
+      "Neversoft, TBRB Solo Career Project"
+   )
+)
+(liveandletdie
+   (author
+      "bsbloom, wingsoveramerica, TBRB Solo Career Project"
    )
 )
 (photograph
@@ -954,6 +964,16 @@
       "farottone, Beatles101"
    )
 )
+(buddyholly
+   (author
+      "Harmonix, JimboEatsKFC"
+   )
+)
+(crippledinside
+   (author
+      "Harmonix, JimboEatsKFC"
+   )
+)
 (devilinherheart
    (author
       "farottone, Beatles101"
@@ -969,6 +989,11 @@
       "farottone, BarbaSNM, Drago, Juan Salvo"
    )
 )
+(imagine
+   (author
+      "Harmonix, JimboEatsKFC"
+   )
+)
 (likedreamersdo
    (author
       "BarbaSNM, Drago, Juan Salvo"
@@ -977,5 +1002,10 @@
 (ladymadonnalove
    (author
       "BarbaSNM, Drago, Juan Salvo"
+   )
+)
+(one
+   (author
+      "Neversoft, JimboEatsKFC"
    )
 )

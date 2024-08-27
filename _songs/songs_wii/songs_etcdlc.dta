@@ -1809,12 +1809,12 @@
    (singer john)
    (songtype electric)
    (downloaded TRUE)
-) (jet
+) (jet2
    (name "Jet")
    (song_id 1970005)
    (context 0)
    (song
-     (name songs/jet/jet)
+     (name songs/jet2/jet2)
      (tracks
         ((drum (0 1 2 3 4 5))
          (bass (6 7))
