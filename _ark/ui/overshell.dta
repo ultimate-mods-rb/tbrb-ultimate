@@ -60,9 +60,9 @@
    {if_else $legacybass os_legacybass1 os_legacybass0}
    {if_else $whammypb os_whammypb1 os_whammypb0}
    #endif
-   #ifndef HX_WII
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
+   #ifndef HX_WII
    {if_else $skipintro os_skipintro1 os_skipintro0}
    #endif
    #ifdef HX_PS3
@@ -115,6 +115,10 @@
          (os_padtar1
             {set $padtar {! $padtar}}
             {set $paddrum FALSE}
+            #ifdef HX_WII
+            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerVocals}
+            {disable_wiimote_mapping}
+            #endif
             #ifdef HX_PS3
             {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
             {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
@@ -127,6 +131,10 @@
          (os_padtar0
             {set $padtar {! $padtar}}
             {set $paddrum FALSE}
+            #ifdef HX_WII
+            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerGuitar}
+            {enable_wiimote_mapping}
+            #endif
             #ifdef HX_PS3
             {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
             {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
@@ -139,6 +147,10 @@
          (os_paddrum1
             {set $paddrum {! $paddrum}}
             {set $padtar FALSE}
+            #ifdef HX_WII
+            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerVocals}
+            {disable_wiimote_mapping}
+            #endif
             #ifdef HX_PS3
             {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
             {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
@@ -151,6 +163,10 @@
          (os_paddrum0
             {set $paddrum {! $paddrum}}
             {set $padtar FALSE}
+            #ifdef HX_WII
+            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerDrum}
+            {enable_wiimote_mapping}
+            #endif
             #ifdef HX_PS3
             {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
             {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
