@@ -27,7 +27,7 @@
    enable_wiimote_mapping
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 kPad_Circle}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 2 0}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 kPad_DUp}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 kPad_DRight}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 4 1}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 kPad_X}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 6 2}
@@ -35,7 +35,7 @@
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 8 3}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 kPad_Tri}
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 10 4}
-   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_DDown}
+   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_DLeft}
 }
 {func
    disable_wiimote_mapping
