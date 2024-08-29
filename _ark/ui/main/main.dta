@@ -166,6 +166,9 @@
             (show_song_author
                (show_song_author $showauthor)
             )
+            (second_kick_mapping
+               (second_kick_mapping $secondkick)
+            )
          )
       }
    }

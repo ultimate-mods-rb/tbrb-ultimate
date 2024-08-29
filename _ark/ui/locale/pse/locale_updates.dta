@@ -163,6 +163,10 @@
    "Show Song Author: ON")
 (os_showauthor0
    "Show Song Author: OFF")
+(os_secondkick1
+   "Second Kick Mapping: ON")
+(os_secondkick0
+   "Second Kick Mapping: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync

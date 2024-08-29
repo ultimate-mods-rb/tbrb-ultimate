@@ -284,6 +284,11 @@
             {elem {find $entry show_song_author} 1}
          }
       }
+      {if {== {elem $entry 0} {basename second_kick_mapping}}
+         {set $secondkick
+            {elem {find $entry second_kick_mapping} 1}
+         }
+      }
    }
 )
 
