@@ -278,6 +278,9 @@
       {set $highwaycustomtexture FALSE}
       {set $streakcustomtexture FALSE}
       {set $spotlightcustomtexture FALSE}
+
+      {set $outro_ran FALSE}
+
       {$this play_intro}
       {if
          {&&
