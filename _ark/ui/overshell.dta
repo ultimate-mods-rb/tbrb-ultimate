@@ -352,12 +352,16 @@
    os_vsync
    {if_else $forcelod0 os_forcelod01 os_forcelod00}
    #endif
-   {if_else $fxdof os_fxdof1 os_fxdof0}
-   {if_else $postfx os_postfx1 os_postfx0}
-   {if_else $blackbg os_blackbg1 os_blackbg0}
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
-   os_blnk
+   #endif
+   {if_else $blackbg os_blackbg1 os_blackbg0}
+   {if_else $postfx os_postfx1 os_postfx0}
+   {if_else $fxdof os_fxdof1 os_fxdof0}
+   {if_else $scrnoise os_scrnoise1 os_scrnoise0}
+   {if_else $scrbloom os_scrbloom1 os_scrbloom0}
+   #ifndef HX_WII
+   {if_else $mbblend os_mbblend1 os_mbblend0}
    #endif
 ))
 {new
@@ -402,6 +406,36 @@
             #else
             {rnd toggle_all_postprocs}
             #endif
+         )
+         (os_scrbloom1
+            {set $scrbloom {! $scrbloom}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_scrbloom0
+            {set $scrbloom {! $scrbloom}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_scrnoise1
+            {set $scrnoise {! $scrnoise}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_scrnoise0
+            {set $scrnoise {! $scrnoise}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_mbblend1
+            {set $mbblend {! $mbblend}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_mbblend0
+            {set $mbblend {! $mbblend}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
          )
          (os_fxdof1
             {set $fxdof {! $fxdof}}

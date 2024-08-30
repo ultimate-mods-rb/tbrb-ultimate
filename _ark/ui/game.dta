@@ -266,10 +266,20 @@
    PAUSE_ON_MIC_DISCONNECT
    (enter
       {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}} {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
-      {$world iterate PostProc $p {$p set emulate_fps $emulatefps}}
+      {$world iterate PostProc $p 
+         {$p set emulate_fps $emulatefps}
+         {$p set noise_intensity {if_else $scrnoise 0 #ifdef HX_WII 0.25 #else 0.5 #endif}} ;this val is (likely) wrong as i had to guess it as i couldnt find it anywhere
+         #ifndef HX_WII ;wii doesn't have motion blur (citation needed)
+         {unless $mbblend
+            {$p set motion_blur_blend 0}
+            {$p set motion_blur_weight 0}
+         }
+         #endif
+         {$p set bloom_intensity {if_else $scrbloom 0 0.5}} ;estimated from wii
+      }
       {$world iterate WorldDir $wd {$wd iterate BandCamShot $bcs 
          {if $fxdof {$bcs set use_depth_of_field FALSE}}
-         #ifndef HX_WII
+         #ifndef HX_WII ;this crashes wii
          {if $forcelod0
             {foreach_int $i 0 {$bcs size (targets)}
                {$bcs set (targets $i force_lod) kLOD0}}}

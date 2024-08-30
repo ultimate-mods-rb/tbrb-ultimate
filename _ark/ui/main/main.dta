@@ -169,6 +169,15 @@
             (second_kick_mapping
                (second_kick_mapping $secondkick)
             )
+            (disable_film_grain
+               (disable_film_grain $scrnoise)
+            )
+            (disable_bloom
+               (disable_bloom $scrbloom)
+            )
+            (disable_motion_blur
+               (disable_motion_blur $mbblend)
+            )
          )
       }
    }

@@ -289,6 +289,21 @@
             {elem {find $entry second_kick_mapping} 1}
          }
       }
+      {if {== {elem $entry 0} {basename disable_film_grain}}
+         {set $scrnoise
+            {elem {find $entry disable_film_grain} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename disable_bloom}}
+         {set $scrbloom
+            {elem {find $entry disable_bloom} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename disable_motion_blur}}
+         {set $mbblend
+            {elem {find $entry disable_motion_blur} 1}
+         }
+      }
    }
 )
 
