@@ -278,14 +278,23 @@
       {set $highwaycustomtexture FALSE}
       {set $streakcustomtexture FALSE}
       {set $spotlightcustomtexture FALSE}
+
+      {set $outro_ran FALSE}
+
       {$this play_intro}
       {if
          {&&
             {exists gamemode}
             {gamemode get play_track_intro_sfx}}
          {synth play track_beg.cue}}
-		 {unless {> {gamecfg get practice_speed} 0} {beatmatch set_music_speed $speedmod}}
-		 {if {> {gamecfg get practice_speed} 0} {beatmatch set_music_speed $modifier}}))
+      {if_else
+         {== {gamemode in_mode} practice}
+         {do
+            {unless {> {gamecfg get practice_speed} 0} {beatmatch set_music_speed $speedmod}}
+            {if {> {gamecfg get practice_speed} 0} {beatmatch set_music_speed $modifier}}
+         }
+         {beatmatch set_music_speed $speedmod}
+      }))
 {new
    TrackPanel
    coop_track_panel

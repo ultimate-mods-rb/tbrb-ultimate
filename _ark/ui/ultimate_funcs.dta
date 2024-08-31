@@ -21,3 +21,50 @@
       kDataUnhandled
    }
 }
+
+#ifdef HX_WII
+{func
+   enable_wiimote_mapping
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 kPad_Circle}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 kPad_DRight}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 kPad_X}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 7 kPad_Square}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 kPad_Tri}
+   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_DLeft}
+}
+{func
+   disable_wiimote_mapping
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 6}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 5}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 4}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 7 7}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 2}
+   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_Select}
+}
+#endif
+{func
+   enable_second_kick_mapping
+   #ifdef HX_XBOX
+   {insert_elems {find $syscfg beatmatcher controller hx_drums_xbox slots} 1 (kPad_R1 0)}
+   {insert_elems {find $syscfg beatmatcher controller hx_drums_xbox_rb2 slots} 1 (kPad_R1 0)}
+   #endif
+   #ifdef HX_PS3
+   {insert_elems {find $syscfg beatmatcher controller hx_drums_ps3 slots} 1 (kPad_R1 0)}
+   #endif
+   #ifdef HX_WII
+   {insert_elems {find $syscfg beatmatcher controller wii_drums slots} 1 (kPad_R1 0)}
+   #endif
+}
+{func
+   disable_second_kick_mapping
+   #ifdef HX_XBOX
+   {set_elem {find $syscfg beatmatcher controller hx_drums_xbox slots} 1 69}
+   {set_elem {find $syscfg beatmatcher controller hx_drums_xbox_rb2 slots} 1 69}
+   #endif
+   #ifdef HX_PS3
+   {set_elem {find $syscfg beatmatcher controller hx_drums_ps3 slots} 1 69}
+   #endif
+   #ifdef HX_WII
+   {set_elem {find $syscfg beatmatcher controller wii_drums slots} 1 69}
+   #endif
+}

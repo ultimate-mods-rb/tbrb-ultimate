@@ -100,9 +100,9 @@
 (os_blackbg0 "Disable Venues: OFF")
 (os_songtitle0 "Song Title Always: OFF")
 (os_postfx1
-   "Disable Post FX: ON")
+   "Disable All Post FX: ON")
 (os_postfx0
-   "Disable Post FX: OFF")
+   "Disable All Post FX: OFF")
 (os_disablegfx1
    "Stop Background Graphics: ON")
 (os_disablegfx0
@@ -163,6 +163,22 @@
    "Show Song Author: ON")
 (os_showauthor0
    "Show Song Author: OFF")
+(os_secondkick1
+   "Second Kick Mapping: ON")
+(os_secondkick0
+   "Second Kick Mapping: OFF")
+(os_scrnoise1
+   "Disable Film Grain: ON")
+(os_scrnoise0
+   "Disable Film Grain: OFF")
+(os_scrbloom1
+   "Disable Bloom: ON")
+(os_scrbloom0
+   "Disable Bloom: OFF")
+(os_mbblend1
+   "Disable Motion Blur: ON")
+(os_mbblend0
+   "Disable Motion Blur: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync
