@@ -178,6 +178,9 @@
             (disable_motion_blur
                (disable_motion_blur $mbblend)
             )
+            (disable_miss_sounds
+               (disable_miss_sounds $nomisounds)
+            )
          )
       }
    }

@@ -8,15 +8,18 @@
       ($user $slot)
       {do
          ($seq
-            {switch
-               {$user get_track_type}
-               (kTrackDrum
-                  {if_else
-                     {== $slot 0}
-                     miss_kick.cue
-                     miss_drum})
-               (kTrackBass miss_bass)
-               miss_gtr.cue})
+            {if_else
+               $nomisounds
+               none
+               {switch
+                  {$user get_track_type}
+                  (kTrackDrum
+                     {if_else
+                        {== $slot 0}
+                        miss_kick.cue
+                        miss_drum})
+                  (kTrackBass miss_bass)
+                  miss_gtr.cue}})
          {play_game_seq_player $seq $seq $user}}
       kDataUnhandled)
    (annoying_pass
@@ -24,7 +27,7 @@
       {do
          ($seq
             {if_else
-               {gamemode in_mode theatre}
+               $nomisounds
                none
                {switch
                   {$user get_track_type}

@@ -62,6 +62,9 @@
      #endif
 	 {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
+      #ifdef HX_WII
+      {exec_song_scripting}
+      #endif
       {script_task
          kTaskSeconds
          (delay
@@ -90,6 +93,9 @@
      #endif
      {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
+      #ifdef HX_WII
+      {exec_song_scripting}
+      #endif
       {{gamemode get game_screen}
          set_showing
          TRUE}

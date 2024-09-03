@@ -1,0 +1,11 @@
+{if {== {meta_performer song} shesawoman}
+   {if {$world find shea}
+      {$world set_force_postproc film_shea.pp 5}
+   }
+   {if {$world find budokan}
+      {do
+         {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+         {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+      }
+   }
+}

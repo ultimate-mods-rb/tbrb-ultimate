@@ -304,6 +304,11 @@
             {elem {find $entry disable_motion_blur} 1}
          }
       }
+      {if {== {elem $entry 0} {basename disable_miss_sounds}}
+         {set $nomisounds
+            {elem {find $entry disable_miss_sounds} 1}
+         }
+      }
    }
 )
 

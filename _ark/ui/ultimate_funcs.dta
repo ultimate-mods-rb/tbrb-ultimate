@@ -23,6 +23,10 @@
 }
 
 #ifdef HX_WII
+{func ;this is a little hacky i'd say find a better way of doing this but i tried like 100 and this was the most reliable lol
+   exec_song_scripting
+   #include ../ulti/song_updates/song_scripting.dta
+}
 {func
    enable_wiimote_mapping
    {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 kPad_Circle}
