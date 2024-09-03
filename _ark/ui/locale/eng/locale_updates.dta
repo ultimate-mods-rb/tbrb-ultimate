@@ -179,6 +179,10 @@
    "Disable Motion Blur: ON")
 (os_mbblend0
    "Disable Motion Blur: OFF")
+(os_nomisounds1
+   "Disable Miss Sounds: ON")
+(os_nomisounds0
+   "Disable Miss Sounds: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync

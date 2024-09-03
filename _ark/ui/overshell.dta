@@ -60,6 +60,7 @@
    {if_else $legacybass os_legacybass1 os_legacybass0}
    {if_else $whammypb os_whammypb1 os_whammypb0}
    #endif
+   {if_else $nomisounds os_nomisounds1 os_nomisounds0}
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
    {if_else $secondkick os_secondkick1 os_secondkick0}
@@ -69,7 +70,6 @@
    #ifdef HX_PS3
    {if_else $skipsplash os_skipsplash1 os_skipsplash0}
    #endif
-   " "
 ))
 {new
    MultiSelectListPanel
@@ -109,6 +109,16 @@
          )
          (os_whammypb0
             {set $whammypb {! $whammypb}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_nomisounds1
+            {set $nomisounds {! $nomisounds}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_nomisounds0
+            {set $nomisounds {! $nomisounds}}
             {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
