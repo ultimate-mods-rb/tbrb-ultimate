@@ -27,17 +27,17 @@
    {unless {$world find cavern}
       {{find_obj {$p9director chars_dir} paul} set instrument_index 1}
       {thread_task kTaskBeats (delay 1.0e-6) (script
-         {if {$world find budokan} {$g step_out}}
+         {if {$world find budokan} {{find_obj {$p9director chars_dir} george} step_out}}
          {$task sleep 100}
-         {$p step_out}
+         {{find_obj {$p9director chars_dir} paul} step_out}
          {$task sleep 47}
-         {$p step_in}
+         {{find_obj {$p9director chars_dir} paul} step_in}
          {$task sleep 49}
-         {$p step_out}
+         {{find_obj {$p9director chars_dir} paul} step_out}
          {$task sleep 48}
-         {$p step_in}
+         {{find_obj {$p9director chars_dir} paul} step_in}
          {$task sleep 93}
-         {$p step_out})}
+         {{find_obj {$p9director chars_dir} paul} step_out})}
    }
 }
 {if {== {meta_performer song} matchbox}
