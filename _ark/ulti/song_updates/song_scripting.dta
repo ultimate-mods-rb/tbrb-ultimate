@@ -1,11 +1,69 @@
+{if {== {meta_performer song} icallyourname}
+   {{{load_objects char/george/song/aharddaysnight.milo} find song_aharddaysnight} set_name song_aharddaysnight {{find_obj {$p9director chars_dir} george} find body}}
+   {if {$world find shea}
+      {$world set_force_postproc film_sullivan.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+   }
+}
+{if {== {meta_performer song} longtallsally}
+   {{{load_objects char/john/song/getback.milo} find song_solo} set_name song_ltssolo {{find_obj {$p9director chars_dir} john} find body}}
+   {{{load_objects char/george/song/whilemyguitargentlyweeps.milo} find song_solo_01} set_name song_ltssolo {{find_obj {$p9director chars_dir} george} find body}}
+   {if {$world find budokan}
+      {$world set_force_postproc film_budokan.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 3} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 3}
+   }
+   {if {$world find shea}
+      {$world set_force_postproc film_shea.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 2} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 2}
+   }
+   {if {$world find sullivan}
+      {$world set_force_postproc film_sullivan.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+   }
+   {unless {$world find cavern}
+      {{find_obj {$p9director chars_dir} paul} set instrument_index 1}
+      {thread_task kTaskBeats (delay 1.0e-6) (script
+         {if {$world find budokan} {$g step_out}}
+         {$task sleep 100}
+         {$p step_out}
+         {$task sleep 47}
+         {$p step_in}
+         {$task sleep 49}
+         {$p step_out}
+         {$task sleep 48}
+         {$p step_in}
+         {$task sleep 93}
+         {$p step_out})}
+   }
+}
+{if {== {meta_performer song} matchbox}
+   {if {$world find budokan}
+      {$world set_force_postproc film_budokan.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+      {{find_obj {$p9director chars_dir} george} step_out}
+   }
+}
 {if {== {meta_performer song} shesawoman}
    {if {$world find shea}
       {$world set_force_postproc film_shea.pp 5}
    }
    {if {$world find budokan}
-      {do
-         {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
-         {{find_obj {$p9director chars_dir} john} set instrument_index 1}
-      }
+      {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+   }
+}
+{if {== {meta_performer song} slowdown}
+   {{{load_objects char/george/song/taxman.milo} find song_solo} set_name song_sdsolo {{find_obj {$p9director chars_dir} george} find body}}
+   {if {$world find sullivan}
+      {$world set_force_postproc film_sullivan.pp 5}
+      {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
+      {{find_obj {$p9director chars_dir} john} set instrument_index 1}
+      {{find_obj {$p9director chars_dir} paul} set instrument_index 1}
+      {{find_obj {$p9director chars_dir} paul} step_out}
    }
 }
