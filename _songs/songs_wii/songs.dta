@@ -1569,7 +1569,7 @@
    (venue rooftop)
    (guide_pitch_volume -3.0)
    (tri_frame 1))
-(ifineededsomeone
+(ifineededsomeoneog
    (name
       "If I Needed Someone")
    (song_id 516)
@@ -1585,6 +1585,7 @@
                (4 5))
             (vocals
                (6 7))))
+      (midi_file songs/ifineededsomeone/ifineededsomeoneog.mid)
       (vocal_parts 3)
       (pans
          (-1.0 1.0 -1.0 1.0 -1.0 1.0 -1.0 1.0 -1.0 1.0))
