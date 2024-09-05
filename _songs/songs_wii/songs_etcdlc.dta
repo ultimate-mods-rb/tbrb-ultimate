@@ -3385,11 +3385,13 @@
    (game_origin beatles)
    (rating 2)
    (date_released
-      "1965-01-01")
+      "2023-05-30")
    (date_recorded
       "1965-10-16")
    (album_name
-      "Rubber Soul")
+      "Extras")
    (album_track_number 13)
    (venue shea)
-   (guide_pitch_volume -3.0))
+   (guide_pitch_volume -3.0)
+   (downloaded TRUE)
+)
