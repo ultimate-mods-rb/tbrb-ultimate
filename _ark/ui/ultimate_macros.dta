@@ -534,6 +534,24 @@
                   {set $author_text {sprint " | Author: " $authorvar}}
                   {do
                      {set $song_dta_path {sprint {song_mgr song_path {symbol $songvar}} "/../../songs.dta"}}
+                     #ifdef HX_PS3 ;hard code some stuff here because ps3 hw is trash. good thing people use a terrible method for adding customs. causes a slight stutter so should probably find elsewhere to do this
+                     {unless
+                        {&& 
+                           {file_exists $song_dta_path} 
+                           {'||' 
+                              {== {gamemode in_mode} qp_coop_online}
+                              {== {gamemode in_mode} story_online}
+                              {== {gamemode in_mode} h2h_score_duel_unranked}
+                              {== {gamemode in_mode} h2h_tug_of_war_unranked}
+                           }
+                        }
+                        #ifdef REGION_EUROPE
+                        {set $song_dta_path "GD:/dev_hdd0/game/BLES00532/USRDIR/CCF0001/songs/songs.dta"}
+                        #else
+                        {set $song_dta_path "GD:/dev_hdd0/game/BLUS30282/USRDIR/CCF0001/songs/songs.dta"} 
+                        #endif
+                     }
+                     #endif
                      {unless
                         {file_exists $song_dta_path}
                         {set $song_dta_path FALSE}
