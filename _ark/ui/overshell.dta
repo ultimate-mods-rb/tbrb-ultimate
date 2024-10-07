@@ -38,7 +38,7 @@
             {ui goto_screen splash_screen}
          }
          #ifndef HX_WII
-         INIT_DTA_WRITER
+         {init_dta_writer}
          #endif
          {ui pop_screen}
          {set $overshell_up FALSE}
@@ -370,6 +370,7 @@
    {if_else $fxdof os_fxdof1 os_fxdof0}
    {if_else $scrnoise os_scrnoise1 os_scrnoise0}
    {if_else $scrbloom os_scrbloom1 os_scrbloom0}
+   {if_else $camerashake os_camerashake1 os_camerashake0}
    #ifndef HX_WII
    {if_else $mbblend os_mbblend1 os_mbblend0}
    #endif
@@ -434,6 +435,16 @@
          )
          (os_scrnoise0
             {set $scrnoise {! $scrnoise}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_camerashake1
+            {set $camerashake {! $camerashake}}
+            {set $gfxmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_camerashake0
+            {set $camerashake {! $camerashake}}
             {set $gfxmodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )

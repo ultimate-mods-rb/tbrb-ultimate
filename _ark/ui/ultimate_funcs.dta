@@ -1,4 +1,66 @@
 {func
+   init_dta_writer
+   {write_file $ulti_settings_path
+      {array
+         (
+            (gameplay_settings
+               (song_speed $speedmod)
+               (whammy_pitch_bending $whammypb)
+               (disable_miss_sounds $nomisounds)
+               (pad_is_guitar $padtar)
+               (pad_is_drum $paddrum)
+               (second_kick_mapping $secondkick)
+               (mic_gain ({profile_mgr get_mic_gain 0} {profile_mgr get_mic_gain 1} {profile_mgr get_mic_gain 2}))
+               (default_difficulties ($default_diff0 $default_diff1 $default_diff2 $default_diff3))
+            )
+            (graphics_settings
+               (disable_all_post_fx $postfx)
+               (black_bg $blackbg)
+               (bloom $scrbloom)
+               (camera_shake $camerashake)
+               (depth_of_field $fxdof)
+               (film_grain $scrnoise)
+               (motion_blur $mbblend)
+               (force_high_lod $forcelod0)
+               (venue_fps $emulatefps)
+               (vsync_rate $vsyncrate)
+            )
+            (track_settings
+               (track_speed $trackspeed)
+               (sync_difficulty_speeds $syncdifspeeds)
+               (legacy_bass_streak $legacybass)
+               (note_color_shuffle $colorshuffle)
+               (guitar_gem_colors ($gtrgem1 $gtrgem2 $gtrgem3 $gtrgem4 $gtrgem5))
+               (guitar_smasher_colors ($gtrsm1 $gtrsm2 $gtrsm3 $gtrsm4 $gtrsm5))
+               (guitar_sustain_colors ($gtrsus1 $gtrsus2 $gtrsus3 $gtrsus4 $gtrsus5))
+               (drum_gem_colors ($drmgem1 $drmgem2 $drmgem3 $drmgem4 $drmgem5))
+               (drum_smasher_colors ($drms1 $drms2 $drms3 $drms4))
+            )
+            (track_textures
+               (highway_texture $highway)
+               (streak_texture $streak)
+               (spotlight_texture $spotlight)
+            )
+            (ui_settings
+               (disable_net_warnings $skipnetwarning)
+               (show_song_author $showauthor)
+               (skip_intro_video $skipintro)
+               (skip_splash_screen $skipsplash)
+               (song_title_always $songtitle)
+            )
+            (venue_settings
+               (force_outfits $forceoutfit)
+               (force_venue $forcevenue)
+               (force_minivenue $forceminivenue)
+               (force_scene $forcescene)
+               (random_venue $randomvenue)
+               (random_outfits $randomoutfit)
+            )
+         )
+      }
+   }
+}
+{func
    game_exit_handler
    {if_else
       {== {meta_performer get_venue} dreamscape}

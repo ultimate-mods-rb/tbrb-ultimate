@@ -152,9 +152,9 @@
 (os_forcelod00
    "Force High Level of Detail: OFF")
 (os_fxdof1
-   "Disable Depth of Field: ON")
+   "Depth of Field: ON")
 (os_fxdof0
-   "Disable Depth of Field: OFF")
+   "Depth of Field: OFF")
 (os_skipnetwarning1
    "Disable Network Warnings: ON")
 (os_skipnetwarning0
@@ -168,17 +168,21 @@
 (os_secondkick0
    "Second Kick Mapping: OFF")
 (os_scrnoise1
-   "Disable Film Grain: ON")
+   "Film Grain: ON")
 (os_scrnoise0
-   "Disable Film Grain: OFF")
+   "Film Grain: OFF")
 (os_scrbloom1
-   "Disable Bloom: ON")
+   "Bloom: ON")
 (os_scrbloom0
-   "Disable Bloom: OFF")
+   "Bloom: OFF")
 (os_mbblend1
-   "Disable Motion Blur: ON")
+   "Motion Blur: ON")
 (os_mbblend0
-   "Disable Motion Blur: OFF")
+   "Motion Blur: OFF")
+(os_camerashake1
+   "Camera Shake: ON")
+(os_camerashake0
+   "Camera Shake: OFF")
 (os_nomisounds1
    "Disable Miss Sounds: ON")
 (os_nomisounds0
@@ -367,5 +371,7 @@
 #else
 (mic_sensitivity_save_warning
    " ")
+(converted_settings
+   "Converted settings to new format succesfully")
 #endif
 
