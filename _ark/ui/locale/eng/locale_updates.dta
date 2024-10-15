@@ -357,6 +357,10 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
+(os_fcring1
+   "Show FC Ring: ON")
+(os_fcring0
+   "Show FC Ring: OFF")
 #ifdef HX_WII
 (force_username
    "Set Nickname")

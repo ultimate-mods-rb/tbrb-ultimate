@@ -34,6 +34,9 @@
 ;dont skip splash by default
 {set $skipsplash FALSE}
 
+;show fc ring
+{set $fcring TRUE}
+
 ;gem texture
 {set $gem "none"}
 

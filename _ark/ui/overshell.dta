@@ -57,7 +57,6 @@
 ((
    {if_else $syncdifspeeds os_syncdifspeeds1 os_syncdifspeeds0}
    #ifndef HX_XBOX
-   {if_else $legacybass os_legacybass1 os_legacybass0}
    {if_else $whammypb os_whammypb1 os_whammypb0}
    #endif
    {if_else $nomisounds os_nomisounds1 os_nomisounds0}
@@ -89,16 +88,6 @@
          )
          (os_syncdifspeeds0
             {set $syncdifspeeds {! $syncdifspeeds}}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_legacybass1
-            {set $legacybass {! $legacybass}}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_legacybass0
-            {set $legacybass {! $legacybass}}
             {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
@@ -246,6 +235,8 @@
 ((
    {if_else $songtitle os_songtitle1 os_songtitle0}
    {if_else $showauthor os_showauthor1 os_showauthor0}
+   {if_else $fcring os_fcring1 os_fcring0}
+   {if_else $legacybass os_legacybass1 os_legacybass0}
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
@@ -284,6 +275,26 @@
          (os_showauthor0
             {set $showauthor {! $showauthor}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_fcring1
+            {set $fcring {! $fcring}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_fcring0
+            {set $fcring {! $fcring}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_legacybass1
+            {set $legacybass {! $legacybass}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_legacybass0
+            {set $legacybass {! $legacybass}}
+            {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
          (os_colorshuffle1

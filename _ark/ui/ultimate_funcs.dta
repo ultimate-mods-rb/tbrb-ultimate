@@ -28,6 +28,7 @@
             (track_settings
                (track_speed $trackspeed)
                (sync_difficulty_speeds $syncdifspeeds)
+               (show_fc_ring $fcring)
                (legacy_bass_streak $legacybass)
                (note_color_shuffle $colorshuffle)
                (guitar_gem_colors ($gtrgem1 $gtrgem2 $gtrgem3 $gtrgem4 $gtrgem5))

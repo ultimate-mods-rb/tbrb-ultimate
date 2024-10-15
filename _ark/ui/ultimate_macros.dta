@@ -122,6 +122,11 @@
                {elem {find $entry sync_difficulty_speeds} 1}
             }
          }
+         {if {find $entry show_fc_ring}
+            {set $fcring
+               {elem {find $entry show_fc_ring} 1}
+            }
+         }
          {if {find $entry legacy_bass_streak}
             {set $legacybass
                {elem {find $entry legacy_bass_streak} 1}
