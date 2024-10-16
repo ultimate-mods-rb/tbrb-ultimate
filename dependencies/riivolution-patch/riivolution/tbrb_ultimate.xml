@@ -12,6 +12,13 @@
     <patch id="tbrbul">
         <file disc="/gen/patch_wii.hdr" external="/tbrbul/patch_wii.hdr" create="true"></file>
         <file disc="/gen/patch_wii_0.ark" external="/tbrbul/patch_wii_0.ark" create="true"></file>
+        <!-- fast start/skip splash patch -->
+        <memory offset="0x8000D5D8" value="60000000" original="485453C1" />
+        <memory offset="0x8000D5EC" value="60000000" original="485453AD" />
+        <memory offset="0x8000D604" value="60000000" original="48545395" />
+        <memory offset="0x8000D610" value="60000000" original="48545389" />
+        <memory offset="0x8000D61C" value="60000000" original="4854537D" />
+        <!-- checksum patch -->
         <memory offset="0x8064FD08" value="60000000" original="4BAA0F55" />
         <memory offset="0x8064FD14" value="60000000" original="4BFFFF71" />
         <memory offset="0x8064FD9C" value="60000000" original="4BAA0EC1" />
