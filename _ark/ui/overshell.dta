@@ -675,7 +675,7 @@
             {set $scorecustomtexture FALSE}
             {set $scoretex "none"}
             {$this lst_reset}
-            INIT_DTA_WRITER
+            {init_dta_writer}
             {ui push_screen reset_info_screen}
          )
          (os_hw

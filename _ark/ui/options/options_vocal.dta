@@ -344,7 +344,7 @@
          {$this focus_name}})
    (exit
       #ifndef HX_WII
-      INIT_DTA_WRITER
+      {init_dta_writer}
       #endif
       {$this handle_exit})
    VOCAL_OPTIONS_PANEL_HANDERS}
@@ -377,7 +377,7 @@
          {$this focus_name}})
    (exit
       #ifndef HX_WII
-      INIT_DTA_WRITER
+      {init_dta_writer}
       #endif
       {$this handle_exit}
       {session remove_sink $this signin_changed}
