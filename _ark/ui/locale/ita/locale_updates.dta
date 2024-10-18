@@ -365,6 +365,79 @@
    "Show FC Ring: ON")
 (os_fcring0
    "Show FC Ring: OFF")
+(os_cnt
+   "Controller Settings")
+(os_remap_cnt
+   "Remap Pad Controls")
+;buttons
+#ifdef HX_WII
+(os_pad_x
+   "A")
+(os_pad_circle
+   "B")
+(os_pad_square
+   "1")
+(os_pad_tri
+   "2")
+(os_pad_select
+   "-")
+#endif
+#ifdef HX_PS3
+(os_pad_x
+   "Cross")
+(os_pad_circle
+   "Circle")
+(os_pad_square
+   "Square")
+(os_pad_tri
+   "Triangle")
+(os_pad_l2
+   "L2")
+(os_pad_l1
+   "L1")
+(os_pad_r1
+   "R1")
+(os_pad_r2
+   "R2")
+(os_pad_l3
+   "L3")
+(os_pad_r3
+   "R3")
+(os_pad_select
+   "Select")
+#endif
+#ifdef HX_XBOX
+(os_pad_x
+   "A")
+(os_pad_circle
+   "B")
+(os_pad_square
+   "X")
+(os_pad_tri
+   "Y")
+(os_pad_l2
+   "RT")
+(os_pad_l1
+   "LB")
+(os_pad_r1
+   "RB")
+(os_pad_r2
+   "RT")
+(os_pad_l3
+   "LS")
+(os_pad_r3
+   "RS")
+(os_pad_select
+   "Back")
+#endif
+(os_pad_dup
+   "Up")
+(os_pad_ddown
+   "Down")
+(os_pad_dleft
+   "Left")
+(os_pad_dright
+   "Right")
 #ifdef HX_WII
 (force_username
    "Set Nickname")

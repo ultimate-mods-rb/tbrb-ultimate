@@ -3,14 +3,17 @@
    {write_file $ulti_settings_path
       {array
          (
+            (controller_settings
+               (pad_is_guitar $padtar)
+               (pad_is_drum $paddrum)
+               (second_kick_mapping $secondkick)
+               (pad_binds ($cnt_slot1 $cnt_slot2 $cnt_slot3 $cnt_slot4 $cnt_slot5 $cnt_star))
+            )
             (gameplay_settings
                (song_speed $speedmod)
                (whammy_pitch_bending $whammypb)
                (track_muting $trkmuting)
                (disable_miss_sounds $nomisounds)
-               (pad_is_guitar $padtar)
-               (pad_is_drum $paddrum)
-               (second_kick_mapping $secondkick)
                (mic_gain ({profile_mgr get_mic_gain 0} {profile_mgr get_mic_gain 1} {profile_mgr get_mic_gain 2}))
                (default_difficulties ($default_diff0 $default_diff1 $default_diff2 $default_diff3))
             )
@@ -91,25 +94,30 @@
    exec_song_scripting
    #include ../ulti/song_updates/song_scripting.dta
 }
-{func
-   enable_wiimote_mapping
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 kPad_Circle}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 kPad_DRight}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 kPad_X}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 7 kPad_Square}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 kPad_Tri}
-   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_DLeft}
-}
-{func
-   disable_wiimote_mapping
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 6}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 5}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 4}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 7 7}
-   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 2}
-   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 kPad_Select}
-}
 #endif
+{func
+   set_cnt_type
+   ($cnt $instr)
+   {set_elem {find $syscfg joypad instrument_mapping $cnt} 1 $instr}
+}
+{func
+   set_cnt_mapping
+   #ifdef HX_WII
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 1 $cnt_slot1}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 3 $cnt_slot2}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 5 $cnt_slot3}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 7 $cnt_slot4}
+   {set_elem {find $syscfg beatmatcher controller wii_remote slots} 9 $cnt_slot5}
+   {set_elem {find $syscfg beatmatcher controller wii_remote force_mercury} 1 $cnt_star}
+   #else
+   {set_elem {find $syscfg beatmatcher controller joypad slots} 1 $cnt_slot1}
+   {set_elem {find $syscfg beatmatcher controller joypad slots} 3 $cnt_slot2}
+   {set_elem {find $syscfg beatmatcher controller joypad slots} 5 $cnt_slot3}
+   {set_elem {find $syscfg beatmatcher controller joypad slots} 7 $cnt_slot4}
+   {set_elem {find $syscfg beatmatcher controller joypad slots} 9 $cnt_slot5}
+   {set_elem {find $syscfg beatmatcher controller joypad force_mercury} 1 $cnt_star}
+   #endif
+}
 {func
    enable_second_kick_mapping
    #ifdef HX_XBOX

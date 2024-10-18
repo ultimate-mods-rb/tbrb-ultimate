@@ -128,6 +128,23 @@
 {set $mic_gain_2 4}
 {set $mic_gain_3 4}
 
+;set pad controls
+#ifdef HX_WII
+{set $cnt_slot1 kPad_Circle}
+{set $cnt_slot2 kPad_DRight}
+{set $cnt_slot3 kPad_X}
+{set $cnt_slot4 kPad_Square}
+{set $cnt_slot5 kPad_Tri}
+{set $cnt_star kPad_DLeft}
+#else
+{set $cnt_slot1 kPad_L2}
+{set $cnt_slot2 kPad_L1}
+{set $cnt_slot3 kPad_R1}
+{set $cnt_slot4 kPad_R2}
+{set $cnt_slot5 kPad_X}
+{set $cnt_star kPad_Select}
+#endif
+
 ;default vsync rate ;0 = off, 1 = 60hz, 2 = 30hz, 4 = 15hz
 {set $vsyncrate 1}
 
@@ -184,14 +201,20 @@
    #ifdef HX_WII {pp_override} #else {rnd toggle_all_postprocs} #endif}
 {if $padtar
    #ifdef HX_PS3
-   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+   {set_cnt_type dualshock kControllerGuitar}
    #endif
-   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}}
+   #ifdef HX_WII
+   {set_cnt_type wii_remote kControllerGuitar}
+   #endif
+   {set_cnt_type analog kControllerGuitar}}
 {if $paddrum
    #ifdef HX_PS3
-   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+   {set_cnt_type dualshock kControllerDrum}
    #endif
-   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}}
+   #ifdef HX_WII
+   {set_cnt_type wii_remote kControllerDrum}
+   #endif
+   {set_cnt_type analog kControllerDrum}}
 
 {unless {== $highway none} {set $highwaycustomtexture TRUE}}
 

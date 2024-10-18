@@ -2,6 +2,43 @@
 #define INIT_DTA_READER
 (
    {foreach $entry {read_file $ulti_settings_path}
+      {if {== {elem $entry 0} {basename controller_settings}}
+         {if {find $entry pad_is_guitar}
+            {set $padtar
+               {elem {find $entry pad_is_guitar} 1}
+            }
+         }
+         {if {find $entry pad_is_drum}
+            {set $paddrum
+               {elem {find $entry pad_is_drum} 1}
+            }
+         }
+         {if {find $entry second_kick_mapping}
+            {set $secondkick
+               {elem {find $entry second_kick_mapping} 1}
+            }
+         }
+         {if {find $entry pad_binds}
+            {set $cnt_slot1
+               {elem {elem {find $entry pad_binds} 1} 0}
+            }
+            {set $cnt_slot2
+               {elem {elem {find $entry pad_binds} 1} 1}
+            }
+            {set $cnt_slot3
+               {elem {elem {find $entry pad_binds} 1} 2}
+            }
+            {set $cnt_slot4
+               {elem {elem {find $entry pad_binds} 1} 3}
+            }
+            {set $cnt_slot5
+               {elem {elem {find $entry pad_binds} 1} 4}
+            }
+            {set $cnt_star
+               {elem {elem {find $entry pad_binds} 1} 5}
+            }
+         }
+      }
       {if {== {elem $entry 0} {basename gameplay_settings}}
          {if {find $entry song_speed}
             {set $speedmod
@@ -23,17 +60,17 @@
                {elem {find $entry disable_miss_sounds} 1}
             }
          }
-         {if {find $entry pad_is_guitar}
+         {if {find $entry pad_is_guitar} ;legacy remove in 2.0 final
             {set $padtar
                {elem {find $entry pad_is_guitar} 1}
             }
          }
-         {if {find $entry pad_is_drum}
+         {if {find $entry pad_is_drum}  ;legacy remove in 2.0 final
             {set $paddrum
                {elem {find $entry pad_is_drum} 1}
             }
          }
-         {if {find $entry second_kick_mapping}
+         {if {find $entry second_kick_mapping}  ;legacy remove in 2.0 final
             {set $secondkick
                {elem {find $entry second_kick_mapping} 1}
             }

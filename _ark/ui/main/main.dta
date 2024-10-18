@@ -29,7 +29,8 @@
       #endif
       {gamemode set_mode init}
       {$this update_motd}
-      {meta music_start})
+      {meta music_start}
+      {set_cnt_mapping}) ;didn't work setting in init
    (exit
       {platform_mgr remove_sink $this connection_status_changed}
       {server remove_sink $this server_status_changed})

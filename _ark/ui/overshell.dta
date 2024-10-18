@@ -6,7 +6,7 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_blnk)}
+      {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_cnt)}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local}
       {set $overshell_up TRUE})
@@ -27,6 +27,9 @@
          )
          (os_trk
             {ui push_screen overshell_trk_screen}
+         )
+         (os_cnt
+            {ui push_screen overshell_cnt_screen}
          )
       }
    )
@@ -61,14 +64,13 @@
    #endif
    {if_else $trkmuting os_trkmuting1 os_trkmuting0}
    {if_else $nomisounds os_nomisounds1 os_nomisounds0}
-   {if_else $padtar os_padtar1 os_padtar0}
-   {if_else $paddrum os_paddrum1 os_paddrum0}
-   {if_else $secondkick os_secondkick1 os_secondkick0}
    #ifndef HX_WII
    {if_else $skipintro os_skipintro1 os_skipintro0}
    #endif
    #ifdef HX_PS3
    {if_else $skipsplash os_skipsplash1 os_skipsplash0}
+   #else
+   os_blnk
    #endif
 ))
 {new
@@ -119,82 +121,6 @@
          )
          (os_nomisounds0
             {set $nomisounds {! $nomisounds}}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_padtar1
-            {set $padtar {! $padtar}}
-            {set $paddrum FALSE}
-            #ifdef HX_WII
-            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerVocals}
-            {disable_wiimote_mapping}
-            #endif
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_padtar0
-            {set $padtar {! $padtar}}
-            {set $paddrum FALSE}
-            #ifdef HX_WII
-            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerGuitar}
-            {enable_wiimote_mapping}
-            #endif
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_paddrum1
-            {set $paddrum {! $paddrum}}
-            {set $padtar FALSE}
-            #ifdef HX_WII
-            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerVocals}
-            {disable_wiimote_mapping}
-            #endif
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_paddrum0
-            {set $paddrum {! $paddrum}}
-            {set $padtar FALSE}
-            #ifdef HX_WII
-            {set_elem {find $syscfg joypad instrument_mapping wii_remote} 1 kControllerDrum}
-            {enable_wiimote_mapping}
-            #endif
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_secondkick1
-            {set $secondkick {! $secondkick}}
-            {disable_second_kick_mapping}
-            {set $modifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_secondkick0
-            {set $secondkick {! $secondkick}}
-            {enable_second_kick_mapping}
             {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
@@ -253,8 +179,6 @@
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
    #ifdef HX_PS3
    {if_else $skipnetwarning os_skipnetwarning1 os_skipnetwarning0}
-   #else
-   os_blnk
    #endif
 ))
 {new
@@ -2922,3 +2846,767 @@
    (back overshell_main_screen)
    (helpbar
       (helpbar_back helpbar_select))}
+;
+;
+
+#define CNT_MODIFIER_DATA
+((
+   os_remap_cnt
+   {if_else $padtar os_padtar1 os_padtar0}
+   {if_else $paddrum os_paddrum1 os_paddrum0}
+   {if_else $secondkick os_secondkick1 os_secondkick0}
+   os_blnk
+))
+{new
+   MultiSelectListPanel
+   overshell_cnt_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_cnt}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_remap_cnt
+            {ui push_screen overshell_remap_cnt_screen}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_padtar1
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_WII
+            {set_cnt_type wii_remote kControllerVocals}
+            #endif
+            #ifdef HX_PS3
+            {set_cnt_type dualshock kControllerVocals}
+            #endif
+            {set_cnt_type analog kControllerVocals}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_padtar0
+            {set $padtar {! $padtar}}
+            {set $paddrum FALSE}
+            #ifdef HX_WII
+            {set_cnt_type wii_remote kControllerGuitar}
+            #endif
+            #ifdef HX_PS3
+            {set_cnt_type dualshock kControllerGuitar}
+            #endif
+            {set_cnt_type analog kControllerGuitar}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_paddrum1
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_WII
+            {set_cnt_type wii_remote kControllerVocals}
+            #endif
+            #ifdef HX_PS3
+            {set_cnt_type dualshock kControllerVocals}
+            #endif
+            {set_cnt_type analog kControllerVocals}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_paddrum0
+            {set $paddrum {! $paddrum}}
+            {set $padtar FALSE}
+            #ifdef HX_WII
+            {set_cnt_type wii_remote kControllerDrum}
+            #endif
+            #ifdef HX_PS3
+            {set_cnt_type dualshock kControllerDrum}
+            #endif
+            {set_cnt_type analog kControllerDrum}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_secondkick1
+            {set $secondkick {! $secondkick}}
+            {disable_second_kick_mapping}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_secondkick0
+            {set $secondkick {! $secondkick}}
+            {enable_second_kick_mapping}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_MODIFIER_DATA}
+   {if $cntmodifierpos
+      {sel_section.lst set_selected $cntmodifierpos}
+   })
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_main_screen}
+         {ui pop_screen}
+         {set $cntmodifierpos 0}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_screen
+   (panels overshell_cnt_panel)
+   (focus overshell_cnt_panel)}
+;
+#ifdef HX_WII
+;#define CNT_BUTTONS_MODIFIER_DATA
+;((
+;   kPad_X kPad_Circle kPad_Square kPad_Tri kPad_DUp kPad_DDown kPad_DLeft kPad_DRight kPad_Select
+;))
+#define CNT_BUTTONS_MODIFIER_DATA ;the game crashes when trying to localize macros so we have to do it this stupid way
+((
+   os_pad_x os_pad_circle os_pad_square os_pad_tri os_pad_dup os_pad_ddown os_pad_dleft os_pad_dright os_pad_select
+))
+#else
+;#define CNT_BUTTONS_MODIFIER_DATA
+;((
+;   kPad_L2 kPad_L1 kPad_R1 kPad_R2 kPad_X kPad_Circle kPad_Square kPad_Tri kPad_DUp kPad_DDown kPad_DLeft kPad_DRight kPad_L3 kPad_R3 kPad_Select
+;))
+#define CNT_BUTTONS_MODIFIER_DATA
+((
+   os_pad_l2 os_pad_l1 os_pad_r1 os_pad_r2 os_pad_x os_pad_circle os_pad_square os_pad_tri os_pad_dup os_pad_ddown os_pad_dleft os_pad_dright os_pad_l3 os_pad_r3 os_pad_select
+))
+#endif
+#define CNT_MAP_LEAVE
+(
+   {ui goto_screen overshell_remap_cnt_screen}
+   {ui pop_screen}
+)
+{new
+   MultiSelectListPanel
+   overshell_remap_cnt_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_remap_cnt}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_reset_gem
+            #ifdef HX_WII
+            {set $cnt_slot1 kPad_Circle}
+            {set $cnt_slot2 kPad_DRight}
+            {set $cnt_slot3 kPad_X}
+            {set $cnt_slot4 kPad_Square}
+            {set $cnt_slot5 kPad_Tri}
+            {set $cnt_star kPad_DLeft}
+            #else
+            {set $cnt_slot1 kPad_L2}
+            {set $cnt_slot2 kPad_L1}
+            {set $cnt_slot3 kPad_R1}
+            {set $cnt_slot4 kPad_R2}
+            {set $cnt_slot5 kPad_X}
+            {set $cnt_star kPad_Select}
+            #endif
+         )
+         (os_gtr_gems_1
+            {ui push_screen overshell_cnt_slot_1_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_gtr_gems_2
+            {ui push_screen overshell_cnt_slot_2_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_gtr_gems_3
+            {ui push_screen overshell_cnt_slot_3_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_gtr_gems_4
+            {ui push_screen overshell_cnt_slot_4_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_gtr_gems_5
+            {ui push_screen overshell_cnt_slot_5_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_spotlight
+            {ui push_screen overshell_cnt_star_screen}
+            {set $rcntmodifierpos {sel_section.lst selected_sym}}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (os_reset_gem os_gtr_gems_1 os_gtr_gems_2 os_gtr_gems_3 os_gtr_gems_4 os_gtr_gems_5 os_spotlight)}
+   {if $rcntmodifierpos
+      {sel_section.lst set_selected $rcntmodifierpos}
+   })
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {set_cnt_mapping}
+         {ui goto_screen overshell_cnt_screen}
+         {ui pop_screen}
+         {set $rcntmodifierpos 0}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_remap_cnt_screen
+   (panels overshell_remap_cnt_panel)
+   (focus overshell_remap_cnt_panel)}
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_slot_1_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_1}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_slot1 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_slot1 kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_slot1 kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_slot1 kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_slot1 kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_slot1 kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_slot1 kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_slot1 kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_slot1 kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_slot1 kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_slot1 kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_slot1 kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_slot1 kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_slot1 kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_slot1 kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_slot_1_screen
+   (panels overshell_cnt_slot_1_panel)
+   (focus overshell_cnt_slot_1_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_slot_2_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_2}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_slot2 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_slot2 kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_slot2 kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_slot2 kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_slot2 kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l2
+            {set $cnt_slot2 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_slot2 kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_slot2 kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_slot2 kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_slot2 kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_slot2 kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_slot2 kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_slot2 kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_slot2 kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_slot2 kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_slot2 kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_slot_2_screen
+   (panels overshell_cnt_slot_2_panel)
+   (focus overshell_cnt_slot_2_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_slot_3_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_3}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_slot3 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_slot3 kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_slot3 kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_slot3 kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_slot3 kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l2
+            {set $cnt_slot3 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_slot3 kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_slot3 kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_slot3 kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_slot3 kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_slot3 kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_slot3 kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_slot3 kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_slot3 kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_slot3 kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_slot3 kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_slot_3_screen
+   (panels overshell_cnt_slot_3_panel)
+   (focus overshell_cnt_slot_3_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_slot_4_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_4}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_slot4 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_slot4 kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_slot4 kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_slot4 kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_slot4 kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l2
+            {set $cnt_slot4 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_slot4 kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_slot4 kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_slot4 kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_slot4 kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_slot4 kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_slot4 kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_slot4 kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_slot4 kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_slot4 kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_slot4 kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_slot_4_screen
+   (panels overshell_cnt_slot_4_panel)
+   (focus overshell_cnt_slot_4_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_slot_5_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gtr_gems_5}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_slot5 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_slot5 kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_slot5 kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_slot5 kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_slot5 kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l2
+            {set $cnt_slot5 kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_slot5 kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_slot5 kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_slot5 kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_slot5 kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_slot5 kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_slot5 kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_slot5 kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_slot5 kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_slot5 kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_slot5 kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_slot_5_screen
+   (panels overshell_cnt_slot_5_panel)
+   (focus overshell_cnt_slot_5_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_cnt_star_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_spotlight}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_pad_l2
+            {set $cnt_star kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l1
+            {set $cnt_star kPad_L1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r1
+            {set $cnt_star kPad_R1}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r2
+            {set $cnt_star kPad_R2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_x
+            {set $cnt_star kPad_X}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l2
+            {set $cnt_star kPad_L2}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_circle
+            {set $cnt_star kPad_Circle}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_square
+            {set $cnt_star kPad_Square}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_tri
+            {set $cnt_star kPad_Tri}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dup
+            {set $cnt_star kPad_DUp}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_ddown
+            {set $cnt_star kPad_DDown}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dleft
+            {set $cnt_star kPad_DLeft}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_dright
+            {set $cnt_star kPad_DRight}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_l3
+            {set $cnt_star kPad_L3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_r3
+            {set $cnt_star kPad_R3}
+            CNT_MAP_LEAVE
+         )
+         (os_pad_select
+            {set $cnt_star kPad_Select}
+            CNT_MAP_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         CNT_MAP_LEAVE
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_cnt_star_screen
+   (panels overshell_cnt_star_panel)
+   (focus overshell_cnt_star_panel)}
+;
