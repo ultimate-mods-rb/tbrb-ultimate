@@ -23,5 +23,7 @@
         <memory offset="0x8064FD14" value="60000000" original="4BFFFF71" />
         <memory offset="0x8064FD9C" value="60000000" original="4BAA0EC1" />
         <memory offset="0x8064FDA8" value="60000000" original="4BFFFEDD" />
+        <!-- stops the game reading mute_volume from songs.dta -->
+        <memory offset="0x80361FA8" value="60000000" original="389C018B" />
     </patch>
 </wiidisc>

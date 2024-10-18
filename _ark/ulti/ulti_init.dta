@@ -25,6 +25,9 @@
 ;disables whammy pitch bending by default
 {set $whammypb FALSE}
 
+;track muting (required silly exec mod to disable)
+{set $trkmuting TRUE}
+
 ;do gem custom textures
 {set $gemcustomtexture FALSE}
 

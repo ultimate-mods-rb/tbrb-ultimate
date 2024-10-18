@@ -6,6 +6,7 @@
             (gameplay_settings
                (song_speed $speedmod)
                (whammy_pitch_bending $whammypb)
+               (track_muting $trkmuting)
                (disable_miss_sounds $nomisounds)
                (pad_is_guitar $padtar)
                (pad_is_drum $paddrum)

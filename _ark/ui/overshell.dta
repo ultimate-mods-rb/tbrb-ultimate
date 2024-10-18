@@ -59,6 +59,7 @@
    #ifndef HX_XBOX
    {if_else $whammypb os_whammypb1 os_whammypb0}
    #endif
+   {if_else $trkmuting os_trkmuting1 os_trkmuting0}
    {if_else $nomisounds os_nomisounds1 os_nomisounds0}
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
@@ -98,6 +99,16 @@
          )
          (os_whammypb0
             {set $whammypb {! $whammypb}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_trkmuting1
+            {set $trkmuting {! $trkmuting}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_trkmuting0
+            {set $trkmuting {! $trkmuting}}
             {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )

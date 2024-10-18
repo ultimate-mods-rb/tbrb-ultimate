@@ -48,7 +48,7 @@
    (player_slot 9))
 (audio
    (default_style unmute)
-   (mute_volume -96.0)
+   (mute_volume {if_else $trkmuting -96.0 -0.001}) ;fun fact the game normally overrides this from the one in the songs dta but we force the game to load this one
    (mute_volume_vocals -12.0)
    (multiplayer_scale 0.33)
    (multiplayer_attenuation 3.0)

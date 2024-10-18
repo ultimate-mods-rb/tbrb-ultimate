@@ -187,6 +187,10 @@
    "Disable Miss Sounds: ON")
 (os_nomisounds0
    "Disable Miss Sounds: OFF")
+(os_trkmuting1
+   "Track Muting: ON")
+(os_trkmuting0
+   "Track Muting: OFF")
 (os_venuefps
    "Venue FPS")
 (os_vsync

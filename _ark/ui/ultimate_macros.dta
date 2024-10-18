@@ -13,6 +13,11 @@
                {elem {find $entry whammy_pitch_bending} 1}
             }
          }
+         {if {find $entry track_muting}
+            {set $trkmuting
+               {elem {find $entry track_muting} 1}
+            }
+         }
          {if {find $entry disable_miss_sounds}
             {set $nomisounds
                {elem {find $entry disable_miss_sounds} 1}
