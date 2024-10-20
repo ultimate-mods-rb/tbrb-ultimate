@@ -50,14 +50,24 @@
    {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ {if_else $syncdifspeeds 1.2 2.4} $trackspeed} $speedmod}} ;implement track speed modifier
    {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {/ 1.2 $trackspeed} $speedmod}}
 )
+#define CALLBACK_ELEMS
+((hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass))
 #define ADD_FC_CALLBACKS
 (
-   {unless {gamemode in_mode h2h}
+   {if_else {gamemode in_mode h2h}
+      {unless {== {{game get_participant_config 0} get_track_sym} vocals}
+         {beatmatch foreach_active_player $player
+            {if_else {== {$player track} track0}
+               {$player add_sink fc_h2h_0_callback CALLBACK_ELEMS}
+               {$player add_sink fc_h2h_1_callback CALLBACK_ELEMS}
+            }
+         }
+      }
       {beatmatch foreach_active_player $player ;handle adding the appropriate callbacks to each player
          {switch {$player instrument}
-            (bass {$player add_sink fc_bass_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
-            (guitar {$player add_sink fc_guitar_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
-            (drum {$player add_sink fc_drum_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
+            (bass {$player add_sink fc_bass_callback CALLBACK_ELEMS})
+            (guitar {$player add_sink fc_guitar_callback CALLBACK_ELEMS})
+            (drum {$player add_sink fc_drum_callback CALLBACK_ELEMS})
          }
       }
    }
@@ -176,6 +186,92 @@
          {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
          {set_ring_tex drum black}}
          {unless $legacybass {if {&& {< [num_gems_combo] 29} $drum_groove_active} {set $drum_groove_active FALSE} {{{{get_track_panel} find drum} find BassSuperStreak_OFF.trig} trigger}}}
+      )
+      (num_gems_hit 0)
+      (num_gems_combo 0)
+      (num_gems_miss 0)
+      (num_gems_pass 0)
+   )
+   (new Object fc_h2h_0_callback ;remove FC groove on h2h track 0 miss/pass
+      (hit
+         {if {! $h2h_0_firstnote} {set $h2h_0_firstnote TRUE}}
+         {if {! $h2h_0_milosong} {set $h2h_0_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
+         {$this check_fc}
+         {set [num_gems_hit] {'+' [num_gems_hit] 1}}
+         {set [num_gems_combo] {'+' [num_gems_combo] 1}}
+         {unless {== {{game get_participant_config 0} get_track_sym} bass}
+            {unless $legacybass  {if {&& {> [num_gems_combo] 29} {! $h2h_0_groove_active}} {set $h2h_0_groove_active TRUE} {{{{get_track_panel} find track_0} find BassSuperStreak_ON.trig} trigger}}}
+         }
+      )
+      (miss
+         {unless {! $h2h_0_firstnote}
+         {set [num_gems_miss] {'+' [num_gems_miss] 1}}
+         {set [num_gems_combo] 0} ;i feel you trying to free me
+         {$this check_missed} ;free me from my mind
+         {set_ring_tex track_0 black}}
+      )
+      (pass
+         {if {! $h2h_0_firstnote} {set $h2h_0_firstnote TRUE}}
+         {if {! $h2h_0_milosong} {set $h2h_0_milosong TRUE} {set [num_gems_hit] 1} {set [num_gems_miss] 1} {set [num_gems_pass] 1} {set [num_gems_combo] 1}}
+         {set [num_gems_pass] {'+' [num_gems_pass] 1}}
+         {set [num_gems_combo] 0}
+         {$this check_missed}
+         {set_ring_tex track_0 black}
+      )
+      (check_fc
+         {$this check_missed}
+         {if {== {'+' [num_gems_pass] [num_gems_miss]} 0}
+         {set_ring_tex track_0 fc}}
+      )
+      (check_missed
+         {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
+         {set_ring_tex track_0 black}}
+         {unless {== {{game get_participant_config 0} get_track_sym} bass}
+            {unless $legacybass {if {&& {< [num_gems_combo] 29} $h2h_0_groove_active} {set $h2h_0_groove_active FALSE} {{{{get_track_panel} find track_0} find BassSuperStreak_OFF.trig} trigger}}}
+         }
+      )
+      (num_gems_hit 0)
+      (num_gems_combo 0)
+      (num_gems_miss 0)
+      (num_gems_pass 0)
+   )
+   (new Object fc_h2h_1_callback ;remove FC groove on h2h track 1 miss/pass
+      (hit
+         {if {! $h2h_1_firstnote} {set $h2h_1_firstnote TRUE}}
+         {if {! $h2h_1_milosong} {set $h2h_1_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
+         {$this check_fc}
+         {set [num_gems_hit] {'+' [num_gems_hit] 1}}
+         {set [num_gems_combo] {'+' [num_gems_combo] 1}}
+         {unless {== {{game get_participant_config 0} get_track_sym} bass}
+            {unless $legacybass  {if {&& {> [num_gems_combo] 29} {! $h2h_1_groove_active}} {set $h2h_1_groove_active TRUE} {{{{get_track_panel} find track_1} find BassSuperStreak_ON.trig} trigger}}}
+         }
+      )
+      (miss
+         {unless {! $h2h_1_firstnote}
+         {set [num_gems_miss] {'+' [num_gems_miss] 1}}
+         {set [num_gems_combo] 0}
+         {$this check_missed}
+         {set_ring_tex track_1 black}}
+      )
+      (pass
+         {if {! $h2h_1_firstnote} {set $h2h_1_firstnote TRUE}}
+         {if {! $h2h_1_milosong} {set $h2h_1_milosong TRUE} {set [num_gems_hit] 1} {set [num_gems_miss] 1} {set [num_gems_pass] 1} {set [num_gems_combo] 1}}
+         {set [num_gems_pass] {'+' [num_gems_pass] 1}}
+         {set [num_gems_combo] 0}
+         {$this check_missed}
+         {set_ring_tex track_1 black}
+      )
+      (check_fc
+         {$this check_missed}
+         {if {== {'+' [num_gems_pass] [num_gems_miss]} 0}
+         {set_ring_tex track_1 fc}}
+      )
+      (check_missed
+         {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
+         {set_ring_tex track_1 black}}
+         {unless {== {{game get_participant_config 0} get_track_sym} bass}
+            {unless $legacybass {if {&& {< [num_gems_combo] 29} $h2h_1_groove_active} {set $h2h_1_groove_active FALSE} {{{{get_track_panel} find track_1} find BassSuperStreak_OFF.trig} trigger}}}
+         }
       )
       (num_gems_hit 0)
       (num_gems_combo 0)

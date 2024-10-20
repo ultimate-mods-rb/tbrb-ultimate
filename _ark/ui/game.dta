@@ -55,10 +55,7 @@
       {meta_performer disband_if_bad_configuration}
       ;#ifndef HX_XBOX
       {set $outro_ran FALSE}
-	  {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-      {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-	  {set $drum_groove_active FALSE}
-	  {set $guitar_groove_active FALSE}
+      {reset_fc_vars}
      ;#endif
 	 {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
@@ -86,10 +83,7 @@
    (intro_skip
       ;#ifndef HX_XBOX
       {set $outro_ran FALSE}
-      {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-      {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-	  {set $drum_groove_active FALSE}
-	  {set $guitar_groove_active FALSE}
+      {reset_fc_vars}
      ;#endif
      {world_panel set_showing {! $blackbg}}
      {if $blackbg {$world iterate PostProc $p {$p set emulate_fps 1}}}
@@ -103,10 +97,7 @@
    (music_start
       ;#ifndef HX_XBOX
       {set $outro_ran FALSE}
-      {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-      {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-	  {set $drum_groove_active FALSE}
-	  {set $guitar_groove_active FALSE}
+      {reset_fc_vars}
      ;#endif
       {ui music_start}
       kDataUnhandled)
@@ -131,10 +122,7 @@
    (game_over
       ;#ifndef HX_XBOX
       {set $outro_ran FALSE}
-      {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-      {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-	  {set $drum_groove_active FALSE}
-	  {set $guitar_groove_active FALSE}
+      {reset_fc_vars}
      ;#endif
       #ifndef HX_WII
       {stagekit_reset}
@@ -195,10 +183,7 @@
       {unless ; i dunno how i feel about this it's kinda hacky so maybe look into a less hacky way to prevent it running twice
          $outro_ran
          {set $outro_ran TRUE}
-         {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
-         {set $bass_groove_active FALSE} {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
-   	  {set $drum_groove_active FALSE}
-   	  {set $guitar_groove_active FALSE}
+         {reset_fc_vars}
          {beatmatch
             foreach_active_player
             $p
