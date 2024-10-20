@@ -290,12 +290,12 @@
          ;    {pp_override})
          (theatre
             {gamemode set_mode theatre}
-            {goto_after_network_connect matchmaking_screen FALSE})
+            {ui goto_screen matchmaking_screen})
          (theatre_info_button
             {ui push_screen theatre_info_screen})
          (autoplay
             {gamemode set_mode autoplay_mode}
-            {goto_after_network_connect matchmaking_screen FALSE})
+            {ui goto_screen matchmaking_screen})
          (enable_whammy
              {set whammy_enabled TRUE}
              {ui push_screen reset_info_screen})
@@ -354,6 +354,12 @@
             {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
             #endif
             )
+         (friendly_scoreduel_local
+            {gamemode set_mode h2h_score_duel_friendly}
+            {ui goto_screen matchmaking_screen})
+         (friendly_scoreduel_online
+            {gamemode set_mode h2h_score_duel_friendly_online}
+            {goto_after_network_connect matchmaking_screen FALSE})
          (qp_local
             {gamemode set_mode qp_coop_local}
             {goto_after_network_connect matchmaking_screen FALSE})

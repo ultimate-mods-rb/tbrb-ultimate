@@ -438,6 +438,12 @@
    "Left")
 (os_pad_dright
    "Right")
+(friendly_scoreduel
+   "Friendly")
+(friendly_scoreduel_local
+   "player match")
+(friendly_scoreduel_online
+   "online match")
 #ifdef HX_WII
 (force_username
    "Set Nickname")

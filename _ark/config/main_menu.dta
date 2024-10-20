@@ -13,7 +13,8 @@
          player_match_scoreduel
          #ifdef HX_XBOX
          (ranked_match_scoreduel easy medium hard expert)
-         #endif))
+         #endif
+         (friendly_scoreduel friendly_scoreduel_local friendly_scoreduel_online)))
    (story story_local story_online)
    ((training popup)
       tutorials

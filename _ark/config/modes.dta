@@ -401,6 +401,12 @@
    (song_select_leaderboards FALSE)
    (update_leaderboards FALSE)
    (check_mics FALSE))
+(h2h_score_duel_friendly
+   (parent_mode h2h_score_duel)
+   (update_leaderboards FALSE)) ;for anyone curious we block it because of the diff score scaling
+(h2h_score_duel_friendly_online
+   (parent_mode h2h_score_duel_friendly)
+   H2H_UNRANKED_PROPERTIES)
 (community_leaderboards
    (song_select_mode song_select_leaderboards)
    (cancel_connect_warning leaderboards_not_available_connection))
