@@ -276,10 +276,10 @@
          $name
          (mod_info_button
             {ui push_screen mod_info_screen})
-         (force_instrument_info_button
-            {ui push_screen force_instrument_info_screen})
-         (album_art_info_button
-            {ui push_screen album_art_info_screen})
+         ;(force_instrument_info_button
+         ;   {ui push_screen force_instrument_info_screen})
+         ;(album_art_info_button
+         ;   {ui push_screen album_art_info_screen})
          (overshell
             {passive_messages_panel queue_message overshell_info}
             {set $modifier_exit {ui current_screen}}
@@ -296,9 +296,9 @@
          (autoplay
             {gamemode set_mode autoplay_mode}
             {ui goto_screen matchmaking_screen})
-         (enable_whammy
-             {set whammy_enabled TRUE}
-             {ui push_screen reset_info_screen})
+         ;(enable_whammy
+         ;    {set whammy_enabled TRUE}
+         ;    {ui push_screen reset_info_screen})
          ;(disable_whammy
          ;    {set whammy_enabled FALSE})
          (go_to_frs
@@ -312,48 +312,48 @@
          ;    {set autosave FALSE} ;dw about this silly line it dont do nothin
          ;    ;{{$this find icons_story.tex} set_bitmap {sprint "ui/track/textures/icons_story.png"}}
          ;    {set $autoplay TRUE})
-         (force_guitar
-            {set $padtar FALSE}
-            {set $paddrum FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_guitar_ps3}
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_guitar_ps3}
-            #else
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 ro_guitar_xbox}
-            #endif
-            )
-         (force_drums
-            {set $padtar FALSE}
-            {set $paddrum FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_drums_ps3}
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_ps3}
-            #else
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_xbox}
-            #endif
-            )
-         (force_dolpadtar
-            {set_elem {find $syscfg joypad instrument_mapping wii_rodrums} 1 kControllerGuitar})
-         (force_reset
-            #ifdef HX_WII
-            {set_elem {find $syscfg joypad instrument_mapping wii_rodrums} 1 kControllerDrum}
-            #else
-            {set $padtar FALSE}
-            {set $paddrum FALSE}
-            #ifdef HX_PS3
-            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-            #endif
-            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-            {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-            #endif
-            )
+         ;(force_guitar
+         ;   {set $padtar FALSE}
+         ;   {set $paddrum FALSE}
+         ;   #ifdef HX_PS3
+         ;   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+         ;   {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_guitar_ps3}
+         ;   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+         ;   {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_guitar_ps3}
+         ;   #else
+         ;   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+         ;   {set_elem {find $syscfg joypad controller_mapping analog} 1 ro_guitar_xbox}
+         ;   #endif
+         ;   )
+         ;(force_drums
+         ;   {set $padtar FALSE}
+         ;   {set $paddrum FALSE}
+         ;   #ifdef HX_PS3
+         ;   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+         ;   {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_drums_ps3}
+         ;   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+         ;   {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_ps3}
+         ;   #else
+         ;   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
+         ;   {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_xbox}
+         ;   #endif
+         ;   )
+         ;(force_dolpadtar
+         ;   {set_elem {find $syscfg joypad instrument_mapping wii_rodrums} 1 kControllerGuitar})
+         ;(force_reset
+         ;   #ifdef HX_WII
+         ;   {set_elem {find $syscfg joypad instrument_mapping wii_rodrums} 1 kControllerDrum}
+         ;   #else
+         ;   {set $padtar FALSE}
+         ;   {set $paddrum FALSE}
+         ;   #ifdef HX_PS3
+         ;   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+         ;   {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+         ;   #endif
+         ;   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+         ;   {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+         ;   #endif
+         ;   )
          (friendly_scoreduel_local
             {gamemode set_mode h2h_score_duel_friendly}
             {ui goto_screen matchmaking_screen})

@@ -215,6 +215,10 @@
    {set_cnt_type wii_remote kControllerDrum}
    #endif
    {set_cnt_type analog kControllerDrum}}
+#ifndef HX_WII
+{if $force_inst_detec
+   {force_inst_detection}}
+#endif
 
 {unless {== $highway none} {set $highwaycustomtexture TRUE}}
 

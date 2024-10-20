@@ -33,7 +33,7 @@
    "Forces GH Drums to Guitar so you can do padtar on Dolphin")
 #else
 (force_instrument_info
-   "Forces pad as Guitar/Drums\nIntended to use Wii RB instruments on PS3 HW or other instruments with adapters\nDisables padtar/drum")
+   "Forces instrument detection as Guitar/Drums\nIntended to use Wii RB instruments on PS3 HW or other instruments with adapters\nDisables padtar/drum")
 #endif
 (album_art_info
    "Some album art might be missing or corrupted\nThere seems to be some sort of file limit I was reaching and removing the art fixed the issues occuring\nIt will not be fixed\nsorry")
@@ -438,6 +438,10 @@
    "Left")
 (os_pad_dright
    "Right")
+(os_force_inst_detec
+   "Force Instrument Detection")
+(gh_guitar
+   "GH Guitar")
 (friendly_scoreduel
    "Friendly")
 (friendly_scoreduel_local

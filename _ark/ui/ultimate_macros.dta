@@ -18,6 +18,11 @@
                {elem {find $entry second_kick_mapping} 1}
             }
          }
+         {if {find $entry force_instrument_dectection}
+            {set $force_inst_detec
+               {elem {find $entry force_instrument_dectection} 1}
+            }
+         }
          {if {find $entry pad_binds}
             {set $cnt_slot1
                {elem {elem {find $entry pad_binds} 1} 0}

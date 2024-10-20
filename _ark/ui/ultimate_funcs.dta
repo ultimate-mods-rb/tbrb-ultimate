@@ -7,6 +7,7 @@
                (pad_is_guitar $padtar)
                (pad_is_drum $paddrum)
                (second_kick_mapping $secondkick)
+               (force_instrument_dectection $force_inst_detec)
                (pad_binds ($cnt_slot1 $cnt_slot2 $cnt_slot3 $cnt_slot4 $cnt_slot5 $cnt_star))
             )
             (gameplay_settings
@@ -149,4 +150,49 @@
    {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE} {set $h2h_0_milosong FALSE} {set $h2h_1_milosong FALSE}
    {set $guitar_firstnote FALSE} {set $bass_firstnote FALSE} {set $drum_firstnote FALSE} {set $h2h_0_firstnote FALSE} {set $h2h_1_firstnote FALSE}
    {set $guitar_groove_active FALSE} {set $drum_groove_active FALSE} {set $h2h_0_groove_active FALSE} {set $h2h_1_groove_active FALSE}
+}
+{func
+   force_inst_detection
+   {set $padtar FALSE}
+   {set $paddrum FALSE}
+   {if_else $force_inst_detec
+      {switch $force_inst_detec
+         (guitar
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_guitar_ps3}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_guitar_ps3}
+            #else
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 ro_guitar_xbox}
+            #endif
+         )
+         #ifdef HX_PS3
+         (gh_guitar
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 ro_guitar_ps3}
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 ro_guitar_ps3}
+         )
+         #endif
+         (drum
+            {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}
+            #ifdef HX_PS3
+            {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+            {set_elem {find $syscfg joypad controller_mapping dualshock} 1 hx_drums_ps3}
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_ps3}
+            #else
+            {set_elem {find $syscfg joypad controller_mapping analog} 1 hx_drums_xbox}
+            #endif
+         )
+      }
+      {do
+         #ifdef HX_PS3
+         {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+         {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+         #endif
+         {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+         {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+      }
+   }
 }

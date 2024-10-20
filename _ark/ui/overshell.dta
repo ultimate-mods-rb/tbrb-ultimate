@@ -2852,6 +2852,9 @@
 #define CNT_MODIFIER_DATA
 ((
    os_remap_cnt
+   #ifndef HX_WII
+   os_force_inst_detec
+   #endif
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
    {if_else $secondkick os_secondkick1 os_secondkick0}
@@ -2870,6 +2873,10 @@
       {switch {$component selected_sym}
          (os_remap_cnt
             {ui push_screen overshell_remap_cnt_screen}
+            {set $cntmodifierpos {sel_section.lst selected_sym}}
+         )
+         (os_force_inst_detec
+            {ui push_screen overshell_force_inst_detec_screen}
             {set $cntmodifierpos {sel_section.lst selected_sym}}
          )
          (os_padtar1
@@ -3609,4 +3616,61 @@
    overshell_cnt_star_screen
    (panels overshell_cnt_star_panel)
    (focus overshell_cnt_star_panel)}
+;
+;
+{new
+   MultiSelectListPanel
+   overshell_force_inst_detec_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_force_inst_detec}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (info
+            {ui push_screen force_instrument_info_screen}
+         )
+         (off
+            {set $force_inst_detec FALSE}
+            {force_inst_detection}
+            {ui goto_screen overshell_cnt_screen}
+            {ui pop_screen}
+         )
+         (guitar
+            {set $force_inst_detec guitar}
+            {force_inst_detection}
+            {ui goto_screen overshell_cnt_screen}
+            {ui pop_screen}
+         )
+         (gh_guitar
+            {set $force_inst_detec gh_guitar}
+            {force_inst_detection}
+            {ui goto_screen overshell_cnt_screen}
+            {ui pop_screen}
+         )
+         (drum
+            {set $force_inst_detec drum}
+            {force_inst_detection}
+            {ui goto_screen overshell_cnt_screen}
+            {ui pop_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (info off guitar #ifdef HX_PS3 gh_guitar #endif drum os_blnk)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_force_inst_detec}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_force_inst_detec_screen
+   (panels overshell_force_inst_detec_panel)
+   (focus overshell_force_inst_detec_panel)}
 ;
