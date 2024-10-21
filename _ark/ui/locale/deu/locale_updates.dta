@@ -445,9 +445,13 @@
 (friendly_scoreduel
    "Friendly")
 (friendly_scoreduel_local
-   "player match")
+   "local multiplayer")
 (friendly_scoreduel_online
-   "online match")
+   "player match")
+(os_flashbang1
+   "Flashbang Gems: ON")
+(os_flashbang0
+   "Flashbang Gems: OFF")
 #ifdef HX_WII
 (force_username
    "Set Nickname")

@@ -1,0 +1,26 @@
+#define FLASHBANG ;this had to be very nerfed to not kill xbox :/
+(
+   {do
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+      {$this trig_all}
+   }
+)
+(trig_all
+   {set [burning] TRUE}
+   {hit.trig trigger}
+   {big_rock_burn.trig trigger}
+   {big_rock_hit.trig trigger}
+   {BRE_final_gem_hit.trig trigger}
+   {burn_bonus.trig trigger}
+   {burn.trig trigger}
+   {finger_tap_bonus.trig trigger}
+   {finger_tap.trig trigger}
+   {hit_bonus.trig trigger}
+   {hit_fill.trig trigger}
+   {spotlight_phrase_success.trig trigger})

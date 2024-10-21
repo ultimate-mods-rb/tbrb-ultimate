@@ -175,6 +175,9 @@
    {if_else $fcring os_fcring1 os_fcring0}
    {if_else $legacybass os_legacybass1 os_legacybass0}
    {if_else $colorshuffle os_colorshuffle1 os_colorshuffle0}
+   #ifndef HX_WII
+   {if_else $flashbang os_flashbang1 os_flashbang0}
+   #endif
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
    {if_else $randomoutfit os_randomoutfit1 os_randomoutfit0}
    #ifdef HX_PS3
@@ -239,6 +242,16 @@
          )
          (os_colorshuffle0
             {set $colorshuffle {! $colorshuffle}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_flashbang1
+            {set $flashbang {! $flashbang}}
+            {set $vismodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_flashbang0
+            {set $flashbang {! $flashbang}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
