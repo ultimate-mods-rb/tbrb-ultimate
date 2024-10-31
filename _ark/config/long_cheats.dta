@@ -27,7 +27,12 @@
       CHEATS_ALLOWED
       {ui push_screen bonus_photo_unlock_screen}})
 ((kPad_Select kPad_Select)
-   {unless OVERSHELL_DISALLOWED_SCREENS
+   {unless 
+      {'||'
+         $overshell_up
+         {find_elem
+            OVERSHELL_DISALLOWED_SCREENS
+            {ui current_screen}}}
       {do
          {set $modifier_exit {ui current_screen}}
          {ui push_screen overshell_main_screen}}})
