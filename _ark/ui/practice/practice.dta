@@ -878,6 +878,7 @@
                      track}
                   set_playing_intro
                   1000}
+               {reset_fc_vars}
                {set
                   [bring_track_in]
                   FALSE}
