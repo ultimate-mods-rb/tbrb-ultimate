@@ -2871,6 +2871,7 @@
    {if_else $padtar os_padtar1 os_padtar0}
    {if_else $paddrum os_paddrum1 os_paddrum0}
    {if_else $secondkick os_secondkick1 os_secondkick0}
+   {if_else $os_igc os_blnk {if_else $autokick os_autokick1 os_autokick0}}
    os_blnk
 ))
 {new
@@ -2954,6 +2955,16 @@
             {set $secondkick {! $secondkick}}
             {enable_second_kick_mapping}
             {set $cntmodifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_autokick1
+            {set $autokick {! $autokick}}
+            {set $modifierpos {sel_section.lst selected_sym}}
+            {$this lst_reset}
+         )
+         (os_autokick0
+            {set $autokick {! $autokick}}
+            {set $modifierpos {sel_section.lst selected_sym}}
             {$this lst_reset}
          )
       }

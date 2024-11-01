@@ -66,7 +66,7 @@
    (ranked FALSE)
    (rock_central TRUE)
    (song_select_leaderboards FALSE)
-   (update_leaderboards TRUE)
+   (update_leaderboards {! $autokick})
    (ready_screen qp_seldiff_screen)
    (matchmaking_screen matchmaking_screen)
    (lose_screen lose_screen)

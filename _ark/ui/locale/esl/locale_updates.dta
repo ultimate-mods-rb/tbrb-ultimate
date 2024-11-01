@@ -195,6 +195,10 @@
    "Venue FPS")
 (os_vsync
    "Vsync Rate")
+(os_autokick1
+   "Auto Kick: ON")
+(os_autokick0
+   "Auto Kick: OFF")
 (os_forcecnv1
    "Force Cavern Venue: ON")
 (os_forcecnv0

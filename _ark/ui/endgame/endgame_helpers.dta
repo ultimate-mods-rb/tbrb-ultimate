@@ -269,9 +269,23 @@
                         TRUE}
                      {if
                         {$pxy exists player.lbl}
-                        {{$pxy find player.lbl}
-                           set_intro_name
-                           $user}}
+                        {if_else $autokick
+                           {if_else
+                              {==
+                                 {{$user player}
+                                    instrument}
+                                 drum}
+                              {{$pxy find player.lbl}
+                                 set
+                                 text_token
+                                 "AUTOKICK"}
+                              {{$pxy find player.lbl}
+                                 set_intro_name
+                                 $user}
+                           }
+                           {{$pxy find player.lbl}
+                              set_intro_name
+                              $user}}}
                      {{$pxy find instrument.lbl}
                         set
                         icon

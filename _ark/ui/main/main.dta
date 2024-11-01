@@ -991,6 +991,7 @@
          (cancel helpbar_back)))
    (last_focus FALSE)
    (enter
+      {set $os_igc FALSE}
       {if
          {&&
             {== $this main_screen}

@@ -281,6 +281,8 @@
                {$bcs set (keyframes $i shake_noiseamp) {'*' {$bcs get (keyframes $i shake_noiseamp)} 0}}
                {$bcs set (keyframes $i shake_maxangle x) {'*' {$bcs get (keyframes $i shake_maxangle x)} 0}}
                {$bcs set (keyframes $i shake_maxangle y) {'*' {$bcs get (keyframes $i shake_maxangle y)} 0}}}}}}
+      {unless {gamemode get online_play_required}
+         {beatmatch set_kick_autoplay $autokick}}
       {$this set_showing TRUE}
       {set
          [delayed_mic_check]

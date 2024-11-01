@@ -21,6 +21,17 @@
          {handle
             (game beat)}})
    (downbeat
+      {if {&& $autokick {! {gamemode get online_play_required}}}
+         {beatmatch foreach_active_player ;rewrite in a non stupid way at some point
+            $player
+            {switch {$player instrument}
+               (bass)
+               (guitar)
+               (vocals)
+               (drum {$player deploy_if_possible})
+            }
+         }
+      }
       {if_else
          $world
          {handle_type
