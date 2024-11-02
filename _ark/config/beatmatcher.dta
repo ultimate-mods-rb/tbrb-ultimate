@@ -22,13 +22,10 @@
             (game beat)}})
    (downbeat
       {if {&& $autokick {! {gamemode get online_play_required}}}
-         {beatmatch foreach_active_player ;rewrite in a non stupid way at some point
+         {beatmatch foreach_active_player
             $player
-            {switch {$player instrument}
-               (bass)
-               (guitar)
-               (vocals)
-               (drum {$player deploy_if_possible})
+            {if {== {$player instrument} drum}
+               {$player deploy_if_possible}
             }
          }
       }
