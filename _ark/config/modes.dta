@@ -57,7 +57,9 @@
    (player_arrangement kArrangeBand)
    (use_static_tip FALSE)
    (cannot_connect_warning community_no_server_warning)
+   #ifdef HX_WII
    (cancel_connect_warning canceled_connect_warning)
+   #endif
    (guest_not_first FALSE)
    (insta_rank FALSE)
    (local_network TRUE)
@@ -205,14 +207,20 @@
          {do
             {if_else
                {story is_story_complete}
+               #ifdef HX_WII
                coop_endgame_screen
+               #else
+               story_endmovie_screen
+               #endif
                coop_endgame_screen}}
          nextsong_screen}))
 (story_local
    (parent_mode story)
    (show_pause_quit FALSE)
    (cannot_connect_warning story_no_server_warning)
-   (cancel_connect_warning canceled_connect_warning))
+   #ifdef HX_WII
+   (cancel_connect_warning canceled_connect_warning)
+   #endif)
 (story_online
    (parent_mode story)
    (guest_not_first TRUE)
@@ -409,10 +417,12 @@
    H2H_UNRANKED_PROPERTIES)
 (community_leaderboards
    (song_select_mode song_select_leaderboards)
-   (cancel_connect_warning leaderboards_not_available_connection))
+   #ifdef HX_WII
+   (cancel_connect_warning leaderboards_not_available_connection)
+   #endif)
 (store
    (local_network FALSE)
-   (rock_central TRUE))
+   (rock_central #ifdef HX_WII TRUE #else FALSE #endif))
 (options
    (uisink_signout_screen MAIN_MENU_RETURN_SCREEN))
 #ifdef HX_WII
