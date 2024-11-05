@@ -88,6 +88,8 @@
    "SONG SPEED: %d%%")
 (trackspeed_msg
    "NOTE SPEED: %d%%")
+(hwlength_msg
+   "HIGHWAY LENGTH: %d%%")
 (fps_msg
    "VENUE FPS: %dFPS")
 (os_dxsettings "SETTINGS")

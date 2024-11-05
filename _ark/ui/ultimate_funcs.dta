@@ -33,6 +33,7 @@
             )
             (track_settings
                (track_speed $trackspeed)
+               (highway_length $hwlength)
                (sync_difficulty_speeds $syncdifspeeds)
                (show_fc_ring $fcring)
                (legacy_bass_streak $legacybass)

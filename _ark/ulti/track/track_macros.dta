@@ -47,8 +47,20 @@
 )
 #define SET_TRACK_SPEEDS
 (
-   {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ {if_else $syncdifspeeds 1.2 2.4} $trackspeed} $speedmod}} ;implement track speed modifier
-   {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {/ 1.2 $trackspeed} $speedmod}}
+   {set $hwss ;p tf you gonna do about it. nothing :3
+      {if_else {== $hwlength 1.0}
+         1.0
+         {if_else {> $hwlength 2.0}
+            {/ $hwlength 1.4}
+            {if_else {> $hwlength 1.0}
+               {/ $hwlength {+ {* 0.4 $hwlength} 0.6}}
+               {* $hwlength {+ {* -1.5 $hwlength} 2.5}}
+            }
+         }
+      }
+   }
+   {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {* {/ {if_else $syncdifspeeds 1.2 2.4} $hwss} $trackspeed} $speedmod}} ;implement track speed modifier
+   {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {* {/ 1.2 $trackspeed} $hwss} $speedmod}}
 )
 #define CALLBACK_ELEMS
 ((hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass))

@@ -2690,23 +2690,13 @@
    (enter
 	  {background.sld set_num_steps 41} ;number of steps for note speed slider
       {crowd.sld set_num_steps 31} ;number of steps for song speed slider
-      {sfx.sld set_num_steps 60} ;number of steps for venue fps slider
+      {sfx.sld set_num_steps 41} ;number of steps for highway length slider
 	  {background.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
       {crowd.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
-      ;#ifdef HX_WII
-      {$this disable sfx.sld}
-      {sfx.sld set_showing FALSE}
-      ;#else
-      ;{sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
-      ;#endif
+      {sfx.sld set_current {sprintf {localize hwlength_msg} {int {+ 0.5 {* $hwlength 100}}}}} ;set hw length slider based on current value
 	  {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
 	  {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
-      ;#ifdef HX_WII
-      {$this disable sfx.btn}
-      {sfx.btn set_showing FALSE}
-      ;#else
-	  ;{sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
-      ;#endif
+	  {sfx.btn set text_token {sprintf {localize hwlength_msg} {int {+ 0.5 {* $hwlength 100}}}}}  ;set highway length msg
       {audio_options.lbl set text_token milosliderlbl}
       {karaoke.btn set_showing FALSE}
       {$this disable karaoke.btn}
@@ -2815,28 +2805,28 @@
          (sfx.sld
             {$component
                set_current
-               {int {- $emulatefps 1}}})})
+               {int {+ 0.5 {/ {+ {- $hwlength 1} 0.5} 0.05}}}})})
 	(set_speeds
          {do
             {set $trackspeed {- {+ 1 {* {background.sld current} 0.05}} 0.5}}
             {set $speedmod
                {+ 1 {* {crowd.sld current} 0.05}}}
-            {set $emulatefps
-               {+ 1 {sfx.sld current}}}
+            {set $hwlength
+               {- {+ 1 {* {sfx.sld current} 0.05}} 0.5}}
          {set $leaderspeed $speedmod}}
          {set $leaderspeed $speedmod}
          {$this display_trackspeed_msg $trackspeed}
          {$this display_speed_msg $speedmod}
-         {$this display_fps_msg $emulatefps})
+         {$this display_hl_msg $hwlength})
    (display_trackspeed_msg
       ($tspd)
       {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $tspd 100}}}}})
    (display_speed_msg
       ($mspd)
      {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $mspd 100}}}}})
-   (display_fps_msg
-      ($fps)
-     {sfx.btn set text_token {sprintf {localize fps_msg} {int $fps}}}) ;don't add 1 here because this is being fed the actual fps
+   (display_hl_msg
+      ($hlpd)
+     {sfx.btn set text_token {sprintf {localize hwlength_msg} {int {+ 0.5 {* $hlpd 100}}}}})
    (update_helpbar
       ($new_focus)
       {switch

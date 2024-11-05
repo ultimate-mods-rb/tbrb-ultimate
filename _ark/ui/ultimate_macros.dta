@@ -169,6 +169,11 @@
                {elem {find $entry track_speed} 1}
             }
          }
+         {if {find $entry highway_length}
+            {set $hwlength
+               {elem {find $entry highway_length} 1}
+            }
+         }
          {if {find $entry sync_difficulty_speeds}
             {set $syncdifspeeds
                {elem {find $entry sync_difficulty_speeds} 1}
