@@ -2,10 +2,10 @@
    set_ring_tex ; :3 :3 :3 decode me
    ($isnt $ring_tex)
    {if_else {gamemode in_mode autoplay_mode}
-      {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find ap_plate.tex}}
+      {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find streak_meter_plate_ap.tex}}
       {if_else $fcring
-         {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find {sprint $ring_tex "_plate.tex"}}}
-         {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find black_plate.tex}}
+         {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find  {if_else {== $ring_tex fc} streak_meter_plate_fc.tex streak_meter_plate.tex}}}
+         {{{{{get_track_panel} find $isnt} find streak_meter} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find streak_meter_plate.tex}}
       }
    }
 }

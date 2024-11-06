@@ -1,32 +1,38 @@
 #define SET_TRACK_TEXTURES
 (
-   #ifdef HX_WII
-   {unless $wiisux
-      {set $wiisux TRUE} ;just a message to all the delusional wii mains
-      {{$this find proj9_player_meter_bg.tex} set_bitmap "ui/track/textures/proj9_player_meter_bg.png"}
-      {{$this find proj9_player_meter_lens.tex} set_bitmap "ui/track/textures/proj9_player_meter_lens.png"}
-      {{$this find streak_meter_bg.tex} set_bitmap "ui/track/textures/streak_meter_bg_wii.png"}
-      {{$this find streak_meter_vox_bg.tex} set_bitmap "ui/track/textures/streak_meter_vox_bg.png"}
-   }
-   #endif
-   {if {gamemode in_mode autoplay_mode}
-      {set $wasjustlooking TRUE}
-      {{$this find star_awarded.tex} set_bitmap "ui/track/textures/star_awarded_ap.png"}
-   }
-   {unless {$this find black_plate.tex}
-      {new Tex black_plate.tex}
-      {{$this find black_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate_bk.png"}
-      {new Tex fc_plate.tex}
-      {{$this find fc_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate_fc.png"}
-      {new Tex ap_plate.tex}
-      {{$this find ap_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate.png"}
-   }
-   {unless {gamemode in_mode autoplay_mode}
-      {if $wasjustlooking
-         {set $wasjustlooking FALSE}
-         {{$this find star_awarded.tex} set_bitmap "ui/track/textures/star_awarded.png"}
-      }
-   }
+   ;#ifdef HX_WII ;now stored in track shared milo
+   ;{unless $wiisux
+   ;   {set $wiisux TRUE} ;just a message to all the delusional wii mains
+   ;   {{$this find proj9_player_meter_bg.tex} set_bitmap "ui/track/textures/proj9_player_meter_bg.png"}
+   ;   {{$this find proj9_player_meter_lens.tex} set_bitmap "ui/track/textures/proj9_player_meter_lens.png"}
+   ;   {{$this find streak_meter_bg.tex} set_bitmap "ui/track/textures/streak_meter_bg_wii.png"}
+   ;   {{$this find streak_meter_vox_bg.tex} set_bitmap "ui/track/textures/streak_meter_vox_bg.png"}
+   ;}
+   ;#endif
+   ;{if {gamemode in_mode autoplay_mode} ;now stored in track shared milo
+   ;   {set $wasjustlooking TRUE}
+   ;   {{$this find star_awarded.tex} set_bitmap "ui/track/textures/star_awarded_ap.png"}
+   ;}
+   ;{unless {$this find black_plate.tex} ;now stored in track shared milo
+   ;   {new Tex black_plate.tex}
+   ;   {{$this find black_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate_bk.png"}
+   ;   {new Tex fc_plate.tex}
+   ;   {{$this find fc_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate_fc.png"}
+   ;   {new Tex ap_plate.tex}
+   ;   {{$this find ap_plate.tex} set_bitmap "ui/track/textures/streak_meter_plate.png"}
+   ;}
+   ;{unless {gamemode in_mode autoplay_mode} ;now stored in track shared milo
+   ;   {if $wasjustlooking
+   ;      {set $wasjustlooking FALSE}
+   ;      {{$this find star_awarded.tex} set_bitmap "ui/track/textures/star_awarded.png"}
+   ;   }
+   ;}
+
+   ;we should probably just set it directly but i couldn't find where it was so this works :p
+   {star_awarded.tex iterate_refs $ref {$ref set diffuse_tex {if_else {gamemode in_mode autoplay_mode} star_awarded_ap.tex star_awarded.tex}}}
+   ;fun fact wii unloads the track panel so there's no need for this line on wii but i don't feel like ifdefing it
+   {star_awarded_ap.tex iterate_refs $ref {$ref set diffuse_tex {if_else {gamemode in_mode autoplay_mode} star_awarded_ap.tex star_awarded.tex}}}
+
    {if $highwaycustomtexture
       {{$this find track_lanes.tex} set_bitmap {sprint "ui/track/highway/" $highway ".png"}}
    }
