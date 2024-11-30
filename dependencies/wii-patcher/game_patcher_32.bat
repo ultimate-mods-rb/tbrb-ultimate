@@ -1,7 +1,7 @@
 @echo off
 set "ISO_FOLDER=%cd%\iso"
 set "ULTIMATE_FILES_FOLDER=%cd%\ultimate_files"
-set "WIT_EXECUTABLE=%cd%\wit\wit.exe"
+set "WIT_EXECUTABLE=%cd%\wit\wit_32.exe"
 
 if not exist _temp (
     mkdir _temp
