@@ -92,7 +92,7 @@
 )
 #define FC_CALLBACKS
 (
-   (new Object fc_bass_callback ;remove FC groove on bass miss/pass
+   {new Object fc_bass_callback ;remove FC groove on bass miss/pass
       (hit
          {if {! $bass_firstnote} {set $bass_firstnote TRUE}}
          {if {! $bass_milosong} {set $bass_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
@@ -130,8 +130,8 @@
       (num_gems_combo 0)
       (num_gems_miss 0)
       (num_gems_pass 0)
-   )
-   (new Object fc_guitar_callback ;remove FC groove on guitar miss/pass
+   }
+   {new Object fc_guitar_callback ;remove FC groove on guitar miss/pass
       (hit
          {if {! $guitar_firstnote} {set $guitar_firstnote TRUE}}
          {if {! $guitar_milosong} {set $guitar_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
@@ -170,8 +170,8 @@
       (num_gems_combo 0)
       (num_gems_miss 0)
       (num_gems_pass 0)
-   )
-   (new Object fc_drum_callback ;remove FC groove on drum miss/pass
+   }
+   {new Object fc_drum_callback ;remove FC groove on drum miss/pass
       (hit
          {if {! $drum_firstnote} {set $drum_firstnote TRUE}}
          {if {! $drum_milosong} {set $drum_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
@@ -209,8 +209,8 @@
       (num_gems_combo 0)
       (num_gems_miss 0)
       (num_gems_pass 0)
-   )
-   (new Object fc_h2h_0_callback ;remove FC groove on h2h track 0 miss/pass
+   }
+   {new Object fc_h2h_0_callback ;remove FC groove on h2h track 0 miss/pass
       (hit
          {if {! $h2h_0_firstnote} {set $h2h_0_firstnote TRUE}}
          {if {! $h2h_0_milosong} {set $h2h_0_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
@@ -252,8 +252,8 @@
       (num_gems_combo 0)
       (num_gems_miss 0)
       (num_gems_pass 0)
-   )
-   (new Object fc_h2h_1_callback ;remove FC groove on h2h track 1 miss/pass
+   }
+   {new Object fc_h2h_1_callback ;remove FC groove on h2h track 1 miss/pass
       (hit
          {if {! $h2h_1_firstnote} {set $h2h_1_firstnote TRUE}}
          {if {! $h2h_1_milosong} {set $h2h_1_milosong TRUE} {set [num_gems_hit] 0} {set [num_gems_miss] 0} {set [num_gems_pass] 0} {set [num_gems_combo] 0}}
@@ -295,5 +295,5 @@
       (num_gems_combo 0)
       (num_gems_miss 0)
       (num_gems_pass 0)
-   )
+   }
 )
