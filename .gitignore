@@ -8,3 +8,4 @@ old
 dependencies/riivolution-patch/riivolution/config/
 dependencies/riivolution-patch/tbrbul/
 *_out
+.fuse_hidden*

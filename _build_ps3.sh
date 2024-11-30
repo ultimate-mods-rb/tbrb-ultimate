@@ -26,7 +26,7 @@ mv "$PWD/_songs/songs_ps3" "$PWD/_ark/songs"
 # Building PS3 ARK
 echo
 echo "Building PS3 ARK"
-"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/ps3/USRDIR/gen" -n "patch_ps3" -e -v 5 -s 4073741823 >/dev/null 2>&1
+"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/ps3/USRDIR/gen" -n "patch_ps3" -e -v 5 -s 4073741823
 if [ $? -ne 0 ]; then
     FAILED_ARK_BUILD=1
 fi

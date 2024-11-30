@@ -24,7 +24,7 @@ mv "$PWD/_songs/songs_xbox" "$PWD/_ark/songs"
 
 echo
 echo "Building Xbox ARK"
-"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/xbox/gen" -n "patch_xbox" -e -v 5 > /dev/null
+"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/xbox/gen" -n "patch_xbox" -e -v 5 -s 4073741823
 if [ $? -ne 0 ]; then
     FAILED_ARK_BUILD=1
 fi

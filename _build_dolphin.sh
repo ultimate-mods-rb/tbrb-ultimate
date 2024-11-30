@@ -39,7 +39,7 @@ mv "$PWD/_songs/songs_wii" "$PWD/_ark/songs"
 #find "$PWD/_ark" \( -name "*.milo_xbox" -o -name "*.png_xbox" -o -name "*.bmp_xbox" -o -name "*.milo_ps3" -o -name "*.png_ps3" -o -name "*.bmp_ps3" \) -exec mv -t "$PWD/_temp/_ark" {} +
 
 # Create patched files using arkhelper
-"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/wii/files/gen" -n "patch_wii" -e -v 5 -s 4073741823 >/dev/null 2>&1
+"$ARKHELPER_PATH" dir2ark "$PWD/_ark" "$PWD/_build/wii/files/gen" -n "patch_wii" -e -v 5 -s 4073741823
 if [ $? -ne 0 ]; then
     FAILED_ARK_BUILD=1
 fi
