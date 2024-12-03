@@ -30,12 +30,11 @@
    {unless 
       {'||'
          $overshell_up
+         {ui in_transition}
          {find_elem
             OVERSHELL_DISALLOWED_SCREENS
             {ui current_screen}}}
-      {do
-         {set $modifier_exit {ui current_screen}}
-         {ui push_screen overshell_main_screen}}})
+      {ui push_screen overshell_main_screen}})
 ((kPad_Circle)
    {if
       CLOSE_FRAME_RATE_SCREEN

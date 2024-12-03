@@ -92,7 +92,8 @@
    "HIGHWAY LENGTH: %d%%")
 (fps_msg
    "VENUE FPS: %dFPS")
-(os_dxsettings "SETTINGS")
+(os_ultisettings
+   "Settings")
 (os_spd "Speed Modifiers")
 (os_mod "Gameplay Modifiers")
 (os_vis "Visual Modifiers")
@@ -301,10 +302,6 @@
    "Guitar Smasher Color")
 (os_drm_smasher_color
    "Drum Smasher Color")
-(os_reset_gem
-   "Reset")
-(os_reset_sus
-   "Reset")
 (os_green_gem
    "Green")
 (os_red_gem
@@ -319,54 +316,18 @@
    "Overdrive")
 (os_kick_gem
    "Kick")
-(os_gtr_gems_1
+(os_slot_1
    "Slot 1")
-(os_gtr_gems_2
+(os_slot_2
    "Slot 2")
-(os_gtr_gems_3
+(os_slot_3
    "Slot 3")
-(os_gtr_gems_4
+(os_slot_4
    "Slot 4")
-(os_gtr_gems_5
+(os_slot_5
    "Slot 5")
-(os_gtr_sus_1
-   "Slot 1")
-(os_gtr_sus_2
-   "Slot 2")
-(os_gtr_sus_3
-   "Slot 3")
-(os_gtr_sus_4
-   "Slot 4")
-(os_gtr_sus_5
-   "Slot 5")
-(os_drm_gems_1
-   "Kick")
-(os_drm_gems_2
-   "Slot 1")
-(os_drm_gems_3
-   "Slot 2")
-(os_drm_gems_4
-   "Slot 3")
-(os_drm_gems_5
-   "Slot 4")
-(os_gtr_smasher_1
-   "Slot 1")
-(os_gtr_smasher_2
-   "Slot 2")
-(os_gtr_smasher_3
-   "Slot 3")
-(os_gtr_smasher_4
-   "Slot 4")
-(os_gtr_smasher_5
-   "Slot 5")
-(os_drm_smasher_1
-   "Slot 1")
-(os_drm_smasher_2
-   "Slot 2")
-(os_drm_smasher_3
-   "Slot 3")
-(os_drm_smasher_4
-   "Slot 4")
+(os_slot_6
+   "Overdrive")
 (os_fcring1
    "Show FC Ring: ON")
 (os_fcring0
