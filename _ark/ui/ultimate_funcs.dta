@@ -79,7 +79,6 @@
             {!= $forcescene off}
             {!= $forceminivenue off}
             $ngskillissue
-            
          }
          {script_task
             kTaskSeconds
@@ -87,7 +86,7 @@
             (script
                {$this game_outro}
             )
-         } 
+         }
          kDataUnhandled
       }
       kDataUnhandled
@@ -190,20 +189,17 @@
             #endif
          )
       }
-      {do
-         #ifdef HX_PS3
-         {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-         {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-         #endif
-         {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-         {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
-      }
+      #ifdef HX_PS3
+      {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+      {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+      #endif
+      {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+      {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
    }
 }
 {func
    get_author_info
-   {if_else
-      $showauthor
+   {if_else $showauthor
       {do
          {set $authorvar FALSE}
          {set $author_text FALSE}
@@ -215,42 +211,32 @@
                }
             }
          }
-         #ifdef HX_WII
-         {if
-            $authorvar
-            {set $author_text {sprint " | Author: " $authorvar}}
-         }
-         #else
-         {if_else
-            $authorvar
-            {set $author_text {sprint " | Author: " $authorvar}}
-            {do
-               {set $song_dta_path {sprint {song_mgr song_path {symbol $songvar}} "/../../songs.dta"}}
-               #ifdef HX_PS3 ;hard code some stuff here because ps3 hw is trash. good thing people use a terrible method for adding customs.
-               {unless
-                  {file_exists $song_dta_path}
-                  {set $song_dta_path {sprint "GD:/dev_hdd0/game/" #ifdef REGION_EUROPE "BLES00532" #else "BLUS30282" #endif "/USRDIR/CCF0001/songs/songs.dta"}}
-               }
-               #endif
-               {if
-                  {file_exists $song_dta_path}
-                  {foreach $entry {read_file $song_dta_path}
-                     {if {== {elem $entry 0} {basename $songvar}}
-                        {if {find $entry author}
-                           {set $authorvar
-                              {elem {find $entry author} 1}
-                           }
+         #ifdef HX_NG
+         {unless $authorvar
+            {set $song_dta_path {sprint {song_mgr song_path {symbol $songvar}} "/../../songs.dta"}}
+            #ifdef HX_PS3 ;hard code some stuff here because ps3 hw is trash. good thing people use a terrible method for adding customs.
+            {unless
+               {file_exists $song_dta_path}
+               {set $song_dta_path {sprint "GD:/dev_hdd0/game/" #ifdef REGION_EUROPE "BLES00532" #else "BLUS30282" #endif "/USRDIR/CCF0001/songs/songs.dta"}}
+            }
+            #endif
+            {if
+               {file_exists $song_dta_path}
+               {foreach $entry {read_file $song_dta_path}
+                  {if {== {elem $entry 0} {basename $songvar}}
+                     {if {find $entry author}
+                        {set $authorvar
+                           {elem {find $entry author} 1}
                         }
                      }
-                  }
-                  {if
-                     $authorvar
-                     {set $author_text {sprint " | Author: " $authorvar}}
                   }
                }
             }
          }
          #endif
+         {if $authorvar
+            {set $author_text {sprint " | Author: " $authorvar}}
+         }
       }
       {set $author_text FALSE}
    }
