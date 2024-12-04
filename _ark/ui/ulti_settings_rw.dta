@@ -1,0 +1,712 @@
+{func
+   ulti_settings_reader
+   {foreach $entry {read_file $ulti_settings_path}
+      {if {== {elem $entry 0} {basename controller_settings}}
+         {if {find $entry pad_is_guitar}
+            {set $padtar
+               {elem {find $entry pad_is_guitar} 1}
+            }
+         }
+         {if {find $entry pad_is_drum}
+            {set $paddrum
+               {elem {find $entry pad_is_drum} 1}
+            }
+         }
+         {if {find $entry second_kick_mapping}
+            {set $secondkick
+               {elem {find $entry second_kick_mapping} 1}
+            }
+         }
+         {if {find $entry auto_kick}
+            {set $autokick
+               {elem {find $entry auto_kick} 1}
+            }
+         }
+         {if {find $entry force_instrument_dectection}
+            {set $force_inst_detec
+               {elem {find $entry force_instrument_dectection} 1}
+            }
+         }
+         {if {find $entry pad_binds}
+            {set $cnt_slot1
+               {elem {elem {find $entry pad_binds} 1} 0}
+            }
+            {set $cnt_slot2
+               {elem {elem {find $entry pad_binds} 1} 1}
+            }
+            {set $cnt_slot3
+               {elem {elem {find $entry pad_binds} 1} 2}
+            }
+            {set $cnt_slot4
+               {elem {elem {find $entry pad_binds} 1} 3}
+            }
+            {set $cnt_slot5
+               {elem {elem {find $entry pad_binds} 1} 4}
+            }
+            {set $cnt_star
+               {elem {elem {find $entry pad_binds} 1} 5}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename gameplay_settings}}
+         {if {find $entry song_speed}
+            {set $speedmod
+               {elem {find $entry song_speed} 1}
+            }
+         }
+         {if {find $entry whammy_pitch_bending}
+            {set $whammypb
+               {elem {find $entry whammy_pitch_bending} 1}
+            }
+         }
+         {if {find $entry track_muting}
+            {set $trkmuting
+               {elem {find $entry track_muting} 1}
+            }
+         }
+         {if {find $entry disable_miss_sounds}
+            {set $nomisounds
+               {elem {find $entry disable_miss_sounds} 1}
+            }
+         }
+         {if {find $entry pad_is_guitar} ;legacy remove in 2.0 final
+            {set $padtar
+               {elem {find $entry pad_is_guitar} 1}
+            }
+         }
+         {if {find $entry pad_is_drum}  ;legacy remove in 2.0 final
+            {set $paddrum
+               {elem {find $entry pad_is_drum} 1}
+            }
+         }
+         {if {find $entry second_kick_mapping}  ;legacy remove in 2.0 final
+            {set $secondkick
+               {elem {find $entry second_kick_mapping} 1}
+            }
+         }
+         {if {find $entry mic_gain}
+            {set $mic_gain_1
+               {elem {elem {find $entry mic_gain} 1} 0}
+            }
+            {set $mic_gain_2
+               {elem {elem {find $entry mic_gain} 1} 1}
+            }
+            {set $mic_gain_3
+               {elem {elem {find $entry mic_gain} 1} 2}
+            }
+         }
+         {if {find $entry default_difficulties}
+            {set $default_diff0
+               {elem {elem {find $entry default_difficulties} 1} 0}
+            }
+            {set $default_diff1
+               {elem {elem {find $entry default_difficulties} 1} 1}
+            }
+            {set $default_diff2
+               {elem {elem {find $entry default_difficulties} 1} 2}
+            }
+            {set $default_diff3
+               {elem {elem {find $entry default_difficulties} 1} 3}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename graphics_settings}}
+         {if {find $entry disable_all_post_fx}
+            {set $postfx
+               {elem {find $entry disable_all_post_fx} 1}
+            }
+         }
+         {if {find $entry black_bg}
+            {set $blackbg
+               {elem {find $entry black_bg} 1}
+            }
+         }
+         {if {find $entry camera_shake}
+            {set $camerashake
+               {elem {find $entry camera_shake} 1}
+            }
+         }
+         {if {find $entry bloom}
+            {set $scrbloom
+               {elem {find $entry bloom} 1}
+            }
+         }
+         {if {find $entry depth_of_field}
+            {set $fxdof
+               {elem {find $entry depth_of_field} 1}
+            }
+         }
+         {if {find $entry film_grain}
+            {set $scrnoise
+               {elem {find $entry film_grain} 1}
+            }
+         }
+         {if {find $entry motion_blur}
+            {set $mbblend
+               {elem {find $entry motion_blur} 1}
+            }
+         }
+         {if {find $entry force_high_lod}
+            {set $forcelod0
+               {elem {find $entry force_high_lod} 1}
+            }
+         }
+         {if {find $entry venue_fps}
+            {set $emulatefps
+               {elem {find $entry venue_fps} 1}
+            }
+         }
+         {if {find $entry vsync_rate}
+            {set $vsyncrate
+               {elem {find $entry vsync_rate} 1}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename track_settings}}
+         {if {find $entry track_speed}
+            {set $trackspeed
+               {elem {find $entry track_speed} 1}
+            }
+         }
+         {if {find $entry highway_length}
+            {set $hwlength
+               {elem {find $entry highway_length} 1}
+            }
+         }
+         {if {find $entry sync_difficulty_speeds}
+            {set $syncdifspeeds
+               {elem {find $entry sync_difficulty_speeds} 1}
+            }
+         }
+         {if {find $entry show_fc_ring}
+            {set $fcring
+               {elem {find $entry show_fc_ring} 1}
+            }
+         }
+         {if {find $entry legacy_bass_streak}
+            {set $legacybass
+               {elem {find $entry legacy_bass_streak} 1}
+            }
+         }
+         {if {find $entry note_color_shuffle}
+            {set $colorshuffle
+               {elem {find $entry note_color_shuffle} 1}
+            }
+         }
+         {if {find $entry guitar_gem_colors}
+            {set $gtrgem1
+               {elem {elem {find $entry guitar_gem_colors} 1} 0}
+            }
+            {set $gtrgem2
+               {elem {elem {find $entry guitar_gem_colors} 1} 1}
+            }
+            {set $gtrgem3
+               {elem {elem {find $entry guitar_gem_colors} 1} 2}
+            }
+            {set $gtrgem4
+               {elem {elem {find $entry guitar_gem_colors} 1} 3}
+            }
+            {set $gtrgem5
+               {elem {elem {find $entry guitar_gem_colors} 1} 4}
+            }
+         }
+         {if {find $entry guitar_smasher_colors}
+            {set $gtrsm1
+               {elem {elem {find $entry guitar_smasher_colors} 1} 0}
+            }
+            {set $gtrsm2
+               {elem {elem {find $entry guitar_smasher_colors} 1} 1}
+            }
+            {set $gtrsm3
+               {elem {elem {find $entry guitar_smasher_colors} 1} 2}
+            }
+            {set $gtrsm4
+               {elem {elem {find $entry guitar_smasher_colors} 1} 3}
+            }
+            {set $gtrsm5
+               {elem {elem {find $entry guitar_smasher_colors} 1} 4}
+            }
+         }
+         {if {find $entry guitar_sustain_colors}
+            {set $gtrsus1
+               {elem {elem {find $entry guitar_sustain_colors} 1} 0}
+            }
+            {set $gtrsus2
+               {elem {elem {find $entry guitar_sustain_colors} 1} 1}
+            }
+            {set $gtrsus3
+               {elem {elem {find $entry guitar_sustain_colors} 1} 2}
+            }
+            {set $gtrsus4
+               {elem {elem {find $entry guitar_sustain_colors} 1} 3}
+            }
+            {set $gtrsus5
+               {elem {elem {find $entry guitar_sustain_colors} 1} 4}
+            }
+         }
+         {if {find $entry drum_gem_colors}
+            {set $drmgem1
+               {elem {elem {find $entry drum_gem_colors} 1} 0}
+            }
+            {set $drmgem2
+               {elem {elem {find $entry drum_gem_colors} 1} 1}
+            }
+            {set $drmgem3
+               {elem {elem {find $entry drum_gem_colors} 1} 2}
+            }
+            {set $drmgem4
+               {elem {elem {find $entry drum_gem_colors} 1} 3}
+            }
+            {set $drmgem5
+               {elem {elem {find $entry drum_gem_colors} 1} 4}
+            }
+         }
+         {if {find $entry drum_smasher_colors}
+            {set $drms1
+               {elem {elem {find $entry drum_smasher_colors} 1} 0}
+            }
+            {set $drms2
+               {elem {elem {find $entry drum_smasher_colors} 1} 1}
+            }
+            {set $drms3
+               {elem {elem {find $entry drum_smasher_colors} 1} 2}
+            }
+            {set $drms4
+               {elem {elem {find $entry drum_smasher_colors} 1} 3}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename track_textures}}
+         {if {find $entry highway_texture}
+            {set $highway
+               {elem {find $entry highway_texture} 1}
+            }
+         }
+         {if {find $entry streak_texture}
+            {set $streak
+               {elem {find $entry streak_texture} 1}
+            }
+         }
+         {if {find $entry spotlight_texture}
+            {set $spotlight
+               {elem {find $entry spotlight_texture} 1}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename ui_settings}}
+         {if {find $entry disable_net_warnings}
+            {set $skipnetwarning
+               {elem {find $entry disable_net_warnings} 1}
+            }
+         }
+         {if {find $entry show_song_author}
+            {set $showauthor
+               {elem {find $entry show_song_author} 1}
+            }
+         }
+         {if {find $entry skip_intro_video}
+            {set $skipintro
+               {elem {find $entry skip_intro_video} 1}
+            }
+         }
+         {if {find $entry skip_splash_screen}
+            {set $skipsplash
+               {elem {find $entry skip_splash_screen} 1}
+            }
+         }
+         {if {find $entry song_title_always}
+            {set $songtitle
+               {elem {find $entry song_title_always} 1}
+            }
+         }
+      }
+      {if {== {elem $entry 0} {basename venue_settings}}
+         {if {find $entry force_outfits}
+            {set $forceoutfit
+               {elem {find $entry force_outfits} 1}
+            }
+         }
+         {if {find $entry force_venue}
+            {set $forcevenue
+               {elem {find $entry force_venue} 1}
+            }
+         }
+         {if {find $entry force_minivenue}
+            {set $forceminivenue
+               {elem {find $entry force_minivenue} 1}
+            }
+         }
+         {if {find $entry force_scene}
+            {set $forcescene
+               {elem {find $entry force_scene} 1}
+            }
+         }
+         {if {find $entry random_venue}
+            {set $randomvenue
+               {elem {find $entry random_venue} 1}
+            }
+         }
+         {if {find $entry random_outfits}
+            {set $randomoutfit
+               {elem {find $entry random_outfits} 1}
+            }
+         }
+      }
+   }
+}
+{func
+   ulti_settings_writer
+   {write_file $ulti_settings_path
+      {array
+         (
+            (controller_settings
+               (pad_is_guitar $padtar)
+               (pad_is_drum $paddrum)
+               (second_kick_mapping $secondkick)
+               (auto_kick $autokick)
+               (force_instrument_dectection $force_inst_detec)
+               (pad_binds ($cnt_slot1 $cnt_slot2 $cnt_slot3 $cnt_slot4 $cnt_slot5 $cnt_star))
+            )
+            (gameplay_settings
+               (song_speed $speedmod)
+               (whammy_pitch_bending $whammypb)
+               (track_muting $trkmuting)
+               (disable_miss_sounds $nomisounds)
+               (mic_gain ({profile_mgr get_mic_gain 0} {profile_mgr get_mic_gain 1} {profile_mgr get_mic_gain 2}))
+               (default_difficulties ($default_diff0 $default_diff1 $default_diff2 $default_diff3))
+            )
+            (graphics_settings
+               (disable_all_post_fx $postfx)
+               (black_bg $blackbg)
+               (bloom $scrbloom)
+               (camera_shake $camerashake)
+               (depth_of_field $fxdof)
+               (film_grain $scrnoise)
+               (motion_blur $mbblend)
+               (force_high_lod $forcelod0)
+               (venue_fps $emulatefps)
+               (vsync_rate $vsyncrate)
+            )
+            (track_settings
+               (track_speed $trackspeed)
+               (highway_length $hwlength)
+               (sync_difficulty_speeds $syncdifspeeds)
+               (show_fc_ring $fcring)
+               (legacy_bass_streak $legacybass)
+               (note_color_shuffle $colorshuffle)
+               (guitar_gem_colors ($gtrgem1 $gtrgem2 $gtrgem3 $gtrgem4 $gtrgem5))
+               (guitar_smasher_colors ($gtrsm1 $gtrsm2 $gtrsm3 $gtrsm4 $gtrsm5))
+               (guitar_sustain_colors ($gtrsus1 $gtrsus2 $gtrsus3 $gtrsus4 $gtrsus5))
+               (drum_gem_colors ($drmgem1 $drmgem2 $drmgem3 $drmgem4 $drmgem5))
+               (drum_smasher_colors ($drms1 $drms2 $drms3 $drms4))
+            )
+            (track_textures
+               (highway_texture $highway)
+               (streak_texture $streak)
+               (spotlight_texture $spotlight)
+            )
+            (ui_settings
+               (disable_net_warnings $skipnetwarning)
+               (show_song_author $showauthor)
+               (skip_intro_video $skipintro)
+               (skip_splash_screen $skipsplash)
+               (song_title_always $songtitle)
+               (disable_trophies $lie)
+               (disable_saving $lie)
+            )
+            (venue_settings
+               (force_outfits $forceoutfit)
+               (force_venue $forcevenue)
+               (force_minivenue $forceminivenue)
+               (force_scene $forcescene)
+               (random_venue $randomvenue)
+               (random_outfits $randomoutfit)
+            )
+         )
+      }
+   }
+}
+{func
+   convert_ulti_settings
+   {foreach $entry {read_file $orig_ulti_settings_path}
+      {if {== {elem $entry 0} {basename track_speed}}
+         {set $trackspeed
+            {elem {find $entry track_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename song_speed}}
+         {set $speedmod
+            {elem {find $entry song_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename emulate_fps}}
+         {set $emulatefps
+            {elem {find $entry emulate_fps} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename black_bg}}
+         {set $blackbg
+            {elem {find $entry black_bg} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename highway_texture}}
+         {set $highway
+            {elem {find $entry highway_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename streak_texture}}
+         {set $streak
+            {elem {find $entry streak_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename spotlight_texture}}
+         {set $spotlight
+            {elem {find $entry spotlight_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_gem1}}
+         {set $gtrgem1
+            {elem {find $entry gtr_gem1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_gem2}}
+         {set $gtrgem2
+            {elem {find $entry gtr_gem2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_gem3}}
+         {set $gtrgem3
+            {elem {find $entry gtr_gem3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_gem4}}
+         {set $gtrgem4
+            {elem {find $entry gtr_gem4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_gem5}}
+         {set $gtrgem5
+            {elem {find $entry gtr_gem5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drm_gem1}}
+         {set $drmgem1
+            {elem {find $entry drm_gem1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drm_gem2}}
+         {set $drmgem2
+            {elem {find $entry drm_gem2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drmg_em3}}
+         {set $drmgem3
+            {elem {find $entry drm_gem3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drm_gem4}}
+         {set $drmgem4
+            {elem {find $entry drm_gem4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drm_gem5}}
+         {set $drmgem5
+            {elem {find $entry drm_gem5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm1}}
+         {set $gtrsm1
+            {elem {find $entry gtrsm1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm2}}
+         {set $gtrsm2
+            {elem {find $entry gtrsm2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm3}}
+         {set $gtrsm3
+            {elem {find $entry gtrsm3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm4}}
+         {set $gtrsm4
+            {elem {find $entry gtrsm4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtrsm5}}
+         {set $gtrsm5
+            {elem {find $entry gtrsm5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_sus1}}
+         {set $gtrsus1
+            {elem {find $entry gtr_sus1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_sus2}}
+         {set $gtrsus2
+            {elem {find $entry gtr_sus2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_sus3}}
+         {set $gtrsus3
+            {elem {find $entry gtr_sus3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_sus4}}
+         {set $gtrsus4
+            {elem {find $entry gtr_sus4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gtr_sus5}}
+         {set $gtrsus5
+            {elem {find $entry gtr_sus5} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms1}}
+         {set $drms1
+            {elem {find $entry drms1} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms2}}
+         {set $drms2
+            {elem {find $entry drms2} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms3}}
+         {set $drms3
+            {elem {find $entry drms3} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename drms4}}
+         {set $drms4
+            {elem {find $entry drms4} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename whammypb}}
+         {set $whammypb
+            {elem {find $entry whammypb} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename syncdifspeeds}}
+         {set $syncdifspeeds
+            {elem {find $entry syncdifspeeds} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename legacybass}}
+         {set $legacybass
+            {elem {find $entry legacybass} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename forceoutfit}}
+         {set $forceoutfit
+            {elem {find $entry forceoutfit} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename forcevenue}}
+         {set $forcevenue
+            {elem {find $entry forcevenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename forceminivenue}}
+         {set $forceminivenue
+            {elem {find $entry forceminivenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename forcescene}}
+         {set $forcescene
+            {elem {find $entry forcescene} 1}
+         }
+      }
+      #ifdef HX_PS3
+      {if {== {elem $entry 0} {basename skipsplash}}
+         {set $skipsplash
+            {elem {find $entry skipsplash} 1}
+         }
+      }
+      #endif
+      {if {== {elem $entry 0} {basename skipintro}}
+         {set $skipintro
+            {elem {find $entry skipintro} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename padtar}}
+         {set $padtar
+            {elem {find $entry padtar} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename paddrum}}
+         {set $paddrum
+            {elem {find $entry paddrum} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename colorshuffle}}
+         {set $colorshuffle
+            {elem {find $entry colorshuffle} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomvenue}}
+         {set $randomvenue
+            {elem {find $entry randomvenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomoutfit}}
+         {set $randomoutfit
+            {elem {find $entry randomoutfit} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mic_gain}}
+         {set $mic_gain_1
+            {elem {elem {find $entry mic_gain} 1} 0}
+         }
+         {set $mic_gain_2
+            {elem {elem {find $entry mic_gain} 1} 1}
+         }
+         {set $mic_gain_3
+            {elem {elem {find $entry mic_gain} 1} 2}
+         }
+      }
+      {if {== {elem $entry 0} {basename default_difficulties}}
+         {set $default_diff0
+            {elem {elem {find $entry default_difficulties} 1} 0}
+         }
+         {set $default_diff1
+            {elem {elem {find $entry default_difficulties} 1} 1}
+         }
+         {set $default_diff2
+            {elem {elem {find $entry default_difficulties} 1} 2}
+         }
+         {set $default_diff3
+            {elem {elem {find $entry default_difficulties} 1} 3}
+         }
+      }
+      {if {== {elem $entry 0} {basename vsync_rate}}
+         {set $vsyncrate
+            {elem {find $entry vsync_rate} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename disable_net_warnings}}
+         {set $skipnetwarning
+            {elem {find $entry disable_net_warnings} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename show_song_author}}
+         {set $showauthor
+            {elem {find $entry show_song_author} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename second_kick_mapping}}
+         {set $secondkick
+            {elem {find $entry second_kick_mapping} 1}
+         }
+      }
+   }
+   {script_task
+      kTaskSeconds
+      (delay 7) ;just we only delay because of how slow ps3 is
+      (script
+         {init_dta_writer}
+         {passive_messages_panel queue_message converted_settings})
+   }
+}

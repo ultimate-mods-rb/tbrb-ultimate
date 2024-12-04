@@ -195,9 +195,9 @@
    #endif
 }
 {if_else {file_exists $ulti_settings_path}
-   INIT_DTA_READER
+   {ulti_settings_reader}
    {if {file_exists $orig_ulti_settings_path}
-      CONVERT_SETTINGS}}
+      {convert_ulti_settings}}}
 #endif
 ;modifier funcs
 {if $postfx

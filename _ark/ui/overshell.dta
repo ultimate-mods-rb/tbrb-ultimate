@@ -42,6 +42,9 @@
    )
    (BUTTON_DOWN_MSG
       {if {== $action kAction_Cancel}
+         #ifdef HX_NG
+         {ulti_settings_writer}
+         #endif
          {ui pop_screen}
          {set $overshell_up FALSE}
       }
@@ -556,7 +559,7 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset #endif os_hw os_strk os_spotlight os_venues os_minivenues os_scenes os_outfits os_gems_colors os_smashers_colors
+   #ifdef HX_NG os_reset #endif os_hw os_strk os_spotlight os_venues os_minivenues os_scenes os_outfits os_gems_colors os_smashers_colors
 ))
 {new
    MultiSelectListPanel
@@ -587,7 +590,7 @@
             {set $scorecustomtexture FALSE}
             {set $scoretex "none"}
             {$this lst_reset}
-            {init_dta_writer}
+            {ulti_settings_writer}
             {ui push_screen reset_info_screen}
          )
          (os_hw

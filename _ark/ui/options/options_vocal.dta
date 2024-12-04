@@ -343,8 +343,8 @@
          update_helpbar
          {$this focus_name}})
    (exit
-      #ifndef HX_WII
-      {init_dta_writer}
+      #ifdef HX_NG
+      {ulti_settings_writer}
       #endif
       {$this handle_exit})
    VOCAL_OPTIONS_PANEL_HANDERS}
@@ -376,8 +376,8 @@
          update_helpbar
          {$this focus_name}})
    (exit
-      #ifndef HX_WII
-      {init_dta_writer}
+      #ifdef HX_NG
+      {ulti_settings_writer}
       #endif
       {$this handle_exit}
       {session remove_sink $this signin_changed}
