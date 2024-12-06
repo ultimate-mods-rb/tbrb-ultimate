@@ -15,39 +15,41 @@
             {gamemode in_mode drum_trainer}
             {!
                {gamemode in_mode practice}}}}
-      {do
-         ($vocals 0)
-         ($gems 0)
-         ($tri_frame 0)
-         {beatmatch
-            foreach_active_player
-            $player
-            {if_else
-               {==
-                  {$player instrument}
-                  vocals}
-               {'++' $vocals}
-               {'++' $gems}}}
-         {if
-            {'||'
+      #ifdef HX_WII
+      {if_else $notriframe
+         {rnd tri_frame 0}
+         {do
+            ($vocals 0)
+            ($gems 0)
+            ($tri_frame 0)
+            {beatmatch
+               foreach_active_player
+               $player
+               {if_else
+                  {==
+                     {$player instrument}
+                     vocals}
+                  {'++' $vocals}
+                  {'++' $gems}}}
+            {if
+               {'||'
+                  {&&
+                     $vocals
+                     {== $gems 1}}
+                  {&&
+                     {== $vocals 0}
+                     {>= $gems 2}}}
+               {set
+                  $tri_frame
+                  {song_mgr
+                     tri_frame
+                     {meta_performer song}}}}
+            {if
                {&&
                   $vocals
-                  {== $gems 1}}
-               {&&
-                  {== $vocals 0}
-                  {>= $gems 2}}}
-            {set
-               $tri_frame
-               {song_mgr
-                  tri_frame
-                  {meta_performer song}}}}
-         {if
-            {&&
-               $vocals
-               {>= $gems 2}}
-            {set $tri_frame 1}}
-         {rnd tri_frame $tri_frame}}
-      #ifdef HX_WII
+                  {>= $gems 2}}
+               {set $tri_frame 1}}
+            {rnd tri_frame $tri_frame}}}
       {rnd frames_buffered 2}
       #endif)
    (exit

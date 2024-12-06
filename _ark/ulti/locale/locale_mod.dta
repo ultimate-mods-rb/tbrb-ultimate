@@ -186,6 +186,10 @@
    "Camera Shake: ON")
 (os_camerashake0
    "Camera Shake: OFF")
+(os_notriframe1
+   "Disable Co-op Optimizations: ON")
+(os_notriframe0
+   "Disable Co-op Optimizations: OFF")
 (os_nomisounds1
    "Disable Miss Sounds: ON")
 (os_nomisounds0

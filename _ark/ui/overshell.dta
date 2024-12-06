@@ -207,6 +207,7 @@
    #endif
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
+   {if_else $notriframe os_notriframe1 os_notriframe0}
    #endif
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $postfx os_postfx1 os_postfx0}
@@ -233,6 +234,9 @@
          ((os_disablegfx1 os_disablegfx0)
             {set $disablegfx {! $disablegfx}}
             {rnd toggle_all_postprocs}
+         )
+         ((os_notriframe1 os_notriframe0)
+            {set $notriframe {! $notriframe}}
          )
          ((os_postfx1 os_postfx0)
             {set $postfx {! $postfx}}
