@@ -14,6 +14,10 @@ jobs:
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           chmod +x dependencies/linux/arkhelper
           chmod +x dependencies/linux/dtab
+      - name: Get current commit SHA and Replace DEVBUILD with commit SHA in locale
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
       - name: Remove PS3 and Wii files
         run: |
           find . -name "*.*_ps3" -type f -delete
@@ -40,6 +44,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Get and replace DEVBUILD with commit SHA in locale
+        run: |
+          $commitSha = (git rev-parse --short HEAD).ToUpper()
+          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta      
       - name: Remove Xbox and Wii files
         run: |
           Get-ChildItem _ark/ -recurse -include *.*_xbox | remove-item
@@ -69,6 +77,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Get and replace DEVBUILD with commit SHA in locale
+        run: |
+          $commitSha = (git rev-parse --short HEAD).ToUpper()
+          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta      
       - name: Remove Xbox and Wii files
         run: |
           Get-ChildItem _ark/ -recurse -include *.*_xbox | remove-item
@@ -105,6 +117,10 @@ jobs:
           mkdir -p ./dependencies/riivolution-patch/tbrbul/
           chmod +x dependencies/linux/arkhelper
           chmod +x dependencies/linux/dtab
+      - name: Get current commit SHA and Replace DEVBUILD with commit SHA in locale
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
       - name: Remove Xbox and PS3 files
         run: |
           find . -name "*.*_xbox" -type f -delete
@@ -134,6 +150,10 @@ jobs:
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           chmod +x dependencies/linux/arkhelper
           chmod +x dependencies/linux/dtab
+      - name: Get current commit SHA and Replace DEVBUILD with commit SHA in locale
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
       - name: Remove Xbox and PS3 files
         run: |
           find . -name "*.*_xbox" -type f -delete

@@ -30,6 +30,15 @@
       {gamemode set_mode init}
       {$this update_motd}
       {meta music_start}
+      ;we probably should be doing more of this in the lbl but i only just learned how to make/edit them
+      {ultiver.lbl set text_size 2}
+      {ultiver.lbl set text_token ultiver}
+      {if_else
+         {== {rnd aspect} kWidescreenAspect}
+         {ultiver.lbl set_local_pos -36 0 20}
+         {ultiver.lbl set_local_pos -25.5 0 20}
+      }
+      {ultiver.lbl set_showing TRUE}
       {set_cnt_mapping}) ;didn't work setting in init
    (exit
       {platform_mgr remove_sink $this connection_status_changed}
