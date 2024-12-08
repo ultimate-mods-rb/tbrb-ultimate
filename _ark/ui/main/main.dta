@@ -22,7 +22,7 @@
          (server_status_changed)}
       {achievements set_allow_achievements TRUE}
       {session clear}
-      {song_offer_provider clear_saved_highlight}
+      ;{song_offer_provider clear_saved_highlight}
       {story clear_performer}
       #ifdef HX_WII
       {$this free_wii_remotes}

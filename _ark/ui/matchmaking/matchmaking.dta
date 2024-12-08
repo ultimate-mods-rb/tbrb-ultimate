@@ -555,7 +555,8 @@
       #endif
       {net_sync set_ui_state kNetUI_Matchmaking}
       {input_mgr set_limit kLimitNone}
-      {song_offer_provider clear_saved_highlight})
+      ;{song_offer_provider clear_saved_highlight}
+   )
    (exit
       {memcardmgr remove_sink $this save_load_all_complete_msg}
       {matchmaker cancel_find}
