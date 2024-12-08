@@ -94,8 +94,8 @@
          ((os_trkmuting1 os_trkmuting0)
             {set $trkmuting {! $trkmuting}}
          )
-         ((os_misssounds1 os_misssounds0)
-            {set $misssounds {! $misssounds}}
+         ((os_nomisounds1 os_nomisounds0)
+            {set $nomisounds {! $nomisounds}}
          )
          ((os_skipintro1 os_skipintro0)
             {set $skipintro {! $skipintro}}
