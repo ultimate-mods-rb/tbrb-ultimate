@@ -436,6 +436,8 @@
    "Clear Nickname")
 (username_info
    "Please choose a Nickname to be used on the game servers. This Nickname will be associated with your leaderboards and friends.\n\nIf you do not wish to play online you may disable online play. To re-enable online play go to \qPlayer Settings\q in the \qOptions\q menu.\n\nWithout servers you can also set a nickname in\nUltimenu > Extra Mods > Set Nickname")
+(loaded_ulti_settings
+   "Loaded Mod Settings")
 #else
 (mic_sensitivity_save_warning
    " ")

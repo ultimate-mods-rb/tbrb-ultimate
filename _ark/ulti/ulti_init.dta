@@ -198,43 +198,5 @@
    {ulti_settings_reader}
    {if {file_exists $orig_ulti_settings_path}
       {convert_ulti_settings}}}
-#endif
-;modifier funcs
-{if $postfx
-   #ifdef HX_WII {pp_override} #else {rnd toggle_all_postprocs} #endif}
-{if $padtar
-   #ifdef HX_PS3
-   {set_cnt_type dualshock kControllerGuitar}
-   #endif
-   #ifdef HX_WII
-   {set_cnt_type wii_remote kControllerGuitar}
-   #endif
-   {set_cnt_type analog kControllerGuitar}}
-{if $paddrum
-   #ifdef HX_PS3
-   {set_cnt_type dualshock kControllerDrum}
-   #endif
-   #ifdef HX_WII
-   {set_cnt_type wii_remote kControllerDrum}
-   #endif
-   {set_cnt_type analog kControllerDrum}}
-#ifndef HX_WII
-{if $force_inst_detec
-   {force_inst_detection}}
-#endif
-
-{unless {== $highway none} {set $highwaycustomtexture TRUE}}
-
-{unless {== $spotlight none} {set $spotlightcustomtexture TRUE}}
-
-{unless {== $streak none} {set $streakcustomtexture TRUE}}
-
-{profile_mgr set_mic_gain 0 $mic_gain_1} {profile_mgr update_mic_gain 0}
-
-{profile_mgr set_mic_gain 1 $mic_gain_2} {profile_mgr update_mic_gain 1}
-
-{profile_mgr set_mic_gain 2 $mic_gain_3} {profile_mgr update_mic_gain 2}
-
-#ifndef HX_WII
-{rnd set_sync $vsyncrate}
+{modifier_funcs}
 #endif

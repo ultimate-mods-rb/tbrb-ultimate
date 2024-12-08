@@ -1,0 +1,70 @@
+{func ;i was trying so many ramdom things until it suddenly popped into my head how to do this right it might not be writen optimally but it works so it's not really fine
+   ulti_ssisf ;save settings in save file
+   ($var $num)
+   {if_else {& {profile_mgr get_voice_chat_volume} $num}
+      {unless $var
+         {profile_mgr set_voice_chat_volume
+            {^ {profile_mgr get_voice_chat_volume} $num}
+         }
+      }
+      {if $var
+         {profile_mgr set_voice_chat_volume
+            {^ {profile_mgr get_voice_chat_volume} $num}
+         }
+      }
+   }
+}
+{func
+   ulti_settings_reader ;REWRITE
+   {if {& {profile_mgr get_voice_chat_volume} 2097152}
+      {set $trkmuting {& {profile_mgr get_voice_chat_volume} 1}}
+      {set $whammypb {& {profile_mgr get_voice_chat_volume} 2}}
+      {set $syncdifspeeds {& {profile_mgr get_voice_chat_volume} 4}}
+      {set $nomisounds {& {profile_mgr get_voice_chat_volume} 8}}
+      {set $songtitle {& {profile_mgr get_voice_chat_volume} 16}}
+      {set $showauthor {& {profile_mgr get_voice_chat_volume} 32}}
+      {set $fcring {& {profile_mgr get_voice_chat_volume} 64}}
+      {set $colorshuffle {& {profile_mgr get_voice_chat_volume} 128}}
+      {set $randomvenue {& {profile_mgr get_voice_chat_volume} 256}}
+      {set $randomoutfit {& {profile_mgr get_voice_chat_volume} 512}}
+      {set $notriframe {& {profile_mgr get_voice_chat_volume} 1024}}
+      {set $blackbg {& {profile_mgr get_voice_chat_volume} 2048}}
+      {set $postfx {& {profile_mgr get_voice_chat_volume} 4096}}
+      {set $fxdof {& {profile_mgr get_voice_chat_volume} 8192}}
+      {set $scrnoise {& {profile_mgr get_voice_chat_volume} 16384}}
+      {set $scrbloom {& {profile_mgr get_voice_chat_volume} 32768}}
+      {set $camerashake {& {profile_mgr get_voice_chat_volume} 65536}}
+      {set $padtar {& {profile_mgr get_voice_chat_volume} 131072}}
+      {set $paddrum {& {profile_mgr get_voice_chat_volume} 262144}}
+      {set $secondkick {& {profile_mgr get_voice_chat_volume} 524288}}
+      {set $autokick {& {profile_mgr get_voice_chat_volume} 1048576}}
+      {modifier_funcs}
+      {set $settings_loaded TRUE}
+      {passive_messages_panel queue_message loaded_ulti_settings} ;temporary just to show that this is now a feature
+   }
+}
+{func
+   ulti_settings_writer ;i see no issues here :3
+   {ulti_ssisf $trkmuting 1}
+   {ulti_ssisf $whammypb 2}
+   {ulti_ssisf $syncdifspeeds 4}
+   {ulti_ssisf $nomisounds 8}
+   {ulti_ssisf $songtitle 16}
+   {ulti_ssisf $showauthor 32}
+   {ulti_ssisf $fcring 64}
+   {ulti_ssisf $colorshuffle 128}
+   {ulti_ssisf $randomvenue 256}
+   {ulti_ssisf $randomoutfit 512}
+   {ulti_ssisf $notriframe 1024}
+   {ulti_ssisf $blackbg 2048}
+   {ulti_ssisf $postfx 4096}
+   {ulti_ssisf $fxdof 8192}
+   {ulti_ssisf $scrnoise 16384}
+   {ulti_ssisf $scrbloom 32768}
+   {ulti_ssisf $camerashake 65536}
+   {ulti_ssisf $padtar 131072}
+   {ulti_ssisf $paddrum 262144}
+   {ulti_ssisf $secondkick 524288}
+   {ulti_ssisf $autokick 1048576}
+   {ulti_ssisf 1 2097152} ;a value we check to make sure we never try to read anything unless this has been written before to avoid wrong init stuff
+}

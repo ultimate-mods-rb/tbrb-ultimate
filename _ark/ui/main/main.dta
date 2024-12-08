@@ -39,7 +39,10 @@
          {ultiver.lbl set_local_pos -25.5 0 20}
       }
       {ultiver.lbl set_showing TRUE}
-      {set_cnt_mapping}) ;didn't work setting in init
+      #ifdef HX_WII
+      {unless $settings_loaded
+         {ulti_settings_reader}}
+      #endif)
    (exit
       {platform_mgr remove_sink $this connection_status_changed}
       {server remove_sink $this server_status_changed})

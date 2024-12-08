@@ -42,9 +42,7 @@
    )
    (BUTTON_DOWN_MSG
       {if {== $action kAction_Cancel}
-         #ifdef HX_NG
          {ulti_settings_writer}
-         #endif
          {ui pop_screen}
          {set $overshell_up FALSE}
       }
@@ -248,6 +246,9 @@
          )
          ((os_scrnoise1 os_scrnoise0)
             {set $scrnoise {! $scrnoise}}
+         )
+         ((os_scrbloom1 os_scrbloom0)
+            {set $scrbloom {! $scrbloom}}
          )
          ((os_camerashake1 os_camerashake0)
             {set $camerashake {! $camerashake}}
