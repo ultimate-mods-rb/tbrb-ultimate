@@ -1,6 +1,9 @@
 {switch {meta_performer song}
    (icallyourname
-      {{{load_objects char/george/song/taxman.milo} find song_solo} set_name song_sdsolo {{find_obj {$p9director chars_dir} george} find body}}
+      {if $loadobjsafe ; without this it can potentally crash if you restart the song like 50 times so we do this to be safe
+         {{{load_objects char/george/song/taxman.milo} find song_solo} set_name song_sdsolo {{find_obj {$p9director chars_dir} george} find body}}
+         {set $loadobjsafe FALSE}
+      }
       {if {$world find sullivan}
          {$world set_force_postproc film_sullivan.pp 5}
          {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
@@ -10,8 +13,11 @@
       }
    )
    (longtallsally
-      {{{load_objects char/john/song/getback.milo} find song_solo} set_name song_ltssolo {{find_obj {$p9director chars_dir} john} find body}}
-      {{{load_objects char/george/song/whilemyguitargentlyweeps.milo} find song_solo_01} set_name song_ltssolo {{find_obj {$p9director chars_dir} george} find body}}
+      {if $loadobjsafe
+         {{{load_objects char/john/song/getback.milo} find song_solo} set_name song_ltssolo {{find_obj {$p9director chars_dir} john} find body}}
+         {{{load_objects char/george/song/whilemyguitargentlyweeps.milo} find song_solo_01} set_name song_ltssolo {{find_obj {$p9director chars_dir} george} find body}}
+         {set $loadobjsafe FALSE}
+      }
       {if {$world find budokan}
          {$world set_force_postproc film_budokan.pp 5}
          {{find_obj {$p9director chars_dir} george} set instrument_index 3} ;when having the find_obj stuff as a var the game would crash when reloading the song
@@ -29,18 +35,24 @@
       }
       {unless {$world find cavern}
          {{find_obj {$p9director chars_dir} paul} set instrument_index 1}
-         {thread_task kTaskBeats (delay 1.0e-6) (script
-            {if {$world find budokan} {{find_obj {$p9director chars_dir} george} step_out}}
-            {$task sleep 100}
-            {{find_obj {$p9director chars_dir} paul} step_out}
-            {$task sleep 47}
-            {{find_obj {$p9director chars_dir} paul} step_in}
-            {$task sleep 49}
-            {{find_obj {$p9director chars_dir} paul} step_out}
-            {$task sleep 48}
-            {{find_obj {$p9director chars_dir} paul} step_in}
-            {$task sleep 93}
-            {{find_obj {$p9director chars_dir} paul} step_out})}
+         {thread_task kTaskBeats
+            (delay 1.0e-6)
+            (script
+               {if {$world find budokan}
+                  {{find_obj {$p9director chars_dir} george} step_out}
+               }
+               {$task sleep 100}
+               {{find_obj {$p9director chars_dir} paul} step_out}
+               {$task sleep 47}
+               {{find_obj {$p9director chars_dir} paul} step_in}
+               {$task sleep 49}
+               {{find_obj {$p9director chars_dir} paul} step_out}
+               {$task sleep 48}
+               {{find_obj {$p9director chars_dir} paul} step_in}
+               {$task sleep 93}
+               {{find_obj {$p9director chars_dir} paul} step_out}
+            )
+         }
       }
    )
    (matchbox
@@ -61,13 +73,64 @@
       }
    )
    (slowdown
-      {{{load_objects char/george/song/taxman.milo} find song_solo} set_name song_sdsolo {{find_obj {$p9director chars_dir} george} find body}}
+      {if $loadobjsafe
+         {{{load_objects char/george/song/taxman.milo} find song_solo} set_name song_sdsolo {{find_obj {$p9director chars_dir} george} find body}}
+         {set $loadobjsafe FALSE}
+      }
       {if {$world find sullivan}
          {$world set_force_postproc film_sullivan.pp 5}
          {{find_obj {$p9director chars_dir} george} set instrument_index 1} ;when having the find_obj stuff as a var the game would crash when reloading the song
          {{find_obj {$p9director chars_dir} john} set instrument_index 1}
          {{find_obj {$p9director chars_dir} paul} set instrument_index 1}
          {{find_obj {$p9director chars_dir} paul} step_out}
+      }
+   )
+   (yesterday
+      {if $loadobjsafe
+         {{{load_objects char/ringo/venue/dreamscape.milo} find billysheers_walkout} set_name billysheers_walkout {{find_obj {$p9director chars_dir} ringo} find body}}
+         {set $loadobjsafe FALSE}
+      }
+      {script_task kTaskSeconds
+         (script
+            {{{find_obj {$p9director chars_dir} george} get waypoint} get_local_pos $gx $gy $gz}
+            {{{find_obj {$p9director chars_dir} george} get waypoint} set_local_pos {'+' $gx 40} 400 $gz}
+            {{{find_obj {$p9director chars_dir} john} get waypoint} get_local_pos $jx $jy $jz}
+            {{{find_obj {$p9director chars_dir} john} get waypoint} set_local_pos {'+' $jx 40} 380 $jz}
+            {{{find_obj {$p9director chars_dir} george} get waypoint} set_local_rot 0 0 90}
+            {{{find_obj {$p9director chars_dir} john} get waypoint} set_local_rot 0 0 90}
+            {$world force_shot {find_obj $world shea n07.shot}}
+         )
+      }
+      {script_task kTaskSeconds
+         (delay 135.7)
+         (script
+            {{{find_obj {$p9director chars_dir} ringo} find hist} iterate Mesh $m {if {has_any_substr {$m name} (objgold objring lod0)} {$m set_showing TRUE}}}
+            {with {find_obj {$p9director chars_dir} ringo}
+               {foreach $e (L R) {{sprint "drum_" $e "-stick.mesh"} set_showing TRUE}}
+            }
+         )
+      }
+      {thread_task kTaskBeats
+         (script
+            {set $cari 1}
+            {if {< {beatmatch get_song_ms} 550} {set $cari {'+' 0.4 {'*' {beatmatch get_song_ms} 0.0011}}}}
+            {{{find_obj {$p9director chars_dir} george} get waypoint} get_local_pos $gx $gy $gz}
+            {{{find_obj {$p9director chars_dir} george} get waypoint} set_local_pos {- $gx 1.4} 400 $gz}
+            {{{find_obj {$p9director chars_dir} john} get waypoint} get_local_pos $jx $jy $jz}
+            {{{find_obj {$p9director chars_dir} john} get waypoint} set_local_pos {- $jx {'*' $cari 2.0}} 380 $jz}
+            {$task sleep 0.02}
+            {unless {> {beatmatch get_song_ms} 3000} {$task loop}}
+         )
+      }
+      {thread_task kTaskSeconds
+         (delay 3.0)
+         (script
+            {{{find_obj {$p9director chars_dir} ringo} find hist} iterate Mesh $m {if {has_any_substr {$m name} (objgold objring lod0)} {$m set_showing {'||' {&& {with $p9director [disabled]} {! {has_substr {{$world current_shot} get category} WIN}}} {game paused}}}}}
+            {with {find_obj {$p9director chars_dir} ringo}
+               {foreach $e (L R) {{sprint "drum_" $e "-stick.mesh"} set_showing {'||' {&& {with $p9director [disabled]} {! {has_substr {{$world current_shot} get category} WIN}}} {game paused}}}}
+            }
+            {$task sleep 1.0e-2}
+            {unless {has_substr {{$world current_shot} get category} WIN} {$task loop}})
       }
    )
 }

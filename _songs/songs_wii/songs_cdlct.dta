@@ -3057,58 +3057,6 @@
 	  "vo_loading_wecanworkitout03.bik"
 	  "vo_loading_wecanworkitout04.bik"
    )
-)(yesterday
-   (name "Yesterday")
-   (song_id 9990001)
-   (context 76)
-   (song
-     (name        songs/yesterday/yesterday)
-     (tracks
-        ((bass (0 1))
-         (guitar (2 3))
-         (vocals (4 5))
-        )
-     )   
-     (vocal_parts 1)
-    ;                BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        ( -1.0 -1.0  -1.0 -1.0  -1.0 -1.0  -1.0 -1.0 )) ; Giles didn't approve
-     (cores       (  -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoSlow)
-   (preview 9700 39700)
-   (rank
-      (drum 000)
-      (guitar 206)
-      (bass 194)
-      (vocals 262)
-      (band 161)
-   )
-   (venue shea) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
-   (date_recorded "1965-06-14") ; use 2009-01-01 as default if unknown
-   (album_name "Help!")
-   (album_track_number 13)
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer paul)
-   (songtype acoustic)
-   (downloaded TRUE)
 )(itsonlylove
    (name "It's Only Love")
    (song_id 9990080)

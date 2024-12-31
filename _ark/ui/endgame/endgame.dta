@@ -210,6 +210,9 @@
       "")
    (corrupt FALSE)
    (enter
+      #ifdef HX_WII
+      {set $loadobjsafe TRUE}
+      #endif
       {get_author_info}
       {if_else
          [preload_ok]
