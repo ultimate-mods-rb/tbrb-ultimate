@@ -266,7 +266,9 @@
             $beatle (paul john george ringo)
             {foreach
                $dir (hist dream)
-               {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_showing FALSE}}
+               {if {{find_obj {$p9director chars_dir} $beatle} find $dir}
+                  {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_showing FALSE}}
+               }
             }
          }
       }
