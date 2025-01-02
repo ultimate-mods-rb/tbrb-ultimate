@@ -320,38 +320,6 @@
             }
          }
       }
-      {if {== {elem $entry 0} {basename venue_settings}}
-         {if {find $entry force_outfits}
-            {set $forceoutfit
-               {elem {find $entry force_outfits} 1}
-            }
-         }
-         {if {find $entry force_venue}
-            {set $forcevenue
-               {elem {find $entry force_venue} 1}
-            }
-         }
-         {if {find $entry force_minivenue}
-            {set $forceminivenue
-               {elem {find $entry force_minivenue} 1}
-            }
-         }
-         {if {find $entry force_scene}
-            {set $forcescene
-               {elem {find $entry force_scene} 1}
-            }
-         }
-         {if {find $entry random_venue}
-            {set $randomvenue
-               {elem {find $entry random_venue} 1}
-            }
-         }
-         {if {find $entry random_outfits}
-            {set $randomoutfit
-               {elem {find $entry random_outfits} 1}
-            }
-         }
-      }
    }
 }
 {func
@@ -413,14 +381,6 @@
                (song_title_always $songtitle)
                (disable_trophies $lie)
                (disable_saving $lie)
-            )
-            (venue_settings
-               (force_outfits $forceoutfit)
-               (force_venue $forcevenue)
-               (force_minivenue $forceminivenue)
-               (force_scene $forcescene)
-               (random_venue $randomvenue)
-               (random_outfits $randomoutfit)
             )
          )
       }

@@ -229,6 +229,59 @@
    world_panel
    (file
       "../world/world.milo")
+   (enter
+      {$world iterate PostProc $p 
+         {$p set emulate_fps $emulatefps}
+         {$p set noise_intensity {if_else $scrnoise #ifdef HX_WII 0.25 #else 0.5 #endif 0}} ;this val is (likely) wrong as i had to guess it as i couldnt find it anywhere
+         #ifndef HX_WII ;wii doesn't have motion blur (citation needed)
+         {unless $mbblend
+            {$p set motion_blur_blend 0}
+            {$p set motion_blur_weight 0}
+         }
+         #endif
+         {$p set bloom_intensity {if_else $scrbloom 0.5 0}} ;estimated from wii
+      }
+      {$world iterate WorldDir $wd
+         {$wd iterate BandCamShot $bcs
+            {$bcs set use_depth_of_field $fxdof}
+            #ifndef HX_WII ;this crashes wii
+            {if $forcelod0
+               {foreach_int $i 0 {$bcs size (targets)}
+                  {$bcs set (targets $i force_lod) kLOD0}
+               }
+            }
+            #endif
+            {unless $camerashake
+               {foreach_int $i 0 {$bcs size (keyframes)}
+                  {$bcs set (keyframes $i shake_noisefreq) {'*' {$bcs get (keyframes $i shake_noisefreq)} 0}}
+                  {$bcs set (keyframes $i shake_noiseamp) {'*' {$bcs get (keyframes $i shake_noiseamp)} 0}}
+                  {$bcs set (keyframes $i shake_maxangle x) {'*' {$bcs get (keyframes $i shake_maxangle x)} 0}}
+                  {$bcs set (keyframes $i shake_maxangle y) {'*' {$bcs get (keyframes $i shake_maxangle y)} 0}}
+               }
+            }
+         }
+      }
+      {if $hide_beatles
+         {foreach
+            $beatle (paul john george ringo)
+            {foreach
+               $dir (hist dream)
+               {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_showing FALSE}}
+            }
+         }
+      }
+      {if $hide_insts
+         {foreach
+            $beatle (paul john george ringo)
+            {foreach
+               $dir (instrument0 instrument1 instrument2 instrument3)
+               {if {{find_obj {$p9director chars_dir} $beatle} find $dir} ; perfect scripting
+                  {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_showing FALSE}}
+               }
+            }
+         }
+      }
+   )
    (unload_async TRUE)}
 #define GAME_SCREEN_HANDLERS
 ((disable_screen_saver FALSE)
@@ -257,30 +310,6 @@
    PAUSE_ON_MIC_DISCONNECT
    (enter
       {if {'||' {gamemode in_mode theatre} {gamemode in_mode autoplay_mode}} {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
-      {$world iterate PostProc $p 
-         {$p set emulate_fps $emulatefps}
-         {$p set noise_intensity {if_else $scrnoise #ifdef HX_WII 0.25 #else 0.5 #endif 0}} ;this val is (likely) wrong as i had to guess it as i couldnt find it anywhere
-         #ifndef HX_WII ;wii doesn't have motion blur (citation needed)
-         {unless $mbblend
-            {$p set motion_blur_blend 0}
-            {$p set motion_blur_weight 0}
-         }
-         #endif
-         {$p set bloom_intensity {if_else $scrbloom 0.5 0}} ;estimated from wii
-      }
-      {$world iterate WorldDir $wd {$wd iterate BandCamShot $bcs 
-         {unless $fxdof {$bcs set use_depth_of_field FALSE}}
-         #ifndef HX_WII ;this crashes wii
-         {if $forcelod0
-            {foreach_int $i 0 {$bcs size (targets)}
-               {$bcs set (targets $i force_lod) kLOD0}}}
-         #endif
-         {unless $camerashake
-            {foreach_int $i 0 {$bcs size (keyframes)}
-               {$bcs set (keyframes $i shake_noisefreq) {'*' {$bcs get (keyframes $i shake_noisefreq)} 0}}
-               {$bcs set (keyframes $i shake_noiseamp) {'*' {$bcs get (keyframes $i shake_noiseamp)} 0}}
-               {$bcs set (keyframes $i shake_maxangle x) {'*' {$bcs get (keyframes $i shake_maxangle x)} 0}}
-               {$bcs set (keyframes $i shake_maxangle y) {'*' {$bcs get (keyframes $i shake_maxangle y)} 0}}}}}}
       {unless {gamemode get online_play_required}
          {beatmatch set_kick_autoplay $autokick}}
       {$this set_showing TRUE}

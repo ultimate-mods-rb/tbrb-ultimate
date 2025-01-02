@@ -208,26 +208,6 @@
    "Auto Kick: ON")
 (os_autokick0
    "Auto Kick: OFF")
-(os_forcecnv1
-   "Force Cavern Venue: ON")
-(os_forcecnv0
-   "Force Cavern Venue: OFF")
-(os_forcesnv1
-   "Force Sullivan Venue: ON")
-(os_forcesnv0
-   "Force Sullivan Venue: OFF")
-(os_forcesav1
-   "Force Shea Venue: ON")
-(os_forcesav0
-   "Force Shea Venue: OFF")
-(os_forcebnv1
-   "Force Budokan Venue: ON")
-(os_forcebnv0
-   "Force Budokan Venue: OFF")
-(os_forcerpv1
-   "Force Rooftop Venue: ON")
-(os_forcerpv0
-   "Force Rooftop Venue: OFF")
 (nice_solo
    "Nice")
 (choke_solo
@@ -444,4 +424,30 @@
 (converted_settings
    "Converted settings to new format succesfully")
 #endif
+(os_cheats
+   "Cheats")
+(os_hidebeatles1
+   "Hide Beatles: ON")
+(os_hidebeatles0
+   "Hide Beatles: OFF")
+(os_hideinsts1
+   "Hide instruments: ON")
+(os_hideinsts0
+   "Hide instruments: OFF")
+(os_venues1
+   "Force Venue: ON")
+(os_venues0
+   "Force Venue: OFF")
+(os_outfits1
+   "Force Outfits: ON")
+(os_outfits0
+   "Force Outfits: OFF")
+(os_minivenues1
+   "Force Minivenue: ON")
+(os_minivenues0
+   "Force Minivenue: OFF")
+(os_scenes1
+   "Force Scene: ON")
+(os_scenes0
+   "Force Scene: OFF")
 
