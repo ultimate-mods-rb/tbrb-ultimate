@@ -302,6 +302,7 @@
                }
             }
          }
+         {$world iterate WorldDir $wd {$wd iterate Character $c {$c iterate Mesh $m {$m set_local_scale 5 5 5}}}}
       }
    )
    (unload_async TRUE)}
