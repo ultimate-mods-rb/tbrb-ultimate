@@ -1455,6 +1455,7 @@
    {if_else $flashbang os_flashbang1 os_flashbang0}
    #endif
    {if_else $bigmode os_bigmode1 os_bigmode0}
+   {if_else $smallworld os_smallworld1 os_smallworld0}
    {if_else $hide_beatles os_hidebeatles1 os_hidebeatles0}
    {if_else $hide_insts os_hideinsts1 os_hideinsts0}
    {if_else $randomvenue os_randomvenue1 os_randomvenue0}
@@ -1481,6 +1482,9 @@
          )
          ((os_bigmode1 os_bigmode0)
             {set $bigmode {! $bigmode}}
+         )
+         ((os_smallworld1 os_smallworld0)
+            {set $smallworld {! $smallworld}}
          )
          ((os_hidebeatles1 os_hidebeatles0)
             {set $hide_beatles {! $hide_beatles}}

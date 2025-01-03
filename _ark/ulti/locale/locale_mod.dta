@@ -454,4 +454,8 @@
    "Big Mode: ON")
 (os_bigmode0
    "Big Mode: OFF")
+(os_smallworld1
+   "Small World: ON")
+(os_smallworld0
+   "Small World: OFF")
 

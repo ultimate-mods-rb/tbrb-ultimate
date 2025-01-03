@@ -304,6 +304,9 @@
          }
          {$world iterate WorldDir $wd {$wd iterate Character $c {$c iterate Mesh $m {$m set_local_scale 5 5 5}}}}
       }
+      {if $smallworld
+         {$world iterate WorldDir $wd {$wd iterate Mesh $m {$m set_local_scale 0.5 0.5 0.5}}}
+      }
    )
    (unload_async TRUE)}
 #define GAME_SCREEN_HANDLERS
