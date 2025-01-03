@@ -450,4 +450,8 @@
    "Force Scene: ON")
 (os_scenes0
    "Force Scene: OFF")
+(os_bigmode1
+   "Big Mode: ON")
+(os_bigmode0
+   "Big Mode: OFF")
 

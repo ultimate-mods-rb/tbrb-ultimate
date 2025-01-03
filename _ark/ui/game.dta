@@ -283,6 +283,26 @@
             }
          }
       }
+      {if $bigmode
+         {foreach
+            $beatle (paul john george ringo)
+            {foreach
+               $dir (hist dream)
+               {if {{find_obj {$p9director chars_dir} $beatle} find $dir}
+                  {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_local_scale 5 5 5}}
+               }
+            }
+         }
+         {foreach
+            $beatle (paul john george ringo)
+            {foreach
+               $dir (instrument0 instrument1 instrument2 instrument3)
+               {if {{find_obj {$p9director chars_dir} $beatle} find $dir}
+                  {{{find_obj {$p9director chars_dir} $beatle} find $dir} iterate Mesh $m {$m set_local_scale 2 2 2}}
+               }
+            }
+         }
+      }
    )
    (unload_async TRUE)}
 #define GAME_SCREEN_HANDLERS
