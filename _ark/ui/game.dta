@@ -307,6 +307,10 @@
       {if $smallworld
          {$world iterate WorldDir $wd {$wd iterate Mesh $m {$m set_local_scale 0.5 0.5 0.5}}}
       }
+      {if $greennday ; don't ask why and don't change it
+         {{$p9director chars_dir} iterate P9Character $p9c {$p9c iterate Character $c {$c iterate Mat $m {$m set intensify 1} {$m set color {pack_color 0 1 0}}}}}
+         {$world iterate WorldDir $wd {$wd iterate Mat $m {$m set intensify 1} {$m set color {pack_color 0 1 0}}} {$wd iterate Character $c {$c iterate Mat $m {$m set intensify 1} {$m set color {pack_color 0 1 0}}}}}
+      }
    )
    (unload_async TRUE)}
 #define GAME_SCREEN_HANDLERS

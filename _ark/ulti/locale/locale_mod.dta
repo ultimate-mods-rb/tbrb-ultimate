@@ -458,4 +458,8 @@
    "Small World: ON")
 (os_smallworld0
    "Small World: OFF")
+(os_greenday1
+   "Green Day: ON")
+(os_greenday0
+   "Green Day: OFF")
 
