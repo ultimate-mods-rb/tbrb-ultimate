@@ -243,7 +243,9 @@
       }
       {$world iterate WorldDir $wd
          {$wd iterate BandCamShot $bcs
-            {$bcs set use_depth_of_field $fxdof}
+            {unless $fxdof
+               {$bcs set use_depth_of_field FALSE}
+            }
             #ifndef HX_WII ;this crashes wii
             {if $forcelod0
                {foreach_int $i 0 {$bcs size (targets)}
