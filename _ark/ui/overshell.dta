@@ -1628,7 +1628,7 @@
 
 ;
 #define TBRB_OUTFITS_MODIFIER_DATA
-((off budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 hidden))
+((off budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 #ifdef HX_WII sullivan02 sullivan03 #endif hidden))
 {new
    MultiSelectListPanel
    overshell_outfits_panel
