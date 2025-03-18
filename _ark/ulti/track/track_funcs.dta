@@ -9,3 +9,16 @@
       }
    }
 }
+{func
+   set_vox_ring_tex
+   ($isnt $ring_tex)
+   {foreach $dir (streak_meter_vox_top streak_meter_vox_bot)
+      {if_else {gamemode in_mode autoplay_mode}
+         {{{{{get_track_panel} find $isnt} find $dir} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find streak_meter_plate_ap.tex}}
+         {if_else $fcring
+            {{{{{get_track_panel} find $isnt} find $dir} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find  {if_else {== $ring_tex fc} streak_meter_plate_fc.tex streak_meter_plate.tex}}}
+            {{{{{get_track_panel} find $isnt} find $dir} find streak_meter_plate.mat} set diffuse_tex {{get_track_panel} find streak_meter_plate.tex}}
+         }
+      }
+   }
+}

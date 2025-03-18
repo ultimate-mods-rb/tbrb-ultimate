@@ -69,11 +69,17 @@
    {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {* {/ 1.2 $trackspeed} $hwss} $speedmod}}
 )
 #define CALLBACK_ELEMS
-((hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass))
+((hit miss pass))
 #define ADD_FC_CALLBACKS
 (
    {if_else {gamemode in_mode h2h}
-      {unless {== {{game get_participant_config 0} get_track_sym} vocals}
+      {if_else {== {{game get_participant_config 0} get_track_sym} vocals}
+         {beatmatch foreach_active_player $player
+            {if_else {== {$player track} track0}
+               {$player add_sink fc_vocals_callback (phrase_rating)}
+               {$player add_sink fc_vocals_callback_1 (phrase_rating)}
+            }
+         }
          {beatmatch foreach_active_player $player
             {if_else {== {$player track} track0}
                {$player add_sink fc_h2h_0_callback CALLBACK_ELEMS}
@@ -86,12 +92,67 @@
             (bass {$player add_sink fc_bass_callback CALLBACK_ELEMS})
             (guitar {$player add_sink fc_guitar_callback CALLBACK_ELEMS})
             (drum {$player add_sink fc_drum_callback CALLBACK_ELEMS})
+            (vocals {$player add_sink fc_vocals_callback (phrase_rating)})
          }
       }
    }
 )
 #define FC_CALLBACKS
 (
+   {new Object fc_vocals_callback
+      (phrase_rating
+         ($rating)
+         {if_else {== $rating 4}
+            {do
+               {set [phrases_hit] {+ [phrases_hit] 1}}
+               {set [phrases_combo] {+ [phrases_combo] 1}}
+               {if {== [phrases_missed] 0}
+                  {set_vox_ring_tex {if_else {gamemode in_mode h2h} track_0_vox vocals} fc}
+               }
+            }
+            {do
+               {set [phrases_missed] {+ [phrases_missed] 1}}
+               {set [phrases_combo] 0}
+               {set_vox_ring_tex {if_else {gamemode in_mode h2h} track_0_vox vocals} black}
+            }
+         }
+      )
+      (reset
+         {set [phrases_hit] 0}
+         {set [phrases_combo] 0}
+         {set [phrases_missed] 0}
+      )
+      (phrases_hit 0)
+      (phrases_combo 0)
+      (phrases_missed 0)
+   }
+   {new Object fc_vocals_callback_1
+      (phrase_rating
+         ($rating)
+         {if_else {== $rating 4}
+            {do
+               {set [phrases_hit] {+ [phrases_hit] 1}}
+               {set [phrases_combo] {+ [phrases_combo] 1}}
+               {if {== [phrases_missed] 0}
+                  {set_vox_ring_tex track_1_vox fc}
+               }
+            }
+            {do
+               {set [phrases_missed] {+ [phrases_missed] 1}}
+               {set [phrases_combo] 0}
+               {set_vox_ring_tex track_1_vox black}
+            }
+         }
+      )
+      (reset
+         {set [phrases_hit] 0}
+         {set [phrases_combo] 0}
+         {set [phrases_missed] 0}
+      )
+      (phrases_hit 0)
+      (phrases_combo 0)
+      (phrases_missed 0)
+   }
    {new Object fc_bass_callback ;remove FC groove on bass miss/pass
       (hit
          {if {! $bass_firstnote} {set $bass_firstnote TRUE}}
