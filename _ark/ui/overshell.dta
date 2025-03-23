@@ -189,6 +189,7 @@
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    {if_else $notriframe os_notriframe1 os_notriframe0}
+   {if_else $60fps os_60fps os_30fps}
    #endif
    {if_else $blackbg os_blackbg1 os_blackbg0}
    {if_else $postfx os_postfx1 os_postfx0}
@@ -218,6 +219,9 @@
          )
          ((os_notriframe1 os_notriframe0)
             {set $notriframe {! $notriframe}}
+         )
+         ((os_60fps os_30fps)
+            {set $60fps {! $60fps}}
          )
          ((os_postfx1 os_postfx0)
             {set $postfx {! $postfx}}

@@ -24,9 +24,9 @@
       {set $songtitle {& {profile_mgr get_voice_chat_volume} 16}}
       {set $showauthor {& {profile_mgr get_voice_chat_volume} 32}}
       {set $fcring {& {profile_mgr get_voice_chat_volume} 64}}
-      {set $colorshuffle {& {profile_mgr get_voice_chat_volume} 128}}
+      ;{set $colorshuffle {& {profile_mgr get_voice_chat_volume} 128}}
       ;{set $randomvenue {& {profile_mgr get_voice_chat_volume} 256}}
-      ;{set $randomoutfit {& {profile_mgr get_voice_chat_volume} 512}}
+      {set $60fps {& {profile_mgr get_voice_chat_volume} 512}}
       {set $notriframe {& {profile_mgr get_voice_chat_volume} 1024}}
       {set $blackbg {& {profile_mgr get_voice_chat_volume} 2048}}
       {set $postfx {& {profile_mgr get_voice_chat_volume} 4096}}
@@ -52,9 +52,9 @@
    {ulti_ssisf $songtitle 16}
    {ulti_ssisf $showauthor 32}
    {ulti_ssisf $fcring 64}
-   {ulti_ssisf $colorshuffle 128}
+   ;{ulti_ssisf $colorshuffle 128}
    ;{ulti_ssisf $randomvenue 256}
-   ;{ulti_ssisf $randomoutfit 512}
+   {ulti_ssisf $60fps 512}
    {ulti_ssisf $notriframe 1024}
    {ulti_ssisf $blackbg 2048}
    {ulti_ssisf $postfx 4096}

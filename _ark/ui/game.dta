@@ -348,7 +348,7 @@
       {set
          [delayed_mic_check]
          FALSE}
-      {rnd set_in_game TRUE}
+      {rnd set_in_game #ifdef HX_WII {! $60fps} #else TRUE #endif}
       {platform_mgr
          add_sink
          $this

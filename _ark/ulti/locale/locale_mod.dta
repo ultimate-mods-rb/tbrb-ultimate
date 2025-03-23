@@ -192,6 +192,10 @@
    "Disable Co-op Optimizations: ON")
 (os_notriframe0
    "Disable Co-op Optimizations: OFF")
+(os_30fps
+   "Venue FPS: 30FPS")
+(os_60fps
+   "Venue FPS: 60FPS")
 (os_nomisounds1
    "Disable Miss Sounds: ON")
 (os_nomisounds0
