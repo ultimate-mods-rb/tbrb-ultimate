@@ -216,9 +216,10 @@
       {get_author_info}
       {if_else
          [preload_ok]
-         {ui
-            goto_screen
-            {gamemode get load_nextsong_screen}}
+         {do
+            {if $forceoutfits {force_beatles_outfits}}
+            {ui goto_screen {gamemode get load_nextsong_screen}}
+         }
          {ui
             content_file_read_failed
             [content_name]

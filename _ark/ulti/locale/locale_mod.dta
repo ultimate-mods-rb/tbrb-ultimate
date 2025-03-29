@@ -466,4 +466,9 @@
    "Green Day: ON")
 (os_greenday0
    "Green Day: OFF")
+(os_outfit "Outfit")
+(os_inst1 "Instrument 1")
+(os_inst2 "Instrument 2")
+(os_inst3 "Instrument 3")
+(os_inst4 "Instrument 4")
 

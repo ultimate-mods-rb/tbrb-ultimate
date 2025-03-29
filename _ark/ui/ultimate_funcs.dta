@@ -208,3 +208,37 @@
       {set $author_text FALSE}
    }
 }
+{func force_beatles_outfits
+   {do
+      ($outfitArray
+         {array
+            (
+               (ringo)
+               (george)
+               (john)
+               (paul)
+            )
+         }
+      )
+      {with {load_objects {sprint {song_mgr song_file_path {meta_performer song} ".milo"}}}
+         {foreach $beatle (ringo george john paul)
+            {do
+               ($var {P9SongPref get {symbol {sprint $beatle "_instrument"}}})
+               ($array {switch $beatle (ringo $rArray) (george $gArray) (john $jArray) (paul $pArray)})
+               {push_back {find $outfitArray $beatle} {elem $array 0}}
+               {if {== $var 4}
+                  {insert_elem {find $outfitArray $beatle} 2 {elem $array 4}}
+               }
+               {if {>= $var 3}
+                  {insert_elem {find $outfitArray $beatle} 2 {elem $array 3}}
+               }
+               {if {>= $var 2}
+                  {insert_elem {find $outfitArray $beatle} 2 {elem $array 2}}
+               }
+               {insert_elem {find $outfitArray $beatle} 2 {elem $array 1}}
+            }
+         }
+      }
+      {$p9director force_outfits $outfitArray}
+   }
+}

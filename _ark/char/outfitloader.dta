@@ -283,7 +283,7 @@
             ((historical dreamscape)
                {sprint
                   "../outfit/"
-                  {if_else $randomoutfit {elem TBRB_OUTFITS_MODIFIER_DATA {random_int 1 #ifdef HX_WII 33 #else 32 #endif}} {if_else {== $forceoutfit off} $outfit $forceoutfit}}
+                  {if_else $randomoutfit {elem TBRB_OUTFITS_MODIFIER_DATA {random_int 1 #ifdef HX_WII 33 #else 32 #endif}} $outfit}
                   ".milo"})
             ((stick_left stick_right)
                {sprint

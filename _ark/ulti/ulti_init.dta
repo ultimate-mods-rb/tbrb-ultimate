@@ -1,3 +1,5 @@
+{set $patched TRUE}
+
 ;sets default track speed. 1.15 is 115%, 1.30 is 130% and so on.
 {set $trackspeed 1.0}
 
@@ -88,9 +90,6 @@
 ;score texture
 {set $scoretex "none"}
 
-;dont force outfit by default
-{set $forceoutfit "off"}
-
 ;dont force venue by default
 {set $forcevenue "off"}
 
@@ -99,6 +98,17 @@
 
 ;dont force scene by default
 {set $forcescene "off"}
+
+{set $rArray {array (0 0 0 0 0)}}
+{set $gArray {array (0 0 0 0 0)}}
+{set $jArray {array (0 0 0 0 0)}}
+{set $pArray {array (0 0 0 0 0)}}
+{set $instsArray {array ()}}
+{foreach $inst {find $syscfg objects OutfitLoader types beatle category instrument0 outfits}
+   {if {! {== $inst outfits}}
+      {push_back $instsArray {elem $inst 0}}
+   }
+}
 
 ;default gem/smasher/sustain colors
 {set $gtrgem1 1}

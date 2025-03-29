@@ -87,7 +87,10 @@
       #else
       {if_else
          [preload_ok]
-         {ui goto_screen real_loading_screen}
+         {do
+            {if $forceoutfits {force_beatles_outfits}}
+            {ui goto_screen real_loading_screen}
+         }
          {ui
             content_file_read_failed
             [content_name]
