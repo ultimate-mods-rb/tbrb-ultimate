@@ -1,17 +1,16 @@
 #define OVERSHELL_LIST_FILE
-((file practice/practice_sel_section.milo)
- (focus sel_section.lst))
+((file ../ulti/overshell.milo) (focus overshell.lst))
 {func
    pop_and_goto_screen
    ($gotoscreen)
    {ui pop_screen}
    {ui goto_screen $gotoscreen}}
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_cnt os_cheats)}
+      {overshell.lst set_data (os_mod os_spd os_vis os_trk os_gfx os_cnt os_cheats)}
       {title.lbl set text_token os_ultisettings}
       {set $overshell_up TRUE}
       {set $chtmodifierpos 0}
@@ -72,12 +71,10 @@
    #endif
    #ifdef HX_PS3
    {if_else $skipsplash os_skipsplash1 os_skipsplash0}
-   #else
-   os_blnk
    #endif
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_modifier_panel
    OVERSHELL_LIST_FILE
    (enter
@@ -109,11 +106,11 @@
       {$this lst_reset}
    )
    (lst_reset
-      {sel_section.lst set_data MODIFIER_DATA}
+      {overshell.lst set_data MODIFIER_DATA}
       {if $modifierpos
-         {sel_section.lst set_selected $modifierpos}})
+         {overshell.lst set_selected $modifierpos}})
    (SCROLL_MSG
-      {set $modifierpos {sel_section.lst selected_pos}})
+      {set $modifierpos {overshell.lst selected_pos}})
 }
 {new
    UIScreen
@@ -132,12 +129,9 @@
    #ifdef HX_PS3
    {if_else $skipnetwarning os_skipnetwarning1 os_skipnetwarning0}
    #endif
-   os_blnk
-   os_blnk
-   os_blnk
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_visual_panel
    OVERSHELL_LIST_FILE
    (enter
@@ -166,11 +160,11 @@
       {$this lst_reset}
    )
    (lst_reset
-      {sel_section.lst set_data VIS_MODIFIER_DATA}
+      {overshell.lst set_data VIS_MODIFIER_DATA}
       {if $vismodifierpos
-         {sel_section.lst set_selected $vismodifierpos}})
+         {overshell.lst set_selected $vismodifierpos}})
    (SCROLL_MSG
-      {set $vismodifierpos {sel_section.lst selected_pos}})}
+      {set $vismodifierpos {overshell.lst selected_pos}})}
 {new
    UIScreen
    overshell_visual_screen
@@ -202,7 +196,7 @@
    #endif
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_graphics_panel
    OVERSHELL_LIST_FILE
    (enter
@@ -259,11 +253,11 @@
       {$this lst_reset}
    )
    (lst_reset
-      {sel_section.lst set_data GFX_MODIFIER_DATA}
+      {overshell.lst set_data GFX_MODIFIER_DATA}
       {if $gfxmodifierpos
-         {sel_section.lst set_selected $gfxmodifierpos}})
+         {overshell.lst set_selected $gfxmodifierpos}})
    (SCROLL_MSG
-      {set $gfxmodifierpos {sel_section.lst selected_pos}})}
+      {set $gfxmodifierpos {overshell.lst selected_pos}})}
 {new
    UIScreen
    overshell_graphics_screen
@@ -272,13 +266,13 @@
    (focus overshell_graphics_panel)}
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_vsync_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (infinite full half quarter os_blnk os_blnk)}
+      {overshell.lst set_data (infinite full half quarter)}
       {title.lbl set text_token {localize os_vsync}}
-      {sel_section.lst set_selected {switch $vsyncrate (0 0) (1 1) (2 2) (4 3)}})
+      {overshell.lst set_selected {switch $vsyncrate (0 0) (1 1) (2 2) (4 3)}})
    (exit
       {rnd set_sync $vsyncrate})
    (SELECT_MSG
@@ -305,13 +299,13 @@
    (panels overshell_vsync_panel)
    (focus overshell_vsync_panel)}
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_venuefps_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (60fps 30fps 24fps 15fps 12fps 6fps 1fps)}
+      {overshell.lst set_data (60fps 30fps 24fps 15fps 12fps 6fps 1fps)}
       {title.lbl set text_token {localize os_venuefps}}
-      {sel_section.lst set_selected {switch $emulatefps (60 0) (30 1) (24 2) (15 3) (12 4) (6 5) (1 6)}})
+      {overshell.lst set_selected {switch $emulatefps (60 0) (30 1) (24 2) (15 3) (12 4) (6 5) (1 6)}})
    (SELECT_MSG
       {switch {$component selected_sym}
          (60fps
@@ -357,10 +351,9 @@
    {if_else $paddrum os_paddrum1 os_paddrum0}
    {if_else $secondkick os_secondkick1 os_secondkick0}
    {if_else $os_igc os_blnk {if_else $autokick os_autokick1 os_autokick0}}
-   os_blnk
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_cnt_panel
    OVERSHELL_LIST_FILE
    (enter
@@ -403,11 +396,11 @@
       {$this lst_reset}
    )
    (lst_reset
-      {sel_section.lst set_data CNT_MODIFIER_DATA}
+      {overshell.lst set_data CNT_MODIFIER_DATA}
       {if $cntmodifierpos
-         {sel_section.lst set_selected $cntmodifierpos}})
+         {overshell.lst set_selected $cntmodifierpos}})
    (SCROLL_MSG
-      {set $cntmodifierpos {sel_section.lst selected_pos}})}
+      {set $cntmodifierpos {overshell.lst selected_pos}})}
 {new
    UIScreen
    overshell_cnt_screen
@@ -551,16 +544,16 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifdef HX_NG os_reset #endif os_hw os_strk os_spotlight os_gems_colors os_smashers_colors os_blnk os_blnk
+   #ifdef HX_NG os_reset #endif os_hw os_strk os_spotlight os_gems_colors os_smashers_colors
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_trk_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data TRK_MODIFIER_DATA}
+      {overshell.lst set_data TRK_MODIFIER_DATA}
       {if $trkmodifierpos
-         {sel_section.lst set_selected $trkmodifierpos}}
+         {overshell.lst set_selected $trkmodifierpos}}
       {title.lbl set text_token {localize os_trk}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -603,7 +596,7 @@
       }
    )
    (SCROLL_MSG
-      {set $trkmodifierpos {sel_section.lst selected_pos}})}
+      {set $trkmodifierpos {overshell.lst selected_pos}})}
 {new
    UIScreen
    overshell_trk_screen
@@ -612,11 +605,11 @@
    (focus overshell_trk_panel)}
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_highway_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data
+      {overshell.lst set_data
          (#include track/highway/highway.dta)}
       {title.lbl set text_token {localize os_hw}})
    (SELECT_MSG
@@ -638,11 +631,11 @@
    (focus overshell_highway_panel)}
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_streak_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data
+      {overshell.lst set_data
          (#include track/streak/streak.dta)}
       {title.lbl set text_token {localize os_strk}})
    (SELECT_MSG
@@ -664,11 +657,11 @@
    (focus overshell_streak_panel)}
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_spotlight_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data
+      {overshell.lst set_data
          (#include track/spotlight/spotlight.dta)}
       {title.lbl set text_token {localize os_spotlight}})
    (SELECT_MSG
@@ -691,14 +684,14 @@
 
 #define GEMC_MODIFIER_DATA
 ((
-   os_gtr_gems_color os_gtr_sus_color os_drm_gems_color os_blnk os_blnk
+   os_gtr_gems_color os_gtr_sus_color os_drm_gems_color
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gem_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GEMC_MODIFIER_DATA}
+      {overshell.lst set_data GEMC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_gems_colors}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -727,11 +720,11 @@
    os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_slot_5
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_gem_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GGEMC_MODIFIER_DATA}
+      {overshell.lst set_data GGEMC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_gtr_gems_color}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -780,11 +773,11 @@
    os_reset os_kick_gem os_slot_1 os_slot_2 os_slot_3 os_slot_4
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_drm_gem_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data DGEMC_MODIFIER_DATA}
+      {overshell.lst set_data DGEMC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_drm_gems_color}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -833,11 +826,11 @@
    os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_slot_5
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_sus_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GSUSC_MODIFIER_DATA}
+      {overshell.lst set_data GSUSC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_gtr_sus_color}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -889,20 +882,20 @@
 ))
 #define GSMASHERS_MODIFIER_DATA
 ((
-   os_green_gem os_red_gem os_yellow_gem os_blue_gem os_orange_gem os_blnk
+   os_green_gem os_red_gem os_yellow_gem os_blue_gem os_orange_gem
 ))
 #define DSMASHERS_MODIFIER_DATA
 ((
-   os_red_gem os_yellow_gem os_blue_gem os_green_gem os_orange_gem os_blnk
+   os_red_gem os_yellow_gem os_blue_gem os_green_gem os_orange_gem
 ))
 
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_gems_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GCOLORS_MODIFIER_DATA}
+      {overshell.lst set_data GCOLORS_MODIFIER_DATA}
       {title.lbl set text_token {localize {sprint "os_slot_" $os_var}}})
    (SELECT_MSG
       {set $os_sel
@@ -946,11 +939,11 @@
 ;
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_drm_gems_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data DCOLORS_MODIFIER_DATA}
+      {overshell.lst set_data DCOLORS_MODIFIER_DATA}
       {title.lbl set text_token {localize os_drm_gems_color}}) ;intentional
    (SELECT_MSG
       {set $os_sel
@@ -994,11 +987,11 @@
 
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_sus_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GCOLORS_MODIFIER_DATA}
+      {overshell.lst set_data GCOLORS_MODIFIER_DATA}
       {title.lbl set text_token {localize {sprint "os_slot_" $os_var}}})
    (SELECT_MSG
       {set $os_sel
@@ -1042,14 +1035,14 @@
 
 #define SMASHERC_MODIFIER_DATA
 ((
-   os_gtr_smasher_color os_drm_smasher_color os_blnk os_blnk
+   os_gtr_smasher_color os_drm_smasher_color
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_smasher_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data SMASHERC_MODIFIER_DATA}
+      {overshell.lst set_data SMASHERC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_smashers_colors}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -1077,11 +1070,11 @@
    os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_slot_5
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_smasher_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GSMASHERC_MODIFIER_DATA}
+      {overshell.lst set_data GSMASHERC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_gtr_smasher_color}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -1127,14 +1120,14 @@
 
 #define DSMASHERC_MODIFIER_DATA
 ((
-   os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_blnk
+   os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_drm_smasher_color_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data DSMASHERC_MODIFIER_DATA}
+      {overshell.lst set_data DSMASHERC_MODIFIER_DATA}
       {title.lbl set text_token {localize os_drm_smasher_color}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -1173,11 +1166,11 @@
 
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_gtr_smasher_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data GCOLORS_MODIFIER_DATA}
+      {overshell.lst set_data GCOLORS_MODIFIER_DATA}
       {title.lbl set text_token {localize {sprint "os_slot_" $os_var}}})
    (SELECT_MSG
       {set $os_sel
@@ -1219,11 +1212,11 @@
 
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_drm_smasher_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data DSMASHERS_MODIFIER_DATA}
+      {overshell.lst set_data DSMASHERS_MODIFIER_DATA}
       {title.lbl set text_token {localize {sprint "os_slot_" $os_var}}})
    (SELECT_MSG
       {set $os_sel
@@ -1274,13 +1267,13 @@
 ))
 #endif
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_remap_cnt_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_slot_5 os_spotlight)}
+      {overshell.lst set_data (os_reset os_slot_1 os_slot_2 os_slot_3 os_slot_4 os_slot_5 os_spotlight)}
       {if $rcntmodifierpos
-         {sel_section.lst set_selected $rcntmodifierpos}}
+         {overshell.lst set_selected $rcntmodifierpos}}
       {title.lbl set text_token {localize os_remap_cnt}})
    (exit
       {set_cnt_mapping})
@@ -1330,7 +1323,7 @@
       }
    )
    (SCROLL_MSG
-      {set $rcntmodifierpos {sel_section.lst selected_pos}})}
+      {set $rcntmodifierpos {overshell.lst selected_pos}})}
 {new
    UIScreen
    overshell_remap_cnt_screen
@@ -1339,11 +1332,11 @@
    (focus overshell_remap_cnt_panel)}
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_cnt_slot_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data CNT_BUTTONS_MODIFIER_DATA}
+      {overshell.lst set_data CNT_BUTTONS_MODIFIER_DATA}
       {title.lbl set text_token {localize {sprint "os_slot_" $remap_slot_num}}})
    (SELECT_MSG
       {set $cnt_sel
@@ -1414,11 +1407,11 @@
 ;
 ;
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_force_inst_detec_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (info off guitar #ifdef HX_PS3 gh_guitar #endif drum os_blnk)}
+      {overshell.lst set_data (info off guitar #ifdef HX_PS3 gh_guitar #endif drum)}
       {title.lbl set text_token {localize os_force_inst_detec}})
    (SELECT_MSG
       {switch {$component selected_sym}
@@ -1471,7 +1464,7 @@
    {if_else {== $forcescene off} os_scenes0 os_scenes1}
 ))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_cheats_panel
    OVERSHELL_LIST_FILE
    (enter
@@ -1528,10 +1521,10 @@
       {$this lst_reset}
    )
    (lst_reset
-      {sel_section.lst set_data CHEATS_DATA}
-      {sel_section.lst set_selected $chtmodifierpos})
+      {overshell.lst set_data CHEATS_DATA}
+      {overshell.lst set_selected $chtmodifierpos})
    (SCROLL_MSG
-      {set $chtmodifierpos {sel_section.lst selected_pos}})
+      {set $chtmodifierpos {overshell.lst selected_pos}})
 }
 {new
    UIScreen
@@ -1545,14 +1538,14 @@
 #define TBRB_VENUES_MODIFIER_DATA
 ((off cavern sullivan shea budokan rooftop))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_venues_panel
    OVERSHELL_LIST_FILE
    (enter
       #ifndef HX_WII
       {passive_messages_panel queue_message cdlc_warning_message}
       #endif
-      {sel_section.lst set_data TBRB_VENUES_MODIFIER_DATA}
+      {overshell.lst set_data TBRB_VENUES_MODIFIER_DATA}
       {title.lbl set text_token {localize os_venues}})
    (SELECT_MSG
       {set $forcevenue {$component selected_sym}}
@@ -1574,14 +1567,14 @@
 #define TBRB_MINIVENUES_MODIFIER_DATA
 ((off abbeyroad01 abbeyroad01field abbeyroad01helter abbeyroad01hillside abbeyroad01ocean abbeyroad01ussr abbeyroad01wallfade abbeyroad01within field goodmorning hillside ocean pepperland performancespace01 performancespace02 performancespace02rev performancespace03 performancespace04 performancespace06 submarine walrus weeps))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_minivenues_panel
    OVERSHELL_LIST_FILE
    (enter
       #ifndef HX_WII
       {passive_messages_panel queue_message cdlc_warning_message}
       #endif
-      {sel_section.lst set_data TBRB_MINIVENUES_MODIFIER_DATA}
+      {overshell.lst set_data TBRB_MINIVENUES_MODIFIER_DATA}
       {title.lbl set text_token {localize os_minivenues}})
    (SELECT_MSG
       {set $forceminivenue {$component selected_sym}}
@@ -1603,14 +1596,14 @@
 #define TBRB_SCENES_MODIFIER_DATA
 ((off birds birdwallpaper cloudy dotpaths01 filmgrain fireworks01 fireworks02 flowersgrow01 herecomesthesun01 indian01 indian02 indian03 kaleido01 kaleido02 lightboke lucykaleido moire01 moire02 moire03 projection projectionbird releanor rhelter rkaleido03 rsomething rsunraypoly russr silhouette starfield stripes01 stripes02 stripes03 stripes04 stripes05 stripes06 vines01 whitebackground within withinkaleido))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_scenes_panel
    OVERSHELL_LIST_FILE
    (enter
       #ifndef HX_WII
       {passive_messages_panel queue_message cdlc_warning_message}
       #endif
-      {sel_section.lst set_data TBRB_SCENES_MODIFIER_DATA}
+      {overshell.lst set_data TBRB_SCENES_MODIFIER_DATA}
       {title.lbl set text_token {localize os_scenes}})
    (SELECT_MSG
       {set $forcescene {$component selected_sym}}
@@ -1634,14 +1627,14 @@
 #define TBRB_OUTFITS_MODIFIER_DATA
 ((off budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 #ifdef HX_WII sullivan02 sullivan03 #endif hidden))
 {new
-   MultiSelectListPanel
+   UIPanel
    overshell_outfits_panel
    OVERSHELL_LIST_FILE
    (enter
       #ifndef HX_WII
       {passive_messages_panel queue_message cdlc_warning_message}
       #endif
-      {sel_section.lst set_data TBRB_OUTFITS_MODIFIER_DATA}
+      {overshell.lst set_data TBRB_OUTFITS_MODIFIER_DATA}
       {title.lbl set text_token {localize os_outfits}})
    (SELECT_MSG
       {set $forceoutfit {$component selected_sym}}
