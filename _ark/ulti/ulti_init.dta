@@ -45,6 +45,9 @@
 ;show fc ring
 {set $fcring TRUE}
 
+;show progress bar
+{set $progressbar TRUE}
+
 ;gem texture
 {set $gem "none"}
 

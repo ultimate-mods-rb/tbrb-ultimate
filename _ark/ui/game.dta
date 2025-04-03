@@ -124,6 +124,7 @@
       {set $outro_ran FALSE}
       {reset_fc_vars}
      ;#endif
+      {{{get_track_panel} find progress.sld} set_showing FALSE}
       #ifndef HX_WII
       {stagekit_reset}
       #endif

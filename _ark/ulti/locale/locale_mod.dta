@@ -322,6 +322,10 @@
    "Show FC Ring: ON")
 (os_fcring0
    "Show FC Ring: OFF")
+(os_progressbar1
+   "Show Progress Bar: ON")
+(os_progressbar0
+   "Show Progress Bar: OFF")
 (os_cnt
    "Controller Settings")
 (os_remap_cnt

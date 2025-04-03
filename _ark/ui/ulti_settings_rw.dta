@@ -183,6 +183,11 @@
                {elem {find $entry show_fc_ring} 1}
             }
          }
+         {if {find $entry progress_bar}
+            {set $progressbar
+               {elem {find $entry progress_bar}}
+            }
+         }
          {if {find $entry legacy_bass_streak}
             {set $legacybass
                {elem {find $entry legacy_bass_streak} 1}
@@ -360,6 +365,7 @@
                (highway_length $hwlength)
                (sync_difficulty_speeds $syncdifspeeds)
                (show_fc_ring $fcring)
+               (progress_bar $progressbar)
                (legacy_bass_streak $legacybass)
                (note_color_shuffle $colorshuffle)
                (guitar_gem_colors ($gtrgem1 $gtrgem2 $gtrgem3 $gtrgem4 $gtrgem5))

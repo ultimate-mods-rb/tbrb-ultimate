@@ -4,6 +4,18 @@
 (1920)
 #define TRACK_PANEL_HANDLERS
 ((enter
+      {do
+         ($bar progress.sld)
+         ($wide {== {rnd aspect} kWidescreenAspect})
+         {$bar set_showing FALSE}
+         {$this disable $bar}
+         {$bar set_num_steps 100}
+         {if_else {gamemode in_mode h2h}
+            {$bar set_local_pos -0.34 8 1.86}
+            {$bar set_local_pos {if_else $wide 4.1 2.9} 10 1.86}
+         }
+         {$bar set_local_scale 0.006 0.006 0.006}
+      }
       {unless {exists fc_bass_callback}
          FC_CALLBACKS}
       {game add_sink $this}
@@ -118,7 +130,11 @@
             {if {> {gamecfg get practice_speed} 0} {beatmatch set_music_speed $modifier}}
          }
          {beatmatch set_music_speed $speedmod}
-      }))
+      }
+      {progress.sld set_showing $progressbar}
+   )
+   (poll {progress.sld set_current {{beatmatch main_performer} percent_complete}})
+)
 {new
    TrackPanel
    coop_track_panel
