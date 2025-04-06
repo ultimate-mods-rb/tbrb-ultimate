@@ -185,7 +185,7 @@
          }
          {if {find $entry progress_bar}
             {set $progressbar
-               {elem {find $entry progress_bar}}
+               {elem {find $entry progress_bar} 1}
             }
          }
          {if {find $entry legacy_bass_streak}
