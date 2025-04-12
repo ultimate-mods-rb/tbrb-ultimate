@@ -7,14 +7,53 @@
       {do
          ($bar progress.sld)
          ($wide {== {rnd aspect} kWidescreenAspect})
+         ($h2h {gamemode in_mode h2h})
+         ($vox
+            {if_else $h2h
+               {== {{game get_participant_config 0} get_track_sym} vocals}
+               {{$this loaded_dir} get vocals}
+            }
+         )
+         ($gem
+            {if_else $h2h
+               {! $vox}
+               {||
+                  {{$this loaded_dir} get bass}
+                  {{$this loaded_dir} get drum}
+                  {{$this loaded_dir} get guitar}
+               }
+            }
+         )
+         ($x
+            {cond
+               ({&& $h2h $vox} 0)
+               ($h2h -0.34)
+               ($wide 4.1)
+               2.8
+            }
+         )
+         ($y 
+            {cond
+               ({&& $h2h {! $wide} $gem} 11)
+               ($h2h 8)
+               10
+            }
+         )
+         ($z
+            {cond
+               ({&& $h2h $vox} 1.54)
+               ($h2h 2.4)
+               ({&& $gem $vox} 0.47)
+               ($vox 1.39)
+               1.86
+            }
+         )
+         ($s 0.006)
          {$bar set_showing FALSE}
          {$this disable $bar}
          {$bar set_num_steps 100}
-         {if_else {gamemode in_mode h2h}
-            {$bar set_local_pos -0.34 8 1.86}
-            {$bar set_local_pos {if_else $wide 4.1 2.9} 10 1.86}
-         }
-         {$bar set_local_scale 0.006 0.006 0.006}
+         {$bar set_local_pos $x $y $z}
+         {$bar set_local_scale $s $s $s}
       }
       {unless {exists fc_bass_callback}
          FC_CALLBACKS}
