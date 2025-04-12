@@ -125,6 +125,7 @@
    {if_else $songtitle os_songtitle1 os_songtitle0}
    {if_else $showauthor os_showauthor1 os_showauthor0}
    {if_else $progressbar os_progressbar1 os_progressbar0}
+   {if_else $goldprogress os_goldprogress1 os_goldprogress0}
    {if_else $fcring os_fcring1 os_fcring0}
    {if_else $legacybass os_legacybass1 os_legacybass0}
    #ifdef HX_PS3
@@ -153,6 +154,9 @@
          )
          ((os_progressbar1 os_progressbar0)
             {set $progressbar {! $progressbar}}
+         )
+         ((os_goldprogress1 os_goldprogress0)
+            {set $goldprogress {! $goldprogress}}
          )
          ((os_legacybass1 os_legacybass0)
             {set $legacybass {! $legacybass}}

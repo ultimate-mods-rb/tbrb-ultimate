@@ -28,11 +28,6 @@
    ;   }
    ;}
 
-   ;we should probably just set it directly but i couldn't find where it was so this works :p
-   {star_awarded.tex iterate_refs $ref {$ref set diffuse_tex {if_else {gamemode in_mode autoplay_mode} star_awarded_ap.tex star_awarded.tex}}}
-   ;fun fact wii unloads the track panel so there's no need for this line on wii but i don't feel like ifdefing it
-   {star_awarded_ap.tex iterate_refs $ref {$ref set diffuse_tex {if_else {gamemode in_mode autoplay_mode} star_awarded_ap.tex star_awarded.tex}}}
-
    {if $highwaycustomtexture
       {{$this find track_lanes.tex} set_bitmap {sprint "ui/track/highway/" $highway ".png"}}
    }

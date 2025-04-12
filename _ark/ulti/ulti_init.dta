@@ -48,6 +48,8 @@
 ;show progress bar
 {set $progressbar TRUE}
 
+{set $goldprogress TRUE}
+
 ;gem texture
 {set $gem "none"}
 

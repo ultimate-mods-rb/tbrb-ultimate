@@ -326,6 +326,10 @@
    "Show Progress Bar: ON")
 (os_progressbar0
    "Show Progress Bar: OFF")
+(os_goldprogress1
+   "Show Gold Star Progress: ON")
+(os_goldprogress0
+   "Show Gold Star Progress: OFF")
 (os_cnt
    "Controller Settings")
 (os_remap_cnt
