@@ -552,7 +552,7 @@
 ;
 #define TRK_MODIFIER_DATA
 ((
-   #ifdef HX_NG os_reset #endif os_hw os_strk os_spotlight os_gems_colors os_smashers_colors
+   #ifdef HX_NG os_reset #endif os_hw os_strk os_spotlight #ifdef HX_NG os_gems #endif os_gems_colors os_smashers_colors
 ))
 {new
    UIPanel
@@ -594,6 +594,9 @@
          )
          (os_spotlight
             {pop_and_goto_screen overshell_spotlight_screen}
+         )
+         (os_gems
+            {pop_and_goto_screen overshell_gems_screen}
          )
          (os_gems_colors
             {pop_and_goto_screen overshell_gem_color_screen}
@@ -689,6 +692,35 @@
    (back overshell_trk_screen)
    (panels overshell_spotlight_panel)
    (focus overshell_spotlight_panel)}
+{new
+   UIPanel
+   overshell_gems_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {overshell.lst set_data (none rb1 rb2)}
+      {title.lbl set text_token {localize os_gems}})
+   (SELECT_MSG
+      {set $gems 
+         {if_else {== {$component selected_sym} none}
+            FALSE
+            {$component selected_sym}
+         }
+      }
+      {update_gems}
+      {pop_and_goto_screen overshell_trk_screen})
+   (update_helpbar
+      {helpbar
+         set_config
+         ((cancel helpbar_back)
+            (confirm helpbar_select))})
+   (TRANSITION_COMPLETE_MSG
+      {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_gems_screen
+   (back overshell_trk_screen)
+   (panels overshell_gems_panel)
+   (focus overshell_gems_panel)}
 
 #define GEMC_MODIFIER_DATA
 ((

@@ -43,6 +43,7 @@
 
    #ifndef HX_WII
    {rnd set_sync $vsyncrate}
+   {update_gems}
    #endif}
 {func
    game_exit_handler
@@ -240,5 +241,37 @@
          }
       }
       {$p9director force_outfits $outfitArray}
+   }
+}
+{func update_gems
+   {if $gems
+      {set $custom_ts {load_objects {sprintf "ulti/track/tracksystems/%s/tracksystem.milo" $gems}}}
+      {{$custom_ts find prism_mat.mat} set use_environ FALSE}
+      {foreach $gtr (guitar bass)
+         {with {coop_track_panel find $gtr}
+            {foreach $color (green red yellow blue orange)
+               {do
+                  ($wid {sprintf "gem_%s.wid" $color})
+                  ($hopo_wid {sprintf "gem_%s_hopo.wid" $color})
+                  {$wid copy {$custom_ts find $wid} kCopyDeep}
+                  {$hopo_wid copy {$custom_ts find $hopo_wid} kCopyDeep}
+               }
+            }
+            {foreach $wid (star_gem.wid star_hopo.wid gem_miss.wid gem_miss_hopo.wid)
+               {$wid copy {$custom_ts find $wid} kCopyDeep}
+            }
+         }
+      }
+      {with {coop_track_panel find drum}
+         {foreach $color (red yellow blue green star)
+            {do
+               ($wid {sprintf "drum_%s.wid" $color})
+               {$wid copy {$custom_ts find $wid} kCopyDeep}
+            }
+         }
+         {foreach $wid (gem_kick.wid star_kick.wid drum_miss.wid)
+            {$wid copy {$custom_ts find $wid} kCopyDeep}
+         }
+      }
    }
 }

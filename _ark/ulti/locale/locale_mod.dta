@@ -479,4 +479,5 @@
 (os_inst2 "Instrument 2")
 (os_inst3 "Instrument 3")
 (os_inst4 "Instrument 4")
+(os_gems "Gems")
 

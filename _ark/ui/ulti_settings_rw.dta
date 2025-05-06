@@ -203,6 +203,11 @@
                {elem {find $entry note_color_shuffle} 1}
             }
          }
+         {if {find $entry gems}
+            {set $gems
+               {elem {find $entry gems} 1}
+            }
+         }
          {if {find $entry guitar_gem_colors}
             {set $gtrgem1
                {elem {elem {find $entry guitar_gem_colors} 1} 0}
@@ -374,6 +379,7 @@
                (gold_stars_progress $goldprogress)
                (legacy_bass_streak $legacybass)
                (note_color_shuffle $colorshuffle)
+               (gems $gems)
                (guitar_gem_colors ($gtrgem1 $gtrgem2 $gtrgem3 $gtrgem4 $gtrgem5))
                (guitar_smasher_colors ($gtrsm1 $gtrsm2 $gtrsm3 $gtrsm4 $gtrsm5))
                (guitar_sustain_colors ($gtrsus1 $gtrsus2 $gtrsus3 $gtrsus4 $gtrsus5))
