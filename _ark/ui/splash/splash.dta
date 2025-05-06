@@ -11,6 +11,9 @@
       {ui goto_screen main_popup_swapper}
       {ui goto_screen splash_screen}})
    (enter
+      #ifdef HX_NG
+      {update_gems}
+      #endif
       {platform_mgr disable_xmp}
       kDataUnhandled)
    (exit

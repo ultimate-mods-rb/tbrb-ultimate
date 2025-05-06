@@ -697,11 +697,11 @@
    overshell_gems_panel
    OVERSHELL_LIST_FILE
    (enter
-      {overshell.lst set_data (none rb1 rb2)}
+      {overshell.lst set_data (tbrb rb1 rb2 lrb)}
       {title.lbl set text_token {localize os_gems}})
    (SELECT_MSG
       {set $gems 
-         {if_else {== {$component selected_sym} none}
+         {if_else {== {$component selected_sym} tbrb}
             FALSE
             {$component selected_sym}
          }

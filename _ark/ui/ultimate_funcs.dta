@@ -43,7 +43,6 @@
 
    #ifndef HX_WII
    {rnd set_sync $vsyncrate}
-   {update_gems}
    #endif}
 {func
    game_exit_handler
@@ -243,35 +242,119 @@
       {$p9director force_outfits $outfitArray}
    }
 }
+#ifdef HX_NG
 {func update_gems
-   {if $gems
-      {set $custom_ts {load_objects {sprintf "ulti/track/tracksystems/%s/tracksystem.milo" $gems}}}
-      {{$custom_ts find prism_mat.mat} set use_environ FALSE}
-      {foreach $gtr (guitar bass)
-         {with {coop_track_panel find $gtr}
-            {foreach $color (green red yellow blue orange)
-               {do
-                  ($wid {sprintf "gem_%s.wid" $color})
-                  ($hopo_wid {sprintf "gem_%s_hopo.wid" $color})
+   {switch $gems
+      ((rb1 rb2)
+         {set $custom_ts {load_objects {sprintf "ulti/track/tracksystems/%s/tracksystem.milo" $gems}}}
+         {{$custom_ts find prism_mat.mat} set use_environ FALSE}
+         {foreach $gtr (guitar bass)
+            {with {coop_track_panel find $gtr}
+               {foreach $color (green red yellow blue orange)
+                  {do
+                     ($wid {sprintf "gem_%s.wid" $color})
+                     ($hopo_wid {sprintf "gem_%s_hopo.wid" $color})
+                     {$wid copy {$custom_ts find $wid} kCopyDeep}
+                     {$hopo_wid copy {$custom_ts find $hopo_wid} kCopyDeep}
+                  }
+               }
+               {foreach $wid (star_gem.wid star_hopo.wid gem_miss.wid gem_miss_hopo.wid)
                   {$wid copy {$custom_ts find $wid} kCopyDeep}
-                  {$hopo_wid copy {$custom_ts find $hopo_wid} kCopyDeep}
                }
             }
-            {foreach $wid (star_gem.wid star_hopo.wid gem_miss.wid gem_miss_hopo.wid)
+         }
+         {with {coop_track_panel find drum}
+            {foreach $color (red yellow blue green star)
+               {do
+                  ($wid {sprintf "drum_%s.wid" $color})
+                  {$wid copy {$custom_ts find $wid} kCopyDeep}
+               }
+            }
+            {foreach $wid (gem_kick.wid star_kick.wid drum_miss.wid)
                {$wid copy {$custom_ts find $wid} kCopyDeep}
             }
          }
-      }
-      {with {coop_track_panel find drum}
-         {foreach $color (red yellow blue green star)
-            {do
-               ($wid {sprintf "drum_%s.wid" $color})
-               {$wid copy {$custom_ts find $wid} kCopyDeep}
+      )
+      (lrb
+         {set $custom_ts {load_objects "ulti/track/tracksystems/lrb/gems.milo"}}
+         {foreach $gtr (guitar bass)
+            {with {{get_track_panel} find $gtr}
+               {prism_gem_stepped_miss.mesh copy {$custom_ts find lego_gem_guitar_mis_body.mesh} kCopyDeep}
+               {prism_gem_stepped_style.mesh copy {$custom_ts find lego_gem_guitar_nrg_body.mesh} kCopyDeep}
+               {prism_gem_stepped_orange.mesh copy {$custom_ts find lego_gem_guitar_ora_body.mesh} kCopyDeep}
+               {prism_gem_stepped_blue.mesh copy {$custom_ts find lego_gem_guitar_blu_body.mesh} kCopyDeep}
+               {prism_gem_stepped_yellow.mesh copy {$custom_ts find lego_gem_guitar_yel_body.mesh} kCopyDeep}
+               {prism_gem_stepped_red.mesh copy {$custom_ts find lego_gem_guitar_red_body.mesh} kCopyDeep}
+               {prism_gem_stepped_green.mesh copy {$custom_ts find lego_gem_guitar_grn_body.mesh} kCopyDeep}
+
+               {prism_gem_hopo_miss.mesh copy {$custom_ts find lego_gem_ham_mis_body.mesh} kCopyDeep}
+               {prism_gem_hopo_style.mesh copy {$custom_ts find lego_gem_ham_nrg_body.mesh} kCopyDeep}
+               {prism_gem_hopo_orange.mesh copy {$custom_ts find lego_gem_ham_ora_body.mesh} kCopyDeep}
+               {prism_gem_hopo_blue.mesh copy {$custom_ts find lego_gem_ham_blu_body.mesh} kCopyDeep}
+               {prism_gem_hopo_yellow.mesh copy {$custom_ts find lego_gem_ham_yel_body.mesh} kCopyDeep}
+               {prism_gem_hopo_red.mesh copy {$custom_ts find lego_gem_ham_red_body.mesh} kCopyDeep}
+               {prism_gem_hopo_green.mesh copy {$custom_ts find lego_gem_ham_grn_body.mesh} kCopyDeep}
+
+
+               {foreach $color (green red yellow blue orange)
+                  {do
+                     ($wid {sprintf "gem_%s.wid" $color})
+                     ($hopo_wid {sprintf "gem_%s_hopo.wid" $color})
+                     {if {== {size {$wid get_array meshes}} 2}
+                        {$wid remove (meshes 1)}
+                        {$hopo_wid remove (meshes 1)}
+                     }
+                  }
+               }
+
+               {foreach $starwid (star_gem.wid star_hopo.wid)
+                  {if {== {size {$starwid get_array meshes}} 2}
+                     {$starwid remove (meshes 1)}
+                  }
+               }
+
+               {foreach $misswid (gem_miss.wid gem_miss_hopo.wid)
+                  {if {== {size {$misswid get_array meshes}} 2}
+                     {$misswid remove (meshes 0)}
+                  }
+               }
             }
          }
-         {foreach $wid (gem_kick.wid star_kick.wid drum_miss.wid)
-            {$wid copy {$custom_ts find $wid} kCopyDeep}
+         {with {{get_track_panel} find drum}
+            {foreach $mat (track_gems.mat prism_mat.mat prism_mat_glow.mat) ; dynamic_crash_green.mat dynamic_crash_red.mat
+               {with {$custom_ts find $mat}
+                  {set [prelit] FALSE}
+                  {set [use_environ] FALSE}
+               }
+            }
+
+            ; the dynamic_crash_*.meshes don't work.
+            {drum_red_deploy.mesh copy {$custom_ts find lego_gem_drum_red_body.mesh} kCopyDeep}
+            {drum_green_deploy.mesh copy {$custom_ts find lego_gem_drum_grn_body.mesh} kCopyDeep}
+            {prism_gem_kick_miss.mesh copy {$custom_ts find prism_gem_kick_miss.mesh} kCopyDeep}
+            {prism_gem_drum_miss.mesh copy {$custom_ts find lego_gem_drum_mis_body.mesh} kCopyDeep}
+            {prism_gem_kick_style.mesh copy {$custom_ts find prism_gem_kick_style.mesh} kCopyDeep}
+            {prism_gem_drum_style.mesh copy {$custom_ts find lego_gem_drum_nrg_body.mesh} kCopyDeep}
+            {prism_gem_kick.mesh copy {$custom_ts find prism_gem_kick.mesh} kCopyDeep}
+            {prism_gem_drum_green.mesh copy {$custom_ts find lego_gem_drum_grn_body.mesh} kCopyDeep}
+            {prism_gem_drum_blue.mesh copy {$custom_ts find lego_gem_drum_blu_body.mesh} kCopyDeep}
+            {prism_gem_drum_yellow.mesh copy {$custom_ts find lego_gem_drum_yel_body.mesh} kCopyDeep}
+            {prism_gem_drum_red.mesh copy {$custom_ts find lego_gem_drum_red_body.mesh} kCopyDeep}
+
+            {foreach $color (red yellow blue green star)
+               {do
+                  ($wid {sprintf "drum_%s.wid" $color})
+                  {if {== {size {$wid get_array meshes}} 2}
+                     {$wid remove (meshes 1)}
+                  }
+               }
+            }
+
+            {gem_kick.wid insert (meshes 1) {$custom_ts find prism_gem_kick_glow.mesh}}
+            {star_kick.wid insert (meshes 1) {$custom_ts find prism_gem_kick_glow_style.mesh}}
+            {kick_miss.wid insert (meshes 1) {$custom_ts find prism_gem_kick_miss_glow.mesh}}
          }
-      }
+      )
    }
 }
+#endif
