@@ -355,6 +355,85 @@
             {kick_miss.wid insert (meshes 1) {$custom_ts find prism_gem_kick_miss_glow.mesh}}
          }
       )
+      (rb3
+         {set $custom_ts {load_objects "ulti/track/tracksystems/rb3/gems.milo"}}
+         {with $custom_ts
+            {gem.mat set emissive_map prism_gem_emissive.tex}
+            {gem.mat set emissive_multiplier 1}
+            {kick.mat set emissive_map prism_gem_emissive.tex}
+            {kick.mat set emissive_multiplier 1}
+            {kick.mat set specular_rgb {pack_color 1 1 1}}
+            {kick.mat set specular_power 1.26}
+            {cymbal.mat set emissive_map gem_cymbal_ems.tex}
+            {cymbal.mat set emissive_multiplier 1}
+            ;{style_glow.mat z_mode kZModeDisable} ; this should fix the transparancy issues but it doesn't
+         }
+         {foreach $gtr (guitar bass)
+            {with {coop_track_panel find $gtr}
+
+               {foreach $color (green red yellow blue orange)
+                  {do
+                     ($wid {sprintf "gem_%s.wid" $color})
+                     ($hopo_wid {sprintf "gem_%s_hopo.wid" $color})
+                     {while {size {$wid get_array meshes}}
+                        {$wid remove (meshes 0)}
+                     }
+                     {while {size {$hopo_wid get_array meshes}}
+                        {$hopo_wid remove (meshes 0)}
+                     }
+                     {$wid insert (meshes 0) {$custom_ts find {sprintf "_prism_gem_stepped_%s.mesh_0.mesh" $color}}}
+                     {$hopo_wid insert (meshes 0) {$custom_ts find {sprintf "_prism_gem_hopo_%s.mesh_0.mesh" $color}}}
+                  }
+               }
+
+               {while {size {star_gem.wid get_array meshes}}
+                  {star_gem.wid remove (meshes 0)}
+               }
+               ;{star_gem.wid insert (meshes 0) {$custom_ts find _prism_gem_guitar_style_glow.mesh_0.mesh}}
+               {star_gem.wid insert (meshes 0) {$custom_ts find _prism_gem_stepped_style.mesh_0.mesh}}
+
+               {while {size {star_hopo.wid get_array meshes}}
+                  {star_hopo.wid remove (meshes 0)}
+               }
+               ;{star_hopo.wid insert (meshes 0) {$custom_ts find _prism_gem_hopo_style_glow.mesh_0.mesh}}
+               {star_hopo.wid insert (meshes 0) {$custom_ts find _prism_gem_hopo_style.mesh_0.mesh}}
+            }
+         }
+         {with {coop_track_panel find drum}
+            {foreach $color (red yellow blue green)
+               {do
+                  ($wid {sprintf "drum_%s.wid" $color})
+                  {while {size {$wid get_array meshes}}
+                     {$wid remove (meshes 0)}
+                  }
+                  {$wid insert (meshes 0) {$custom_ts find {sprintf "_prism_gem_drum_%s.mesh_0.mesh" $color}}}
+               }
+            }
+
+            {while {size {drum_star.wid get_array meshes}}
+               {drum_star.wid remove (meshes 0)}
+            }
+            ;{drum_star.wid insert (meshes 0) {$custom_ts find _prism_gem_drum_style_glow.mesh_0.mesh}}
+            {drum_star.wid insert (meshes 0) {$custom_ts find _prism_gem_drum_style.mesh_0.mesh}}
+
+            {while {size {gem_kick.wid get_array meshes}}
+               {gem_kick.wid remove (meshes 0)}
+            }
+            {gem_kick.wid insert (meshes 0) {$custom_ts find _prism_gem_kick_glow.mesh_0.mesh}}
+            {gem_kick.wid insert (meshes 0) {$custom_ts find _prism_gem_kick.mesh_0.mesh}}
+
+            {while {size {star_kick.wid get_array meshes}}
+               {star_kick.wid remove (meshes 0)}
+            }
+            {star_kick.wid insert (meshes 0) {$custom_ts find _prism_gem_kick_style_glow.mesh_0.mesh}}
+            {star_kick.wid insert (meshes 0) {$custom_ts find _prism_gem_kick_style.mesh_0.mesh}}
+
+            {while {size {dynamic_crash_gem.wid get_array meshes}}
+               {dynamic_crash_gem.wid remove (meshes 0)}
+            }
+            {dynamic_crash_gem.wid insert (meshes 0) {$custom_ts find _prism_gem_drum_green.mesh_0.mesh}}
+         }
+      )
       (gh2
          {set $custom_ts {load_objects "ulti/track/tracksystems/gh2/gems.milo"}} ; gems stolen from rb3dx
          {{$custom_ts find gem.mat} set intensify TRUE}

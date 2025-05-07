@@ -697,7 +697,7 @@
    overshell_gems_panel
    OVERSHELL_LIST_FILE
    (enter
-      {overshell.lst set_data (tbrb rb1 rb2 lrb gh2)}
+      {overshell.lst set_data (tbrb rb1 rb2 rb3 lrb gh2)}
       {title.lbl set text_token {localize os_gems}})
    (SELECT_MSG
       {set $gems 
