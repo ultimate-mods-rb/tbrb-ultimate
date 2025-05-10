@@ -1580,7 +1580,7 @@
 ;
 
 #define TBRB_VENUES_MODIFIER_DATA
-((off cavern sullivan shea budokan rooftop))
+((off cavern sullivan shea budokan #ifdef HX_NG dreamscape #endif rooftop))
 {new
    UIPanel
    overshell_venues_panel
