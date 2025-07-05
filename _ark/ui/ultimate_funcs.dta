@@ -163,12 +163,14 @@
             #endif
          )
       }
-      #ifdef HX_PS3
-      {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
-      {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
-      #endif
-      {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
-      {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+      {do
+         #ifdef HX_PS3
+         {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerVocals}
+         {set_elem {find $syscfg joypad controller_mapping dualshock} 1 joypad}
+         #endif
+         {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerVocals}
+         {set_elem {find $syscfg joypad controller_mapping analog} 1 joypad}
+      }
    }
 }
 {func get_author_info
