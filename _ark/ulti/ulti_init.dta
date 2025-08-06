@@ -104,15 +104,13 @@
 ;dont force scene by default
 {set $forcescene "off"}
 
-{set $rArray {array (0 0 0 0 0)}}
-{set $gArray {array (0 0 0 0 0)}}
-{set $jArray {array (0 0 0 0 0)}}
-{set $pArray {array (0 0 0 0 0)}}
-{set $instsArray {array ()}}
-{foreach $inst {find $syscfg objects OutfitLoader types beatle category instrument0 outfits}
-   {if {! {== $inst outfits}}
-      {push_back $instsArray {elem $inst 0}}
-   }
+{set $outfit_array
+   {array (
+      (ringo 0 0 0 0 0 0)
+      (george 0 0 0 0 0 0)
+      (john 0 0 0 0 0 0)
+      (paul 0 0 0 0 0 0)
+   )}
 }
 
 ;default gem/smasher/sustain colors
