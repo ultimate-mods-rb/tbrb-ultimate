@@ -3504,3 +3504,56 @@
    (songtype acoustic)
    (downloaded True)
 )
+(cancermcrwii
+   (name "Cancer (My Chemical Romance)")
+   (song_id 66789000) 
+   (context 0)
+   (song
+     (name    songs/cancermcrwii/cancermcrwii)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 24950 54950)
+   (rank
+      (drum 160)
+      (guitar 80)
+      (bass 80)
+      (vocals 212)
+      (band 130)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released 2006-01-01) ; use 2009-01-01 as default if unknown
+   (date_recorded 2006-10-23) ; use 2009-01-01 as default if unknown
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype piano)
+   (new_ar_console TRUE)
+   (downloaded TRUE)
+)
