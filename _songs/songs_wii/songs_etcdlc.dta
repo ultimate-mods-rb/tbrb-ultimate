@@ -3500,16 +3500,16 @@
    (game_origin beatles)
    (rating 1)
    (guide_pitch_volume -3.0)
-   (singer George)
+   (singer george)
    (songtype acoustic)
-   (downloaded True)
+   (downloaded TRUE)
 )
 (cancermcr
    (name "Cancer (My Chemical Romance)")
    (song_id 66789000) 
    (context 0)
    (song
-     (name    songs/cancermcrwii/cancermcrwii)
+     (name    songs/cancermcr/cancermcr)
      (tracks
         ((drum (0 1))
          (bass (2 3))
