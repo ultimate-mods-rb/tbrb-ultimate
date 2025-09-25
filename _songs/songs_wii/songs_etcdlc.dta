@@ -3610,3 +3610,59 @@
    (songtype acoustic piano) ; SET TO piano, acoustic, electric, OR solo
    (downloaded TRUE)
 )
+(vivalagloria
+   (name "¡Viva la Gloria!")
+   (song_id 6690022)
+   (context 56)
+   (song
+     (name        songs/vivalagloria/vivalagloria)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 295)
+      (guitar 348)
+      (bass 255)
+      (vocals 304)
+      (band 227)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2009-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "2009-05-12") ; use 2009-01-01 as default if unknown
+   (album_name "21st Century Breakdown")
+   (album_track_number 4)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+   (new_ar_console TRUE)
+)
