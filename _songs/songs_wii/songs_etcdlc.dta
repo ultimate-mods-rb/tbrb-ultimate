@@ -3615,7 +3615,7 @@
    (song_id 9420099)
    (context 40)
    (song
-     (name  dlc/r9JE/033/content/songs/doyouwant/doyouwant)
+     (name  songs/doyouwant/doyouwant)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3717,5 +3717,58 @@
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric)
+   (downloaded TRUE)
+)
+(lamento
+   (name "Lamento Boliviano")
+   (song_id 9970018)
+   (context 16)
+   (song
+     (name        songs/lamento/lamento)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; xd
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 145)
+      (guitar 299)
+      (bass 213)
+      (vocals 235)
+      (band 280)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1994-09-09") ; use 2009-01-01 as default if unknown
+   (date_recorded "1994-08-08") ; use 2009-01-01 as default if unknown
+   (album_name "Big Bang")
+   (album_track_number 1)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (new_ar_console TRUE)
    (downloaded TRUE)
 )
