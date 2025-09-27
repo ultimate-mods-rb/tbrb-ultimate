@@ -3884,3 +3884,56 @@
    (downloaded TRUE)
    (new_ar_console TRUE)
 )
+(topcancer
+   (name "Cancer (Twenty One Pilots)")
+   (song_id 6690021)
+   (context 0)
+   (song
+     (name        songs/topcancer/topcancer)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 ))
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 28000 75000)
+   (rank
+      (drum 120)
+      (guitar 126)
+      (bass 100)
+      (vocals 285)
+      (band 250)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "2016-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "2016-09-14") ; use 2009-01-01 as default if unknown
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric)
+   (downloaded TRUE)
+)
