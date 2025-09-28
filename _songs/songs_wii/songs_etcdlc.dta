@@ -3615,7 +3615,7 @@
    (song_id 9420099)
    (context 40)
    (song
-     (name  songs/doyouwant/doyouwant)
+     (name songs/doyouwant/doyouwant)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3670,7 +3670,7 @@
    (song_id 9305002)
    (context 0)
    (song
-     (name      songs/cadavez/cadavez)
+     (name songs/cadavez/cadavez)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3724,7 +3724,7 @@
    (song_id 9970018)
    (context 16)
    (song
-     (name        songs/lamento/lamento)
+     (name songs/lamento/lamento)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3777,7 +3777,7 @@
    (song_id 6690022)
    (context 56)
    (song
-     (name        songs/vivalagloria/vivalagloria)
+     (name songs/vivalagloria/vivalagloria)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3833,7 +3833,7 @@
    (song_id 6690019)
    (context 56)
    (song
-     (name        songs/21guns/21guns)
+     (name songs/21guns/21guns)
      (tracks
         ((drum (0 1))
          (bass (2 3))
@@ -3889,7 +3889,7 @@
    (song_id 6690021)
    (context 0)
    (song
-     (name        songs/topcancer/topcancer)
+     (name songs/topcancer/topcancer)
      (tracks
         ((drum (0 1))
          (bass (2 3))
