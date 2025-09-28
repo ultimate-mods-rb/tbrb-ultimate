@@ -475,7 +475,9 @@
    "Green Day: ON")
 (os_greenday0
    "Green Day: OFF")
-(os_outfit "Outfit")
+(reset "Reset")
+(os_hist_outfit "Historical Outfit")
+(os_dream_outfit "Dreamscape Outfit")
 (os_inst1 "Instrument 1")
 (os_inst2 "Instrument 2")
 (os_inst3 "Instrument 3")

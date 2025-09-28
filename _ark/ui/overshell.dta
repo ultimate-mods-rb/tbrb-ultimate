@@ -1555,11 +1555,13 @@
             {pop_and_goto_screen overshell_scenes_screen}
          )
          ((os_outfits1 os_outfits0)
-            #ifndef HX_WII
-            {passive_messages_panel queue_message cdlc_warning_message}
-            #endif
-            {set $forceoutfits TRUE}
-            {pop_and_goto_screen overshell_force_outfits_screen}
+            {set $forceoutfits {! $forceoutfits}}
+            {if $forceoutfits
+               #ifndef HX_WII
+               {passive_messages_panel queue_message cdlc_warning_message}
+               #endif
+               {pop_and_goto_screen overshell_force_outfits_screen}
+            }
          )
       }
       {$this lst_reset}
@@ -1669,20 +1671,33 @@
 
 ;
 #define TBRB_OUTFITS_MODIFIER_DATA
-((none budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 #ifdef HX_WII sullivan02 sullivan03 #endif))
+((off budokan01 budokan02 cavern cavern02 love love_alt love_hdp revolver01 revolver01_alt revolver01_hdp rooftop sgtpepper02 sgtpepper03 sgtpepper03_hdp sgtpepper03_alt sgtpepper03_alt_hdp sgtpepper sgtpepper_alt shea sixtyeight02 sixtyeight02_hdp sixtyeight sixtyeight_hdp sixtynine sixtynine_hdp straw straw_alt sullivan walrus01 walrus02 yellow01 #ifdef HX_WII sullivan02 sullivan03 #endif none))
 {new UIPanel
    overshell_force_outfits_panel
    OVERSHELL_LIST_FILE
    (pos)
+   (char)
    (enter
-      {overshell.lst set_data (ringo george john paul)}
+      {overshell.lst set_data (reset ringo george john paul)}
       {overshell.lst set_selected [pos]}
       {title.lbl set text_token {localize os_outfits}}
    )
    (SELECT_MSG
-      {set $os_char {$component selected_sym}}
-      {overshell_char_panel set pos 0}
-      {pop_and_goto_screen overshell_char_screen}
+      {if_else [pos]
+         {do
+            {set [char] {$component selected_sym}}
+            {overshell_char_panel set pos 0}
+            {pop_and_goto_screen overshell_char_screen}
+         }
+         {set $outfit_array
+            {array (
+               (ringo 0 0 0 0 0 0)
+               (george 0 0 0 0 0 0)
+               (john 0 0 0 0 0 0)
+               (paul 0 0 0 0 0 0)
+            )}
+         }
+      }
    )
    (SCROLL_MSG {set [pos] {overshell.lst selected_pos}})
 }
@@ -1696,16 +1711,18 @@
    overshell_char_panel
    OVERSHELL_LIST_FILE
    (pos)
+   (get_elem {+ [pos] 1})
    (enter
-      {overshell.lst set_data (os_outfit os_inst1 os_inst2 os_inst3 os_inst4)}
+      {overshell.lst set_data (os_hist_outfit os_dream_outfit os_inst1 os_inst2 os_inst3 os_inst4)}
       {overshell.lst set_selected [pos]}
-      {title.lbl set text_token $os_char}
+      {title.lbl set text_token {overshell_force_outfits_panel get char}}
    )
    (SELECT_MSG
-      {set $os_var [pos]}
-      {if_else [pos]
-         {pop_and_goto_screen overshell_insts_screen}
-         {pop_and_goto_screen overshell_outfits_screen}
+      {pop_and_goto_screen
+         {if_else {> [pos] 1}
+            overshell_insts_screen
+            overshell_outfits_screen
+         }
       }
    )
    (SCROLL_MSG {set [pos] {overshell.lst selected_pos}})
@@ -1721,10 +1738,22 @@
    OVERSHELL_LIST_FILE
    (enter
       {overshell.lst set_data TBRB_OUTFITS_MODIFIER_DATA}
-      {title.lbl set text_token os_outfit}
+      {title.lbl set text_token
+         {if_else {== {overshell_char_panel get_elem} 1}
+            os_hist_outfit
+            os_dream_outfit
+         }
+      }
    )
    (SELECT_MSG
-      {set_elem {switch $os_char (ringo $rArray) (george $gArray) (john $jArray) (paul $pArray)} 0 {$component selected_sym}}
+      {set_elem
+         {find $outfit_array {overshell_force_outfits_panel get char}}
+         {overshell_char_panel get_elem}
+         {if_else {== {$component selected_sym} off}
+            0
+            {$component selected_sym}
+         }
+      }
       {pop_and_goto_screen overshell_char_screen}
    )
 }
@@ -1738,11 +1767,28 @@
    overshell_insts_panel
    OVERSHELL_LIST_FILE
    (enter
-      {overshell.lst set_data $instsArray}
-      {title.lbl set text_token {localize {sprint "os_inst" $os_var}}}
+      {do
+         ($array {array (off)})
+         {foreach $inst {find $syscfg objects OutfitLoader types beatle category instrument0 outfits}
+            {if {!= $inst outfits}
+               {push_back $array {elem $inst 0}}
+            }
+         }
+         {remove_elem $array none}
+         {push_back $array none}
+         {overshell.lst set_data $array}
+      }
+      {title.lbl set text_token {sprint os_inst {- {overshell_char_panel get_elem} 2}}}
    )
    (SELECT_MSG
-      {set_elem {switch $os_char (ringo $rArray) (george $gArray) (john $jArray) (paul $pArray)} $os_var {$component selected_sym}}
+      {set_elem
+         {find $outfit_array {overshell_force_outfits_panel get char}}
+         {overshell_char_panel get_elem}
+         {if_else {== {$component selected_sym} off}
+            0
+            {$component selected_sym}
+         }
+      }
       {pop_and_goto_screen overshell_char_screen}
    )
 }
