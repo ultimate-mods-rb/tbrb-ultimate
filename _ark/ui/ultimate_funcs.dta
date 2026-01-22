@@ -173,41 +173,37 @@
       }
    }
 }
-{func get_author_info
-   {if_else $showauthor
-      {do
-         {set $authorvar FALSE}
-         {set $author_text FALSE}
-         {set $songvar {meta_performer song}}
-         {foreach $entry SONG_AUTHOR_INFO
-            {if {== {elem $entry 0} $songvar}
-               {set $authorvar
-                  {elem {find $entry author} 1}
-               }
+{func update_song_data
+   {set $song_data FALSE}
+   #ifdef HX_NG
+   {do
+      ($song {meta_performer song})
+      ($path {sprint {song_mgr song_path $song} "songs.dta"})
+      {search_replace $path {sprint $song "/" $song} "" $path}
+      {if {file_exists $path}
+         {do
+            ($data {find_exists {read_file $path} $song})
+            {if $data
+               {set $song_data $data}
             }
-         }
-         #ifdef HX_NG
-         {if {! $authorvar}
-            {set $song_dta_path {sprint {song_mgr song_path {symbol $songvar}} "songs.dta"}}
-            {search_replace $song_dta_path {sprint $songvar "/" $songvar} "" $song_dta_path}
-            {if {file_exists $song_dta_path}
-               {foreach $entry {read_file $song_dta_path}
-                  {if {== {elem $entry 0} $songvar}
-                     {if {find $entry author}
-                        {set $authorvar
-                           {elem {find $entry author} 1}
-                        }
-                     }
-                  }
-               }
-            }
-         }
-         #endif
-         {if $authorvar
-            {set $author_text {sprint " | Author: " $authorvar}}
          }
       }
-      {set $author_text FALSE}
+   }
+   #endif
+}
+{func get_song_data
+   ($s)
+   {do
+      ($song {meta_performer song})
+      {cond
+         ({find_exists $syscfg missing_song_data $song $s}
+            {elem {find_exists $syscfg missing_song_data $song $s} 1}
+         )
+         ({&& $song_data {find_exists $song_data $s}}
+            {elem {find_exists $song_data $s} 1}
+         )
+         (TRUE kDataUnhandled)
+      }
    }
 }
 #ifdef HX_NG

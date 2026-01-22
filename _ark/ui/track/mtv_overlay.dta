@@ -5,46 +5,74 @@
             (show
                script
                (script
-                  {if
-                     {exists fade.anim}
-                     {fade.anim set_frame 50}}))
+                  {if {exists fade.anim}
+                     {fade.anim set_frame 50}
+                  }
+               )
+            )
             (hide
                script
                (script
-                  {if
-                     {exists fade.anim}
-                     {fade.anim set_frame 0}}))
+                  {if {exists fade.anim}
+                     {fade.anim set_frame 0}
+                  }
+               )
+            )
             (play
                script
                (script
-                  {if
-                     {exists fade.anim}
-                     {fade.anim animate}})))
+                  {if {exists fade.anim}
+                     {fade.anim animate}
+                  }
+               )
+            )
+         )
          (enter
-            {if
-               {exists game}
-               {game
-                  add_sink
-                  $this
-                  (intro_end)}
+            {if {exists game}
+               {game add_sink $this (intro_end)}
                {$this setup_text}
-               {if
-                  {exists fade.anim}
-                  {fade.anim set_frame 0}}})
+               {if {exists fade.anim}
+                  {fade.anim set_frame 0}
+               }
+            }
+         )
          (exit
-            {if
-               {exists game}
-               {game remove_sink $this}})
+            {if {exists game}
+               {game remove_sink $this}
+            }
+         )
          (intro_end
-            {if
-               {&&
-                  {exists game}
-                  {gamemode get show_mtv_overlay}}
+            {if {&& {exists game} {gamemode get show_mtv_overlay}}
                {$this setup_text}
-               {if
-                  {exists fade.anim}
+               {if {exists fade.anim}
                   {if_else $songtitle
-                  {fade.anim set_frame 50}
-                  {fade.anim animate}}}})
+                     {fade.anim set_frame 50}
+                     {fade.anim animate}
+                  }
+               }
+            }
+         )
          (setup_text
-            SETUP_MTV_OVERLAY))))
+            {if {exists song.lbl}
+               {do
+                  ($song {meta_performer song})
+                  ($text {song_mgr song_name $song})
+                  ($artist {get_song_data artist})
+                  ($author {get_song_data author})
+                  {song.lbl set fixed_length 1000} ; ????
+                  {if {> $speedmod 1}
+                     {append_str $text {sprint " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
+                  }
+                  {if $artist
+                     {append_str $text {sprint " | " $artist}}
+                  }
+                  {if {&& $author $showauthor}
+                     {append_str $text {sprint " | " $author}}
+                  }
+                  {song.lbl set_token_fmt $text}
+               }
+            }
+         )
+      )
+   )
+)

@@ -109,23 +109,6 @@
       }
    }
 )
-#define TBRBUL_ADV_FORCE_OUTFITS
-(((ringo $forceroo $forceroi1 $forceroi2 $forceroi3 $forceroi4 none)   
-   (george $forcegeo $forcegei1 $forcegei2 $forcegei3 $forcegei4 none)
-   (john $forcejno $forcejni1 $forcejni2 $forcejni3 $forcejni4 none)
-   (paul $forceplo $forcepli1 $forcepli2 $forcepli3 $forcepli4 none)))
-#define RPC_HANDLER
-(
-   {set $current_game_mode {gamemode in_mode}}
-   {write_file #ifdef HX_XBOX "GAME:/ulti_rpc.dta" #endif #ifdef HX_PS3 #ifdef REGION_EUROPE "GD:/dev_hdd0/game/BLES00532/USRDIR/ulti_rpc.dta" #else "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_rpc.dta" #endif #endif
-         {array
-            (
-               (song {song_mgr song_name {meta_performer song}})
-               (mode $current_game_mode)
-            )
-         }
-   }
-)
 #define OVERSHELL_DISALLOWED_SCREENS ;better way of doing this found thx rb1 :3
 (
    (
@@ -177,36 +160,4 @@
       complete_screen
       complete_accomplishments_screen
    )
-)
-#define SONG_AUTHOR_INFO
-(
-   (
-      #include ../ulti/song_updates/song_author_info.dta
-   )
-)
-#define SETUP_MTV_OVERLAY
-(
-   {if
-      {exists song.lbl}
-      {do
-         ($song
-            {meta_performer song})
-         ($song_text
-            {song_mgr song_name $song})
-         {song.lbl set fixed_length 1000}
-         {if_else
-             {!= $speedmod 1}
-             {if_else
-                 $author_text
-                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)" $author_text}}
-                 {song.lbl set_token_fmt {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
-             }
-             {if_else
-                 $author_text
-                 {song.lbl set_token_fmt {sprint $song_text $author_text}}
-                 {song.lbl set_token_fmt {sprint $song_text}}
-             }
-          }
-      }
-   }
 )
