@@ -63,7 +63,7 @@
                   {if {> $speedmod 1}
                      {append_str $text {sprint " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}
                   }
-                  {if $artist
+                  {if {&& $artist {!= $artist "The Beatles"}}
                      {append_str $text {sprint " | " $artist}}
                   }
                   {if {&& $author $showauthor}
