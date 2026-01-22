@@ -735,10 +735,16 @@
    (author
       "TBRB CDLC Team"
    )
+   (artist
+      "John Lennon"
+   )
 )
 (workingclassclean
    (author
       "TBRB CDLC Team"
+   )
+   (artist
+      "John Lennon"
    )
 )
 
@@ -896,50 +902,80 @@
    (author
       "yaniv297, TBRB Custom Rarities"
    )
+   (artist
+      "Paul McCartney & Wings"
+   )
 )
 (happyxmas
    (author
       "Harmonix, TBRB Custom Rarities"
+   )
+   (artist
+      "John & Yoko (Plastic Ono Band)"
    )
 )
 (jet
    (author
       "Neversoft, TBRB Custom Rarities"
    )
+   (artist
+      "Paul McCartney & Wings"
+   )
 )
 (letmerollit
    (author
       "Harmonix, TBRB Custom Rarities"
+   )
+   (artist
+      "Paul McCartney & Wings"
    )
 )
 (mullofkintyre
    (author
       "yaniv297, TBRB Custom Rarities"
    )
+   (artist
+      "Paul McCartney & Wings"
+   )
 )
 (topcancer
    (author
       "Fieldy92, TBRB Custom Rarities"
+   )
+   (artist
+      "Twenty One Pilots"
    )
 )
 (topmulberrystreet
    (author
       "ThreeAreEss, TBRB Custom Rarities"
    )
+   (artist
+      "Twenty One Pilots"
+   )
 )
 (topnextsemester
    (author
       "ThreeAreEss, TBRB Custom Rarities"
+   )
+   (artist
+      "Twenty One Pilots"
    )
 )
 (topshyaway
    (author
       "ThreeAreEss, TBRB Custom Rarities"
    )
+   (artist
+      "Twenty One Pilots"
+   )
 )
 (unclealbert
    (author
       "wingsoveramerica, TBRB Custom Rarities"
+   )
+   (artist
+      "Paul & Linda McCartney"
    )
 )
 ;tbrb solo career project
@@ -947,45 +983,72 @@
    (author
       "TBRB Solo Career Project"
    )
+   (artist
+      "John Lennon"
+   )
 )
 (everynight
    (author
       "yaniv297, TBRB Solo Career Project"
+   )
+   (artist
+      "Paul McCartney"
    )
 )
 (givemelove
    (author
       "TBRB Solo Career Project"
    )
+   (artist
+      "George Harrison"
+   )
 )
 (imthegreatest
    (author
       "TBRB Solo Career Project"
+   )
+   (artist
+      "Ringo Starr"
    )
 )
 (jet2
    (author
       "Neversoft, TBRB Solo Career Project"
    )
+   (artist
+      "Paul McCartney & Wings"
+   )
 )
 (liveandletdie
    (author
       "bsbloom, wingsoveramerica, TBRB Solo Career Project"
+   )
+   (artist
+      "Paul McCartney & Wings"
    )
 )
 (photograph
    (author
       "TBRB Solo Career Project"
    )
+   (artist
+      "Ringo Starr"
+   )
 )
 (twominutessilence
    (author
       "TBRB Solo Career Project"
    )
+   (artist
+      "John Lennon and Yoko Ono"
+   )
 )
 (wonderfulchristmastime
    (author
       "TBRB Solo Career Project"
+   )
+   (artist
+      "Paul McCartney"
    )
 )
 ;etc stuff
@@ -998,20 +1061,32 @@
    (author
       "friskyBrisky, Ronstereno"
    )
+   (artist
+      "George Harrison"
+   )
 )
 (buddyholly
    (author
       "Harmonix, JimboEatsKFC"
+   )
+   (artist
+      "Weezer"
    )
 )
 (cadavez
    (author
       "Bombapom, CYLITM, Galexio"
    )
+   (artist
+      "Los Enanitos Verdes"
+   )
 )
 (crippledinside
    (author
       "Harmonix, JimboEatsKFC"
+   )
+   (artist
+      "John Lennon"
    )
 )
 (devilinherheart
@@ -1028,15 +1103,24 @@
    (author
       "friskyBrisky, Cade"
    )
+   (artist
+      "Bee Gees"
+   )
 )
 (gotmymind
    (author
       "farottone, BarbaSNM, Drago, Juan Salvo"
    )
+   (artist
+      "George Harrison"
+   )
 )
 (imagine
    (author
       "Harmonix, JimboEatsKFC"
+   )
+   (artist
+      "John Lennon"
    )
 )
 (likedreamersdo
@@ -1053,9 +1137,15 @@
    (author
       "Harmonix, Dabishadow"
    )
+   (artist
+      "One Direction"
+   )
 )
 (one
    (author
       "Neversoft, JimboEatsKFC"
+   )
+   (artist
+      "Metallica"
    )
 )
