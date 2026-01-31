@@ -213,7 +213,7 @@
       #ifdef HX_WII
       {set $loadobjsafe TRUE}
       #endif
-      {get_author_info}
+      {update_song_data}
       {if_else
          [preload_ok]
          {do

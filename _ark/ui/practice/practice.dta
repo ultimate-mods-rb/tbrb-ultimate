@@ -32,7 +32,7 @@
       "")
    (corrupt FALSE)
    (enter
-      {get_author_info}
+      {update_song_data}
       {if_else
          [preload_ok]
          {ui goto_screen practice_pre_sel_section_screen}

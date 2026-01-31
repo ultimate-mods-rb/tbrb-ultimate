@@ -1640,7 +1640,7 @@
    (focus overshell_minivenues_panel)}
 ;
 #define TBRB_SCENES_MODIFIER_DATA
-((off birds birdwallpaper cloudy dotpaths01 filmgrain fireworks01 fireworks02 flowersgrow01 herecomesthesun01 indian01 indian02 indian03 kaleido01 kaleido02 lightboke lucykaleido moire01 moire02 moire03 projection projectionbird releanor rhelter rkaleido03 rsomething rsunraypoly russr silhouette starfield stripes01 stripes02 stripes03 stripes04 stripes05 stripes06 vines01 whitebackground within withinkaleido #ifdef HX_NG popstarschool #endif))
+((off birds birdwallpaper cloudy dotpaths01 filmgrain fireworks01 fireworks02 flowersgrow01 herecomesthesun01 indian01 indian02 indian03 kaleido01 kaleido02 lightboke lucykaleido moire01 moire02 moire03 projection projectionbird releanor rhelter rkaleido03 rsomething rsunraypoly russr silhouette starfield stripes01 stripes02 stripes03 stripes04 stripes05 stripes06 vines01 whitebackground within withinkaleido popstarschool))
 {new
    UIPanel
    overshell_scenes_panel
