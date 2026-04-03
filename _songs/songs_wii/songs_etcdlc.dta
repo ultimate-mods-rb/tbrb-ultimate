@@ -3491,7 +3491,7 @@
    (venue dreamscape) ; if you don't know venue yet use dreamscape
    
    (date_released "2011-11-16") ; use 2009-01-01 as default if unknown
-   (date_recorded "2021-07-16") ; use 2009-01-01 as default if unknown
+   (date_recorded "2011-07-16") ; use 2009-01-01 as default if unknown
    (album_name "Up All Night")
    (album_track_number 3)
 
@@ -3500,7 +3500,7 @@
    (game_origin beatles)
    (rating 1)
    (guide_pitch_volume -3.0)
-   (singer george)
+   (singer paul)
    (songtype acoustic)
    (downloaded TRUE)
 )
@@ -3610,61 +3610,6 @@
    (songtype acoustic piano) ; SET TO piano, acoustic, electric, OR solo
    (downloaded TRUE)
 )
-(doyouwant
-   (name "Do You Want To Know A Secret (Dreamscape)")
-   (song_id 9420099)
-   (context 40)
-   (song
-     (name songs/doyouwant/doyouwant)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 3)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 16776 45278)
-   (rank
-      (drum 136)
-      (guitar 205)
-      (bass 283)
-      (vocals 147)
-      (band 182)
-   )
-   (venue dreamscape) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1963-01-01") ; use 2009-01-01 as default if unknown
-   (date_recorded "1963-02-11") ; use 2009-01-01 as default if unknown
-   (album_name "Please Please Me")
-   (album_track_number 13)
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   ('tuning_offset_cents' -30)
-   (guide_pitch_volume -3.0)
-   (singer george)
-   (songtype acoustic)
-   (downloaded TRUE)
-)
 (cadavez
    (name "Cada Vez Que Digo Adios")
    (song_id 9305002)
@@ -3717,59 +3662,6 @@
    (guide_pitch_volume -3.0)
    (singer paul)
    (songtype electric)
-   (downloaded TRUE)
-)
-(lamento
-   (name "Lamento Boliviano")
-   (song_id 9970018)
-   (context 16)
-   (song
-     (name songs/lamento/lamento)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 1)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; xd
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 30638 60046)
-   (rank
-      (drum 145)
-      (guitar 299)
-      (bass 213)
-      (vocals 235)
-      (band 280)
-   )
-   (venue dreamscape) ; if you don't know venue yet use dreamscape
-   (date_released "1994-09-09") ; use 2009-01-01 as default if unknown
-   (date_recorded "1994-08-08") ; use 2009-01-01 as default if unknown
-   (album_name "Big Bang")
-   (album_track_number 1)
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer paul)
-   (songtype electric)
-   (new_ar_console TRUE)
    (downloaded TRUE)
 )
 (vivalagloria
@@ -4096,113 +3988,6 @@
    (songtype acoustic)
    (downloaded TRUE)
 )
-(monstermash
-   (name "Monster Mash")
-   (song_id 6690027)
-   (context 0)
-   (song
-     (name  songs/monstermash/monstermash)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 3)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 30638 60046)
-   (rank
-      (drum 152)
-      (guitar 210)
-      (bass 220)
-      (vocals 313)
-      (band 257)
-   )
-   (venue dreamscape) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1962-01-01") ; use 2009-01-01 as default if unknown
-   (date_recorded "1962-08-25") ; use 2009-01-01 as default if unknown
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   ('tuning_offset_cents' -30)
-   (guide_pitch_volume -3.0)
-   (singer george)
-   (songtype electric piano)
-   (downloaded TRUE)
-)
-(septembergurls
-   (name "September Gurls")
-   (song_id 3780001)
-   (context 0)
-   (song
-     (name songs/septembergurls/septembergurls)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 3)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 10400 40400)
-   (rank
-      (drum 155)
-      (guitar 120)
-      (bass 220)
-      (vocals 260)
-      (band 190)
-   )
-   (venue budokan) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1973-01-01") ; use 2009-01-01 as default if unknown
-   (date_recorded "1974-08-01") ; use 2009-01-01 as default if unknown
-   (album_name "Radio City")
-   (album_track_number 10)
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer george)
-   (songtype electric)
-   (downloaded TRUE)
-)
 (tv
    (name "We Don't Believe What's on TV")
    (song_id 6690010)
@@ -4257,113 +4042,4 @@
    (singer john)
    (songtype electric)
    (downloaded TRUE)
-)
-(jonas
-   (name "My Name Is Jonas")
-   (song_id 6840002)
-   (context 0)
-   (song
-     (name songs/jonas/jonas)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 3)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 30638 60046)
-   (rank
-      (drum 166)
-      (guitar 320)
-      (bass 220)
-      (vocals 250)
-      (band 270)
-   )
-   (venue shea) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1994-09-07") ; use 2009-01-01 as default if unknown
-   (date_recorded "1994-07-23") ; use 2009-01-01 as default if unknown
-   (album_name "Weezer (The Blue Album)")
-   (album_track_number 1)
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   ('tuning_offset_cents' -30)
-   (guide_pitch_volume -3.0)
-   (singer paul)
-   (songtype acoustic electric)
-   (downloaded TRUE)
-)
-(blackholesunmv
-   (name "Black Hole Sun (Music Video)")
-   (song_id 99901839)
-   (context 0)
-   (song
-     (name        songs/blackholesunmv/blackholesunmv)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 3)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Chris Cornell Approved
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 9633 66113)
-   (rank
-      (drum 170)
-      (guitar 260)
-      (bass 270)
-      (vocals 170)
-      (band 270)
-   )
-   (venue dreamscape)
-   
-   (date_released "1994-03-09")
-   (date_recorded "1993-09-14")
-   (album_name "Superunknown")
-   (album_track_number 7)
-   (format 0)
-   (version 20)
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer john)
-   (songtype electric)
-   (downloaded TRUE)
-   (new_ar_console TRUE)
 )
