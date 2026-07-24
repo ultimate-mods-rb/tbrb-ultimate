@@ -92,6 +92,7 @@ jobs:
   build_wii_riivolution:
     runs-on: ubuntu-latest
 
+    steps:
       - uses: actions/checkout@v7
         with:
           submodules: true
