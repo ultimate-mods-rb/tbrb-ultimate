@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-python@v7
       - name: Set env
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
@@ -18,23 +21,12 @@ jobs:
         run: |
           COMMIT_SHA=$(git rev-parse --short HEAD)
           sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
-      - name: Remove PS3 and Wii files
-        run: |
-          find . -name "*.*_ps3" -type f -delete
-          find . -name "*.*_wii" -type f -delete
-      - name: Move songs_xbox folder to _ark
-        run: |
-          mv _songs/songs_xbox _ark/songs
       - name: Build ARK
         run: |
-          dependencies/linux/arkhelper dir2ark ./_ark ./_build/xbox/gen -n "patch_xbox" -e -v 5 -s 4073741823
-      - name: Remove Excess files
-        run: |
-          find . -name "*.txt" -type f -delete
-          find . -name "*.zbm" -type f -delete
+          python _build_xbox.py
       
       - name: Upload result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TBRBUL-Xbox
           path: _build/xbox
@@ -43,21 +35,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-python@v7
       - name: Get and replace DEVBUILD with commit SHA in locale
         run: |
           $commitSha = (git rev-parse --short HEAD).ToUpper()
-          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta      
-      - name: Remove Xbox and Wii files
-        run: |
-          Get-ChildItem _ark/ -recurse -include *.*_xbox | remove-item
-          Get-ChildItem _ark/ -recurse -include *.*_wii | remove-item
-      - name: Move songs_ps3 folder to _ark
-        run: |
-          move _songs\songs_ps3 _ark\songs
+          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta
       - name: Build ARK
         run: |
-          dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
+          python _build_ps3.py
       - name: Build PKG
         run: |
           move "dependencies\ta_pkg_repacker_tools\usa\PARAM.SFO" "_build\ps3"
@@ -67,7 +55,7 @@ jobs:
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/usa/package.conf _build/ps3
 
       - name: Upload result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TBRBUL-PS3-USA
           path: '*.pkg'
@@ -76,21 +64,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-python@v7
       - name: Get and replace DEVBUILD with commit SHA in locale
         run: |
           $commitSha = (git rev-parse --short HEAD).ToUpper()
-          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta      
-      - name: Remove Xbox and Wii files
-        run: |
-          Get-ChildItem _ark/ -recurse -include *.*_xbox | remove-item
-          Get-ChildItem _ark/ -recurse -include *.*_wii | remove-item
-      - name: Move songs_ps3 folder to _ark
-        run: |
-          move _songs\songs_ps3 _ark\songs
+          (Get-Content _ark/ulti/locale/locale_mod.dta) -replace 'DEVBUILD', $commitSha | Set-Content _ark/ulti/locale/locale_mod.dta
       - name: Build ARK
         run: |
-          dependencies/arkhelper.exe dir2ark _ark _build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
+          python _build_ps3.py
       - name: Build PKG
         run: |
           move "dependencies\ta_pkg_repacker_tools\eur\PARAM.SFO" "_build\ps3"
@@ -100,7 +84,7 @@ jobs:
           dependencies/ta_pkg_repacker_tools/make_package_npdrm_retail.exe --k-licensee 0x00000000000000000000000000000000 --drm-type Local --package-version $packageversion --content-type GameData --content-id ($content + $sha_short) dependencies/ta_pkg_repacker_tools/eur/package.conf _build/ps3
 
       - name: Upload result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TBRBUL-PS3-EUR
           path: '*.pkg'
@@ -108,8 +92,10 @@ jobs:
   build_wii_riivolution:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-python@v7
       - name: Set env
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
@@ -117,24 +103,37 @@ jobs:
           mkdir -p ./dependencies/riivolution-patch/tbrbul/
           chmod +x dependencies/linux/arkhelper
           chmod +x dependencies/linux/dtab
+      - name: make fake ark parts
+        run: |
+          mkdir -p ./_build/wii
+          mkdir -p ./_build/wii/files
+          mkdir -p ./_build/wii/gen
+          truncate -s 71270695 _build/wii/files/gen/main_wii_0.ark
+          truncate -s 775705 _build/wii/files/gen/main_wii_1.ark
+          truncate -s 7713712 _build/wii/files/gen/main_wii_2.ark
+          truncate -s 161461271 _build/wii/files/gen/main_wii_3.ark
+          truncate -s 443967468 _build/wii/files/gen/main_wii_4.ark
+          truncate -s 485075279 _build/wii/files/gen/main_wii_5.ark
+          truncate -s 158496972 _build/wii/files/gen/main_wii_6.ark
+          truncate -s 287481367 _build/wii/files/gen/main_wii_7.ark
+          truncate -s 1732380974 _build/wii/files/gen/main_wii_8.ark
+          truncate -s 65556397 _build/wii/files/gen/main_wii_9.ark
       - name: Get current commit SHA and Replace DEVBUILD with commit SHA in locale
         run: |
           COMMIT_SHA=$(git rev-parse --short HEAD)
           sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
-      - name: Remove Xbox and PS3 files
-        run: |
-          find . -name "*.*_xbox" -type f -delete
-          find . -name "*.*_ps3" -type f -delete
-      - name: Move songs_wii folder to _ark
-        run: |
-          mv _songs/songs_wii _ark/songs
 
       - name: Build ARK
         run: |
-          dependencies/linux/arkhelper dir2ark ./_ark ./dependencies/riivolution-patch/tbrbul -n "patch_wii" -e -v 5 -s 4073741823
+          python _build_dolphin.py
+          mv ./_build/wii/files/gen/main_wii.hdr ./dependencies/riivolution-patch/tbrbul
+          mv ./_build/wii/files/gen/main_wii_10.ark ./dependencies/riivolution-patch/tbrbul
+          mv ./_build/wii/files/gen/patch_wii.hdr ./dependencies/riivolution-patch/tbrbul
+          mv ./_build/wii/files/gen/patch_wii_0.ark ./dependencies/riivolution-patch/tbrbul
+          rm -rf ./_build/wii/files
       
       - name: Upload result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TBRBUL-Wii-Riivolution
           path: dependencies/riivolution-patch
@@ -143,43 +142,57 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-python@v7
       - name: Set env
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           chmod +x dependencies/linux/arkhelper
           chmod +x dependencies/linux/dtab
+      - name: make fake ark parts
+        run: |
+          mkdir -p ./_build/wii
+          mkdir -p ./_build/wii/files
+          mkdir -p ./_build/wii/gen
+          truncate -s 71270695 _build/wii/files/gen/main_wii_0.ark
+          truncate -s 775705 _build/wii/files/gen/main_wii_1.ark
+          truncate -s 7713712 _build/wii/files/gen/main_wii_2.ark
+          truncate -s 161461271 _build/wii/files/gen/main_wii_3.ark
+          truncate -s 443967468 _build/wii/files/gen/main_wii_4.ark
+          truncate -s 485075279 _build/wii/files/gen/main_wii_5.ark
+          truncate -s 158496972 _build/wii/files/gen/main_wii_6.ark
+          truncate -s 287481367 _build/wii/files/gen/main_wii_7.ark
+          truncate -s 1732380974 _build/wii/files/gen/main_wii_8.ark
+          truncate -s 65556397 _build/wii/files/gen/main_wii_9.ark
       - name: Get current commit SHA and Replace DEVBUILD with commit SHA in locale
         run: |
           COMMIT_SHA=$(git rev-parse --short HEAD)
           sed -i "s/DEVBUILD/$COMMIT_SHA/g" _ark/ulti/locale/locale_mod.dta
-      - name: Remove Xbox and PS3 files
-        run: |
-          find . -name "*.*_xbox" -type f -delete
-          find . -name "*.*_ps3" -type f -delete
-      - name: Move songs_wii folder to _ark
-        run: |
-          mv _songs/songs_wii _ark/songs
       - name: Create necessary directories and copy files for patcher
         run: |
           mkdir -p ./_build/wii/ultimate_files/sys/
           mkdir -p ./_build/wii/ultimate_files/files/gen/
           mkdir -p ./_build/wii/iso
           mkdir -p ./_build/wii/wit
-          cp dependencies/patch/main.dol ./_build/wii/ultimate_files/sys/main.dol
-          cp dependencies/patch/setup.txt ./_build/wii/ultimate_files/setup.txt
-          cp _build/wii_rebuild_files/main_wii.hdr ./_build/wii/ultimate_files/files/gen/main_wii.hdr
+          cp -r dependencies/patch/* ./_build/wii/ultimate_files
           cp -r dependencies/wii-patcher/* ./_build/wii
           cp -r dependencies/wit/* ./_build/wii/wit
           cp -r iso/* ./_build/wii/iso
 
       - name: Build ARK
         run: |
-          dependencies/linux/arkhelper dir2ark ./_ark ./_build/wii/ultimate_files/files/gen -n "patch_wii" -e -v 5 -s 4073741823
+          python _build_dolphin.py
+          mv ./_build/wii/files/gen/main_wii.hdr ./_build/wii/ultimate_files/files/gen
+          mv ./_build/wii/files/gen/main_wii_10.ark ./_build/wii/ultimate_files/files/gen
+          mv ./_build/wii/files/gen/patch_wii.hdr ./_build/wii/ultimate_files/files/gen
+          mv ./_build/wii/files/gen/patch_wii_0.ark ./_build/wii/ultimate_files/files/gen
+          rm -rf ./_build/wii/files
       
       - name: Upload result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TBRBUL-Wii-Patcher-USA
           path: _build/wii
