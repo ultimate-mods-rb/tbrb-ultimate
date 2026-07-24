@@ -108,7 +108,7 @@ jobs:
         run: |
           mkdir -p ./_build/wii
           mkdir -p ./_build/wii/files
-          mkdir -p ./_build/wii/gen
+          mkdir -p ./_build/wii/files/gen
           truncate -s 71270695 _build/wii/files/gen/main_wii_0.ark
           truncate -s 775705 _build/wii/files/gen/main_wii_1.ark
           truncate -s 7713712 _build/wii/files/gen/main_wii_2.ark
@@ -157,7 +157,7 @@ jobs:
         run: |
           mkdir -p ./_build/wii
           mkdir -p ./_build/wii/files
-          mkdir -p ./_build/wii/gen
+          mkdir -p ./_build/wii/files/gen
           truncate -s 71270695 _build/wii/files/gen/main_wii_0.ark
           truncate -s 775705 _build/wii/files/gen/main_wii_1.ark
           truncate -s 7713712 _build/wii/files/gen/main_wii_2.ark
