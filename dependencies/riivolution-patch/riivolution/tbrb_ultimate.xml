@@ -10,6 +10,8 @@
         </section>
     </options>
     <patch id="tbrbul">
+        <file disc="/gen/main_wii.hdr" external="/tbrbul/main_wii.hdr" create="true"></file>
+        <file disc="/gen/main_wii_10.ark" external="/tbrbul/main_wii_10.ark" create="true"></file>
         <file disc="/gen/patch_wii.hdr" external="/tbrbul/patch_wii.hdr" create="true"></file>
         <file disc="/gen/patch_wii_0.ark" external="/tbrbul/patch_wii_0.ark" create="true"></file>
         <!-- fast start/skip splash patch -->

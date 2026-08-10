@@ -1,0 +1,3 @@
+[submodule "dependencies/buildark"]
+	path = dependencies/buildark
+	url = https://github.com/ultimate-mods-rb/buildark

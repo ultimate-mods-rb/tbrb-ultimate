@@ -3576,3 +3576,609 @@
 	  "vo_loading_across03.bik"
    )
 ) 
+(everybodystrying
+   (name "Everybody's Trying To Be My Baby")
+   (song_id 9990084)
+   (context 0)
+   (song
+     (name songs/everybodystrying/everybodystrying)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 11000 39500)
+   (rank
+      (drum 249)
+      (guitar 343)
+      (bass 298)
+      (vocals 301)
+      (band 290)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 14)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_ettbmb01.bik"
+   )
+)
+(everylittlething
+   (name "Every Little Thing")
+   (song_id 9990088)
+   (context 0)
+   (song
+     (name songs/everylittlething/everylittlething)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 15500 45000)
+   (rank
+      (drum 170)
+      (guitar 190)
+      (bass 202)
+      (vocals 141)
+      (band 159)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-09-30") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 11)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_everyloadingthing01.bik"
+   )
+)
+(honeydont
+   (name "Honey Don't")
+   (song_id 9990074)
+   (context 0)
+   (song
+     (name songs/honeydont/honeydont)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 23800 60000)
+   (rank
+      (drum 242)
+      (guitar 422)
+      (bass 288)
+      (vocals 386)
+      (band 327)
+   )
+   (venue sullivan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-26") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 10)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer ringo)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(idontwanttospoil
+   (name "I Don't Want To Spoil The Party")
+   (song_id 9990102)
+   (context 0)
+   (song
+     (name songs/idontwanttospoil/idontwanttospoil)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14600 44600)
+   (rank
+      (drum 390)
+      (guitar 354)
+      (bass 278)
+      (vocals 308)
+      (band 318)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 12)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric)
+   (downloaded TRUE)
+)
+(illfollowthesun
+   (name "I'll Follow The Sun")
+   (song_id 9990072)
+   (context 0)
+   (song
+     (name songs/illfollowthesun/illfollowthesun)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14600 44600)
+   (rank
+      (drum 78)
+      (guitar 355)
+      (bass 192)
+      (vocals 201)
+      (band 200)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 5)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_illfollowthesun01.bik"
+      "vo_loading_illfollowthesun02.bik"
+   )
+)
+(ivejustseenaface
+   (name "I've Just Seen A Face")
+   (song_id 9990110)
+   (context 0)
+   (song
+     (name songs/ivejustseenaface/ivejustseenaface)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 33700 63700)
+   (rank
+      (drum 452)
+      (guitar 423)
+      (bass 207)
+      (vocals 152)
+      (band 329)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-06-14") ; use 2009-01-01 as default if unknown
+   (album_name "Help!")
+   (album_track_number 12)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
+(kansascity
+   (name "Kansas City/Hey-Hey-Hey-Hey!")
+   (song_id 9990103)
+   (context 0)
+   (song
+     (name songs/kansascity/kansascity)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 74500 99000)
+   (rank
+      (drum 149)
+      (guitar 351)
+      (bass 246)
+      (vocals 388)
+      (band 285)
+   )
+   (venue cavern) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 7)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_kansascity01.bik"
+   )
+)
+(losethatgirl
+   (name "You're Going To Lose That Girl")
+   (song_id 9990091)
+   (context 0)
+   (song
+     (name songs/losethatgirl/losethatgirl)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 55500 103000)
+   (rank
+      (drum 120)
+      (guitar 165)
+      (bass 223)
+      (vocals 231)
+      (band 160)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1965-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-02-19") ; use 2009-01-01 as default if unknown
+   (album_name "Help!")
+   (album_track_number 6)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric piano)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_losethatgirl01.bik"
+   )
+)
+(noreply
+   (name "No Reply")
+   (song_id 9990017)
+   (context 0)
+   (song
+     (name songs/noreply/noreply)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14600 44600)
+   (rank
+      (drum 166)
+      (guitar 168)
+      (bass 223)
+      (vocals 204)
+      (band 193)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-09-30") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 1)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_noreply01.bik"
+      "vo_loading_noreply02.bik"
+      "vo_loading_noreply03.bik"
+      "vo_loading_noreply04.bik"
+      "vo_loading_noreply05.bik"
+   )
+)
+(whatyouredoing
+   (name "What You're Doing")
+   (song_id 9990064)
+   (context 0)
+   (song
+     (name songs/whatyouredoing/whatyouredoing)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14600 44600)
+   (rank
+      (drum 151)
+      (guitar 150)
+      (bass 245)
+      (vocals 184)
+      (band 165)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-26") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 13)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_whatyouredoing01.bik"
+      "vo_loading_whatyouredoing02.bik"
+      "vo_loading_whatyouredoing03.bik"
+   )
+)
+(wordsoflove
+   (name "Words Of Love")
+   (song_id 9990079)
+   (context 0)
+   (song
+     (name songs/wordsoflove/wordsoflove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 19000 51000)
+   (rank
+      (drum 145)
+      (guitar 311)
+      (bass 206)
+      (vocals 293)
+      (band 235)
+   )
+   (venue budokan) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-10-18") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 9)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul john)
+   (songtype electric)
+   (downloaded TRUE)
+)

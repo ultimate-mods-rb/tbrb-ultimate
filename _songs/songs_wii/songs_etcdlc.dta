@@ -514,60 +514,6 @@
 	"vo_loading_12bar03.bik"
 	"vo_loading_12bar04.bik")
 )
-(babysinblack
-   (name "Baby's In Black")
-   (song_id 2510078)
-   (context 13)
-   (song
-     (name        songs/babysinblack/babysinblack)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 2)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 19000 51000)
-   (rank
-      (drum 154)
-      (guitar 300)
-      (bass 160)
-      (vocals 467)
-      (band 250)
-   )
-   (venue shea) ; if you don't know venue yet use dreamscape
-   
-   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
-   (date_recorded "1964-08-11") ; use 2009-01-01 as default if unknown
-   (album_name "Beatles For Sale")
-   (album_track_number 3)
-
-   (format 0)
-   (version 20)               ; Only modified by coders!
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer john)
-   (songtype electric)
-   (downloaded TRUE)
-)
 (devilinherheart
    (name "Devil In Her Heart")
    (song_id 9350019)
