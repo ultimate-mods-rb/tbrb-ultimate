@@ -3721,3 +3721,58 @@
    (songtype electric)
    (downloaded TRUE)
 )
+(goodriddance
+   (name "Good Riddance (Time Of Your Life)")
+   (song_id 2570024)
+   (context 0)
+   (song
+     (name   songs/goodriddance/goodriddance)
+     (tracks
+        ((bass (0 1))
+         (guitar (2 3))
+         (vocals (4 5))
+        )
+     )  
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian Approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium) ; SET T0 kTempoMedium, kTempoFast, OR kTempoSlow
+   (preview 9633 66113)
+   (rank
+      (drum 0)
+      (guitar 353)
+      (bass 263)
+      (vocals 291)
+      (band 280)
+   )
+   (venue dreamscape)
+   
+   (date_released "1997-10-14") ; YEAR-MONTH-DAY
+   (date_recorded "1997-03-31") ; YEAR-MONTH-DAY
+   (album_name "Nimrod") ; DELETE IF SINGLE
+   (album_track_number 17) ; DELETE IF SINGLE
+   (format 0)
+   (version 20)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer george) ; SET TO paul, john, george, OR ringo
+   (songtype acoustic) ; SET TO piano, acoustic, electric, OR solo
+   (downloaded TRUE)
+   (new_ar_console TRUE) ; ONLY USE IF USING "emi_tg_mixer" IN SONG.JSON
+   (loading_sounds ; DELETE UNLESS USING CUSTOM LOADING SOUNDS
+		"vo_loading_riddance01.mogg")
+)
