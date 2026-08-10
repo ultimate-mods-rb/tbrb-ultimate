@@ -30,12 +30,6 @@ A mod for The Beatles Rock Band on every platform that makes the game more much 
 * Toggleable post proccessing
 * Includes over 150 extra songs in the Wii version
 
-## Xbox 360/PS3 Build Guide
-Download the repo and run the bat/sh for the platform you want and transfer the files to the proper place
-
-## Wii Build Guide
-Download the repo and insert a US The Beatles Rock Band iso/wbfs into the iso folder and run the bat/sh in the root of the repo depending on what files you want to generate
-
 ## Credit
 This project is based off The Beatles Rock Band Deluxe which is a mod created by [Milohax](https://github.com/hmxmilohax) please check out their work this mod would not have happened if they didn't exist
 

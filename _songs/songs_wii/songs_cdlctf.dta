@@ -678,3 +678,215 @@
    (songtype acoustic)
    (downloaded TRUE)
 )
+(babysinblack
+   (name "Baby's In Black")
+   (song_id 9990092)
+   (context 0)
+   (song
+     (name songs/babysinblack/babysinblack)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 31000 62000)
+   (rank
+      (drum 156)
+      (guitar 315)
+      (bass 202)
+      (vocals 296)
+      (band 237)
+   )
+   (venue {elem (shea budokan) $mulvenue_bib})
+   (date_released {do {set $mulvenue_bib {random_int 0 2}} "1964-01-01"}) ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-08-11") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 3)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+   (loading_sounds
+      "vo_loading_babysinblack01.bik"
+      "vo_loading_babysinblack02.bik"
+   )
+)
+(imaloser
+   (name "I'm A Loser")
+   (song_id 9990073)
+   (context 0)
+   (song
+     (name songs/imaloser/imaloser)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 14600 44600)
+   (rank
+      (drum 382)
+      (guitar 318)
+      (bass 280)
+      (vocals 364)
+      (band 316)
+   )
+   (venue shea) ; if you don't know venue yet use dreamscape
+   (date_released "1964-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1964-08-14") ; use 2009-01-01 as default if unknown
+   (album_name "Beatles For Sale")
+   (album_track_number 2)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic electric)
+   (downloaded TRUE)
+)
+(helplove
+   (name "Help! (Love Version)")
+   (song_id 9990106)
+   (context 0)
+   (song
+     (name songs/helplove/helplove)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 33700 63700)
+   (rank
+      (drum 377)
+      (guitar 314)
+      (bass 272)
+      (vocals 302)
+      (band 308)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "2006-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-04-13") ; use 2009-01-01 as default if unknown
+   (album_name "Love")
+   (album_track_number 5)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john)
+   (songtype acoustic electric)
+   (downloaded TRUE)
+)
+(birdyesterday
+   (name "Blackbird/Yesterday")
+   (song_id 9990107)
+   (context 0)
+   (song
+     (name songs/birdyesterday/birdyesterday)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+       (vocals (6 7))
+        )
+     )
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 33700 63700)
+   (rank
+      (drum 51)
+      (guitar 355)
+      (bass 168)
+      (vocals 120)
+      (band 207)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "2006-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1965-06-14") ; use 2009-01-01 as default if unknown
+   (album_name "Love")
+   (album_track_number 6)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
