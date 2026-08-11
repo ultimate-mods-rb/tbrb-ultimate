@@ -3558,7 +3558,7 @@
 )
 (vivalagloria
    (name "¡Viva la Gloria!")
-   (song_id 6690022)
+   (song_id 669002234)
    (context 56)
    (song
      (name songs/vivalagloria/vivalagloria)
@@ -3774,5 +3774,5 @@
    (downloaded TRUE)
    (new_ar_console TRUE) ; ONLY USE IF USING "emi_tg_mixer" IN SONG.JSON
    (loading_sounds ; DELETE UNLESS USING CUSTOM LOADING SOUNDS
-		"vo_loading_riddance01.mogg")
+		"vo_loading_riddance01.bik")
 )
