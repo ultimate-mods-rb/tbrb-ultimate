@@ -3776,3 +3776,159 @@
    (loading_sounds ; DELETE UNLESS USING CUSTOM LOADING SOUNDS
 		"vo_loading_riddance01.bik")
 )
+(monstermash
+   (name "Monster Mash")
+   (song_id 6690027)
+   (context 0)
+   (song
+     (name  songs/monstermash/monstermash)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Prod approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 30638 60046)
+   (rank
+      (drum 152)
+      (guitar 210)
+      (bass 220)
+      (vocals 313)
+      (band 257)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1962-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1962-08-25") ; use 2009-01-01 as default if unknown
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   ('tuning_offset_cents' -30)
+   (guide_pitch_volume -3.0)
+   (singer george)
+   (songtype electric piano)
+   (downloaded TRUE)
+)
+(calicoskies
+   (name "Calico Skies")
+   (song_id 6690029)
+   (context 0)
+   (song
+     (name   songs/calicoskies/calicoskies)
+     (tracks
+        ((guitar (0 1))
+         (vocals (2 3))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 10000 45000)
+   (rank
+      (drum 0)
+      (guitar 267)
+      (bass 0)
+      (vocals 218)
+      (band 198)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "2016-06-10") ; use 2009-01-01 as default if unknown
+   (date_recorded "1992-09-03") ; use 2009-01-01 as default if unknown
+   (album_name "Pure McCartney (Disc 2)")
+   (album_track_number 9)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic solo)
+   (downloaded TRUE)
+)
+(jennywren
+   (name "Jenny Wren")
+   (song_id 6690018)
+   (context 0)
+   (song
+     (name  songs/jennywren/jennywren)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; recede approved!
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 9633 66113)
+   (rank
+      (drum 106)
+      (guitar 379)
+      (bass 288)
+      (vocals 279)
+      (band 257)
+   )
+   (venue dreamscape)
+   
+   (date_released "2005-09-12")
+   (date_recorded "2004-10-25")
+   (album_name "Chaos and Creation in the Backyard")
+   (album_track_number 3)
+   (format 0)
+   (version 20)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype acoustic)
+   (downloaded TRUE)
+)
