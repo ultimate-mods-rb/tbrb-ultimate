@@ -3932,3 +3932,56 @@
    (songtype acoustic)
    (downloaded TRUE)
 )
+(miserydream
+   (name "Misery (Dreamscape)")
+   (song_id 6690028)
+   (context 0)
+   (song
+     (name        songs/miserydream/miserydream)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 2)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium)
+   (preview 43000 73000)
+   (rank
+      (drum 120)
+      (guitar 221)
+      (bass 230)
+      (vocals 198)
+      (band 155)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   
+   (date_released "1963-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1963-02-11") ; use 2009-01-01 as default if unknown
+   (album_name "Please Please Me")
+   (album_track_number 2)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john paul)
+   (songtype electric acoustic)
+   (downloaded TRUE)
+)
