@@ -3990,7 +3990,7 @@
    (song_id 9305002)
    (context 0)
    (song
-     (name  content/songs/cadavez/cadavez)
+     (name  songs/cadavez/cadavez)
      (tracks
         ((drum (0 1))
          (bass (2 3))
