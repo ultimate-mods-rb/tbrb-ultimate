@@ -3932,3 +3932,110 @@
    (songtype acoustic)
    (downloaded TRUE)
 )
+(you
+   (name "Gotta Be You")
+   (song_id 8976986)
+   (context 0)
+   (song
+     (name  songs/you/you)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )   
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian Approved
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoMedium) ; SET T0 kTempoMedium, kTempoFast, OR kTempoSlow
+   (preview 9633 66113)
+   (rank
+      (drum 135)
+      (guitar 270)
+      (bass 121)
+      (vocals 295)
+      (band 244)
+   )
+   (venue dreamscape)
+   
+   (date_released "2011-11-16") ; YEAR-MONTH-DAY
+   (date_recorded "2011-11-11") ; YEAR-MONTH-DAY
+   (album_name "Up All Night") ; DELETE IF SINGLE
+   (album_track_number 3) ; DELETE IF SINGLE
+   (format 0)
+   (version 20)
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer john) ; SET TO paul, john, george, OR ringo
+   (songtype acoustic piano) ; SET TO piano, acoustic, electric, OR solo
+   (downloaded TRUE)
+)
+(cadavez
+   (name "Cada Vez Que Digo Adios")
+   (song_id 9305002)
+   (context 0)
+   (song
+     (name  songs/cadavez/cadavez)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
+        )
+     )
+     (vocal_parts 1)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; bombapoom
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoFast)
+   (preview 23800 60000)
+   (rank
+      (drum 131)
+      (guitar 352)
+      (bass 220)
+      (vocals 386)
+      (band 250)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+
+   (date_released "1986-07-02") ; use 2009-01-01 as default if unknown
+   (date_recorded "1986-05-01") ; use 2009-01-01 as default if unknown
+   (album_name "Contrareloj")
+   (album_track_number 3)
+
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (downloaded TRUE)
+)
