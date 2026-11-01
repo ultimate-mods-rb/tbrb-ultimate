@@ -4089,60 +4089,6 @@
    (new_ar_console TRUE)
    (downloaded TRUE)
 )
-(upsidedown
-   (name "Upside Down")
-   (song_id 1860001)
-   (context 0)
-   (song
-     (name songs/upsidedown/upsidedown)
-     (tracks
-        ((drum (0 1))
-         (bass (2 3))
-         (guitar (4 5))
-		 (vocals (6 7))
-        )
-     )   
-     (vocal_parts 2)
-    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
-     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Jack Johnson Approved
-     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
-     (drum_solo
-        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
-     )
-     (drum_freestyle
-        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
-     )
-     (mute_volume -14.0)
-     (mute_volume_vocals -12.0)
-     (sfx_level -3.0)
-   )
-   (song_scroll_speed 2300)
-   (anim_tempo kTempoMedium)
-   (preview 9633 66113)
-   (rank
-      (drum 166)
-      (guitar 175)
-      (bass 165)
-      (vocals 204)
-      (band 190)
-   )
-   (venue dreamscape)
-   
-   (date_released "2006-01-01") 
-   (date_recorded "2005-04-26")
-   (album_name "Sing-A-Longs and Lullabies")
-   (album_track_number 1)
-   (format 0)
-   (version 20)
-   (game_origin beatles)
-   (rating 1)
-   (guide_pitch_volume -3.0)
-   (singer george)
-   (songtype acoustic)
-   (downloaded TRUE)
-   (new_ar_console TRUE)
-)
 (ringostheme
    (name "Ringo's Theme (This Boy)")
    (song_id 6690030)
@@ -4195,20 +4141,23 @@
    (songtype electric acoustic)
    (downloaded TRUE)
 )
-(nomorefanmail
-   (name "No More Fan Mail")
-   (song_id 9470002)
+(mindelectric
+   (name "The Mind Electric")
+   (song_id 2070001)
    (context 0)
    (song
-     (name   songs/nomorefanmail/nomorefanmail)
+     (name songs/mindelectric/mindelectric)
      (tracks
-        ((vocals (0 1))
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+		 (vocals (6 7))
         )
      )   
      (vocal_parts 1)
     ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
      (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
-     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Amog Approved
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Steamian Approved
      (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
      (drum_solo
         (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
@@ -4224,23 +4173,78 @@
    (anim_tempo kTempoMedium) ; SET T0 kTempoMedium, kTempoFast, OR kTempoSlow
    (preview 9633 66113)
    (rank
-      (drum 0)
-      (guitar 0)
-      (bass 0)
-      (vocals 1)
-      (band 1)
+      (drum 135)
+      (guitar 353)
+      (bass 270)
+      (vocals 2310)
+      (band 290)
    )
    (venue dreamscape)
    
-   (date_released "2008-10-13") ; YEAR-MONTH-DAY
-   (date_recorded "2008-10-13") ; YEAR-MONTH-DAY
+   (date_released "2012-12-12") ; YEAR-MONTH-DAY
+   (date_recorded "2005-05-13") ; YEAR-MONTH-DAY
+   (album_name "Hawaii Part II") ; DELETE IF SINGLE
+   (album_track_number 7) ; DELETE IF SINGLE
    (format 0)
    (version 20)
    (game_origin beatles)
    (rating 1)
    (guide_pitch_volume -3.0)
-   (singer ringo) ; SET TO paul, john, george, OR ringo
-   (songtype solo) ; SET TO piano, acoustic, electric, OR solo
+   (singer john) ; SET TO paul, john, george, OR ringo
+   (songtype acoustic piano) ; SET TO piano, acoustic, electric, OR solo
    (downloaded TRUE)
    (new_ar_console TRUE) ; ONLY USE IF USING "emi_tg_mixer" IN SONG.JSON
+)
+(redhotscartissue
+   (name "Scar Tissue")
+   (song_id 6690012)
+   (context 0)
+   (song
+     (name  songs/redhotscartissue/redhotscartissue)
+     (tracks
+        ((drum (0 1))
+         (bass (2 3))
+         (guitar (4 5))
+         (vocals (6 7))
+        )
+     )    
+     (vocal_parts 3)
+    ;                DRUMS       BASS      GUITAR     VOCALS     TRACKS
+     (pans        ( -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0  -1.0  1.0 ))
+     (vols        (  0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0   0.0  0.0 )) ; Giles didn't approve
+     (cores       (  -1   -1    -1   -1     1    1    -1   -1    -1   -1  ))
+     (drum_solo
+        (seqs (kick.cue snare.cue tom1.cue tom2.cue crash.cue))
+     )
+     (drum_freestyle
+        (seqs (kick.cue snare.cue hat.cue ride.cue crash.cue))
+     )
+     (mute_volume -14.0)
+     (mute_volume_vocals -12.0)
+     (sfx_level -3.0)
+   )
+   (song_scroll_speed 2300)
+   (anim_tempo kTempoSlow)
+   (preview 65764 83424)
+   (rank
+      (drum 245)
+      (guitar 267)
+      (bass 234)
+      (vocals 261)
+      (band 271)
+   )
+   (venue dreamscape) ; if you don't know venue yet use dreamscape
+   (date_released "1999-01-01") ; use 2009-01-01 as default if unknown
+   (date_recorded "1999-06-08") ; use 2009-01-01 as default if unknown
+   (album_name "Californication")
+   (album_track_number 3)
+   (format 0)
+   (version 20)               ; Only modified by coders!
+   (game_origin beatles)
+   (rating 1)
+   (guide_pitch_volume -3.0)
+   (singer paul)
+   (songtype electric)
+   (new_ar_console TRUE)
+   (downloaded TRUE)
 )
