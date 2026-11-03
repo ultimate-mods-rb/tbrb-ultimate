@@ -4354,11 +4354,6 @@
    (singer john paul)
    (songtype electric acoustic)
    (downloaded TRUE)
-   (loading_sounds
-      "vo_loading_warning01.bik"
-	  "vo_loading_warning02.bik"
-	  "vo_loading_warning03.bik"
-   )
 )
 (topshyaway
    (name "Shy Away")
